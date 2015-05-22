@@ -24,6 +24,10 @@ const TYPE_MAP = {
 
 TYPE_MAP.single = TYPE_MAP.pre;
 
+function isGetter(getter) {
+  return Boolean(getter[`${settings.annotationPrefix}isGetter`]);
+}
+
 /**
  * Creates a generic decorator for a method on an object.
  *
@@ -38,12 +42,12 @@ function createDecorator(root, method, type = 'pre') {
   function wrapper(...args) {
     return function decorator(target, name, descriptor) {
       const { value, get } = descriptor;
-      const result = TYPE_MAP[type](root[method], target, (get || value), ...args);
 
       if (get) {
-        descriptor.get = result;
+        const toWrap = isGetter(get) ? get : get.call(this);
+        descriptor.get = TYPE_MAP[type](root[method], target, toWrap, ...args);
       } else if (value) {
-        descriptor.value = result;
+        descriptor.value = TYPE_MAP[type](root[method], target, value, ...args); 
       }
 
       return descriptor;
