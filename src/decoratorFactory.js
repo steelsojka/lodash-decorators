@@ -54,10 +54,12 @@ function createInstanceDecorator(root, method, type = 'pre') {
 
       return {
         get: function getter() {
-          const newDescriptor = { configurable: true, writable: true };
+          const newDescriptor = { configurable: true };
 
           if (isFunction(get)) {
             newDescriptor.get = action(root[method], this, get, ...args);
+            newDescriptor.writable = false;
+
             Object.defineProperty(this, name, newDescriptor);
 
             return newDescriptor.get();
