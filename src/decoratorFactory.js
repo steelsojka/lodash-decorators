@@ -60,7 +60,9 @@ function createInstanceDecorator(root, method, type = 'pre') {
       const action = TYPE_MAP[type];
       const getterAnnotation = `${settings.annotationPrefix}isGetter`;
 
-      getter[getterAnnotation] = get[getterAnnotation];
+      if (get) {
+        getter[getterAnnotation] = get[getterAnnotation];
+      }
 
       return { get: getter };
 
