@@ -1,6 +1,7 @@
 'use strict';
 
 import { isFunction } from 'lodash';
+import settings from './settings';
 
 const TYPE_MAP = {
   // Methods where the function is the last argument or the first
@@ -21,6 +22,8 @@ const TYPE_MAP = {
   compose: (fn, target, value, ...args) => fn(value, ...args.map(method => target[method]))
 };
 
+TYPE_MAP.single = TYPE_MAP.pre;
+
 /**
  * Creates a generic decorator for a method on an object.
  *
@@ -30,7 +33,9 @@ const TYPE_MAP = {
  * @returns {Function} Decorator function
  */
 function createDecorator(root, method, type = 'pre') {
-  return function wrapper(...args) {
+  return type === 'single' ? wrapper() : wrapper;
+
+  function wrapper(...args) {
     return function decorator(target, name, descriptor) {
       const { value, get } = descriptor;
       const result = TYPE_MAP[type](root[method], target, (get || value), ...args);
@@ -47,30 +52,37 @@ function createDecorator(root, method, type = 'pre') {
 }
 
 function createInstanceDecorator(root, method, type = 'pre') {
-  return function wrapper(...args) {
+  return type === 'single' ? wrapper() : wrapper;
+
+  function wrapper(...args) {
     return function decorator(target, name, descriptor) {
       const { value, get } = descriptor;
       const action = TYPE_MAP[type];
+      const getterAnnotation = `${settings.annotationPrefix}isGetter`;
 
-      return {
-        get: function getter() {
-          const newDescriptor = { configurable: true };
+      getter[getterAnnotation] = get[getterAnnotation];
 
-          if (isFunction(get)) {
-            newDescriptor.get = action(root[method], this, get, ...args);
-            newDescriptor.writable = false;
+      return { get: getter };
 
-            Object.defineProperty(this, name, newDescriptor);
+      function getter() {
+        const isGetter = Boolean(getter[getterAnnotation]);
+        const newDescriptor = { configurable: true };
 
-            return newDescriptor.get();
-          }
+        if (isFunction(get)) {
+          const toWrap = isGetter ? get : get.call(this);
 
-          newDescriptor.value = action(root[method], this, value, ...args);
+          newDescriptor.get = action(root[method], this, toWrap, ...args);
+
           Object.defineProperty(this, name, newDescriptor);
 
-          return newDescriptor.value;
+          return isGetter ? newDescriptor.get() : newDescriptor.get;
         }
-      };
+
+        newDescriptor.value = action(root[method], this, value, ...args);
+        Object.defineProperty(this, name, newDescriptor);
+
+        return newDescriptor.value;
+      }
     };
   };
 }

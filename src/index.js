@@ -1,15 +1,19 @@
 'use strict';
 
 import _ from 'lodash';
+import getter from './getter';
 import { createDecorator, createInstanceDecorator } from './decoratorFactory';
+import settings from './settings';
 
 const methods = {
   instance: {
+    single: [
+      'once'
+    ],
     pre: [
       'debounce',
       'throttle',
-      'memoize',
-      'once'
+      'memoize'
     ],
     post: [
       'after',
@@ -17,11 +21,13 @@ const methods = {
     ]
   },
   proto: {
+    single: [
+      'rearg',
+      'negate'
+    ],
     pre: [
       'curry',
-      'curryRight',
-      'negate',
-      'rearg'
+      'curryRight'
     ],
     partial: [
       'partial',
@@ -31,7 +37,8 @@ const methods = {
       'wrap'
     ],
     compose: [
-      'compose'
+      'compose',
+      'flow'
     ]
   }
 };
@@ -50,4 +57,12 @@ _.forOwn(methods, (hash, createType) => {
   });
 });
 
-export default result;
+// All other decorators
+_.assign(result, { getter });
+
+// Provide aliases @memoize => @Memoize
+// This is for users who prefer capitalized decorators and
+// can prevent naming collissions.
+_.forOwn(result, (value, key) => result[_.capitalize(key)] = value);
+
+export default _.assign(result, { settings });
