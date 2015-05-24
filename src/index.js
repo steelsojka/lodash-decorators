@@ -2,6 +2,7 @@
 
 import _ from 'lodash';
 import getter from './getter';
+import bind from './bind';
 import { createDecorator, createInstanceDecorator } from './decoratorFactory';
 import settings from './settings';
 
@@ -22,12 +23,15 @@ const methods = {
   },
   proto: {
     single: [
+      'spread',
       'rearg',
       'negate'
     ],
     pre: [
+      'ary',
       'curry',
-      'curryRight'
+      'curryRight',
+      'restParam'
     ],
     partial: [
       'partial',
@@ -38,7 +42,13 @@ const methods = {
     ],
     compose: [
       'compose',
-      'flow'
+      'flow',
+      'flowRight',
+      'backflow'
+    ],
+    partialed: [
+      'delay',
+      'defer'
     ]
   }
 };
@@ -58,7 +68,10 @@ _.forOwn(methods, (hash, createType) => {
 });
 
 // All other decorators
-_.assign(result, { getter });
+_.assign(result, {
+  getter,
+  bind
+});
 
 // Provide aliases @memoize => @Memoize
 // This is for users who prefer capitalized decorators and

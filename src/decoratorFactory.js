@@ -1,6 +1,6 @@
 'use strict';
 
-import { isFunction } from 'lodash';
+import { isFunction, partial } from 'lodash';
 import settings from './settings';
 
 const TYPE_MAP = {
@@ -19,7 +19,8 @@ const TYPE_MAP = {
   replace: (fn, target, value, ...args) => fn(...args),
 
   // Calls the function with key functions and the value
-  compose: (fn, target, value, ...args) => fn(value, ...args.map(method => target[method]))
+  compose: (fn, target, value, ...args) => fn(value, ...args.map(method => target[method])),
+  partialed: (fn, target, value, ...args) => partial(fn, value, ...args)
 };
 
 TYPE_MAP.single = TYPE_MAP.pre;
@@ -68,7 +69,7 @@ function createInstanceDecorator(root, method, type = 'pre') {
         getter[getterAnnotation] = get[getterAnnotation];
       }
 
-      return { get: getter };
+      return { get: getter, configurable: true };
 
       function getter() {
         const isGetter = Boolean(getter[getterAnnotation]);
