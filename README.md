@@ -1,6 +1,9 @@
 # lodash-decorators
 ES7 Decorators for lodash functions.
 
+[![Build Status](https://travis-ci.org/steelsojka/lodash-decorators.svg)](https://travis-ci.org/steelsojka/lodash-decorators)
+[![npm version](https://badge.fury.io/js/lodash-decorators.svg)](http://badge.fury.io/js/lodash-decorators)
+
 ## Install
 
 `npm install --save lodash-decorators`
