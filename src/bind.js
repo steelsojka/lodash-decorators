@@ -14,7 +14,6 @@ export default function bindDecorator(target, name, descriptor) {
         boundFn = bind(get, this);
 
         Object.defineProperty(this, name, {
-          writable,
           configurable: true,
           get: boundFn
         });
