@@ -63,7 +63,7 @@ function createDecorator(root, method, type = 'pre') {
         copyMetaData(toWrap, descriptor.get);
       } else if (value) {
         descriptor.value = TYPE_MAP[type](root[method], target, value, ...args); 
-        copyMetaData(value, descriptor.get);
+        copyMetaData(value, descriptor.value);
       }
 
       return descriptor;
