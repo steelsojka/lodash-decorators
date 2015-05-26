@@ -2,6 +2,7 @@
 
 import settings from './settings';
 import { isFunction, bind } from 'lodash';
+import { copyMetaData } from './decoratorFactory';
 
 export default function bindWrapper(...args) {
   return function bindDecorator(...properties) {
@@ -26,22 +27,29 @@ function bindMethod(target, name, descriptor, ...args) {
 
   return {
     configurable: true,
-    get: function bindGetter() {
-      let thisValue = value;
+    get: bindGetter
+  };
 
-      if (isFunction(get)) {
-        thisValue = get.call(this);
-      }
+  function bindGetter() {
+    let thisValue = value;
 
-      let boundValue = isFunction(thisValue) ? bind(thisValue, this, ...args) : thisValue;
-
-      Object.defineProperty(this, name, {
-        writable,
-        configurable: true,
-        value: boundValue
-      });
-
-      return boundValue;
+    if (isFunction(get)) {
+      thisValue = get.call(this);
     }
+
+    let boundValue = thisValue;
+
+    if (isFunction(thisValue)) {
+      boundValue = bind(thisValue, this, ...args);
+      copyMetaData(thisValue, boundValue);
+    }
+
+    Object.defineProperty(this, name, {
+      writable,
+      configurable: true,
+      value: boundValue
+    });
+
+    return boundValue;
   }
 }
