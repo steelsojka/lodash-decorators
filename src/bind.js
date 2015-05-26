@@ -14,17 +14,11 @@ function bindClass(target, name, descriptor, ...args) {
     if (key !== 'constructor') {
       let descriptor = Object.getOwnPropertyDescriptor(target.prototype, key);
 
-      if (isFunction(descriptor.value)) {
+      if (isFunction(descriptor.value) || isFunction(descriptor.get)) {
         Object.defineProperty(target.prototype, key, bindMethod(target, key, descriptor));
       }
     }
   });
-}
-
-function checkBindValue(value) {
-  if (!isFunction(value)) {
-    throw new Error('Binds can not be used on getters, setters, or properties');
-  }
 }
 
 function bindMethod(target, name, descriptor, ...args) {
@@ -39,17 +33,15 @@ function bindMethod(target, name, descriptor, ...args) {
         thisValue = get.call(this);
       }
 
-      checkBindValue(thisValue);
-
-      let boundFn = bind(thisValue, this, ...args);
+      let boundValue = isFunction(thisValue) ? bind(thisValue, this, ...args) : thisValue;
 
       Object.defineProperty(this, name, {
         writable,
         configurable: true,
-        value: boundFn
+        value: boundValue
       });
 
-      return boundFn;
+      return boundValue;
     }
   }
 }
