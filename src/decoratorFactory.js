@@ -11,19 +11,23 @@ const TYPE_MAP = {
 
   // Partials are slightly different. They partial an existing function
   // on the object referenced by string name.
-  partial: (fn, target, value, ...args) => fn(target[args[0]], ...args.slice(1)),
+  partial: (fn, target, value, ...args) => fn(resolveFunction(args[0], target), ...args.slice(1)),
 
   // Wrap is a different case since the original function value
   // needs to be given to the wrap method.
-  wrap: (fn, target, value, ...args) => fn(target[args[0]], value),
+  wrap: (fn, target, value, ...args) => fn(resolveFunction(args[0], target), value),
   replace: (fn, target, value, ...args) => fn(...args),
 
   // Calls the function with key functions and the value
-  compose: (fn, target, value, ...args) => fn(value, ...args.map(method => target[method])),
+  compose: (fn, target, value, ...args) => fn(value, ...args.map(method => resolveFunction(method, target))),
   partialed: (fn, target, value, ...args) => partial(fn, value, ...args)
 };
 
 TYPE_MAP.single = TYPE_MAP.pre;
+
+function resolveFunction(method, target) {
+  return isFunction(method) ? method : target[method];
+}
 
 function isGetter(getter) {
   return Boolean(getter[`${settings.annotationPrefix}isGetter`]);
