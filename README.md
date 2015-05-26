@@ -156,8 +156,7 @@ class Person {
 
 const person = new Person('Joe', 'Smith');
 
-person.getFirstName(); // 'Joe'
-person.getLastName(); // 'Smith'
+person.getUpperCaseName(); // JOE SMITH
 ```
 
 ### Composition
@@ -238,7 +237,7 @@ class Person {
 
 ### Bind
 
-Bind takes no arguments and binds the `Function` to
+Bind takes arguments based on lodash's bind and binds the `Function` to
 the current instance object.
 
 #### Example
@@ -252,7 +251,38 @@ class Person {
     this.lastName = lastName;
   }
 
-  @bind
+  @bind()
+  getName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+
+  // It can also function as a partial
+  @bind('Joe')
+  getUpperCaseName(name) {
+    return name.toUpperCase();
+  }
+}
+
+const person = new Person('Joe', 'Smith');
+
+person.getName.call(null); // Joe Smith
+person.getUpperCaseName(); // JOE
+```
+
+You can also bind entire classes.
+
+#### Example
+
+```javascript
+import { bind } from 'lodash-decorators'
+
+@bind()
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
   getName() {
     return `${this.firstName} ${this.lastName}`;
   }
