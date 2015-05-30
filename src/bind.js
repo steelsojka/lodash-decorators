@@ -27,29 +27,27 @@ function bindMethod(target, name, descriptor, ...args) {
 
   return {
     configurable: true,
-    get: bindGetter
+    get() {
+      let thisValue = value;
+
+      if (isFunction(get)) {
+        thisValue = get.call(this);
+      }
+
+      let boundValue = thisValue;
+
+      if (isFunction(thisValue)) {
+        boundValue = bind(thisValue, this, ...args);
+        copyMetaData(thisValue, boundValue);
+      }
+
+      Object.defineProperty(this, name, {
+        writable,
+        configurable: true,
+        value: boundValue
+      });
+
+      return boundValue;
+    }
   };
-
-  function bindGetter() {
-    let thisValue = value;
-
-    if (isFunction(get)) {
-      thisValue = get.call(this);
-    }
-
-    let boundValue = thisValue;
-
-    if (isFunction(thisValue)) {
-      boundValue = bind(thisValue, this, ...args);
-      copyMetaData(thisValue, boundValue);
-    }
-
-    Object.defineProperty(this, name, {
-      writable,
-      configurable: true,
-      value: boundValue
-    });
-
-    return boundValue;
-  }
 }
