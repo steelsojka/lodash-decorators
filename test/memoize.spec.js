@@ -6,7 +6,7 @@ import _ from 'lodash';
 import { memoize } from '../src';
 
 describe('memoize', () => {
-  let person;
+  let person, sandbox;
   let resolver = item => item.toString();
 
   class Person {
@@ -17,10 +17,15 @@ describe('memoize', () => {
   }
 
   beforeEach(() => {
-    sinon.stub(_, 'memoize').returnsArg(0);
+    sandbox = sinon.sandbox.create();
+    sandbox.stub(_, 'memoize').returnsArg(0);
 
     person = new Person();
     person.fn();
+  });
+
+  afterEach(() => {
+    sandbox.restore();
   });
 
   it('should call the function', () => {

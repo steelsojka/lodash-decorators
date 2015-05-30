@@ -6,7 +6,7 @@ import _ from 'lodash';
 import { throttle } from '../src';
 
 describe('throttle', () => {
-  let person;
+  let person, sandbox;
 
   class Person {
     constructor() {}
@@ -16,10 +16,15 @@ describe('throttle', () => {
   }
 
   beforeEach(() => {
-    sinon.stub(_, 'throttle').returnsArg(0);
+    sandbox = sinon.sandbox.create();
+    sandbox.stub(_, 'throttle').returnsArg(0);
 
     person = new Person();
     person.fn();
+  });
+
+  afterEach(() => {
+    sandbox.restore();
   });
 
   it('should call the function', () => {

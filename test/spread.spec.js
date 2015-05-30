@@ -3,31 +3,30 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
 import _ from 'lodash';
-import { after } from '../src';
+import { spread } from '../src';
 
-describe('after', () => {
+describe('spread', () => {
   let person, sandbox;
-
-  class Person {
-    constructor() {}
-
-    @after(3)
-    fn() {}
-  }
 
   beforeEach(() => {
     sandbox = sinon.sandbox.create();
-    sandbox.stub(_, 'after').returnsArg(1);
-
-    person = new Person();
-    person.fn();
   });
 
   afterEach(() => {
     sandbox.restore();
   });
 
+
   it('should call the function', () => {
-    expect(_.after).to.have.been.calledWith(3, Person.prototype.fn);
+    sandbox.stub(_, 'spread').returnsArg(0);
+
+    class Person {
+      constructor() {}
+
+      @spread
+      fn() {}
+    }
+
+    expect(_.spread).to.have.been.calledWith(sinon.match.func);
   });
 });

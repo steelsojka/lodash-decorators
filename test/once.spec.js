@@ -6,7 +6,7 @@ import _ from 'lodash';
 import { once } from '../src';
 
 describe('once', () => {
-  let person;
+  let person, sandbox;
 
   class Person {
     constructor() {}
@@ -16,11 +16,15 @@ describe('once', () => {
   }
 
   beforeEach(() => {
-    sinon.stub(_, 'once').returnsArg(0);
-
+    sandbox = sinon.sandbox.create();
+    sandbox.stub(_, 'once').returnsArg(0);
 
     person = new Person();
     person.fn();
+  });
+
+  afterEach(() => {
+    sandbox.restore();
   });
 
   it('should call the function', () => {
