@@ -1,6 +1,6 @@
 'use strict';
 
-import { isFunction, partial } from 'lodash';
+import { forOwn, isFunction, partial } from 'lodash';
 import settings from './settings';
 
 const TYPE_MAP = {
@@ -11,22 +11,35 @@ const TYPE_MAP = {
 
   // Partials are slightly different. They partial an existing function
   // on the object referenced by string name.
-  partial: (fn, target, value, ...args) => fn(target[args[0]], ...args.slice(1)),
+  partial: (fn, target, value, ...args) => fn(resolveFunction(args[0], target), ...args.slice(1)),
 
   // Wrap is a different case since the original function value
   // needs to be given to the wrap method.
-  wrap: (fn, target, value, ...args) => fn(target[args[0]], value),
+  wrap: (fn, target, value, ...args) => fn(resolveFunction(args[0], target), value),
   replace: (fn, target, value, ...args) => fn(...args),
 
   // Calls the function with key functions and the value
-  compose: (fn, target, value, ...args) => fn(value, ...args.map(method => target[method])),
+  compose: (fn, target, value, ...args) => fn(value, ...args.map(method => resolveFunction(method, target))),
   partialed: (fn, target, value, ...args) => partial(fn, value, ...args)
 };
 
 TYPE_MAP.single = TYPE_MAP.pre;
 
+function resolveFunction(method, target) {
+  return isFunction(method) ? method : target[method];
+}
+
 function isGetter(getter) {
   return Boolean(getter[`${settings.annotationPrefix}isGetter`]);
+}
+
+/**
+ * Used to copy over meta data from function to function.
+ * If meta data is attached to a function. This can get lost
+ * when wrapping functions. This tries to persist that.
+ */
+function copyMetaData(from, to) {
+  forOwn(from, (value, key) => to[key] = from[key]);
 }
 
 /**
@@ -47,8 +60,10 @@ function createDecorator(root, method, type = 'pre') {
       if (get) {
         const toWrap = isGetter(get) ? get : get.call(this);
         descriptor.get = TYPE_MAP[type](root[method], target, toWrap, ...args);
+        copyMetaData(toWrap, descriptor.get);
       } else if (value) {
         descriptor.value = TYPE_MAP[type](root[method], target, value, ...args); 
+        copyMetaData(value, descriptor.value);
       }
 
       return descriptor;
@@ -66,7 +81,7 @@ function createInstanceDecorator(root, method, type = 'pre') {
       const getterAnnotation = `${settings.annotationPrefix}isGetter`;
 
       if (get) {
-        getter[getterAnnotation] = get[getterAnnotation];
+        copyMetaData(get, getter);
       }
 
       return { get: getter, configurable: true };
@@ -79,6 +94,7 @@ function createInstanceDecorator(root, method, type = 'pre') {
           const toWrap = isGetter ? get : get.call(this);
 
           newDescriptor.get = action(root[method], this, toWrap, ...args);
+          copyMetaData(toWrap, newDescriptor.get);
 
           Object.defineProperty(this, name, newDescriptor);
 
@@ -86,6 +102,8 @@ function createInstanceDecorator(root, method, type = 'pre') {
         }
 
         newDescriptor.value = action(root[method], this, value, ...args);
+        copyMetaData(value, newDescriptor.value);
+
         Object.defineProperty(this, name, newDescriptor);
 
         return newDescriptor.value;
@@ -96,5 +114,6 @@ function createInstanceDecorator(root, method, type = 'pre') {
 
 export default {
   createDecorator,
-  createInstanceDecorator
+  createInstanceDecorator,
+  copyMetaData
 };

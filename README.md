@@ -34,6 +34,7 @@ Many of the lodash decorators can contain arguments.
 - `backflow`
 - `delay`
 - `defer`
+- `bind`
 
 #### Example
 
@@ -67,7 +68,6 @@ Some decorators don't take any arguments at all.
 - `spread`
 - `rearg`
 - `negate`
-- `bind`
 
 #### Example
 
@@ -96,9 +96,9 @@ them to work than lodash.
 - `partialRight`
 - `wrap`
 
-These decorators take a `String` argument as their first parameter
-instead of a `Function`. The argument is the name of a function on the
-object you wish to partially apply arguments to.
+These can take a `Function` as their first argument or a `String`.
+If the argument is a `String` then a `Function` is resolved from
+the current object.
 
 #### Example
 
@@ -120,33 +120,6 @@ class Person {
 
   @partial('getName', null)
   getLastName() {}
-}
-
-const person = new Person('Joe', 'Smith');
-
-person.getFirstName(); // 'Joe'
-person.getLastName(); // 'Smith'
-```
-
-### Wraps
-
-Wraps work the same way as partials by taking a `String` argument
-of the function you wish to wrap.
-
-#### Example
-
-```javascript
-import { wrap } from 'lodash-decorators'
-
-class Person {
-  constructor(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
-
-  getName() {
-    return `${this.firstName} ${this.lastName}`;
-  }
 
   @wrap('getName')
   getUpperCaseName(fn) {
@@ -158,18 +131,20 @@ const person = new Person('Joe', 'Smith');
 
 person.getFirstName(); // 'Joe'
 person.getLastName(); // 'Smith'
+person.getUpperCaseName(); // JOE SMITH
 ```
 
 ### Composition
 
 You can use methods like `compose` and `flow` similiar to
-partials. It takes any number of `String` arguments that resolve
-to `Function`s on the object.
+partials. The arguments are resolved the same way partials
+are resolved.
 
 #### Example
 
 ```javascript
 import { compose } from 'lodash-decorators'
+import { kebabCase } from 'lodash';
 
 class Person {
   constructor(firstName, lastName) {
@@ -181,11 +156,7 @@ class Person {
     return `${this.firstName} ${this.lastName}`;
   }
 
-  upperCaseName(name) {
-    return name.toUpperCase();
-  }
-
-  @compose('upperCaseName', 'getName')
+  @compose(kebabCase, 'getName')
   logName(name) {
     console.log(name);
   }
@@ -193,7 +164,7 @@ class Person {
 
 const person = new Person('Joe', 'Smith');
 
-person.logName(); // JOE SMITH
+person.logName(); // joe-smith
 ```
 
 ### Instance Decorators
@@ -238,7 +209,7 @@ class Person {
 
 ### Bind
 
-Bind takes no arguments and binds the `Function` to
+Bind takes arguments based on lodash's bind and binds the `Function` to
 the current instance object.
 
 #### Example
@@ -252,7 +223,38 @@ class Person {
     this.lastName = lastName;
   }
 
-  @bind
+  @bind()
+  getName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+
+  // It can also function as a partial
+  @bind('Joe')
+  getUpperCaseName(name) {
+    return name.toUpperCase();
+  }
+}
+
+const person = new Person('Joe', 'Smith');
+
+person.getName.call(null); // Joe Smith
+person.getUpperCaseName(); // JOE
+```
+
+You can also bind entire classes.
+
+#### Example
+
+```javascript
+import { bind } from 'lodash-decorators'
+
+@bind()
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
   getName() {
     return `${this.firstName} ${this.lastName}`;
   }
