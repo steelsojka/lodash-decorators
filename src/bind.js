@@ -27,6 +27,14 @@ function bindMethod(target, name, descriptor, ...args) {
 
   return {
     configurable: true,
+    // Allows the user to reassign the variable
+    set(value) {
+      Object.defineProperty(this, name, {
+        configurable: true,
+        value,
+        writable
+      });
+    },
     get() {
       let thisValue = value;
 

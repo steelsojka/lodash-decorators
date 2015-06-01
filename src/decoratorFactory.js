@@ -84,7 +84,15 @@ function createInstanceDecorator(root, method, type = 'pre') {
         copyMetaData(get, getter);
       }
 
-      return { get: getter, configurable: true };
+      return { get: getter, set: setter, configurable: true };
+
+      function setter(value) {
+        Object.defineProperty(this, name, {
+          configurable: true,
+          value,
+          writable
+        });
+      }
 
       function getter() {
         const isGetter = Boolean(getter[getterAnnotation]);
