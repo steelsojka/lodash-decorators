@@ -33,7 +33,7 @@ describe('decoratorFactory', () => {
   describe('createDecorator', () => {
     describe('pre', () => {
       beforeEach(() => {
-        wrapper = createDecorator(root, method, 'pre');
+        wrapper = createDecorator(root[method], 'pre');
         decorator = wrapper(arg);
         actual = decorator.call(context, target, name, descriptor);
       });
@@ -49,7 +49,7 @@ describe('decoratorFactory', () => {
 
     describe('post', () => {
       beforeEach(() => {
-        wrapper = createDecorator(root, method, 'post');
+        wrapper = createDecorator(root[method], 'post');
         decorator = wrapper(arg);
         actual = decorator.call(context, target, name, descriptor);
       });
@@ -66,7 +66,7 @@ describe('decoratorFactory', () => {
     describe('partial', () => {
       beforeEach(() => {
         target.test = () => null;
-        wrapper = createDecorator(root, method, 'partial');
+        wrapper = createDecorator(root[method], 'partial');
         decorator = wrapper('test', arg);
         actual = decorator.call(context, target, name, descriptor);
       });
@@ -83,7 +83,7 @@ describe('decoratorFactory', () => {
     describe('wrap', () => {
       beforeEach(() => {
         target.test = () => null;
-        wrapper = createDecorator(root, method, 'wrap');
+        wrapper = createDecorator(root[method], 'wrap');
         decorator = wrapper('test', arg);
         actual = decorator.call(context, target, name, descriptor);
       });
@@ -99,7 +99,7 @@ describe('decoratorFactory', () => {
 
     describe('replace', () => {
       beforeEach(() => {
-        wrapper = createDecorator(root, method, 'replace');
+        wrapper = createDecorator(root[method], 'replace');
         decorator = wrapper(arg);
         actual = decorator.call(context, target, name, descriptor);
       });
@@ -118,7 +118,7 @@ describe('decoratorFactory', () => {
         target.test = () => null;
         target.test2 = () => null;
 
-        wrapper = createDecorator(root, method, 'compose');
+        wrapper = createDecorator(root[method], 'compose');
         decorator = wrapper('test', 'test2');
         actual = decorator.call(context, target, name, descriptor);
       });
@@ -138,7 +138,7 @@ describe('decoratorFactory', () => {
       beforeEach(() => {
         fn = descriptor.value;
 
-        wrapper = createDecorator(root, method, 'partialed');
+        wrapper = createDecorator(root[method], 'partialed');
         decorator = wrapper(arg);
         actual = decorator.call(context, target, name, descriptor);
         actual.value();
@@ -155,7 +155,7 @@ describe('decoratorFactory', () => {
 
     describe('single', () => {
       beforeEach(() => {
-        decorator = createDecorator(root, method, 'single');
+        decorator = createDecorator(root[method], 'single');
         actual = decorator.call(context, target, name, descriptor);
       });
 
