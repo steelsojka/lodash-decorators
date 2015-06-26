@@ -68,10 +68,12 @@ Some decorators don't take any arguments at all.
 - `spread`
 - `rearg`
 - `negate`
+- `tap`
 
 #### Example
 
 ```javascript
+import { uniqueId } from 'lodash';
 import { once } from 'lodash-decorators'
 
 class Person {
@@ -84,7 +86,16 @@ class Person {
   getFullName() {
     return `${this.firstName} ${this.lastName}`
   }
+
+  @tap
+  popIt(list) {
+    list.pop();
+  }
 }
+
+const person = new Person();
+
+person.popIt([1, 2, 3]); //=> [1, 2]
 ```
 
 ### Partials
