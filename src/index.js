@@ -3,50 +3,63 @@
 import _ from 'lodash';
 import getter from './getter';
 import bind from './bind';
+import tap from './tap';
 import { createDecorator, createInstanceDecorator } from './decoratorFactory';
 import settings from './settings';
 
+import {
+  SINGLE, 
+  PRE, 
+  POST, 
+  PROTO, 
+  WRAP, 
+  COMPOSE, 
+  PARTIALED,
+  PARTIAL,
+  INSTANCE
+} from './applyTypes';
+
 const methods = {
-  instance: {
-    single: [
+  [INSTANCE]: {
+    [SINGLE]: [
       'once'
     ],
-    pre: [
+    [PRE]: [
       'debounce',
       'throttle',
       'memoize'
     ],
-    post: [
+    [POST]: [
       'after',
       'before'
     ]
   },
-  proto: {
-    single: [
+  [PROTO]: {
+    [SINGLE]: [
       'spread',
       'rearg',
       'negate'
     ],
-    pre: [
+    [PRE]: [
       'ary',
       'curry',
       'curryRight',
       'restParam'
     ],
-    partial: [
+    [PARTIAL]: [
       'partial',
       'partialRight'
     ],
-    wrap: [
+    [WRAP]: [
       'wrap'
     ],
-    compose: [
+    [COMPOSE]: [
       'compose',
       'flow',
       'flowRight',
       'backflow'
     ],
-    partialed: [
+    [PARTIALED]: [
       'delay',
       'defer'
     ]
@@ -58,9 +71,9 @@ let result = {};
 _.forOwn(methods, (hash, createType) => {
   _.forOwn(hash, (list, type) => {
     result = list.reduce((res, fnName) => {
-      res[fnName] = createType === 'instance'
-        ? createInstanceDecorator(_, fnName, type)
-        : createDecorator(_, fnName, type);
+      res[fnName] = createType === INSTANCE
+        ? createInstanceDecorator(_[fnName], type)
+        : createDecorator(_[fnName], type);
 
       return res;
     }, result);
@@ -70,7 +83,8 @@ _.forOwn(methods, (hash, createType) => {
 // All other decorators
 _.assign(result, {
   getter,
-  bind
+  bind,
+  tap
 });
 
 // Provide aliases @memoize => @Memoize

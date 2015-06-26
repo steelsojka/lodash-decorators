@@ -3,33 +3,46 @@
 import { forOwn, isFunction, partial } from 'lodash';
 import settings from './settings';
 
+import {
+  SINGLE, 
+  PRE, 
+  POST, 
+  PROTO, 
+  WRAP, 
+  COMPOSE, 
+  PARTIALED,
+  PARTIAL,
+  REPLACE,
+  INSTANCE
+} from './applyTypes';
+
 const TYPE_MAP = {
   // Methods where the function is the last argument or the first
   // and all other arguments come before or after.
-  post: (fn, target, value, ...args) => fn(...args, value),
-  pre: (fn, target, value, ...args) => fn(value, ...args),
+  [POST]: (fn, target, value, ...args) => fn(...args, value),
+  [PRE]: (fn, target, value, ...args) => fn(value, ...args),
 
   // Partials are slightly different. They partial an existing function
   // on the object referenced by string name.
-  partial: (fn, target, value, ...args) => fn(resolveFunction(args[0], target), ...args.slice(1)),
+  [PARTIAL]: (fn, target, value, ...args) => fn(resolveFunction(args[0], target), ...args.slice(1)),
 
   // Wrap is a different case since the original function value
   // needs to be given to the wrap method.
-  wrap: (fn, target, value, ...args) => fn(resolveFunction(args[0], target), value),
-  replace: (fn, target, value, ...args) => fn(...args),
+  [WRAP]: (fn, target, value, ...args) => fn(resolveFunction(args[0], target), value),
+  [REPLACE]: (fn, target, value, ...args) => fn(...args),
 
   // Calls the function with key functions and the value
-  compose: (fn, target, value, ...args) => fn(value, ...args.map(method => resolveFunction(method, target))),
-  partialed: (fn, target, value, ...args) => partial(fn, value, ...args)
+  [COMPOSE]: (fn, target, value, ...args) => fn(value, ...args.map(method => resolveFunction(method, target))),
+  [PARTIALED]: (fn, target, value, ...args) => partial(fn, value, ...args)
 };
 
-TYPE_MAP.single = TYPE_MAP.pre;
+TYPE_MAP[SINGLE] = TYPE_MAP[PRE];
 
 function resolveFunction(method, target) {
   return isFunction(method) ? method : target[method];
 }
 
-function isGetter(getter) {
+export function isGetter(getter) {
   return Boolean(getter[`${settings.annotationPrefix}isGetter`]);
 }
 
@@ -38,8 +51,8 @@ function isGetter(getter) {
  * If meta data is attached to a function. This can get lost
  * when wrapping functions. This tries to persist that.
  */
-function copyMetaData(from, to) {
-  forOwn(from, (value, key) => to[key] = from[key]);
+export function copyMetaData(from, to) {
+  forOwn(from, (value, key) => to[key] = value);
 }
 
 /**
@@ -50,8 +63,8 @@ function copyMetaData(from, to) {
  * @param {String} [type=post] How to wrap the function.
  * @returns {Function} Decorator function
  */
-function createDecorator(root, method, type = 'pre') {
-  return type === 'single' ? wrapper() : wrapper;
+export function createDecorator(method, type = PRE) {
+  return type === SINGLE ? wrapper() : wrapper;
 
   function wrapper(...args) {
     return function decorator(target, name, descriptor) {
@@ -59,10 +72,10 @@ function createDecorator(root, method, type = 'pre') {
 
       if (get) {
         const toWrap = isGetter(get) ? get : get.call(this);
-        descriptor.get = TYPE_MAP[type](root[method], target, toWrap, ...args);
+        descriptor.get = TYPE_MAP[type](method, target, toWrap, ...args);
         copyMetaData(toWrap, descriptor.get);
       } else if (value) {
-        descriptor.value = TYPE_MAP[type](root[method], target, value, ...args); 
+        descriptor.value = TYPE_MAP[type](method, target, value, ...args); 
         copyMetaData(value, descriptor.value);
       }
 
@@ -71,8 +84,8 @@ function createDecorator(root, method, type = 'pre') {
   };
 }
 
-function createInstanceDecorator(root, method, type = 'pre') {
-  return type === 'single' ? wrapper() : wrapper;
+export function createInstanceDecorator(method, type = 'pre') {
+  return type === SINGLE ? wrapper() : wrapper;
 
   function wrapper(...args) {
     return function decorator(target, name, descriptor) {
@@ -101,7 +114,7 @@ function createInstanceDecorator(root, method, type = 'pre') {
         if (isFunction(get)) {
           const toWrap = isGetter ? get : get.call(this);
 
-          newDescriptor.get = action(root[method], this, toWrap, ...args);
+          newDescriptor.get = action(method, this, toWrap, ...args);
           copyMetaData(toWrap, newDescriptor.get);
 
           Object.defineProperty(this, name, newDescriptor);
@@ -109,7 +122,7 @@ function createInstanceDecorator(root, method, type = 'pre') {
           return isGetter ? newDescriptor.get() : newDescriptor.get;
         }
 
-        newDescriptor.value = action(root[method], this, value, ...args);
+        newDescriptor.value = action(method, this, value, ...args);
         copyMetaData(value, newDescriptor.value);
 
         Object.defineProperty(this, name, newDescriptor);
@@ -119,9 +132,3 @@ function createInstanceDecorator(root, method, type = 'pre') {
     };
   };
 }
-
-export default {
-  createDecorator,
-  createInstanceDecorator,
-  copyMetaData
-};
