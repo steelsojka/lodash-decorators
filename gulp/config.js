@@ -9,6 +9,11 @@ export default {
     },
     dist: 'dist',
     stage: 'stage',
-    published: ['dist/**/*', 'package.json']
+    published: [
+      'dist/**/*', 
+      'package.json',
+      'README.md',
+      'LICENSE'
+    ]
   }
 };
