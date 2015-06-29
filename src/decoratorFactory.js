@@ -1,7 +1,7 @@
 'use strict';
 
 import { forOwn, isFunction, partial } from 'lodash';
-import settings from './settings';
+import CompositeKeyWeakMap from './CompositeKeyWeakMap';
 
 import {
   SINGLE, 
@@ -42,10 +42,6 @@ function resolveFunction(method, target) {
   return isFunction(method) ? method : target[method];
 }
 
-export function isGetter(getter) {
-  return Boolean(getter[`${settings.annotationPrefix}isGetter`]);
-}
-
 /**
  * Used to copy over meta data from function to function.
  * If meta data is attached to a function. This can get lost
@@ -53,6 +49,7 @@ export function isGetter(getter) {
  */
 export function copyMetaData(from, to) {
   forOwn(from, (value, key) => to[key] = value);
+  return to;
 }
 
 /**
@@ -71,9 +68,8 @@ export function createDecorator(method, type = PRE) {
       const { value, get } = descriptor;
 
       if (get) {
-        const toWrap = isGetter(get) ? get : get.call(this);
-        descriptor.get = TYPE_MAP[type](method, target, toWrap, ...args);
-        copyMetaData(toWrap, descriptor.get);
+        descriptor.get = TYPE_MAP[type](method, target, get, ...args);
+        copyMetaData(get, descriptor.get);
       } else if (value) {
         descriptor.value = TYPE_MAP[type](method, target, value, ...args); 
         copyMetaData(value, descriptor.value);
@@ -84,51 +80,34 @@ export function createDecorator(method, type = PRE) {
   };
 }
 
-export function createInstanceDecorator(method, type = 'pre') {
+export function createInstanceDecorator(method, type = PRE) {
+  const objectMap = new CompositeKeyWeakMap();
+
   return type === SINGLE ? wrapper() : wrapper;
 
   function wrapper(...args) {
     return function decorator(target, name, descriptor) {
       const { value, get } = descriptor;
       const action = TYPE_MAP[type];
-      const getterAnnotation = `${settings.annotationPrefix}isGetter`;
+      let toWrap = get ? get : value;
 
       if (get) {
-        copyMetaData(get, getter);
+        descriptor.get = copyMetaData(toWrap, instanceDecoratorWrapper);
+      } else {
+        descriptor.value = copyMetaData(toWrap, instanceDecoratorWrapper); 
       }
 
-      return { get: getter, set: setter, configurable: true };
-
-      function setter(value) {
-        Object.defineProperty(this, name, {
-          configurable: true,
-          value,
-          writable
-        });
-      }
-
-      function getter() {
-        const isGetter = Boolean(getter[getterAnnotation]);
-        const newDescriptor = { configurable: true };
-
-        if (isFunction(get)) {
-          const toWrap = isGetter ? get : get.call(this);
-
-          newDescriptor.get = action(method, this, toWrap, ...args);
-          copyMetaData(toWrap, newDescriptor.get);
-
-          Object.defineProperty(this, name, newDescriptor);
-
-          return isGetter ? newDescriptor.get() : newDescriptor.get;
+      return descriptor;
+        
+      function instanceDecoratorWrapper(...methodArgs) {
+        if (!objectMap.has([this, toWrap])) {
+          objectMap.set([this, toWrap], action(method, this, toWrap, ...args));
         }
 
-        newDescriptor.value = action(method, this, value, ...args);
-        copyMetaData(value, newDescriptor.value);
+        const fn = objectMap.get([this, toWrap]);
 
-        Object.defineProperty(this, name, newDescriptor);
-
-        return newDescriptor.value;
-      }
+        return fn.apply(this, methodArgs);
+      };
     };
   };
 }

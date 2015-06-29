@@ -1,11 +1,9 @@
 'use strict';
 
 import _ from 'lodash';
-import getter from './getter';
 import bind from './bind';
 import tap from './tap';
 import { createDecorator, createInstanceDecorator } from './decoratorFactory';
-import settings from './settings';
 
 import {
   SINGLE, 
@@ -82,7 +80,6 @@ _.forOwn(methods, (hash, createType) => {
 
 // All other decorators
 _.assign(result, {
-  getter,
   bind,
   tap
 });
@@ -92,4 +89,4 @@ _.assign(result, {
 // can prevent naming collissions.
 _.forOwn(result, (value, key) => result[_.capitalize(key)] = value);
 
-export default _.assign(result, { settings });
+export default result;

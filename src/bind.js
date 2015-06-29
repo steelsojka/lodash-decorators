@@ -1,6 +1,5 @@
 'use strict';
 
-import settings from './settings';
 import { isFunction, bind } from 'lodash';
 import { copyMetaData } from './decoratorFactory';
 
