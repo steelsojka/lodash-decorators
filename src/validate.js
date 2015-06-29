@@ -1,18 +1,18 @@
 'use strict';
 
 import { chain, isArray, every, forEach } from 'lodash';
-import { createDecorator } from '../decoratorFactory';
+import { createDecorator } from './decoratorFactory';
 
 export default createDecorator(validateDecorator);
 
 function validateDecorator(fn, ...args) {
   const validators = chain(args)
     .map(arg => isArray(arg) ? arg : [arg])
-    .map(pipeline => arg => every(pipeline, fn => fn(arg)))
+    .map(fns => arg => every(fns, fn => fn(arg)))
     .value();
 
   return function validator(...args) {
-    validate(args)
+    validate(args);
     return fn.call(this, ...args);
   };
 
