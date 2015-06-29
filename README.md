@@ -191,33 +191,6 @@ decorators are applied at the instance level.
 - `after`
 - `before`
 
-### Getters
-
-When apply a decorator to a getter, a special annotation
-is required to distinguish between a getter property and
-an instance decorator.
-
-- `getter`
-
-#### Example
-
-```javascript
-import { getter, debounce } from 'lodash-decorators'
-
-class Person {
-  constructor(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
-
-  @getter
-  @debounce(100)
-  get name() {
-    return `${this.firstName} ${this.lastName}`;
-  }
-}
-```
-
 ### Bind
 
 Bind takes arguments based on lodash's bind and binds the `Function` to
