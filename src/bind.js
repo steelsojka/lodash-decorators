@@ -1,7 +1,9 @@
 'use strict';
 
-import { isFunction, bind } from 'lodash';
-import { copyMetaData } from './decoratorFactory';
+import isFunction from 'lodash/lang/isFunction';
+import bind from 'lodash/function/bind';
+
+import Applicator from './Applicator';
 
 export default function bindWrapper(...args) {
   return function bindDecorator(...properties) {
@@ -45,7 +47,7 @@ function bindMethod(target, name, descriptor, ...args) {
 
       if (isFunction(thisValue)) {
         boundValue = bind(thisValue, this, ...args);
-        copyMetaData(thisValue, boundValue);
+        Applicator.copyMetaData(thisValue, boundValue);
       }
 
       Object.defineProperty(this, name, {
