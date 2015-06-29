@@ -1,11 +1,16 @@
 'use strict';
 
-import _ from 'lodash';
+import capitalize from 'lodash/string/capitalize';
+import forOwn from 'lodash/object/forOwn';
+import assign from 'lodash/object/assign';
+import functions from 'lodash/function';
+
 import bind from './bind';
 import tap from './tap';
 import { createDecorator, createInstanceDecorator } from './decoratorFactory';
+import Applicator from './Applicator';
 
-import {
+const {
   SINGLE, 
   PRE, 
   POST, 
@@ -15,7 +20,7 @@ import {
   PARTIALED,
   PARTIAL,
   INSTANCE
-} from './applyTypes';
+} = Applicator;
 
 const methods = {
   [INSTANCE]: {
@@ -66,12 +71,12 @@ const methods = {
 
 let result = {};
 
-_.forOwn(methods, (hash, createType) => {
-  _.forOwn(hash, (list, type) => {
+forOwn(methods, (hash, createType) => {
+  forOwn(hash, (list, type) => {
     result = list.reduce((res, fnName) => {
       res[fnName] = createType === INSTANCE
-        ? createInstanceDecorator(_[fnName], type)
-        : createDecorator(_[fnName], type);
+        ? createInstanceDecorator(functions[fnName], type)
+        : createDecorator(functions[fnName], type);
 
       return res;
     }, result);
@@ -79,7 +84,7 @@ _.forOwn(methods, (hash, createType) => {
 });
 
 // All other decorators
-_.assign(result, {
+assign(result, {
   bind,
   tap
 });
@@ -87,6 +92,6 @@ _.assign(result, {
 // Provide aliases @memoize => @Memoize
 // This is for users who prefer capitalized decorators and
 // can prevent naming collissions.
-_.forOwn(result, (value, key) => result[_.capitalize(key)] = value);
+forOwn(result, (value, key) => result[capitalize(key)] = value);
 
 export default result;

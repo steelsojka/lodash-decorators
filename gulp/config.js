@@ -7,6 +7,8 @@ export default {
     tests: {
       unit: 'test/**/*.spec.js'
     },
-    dist: 'dist'
+    dist: 'dist',
+    stage: 'stage',
+    published: ['dist/**/*', 'package.json']
   }
 };
