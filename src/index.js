@@ -8,61 +8,49 @@ import functions from 'lodash/function';
 import bind from './bind';
 import tap from './tap';
 import { createDecorator, createInstanceDecorator } from './decoratorFactory';
-import Applicator from './Applicator';
-
-const {
-  SINGLE, 
-  PRE, 
-  POST, 
-  PROTO, 
-  WRAP, 
-  COMPOSE, 
-  PARTIALED,
-  PARTIAL,
-  INSTANCE
-} = Applicator;
+import { applicators } from './Applicator';
 
 const methods = {
-  [INSTANCE]: {
-    [SINGLE]: [
+  instance: {
+    single: [
       'once'
     ],
-    [PRE]: [
+    pre: [
       'debounce',
       'throttle',
       'memoize'
     ],
-    [POST]: [
+    post: [
       'after',
       'before'
     ]
   },
-  [PROTO]: {
-    [SINGLE]: [
+  proto: {
+    single: [
       'spread',
       'rearg',
       'negate'
     ],
-    [PRE]: [
+    pre: [
       'ary',
       'curry',
       'curryRight',
       'restParam'
     ],
-    [PARTIAL]: [
+    partial: [
       'partial',
       'partialRight'
     ],
-    [WRAP]: [
+    wrap: [
       'wrap'
     ],
-    [COMPOSE]: [
+    compose: [
       'compose',
       'flow',
       'flowRight',
       'backflow'
     ],
-    [PARTIALED]: [
+    partialed: [
       'delay',
       'defer'
     ]
@@ -74,9 +62,9 @@ let result = {};
 forOwn(methods, (hash, createType) => {
   forOwn(hash, (list, type) => {
     result = list.reduce((res, fnName) => {
-      res[fnName] = createType === INSTANCE
-        ? createInstanceDecorator(functions[fnName], type)
-        : createDecorator(functions[fnName], type);
+      res[fnName] = createType === 'instance'
+        ? createInstanceDecorator(functions[fnName], applicators[type])
+        : createDecorator(functions[fnName], applicators[type]);
 
       return res;
     }, result);
