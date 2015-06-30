@@ -3,7 +3,7 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
 import _ from 'lodash';
-import Validate from '../src/validate';
+import Validate from '../../src/validate';
 
 describe('validate', () => {
   let spy, actual, person;

@@ -3,7 +3,7 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
 import _ from 'lodash';
-import { tap } from '../../src';
+import { tap } from '../src';
 
 describe('tap', () => {
   let spy, person, actual, sandbox = sinon.sandbox.create();

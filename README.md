@@ -4,6 +4,29 @@ ES7 Decorators for lodash functions.
 [![Build Status](https://travis-ci.org/steelsojka/lodash-decorators.svg)](https://travis-ci.org/steelsojka/lodash-decorators)
 [![npm version](https://badge.fury.io/js/lodash-decorators.svg)](http://badge.fury.io/js/lodash-decorators)
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Install](#install)
+- [Usage](#usage)
+  - [With Arguments](#with-arguments)
+    - [Example](#example)
+  - [Without Arguments](#without-arguments)
+    - [Example](#example-1)
+  - [Partials](#partials)
+    - [Example](#example-2)
+  - [Composition](#composition)
+    - [Example](#example-3)
+  - [Instance Decorators](#instance-decorators)
+  - [Getters and Setters](#getters-and-setters)
+    - [Example](#example-4)
+  - [Bind](#bind)
+    - [Example](#example-5)
+    - [Example](#example-6)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Install
 
 `npm install --save lodash-decorators`
@@ -190,6 +213,36 @@ decorators are applied at the instance level.
 - `memoize`
 - `after`
 - `before`
+
+### Getters and Setters
+
+Most decorators can be applied directly to getter and setter methods.
+
+#### Example
+
+```javascript
+import { once } from 'lodash-decorators'
+import _ from 'lodash';
+
+class Person {
+  constructor() {}
+
+  @once
+  get name() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+
+  @compose(_.trim)
+  set name(name) {
+    [this.firstName, this.lastName] = name.split(' ');
+  }
+}
+
+const person = new Person();
+
+person.name = '    Joe Smith   ';
+person.name; //=> Joe Smith
+```
 
 ### Bind
 
