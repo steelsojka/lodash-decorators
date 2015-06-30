@@ -1,26 +1,11 @@
 'use strict';
 
-import every from 'lodash/collection/every';
+import normalizeExport from '../utils/normalizeExport';
 
-import { createDecorator } from '../decoratorFactory';
+import validate from './validate';
+import validateReturn from './validateReturn';
 
-export default createDecorator(validateDecorator);
-
-function validateDecorator(fn, ...args) {
-  const validators = args
-    .map(arg => Array.isArray(arg) ? arg : Array.of(arg))
-    .map(fns => arg => every(fns, fn => fn(arg)));
-
-  return function validator(...args) {
-    validate(args);
-    return fn.call(this, ...args);
-  };
-
-  function validate(args) {
-    for (let i = 0, len = args.length; i < len; i++) {
-      if (validators[i] && !validators[i](args[i])) {
-        throw new TypeError(`Argument did not pass validation. Got ${typeof arg}.`);
-      }
-    }
-  }
-}
+export default normalizeExport({
+  validate,
+  validateReturn
+});

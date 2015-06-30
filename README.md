@@ -24,6 +24,8 @@ ES7 Decorators for lodash functions.
   - [Bind](#bind)
     - [Example](#example-5)
     - [Example](#example-6)
+  - [Extensions](#extensions)
+  - [Validate](#validate)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -58,6 +60,7 @@ Many of the lodash decorators can contain arguments.
 - `delay`
 - `defer`
 - `bind`
+- `modArgs`
 
 #### Example
 
@@ -301,6 +304,19 @@ const person = new Person('Joe', 'Smith');
 
 person.getName.call(null); // Joe Smith
 ```
+
+### Extensions
+
+Extensions are decorators that aren't necessarily Lodash functions, but use Lodash under the hood. They
+provided some more basic utilities not found in Lodash;
+
+These can be found in `src/extensions`
+
+### Validate
+
+The validate module contains decorators that can validate function arguments and return value.
+
+These can be found in `src/validate`
 
 Author: Steven Sojka
 MIT Licensed

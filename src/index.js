@@ -1,6 +1,5 @@
 'use strict';
 
-import capitalize from 'lodash/string/capitalize';
 import forOwn from 'lodash/object/forOwn';
 import assign from 'lodash/object/assign';
 import functions from 'lodash/function';
@@ -9,6 +8,7 @@ import bind from './bind';
 import tap from './tap';
 import { createDecorator, createInstanceDecorator } from './decoratorFactory';
 import { applicators } from './Applicator';
+import normalizeExport from './utils/normalizeExport';
 
 const methods = {
   instance: {
@@ -78,9 +78,4 @@ assign(result, {
   tap
 });
 
-// Provide aliases @memoize => @Memoize
-// This is for users who prefer capitalized decorators and
-// can prevent naming collissions.
-forOwn(result, (value, key) => result[capitalize(key)] = value);
-
-export default result;
+export default normalizeExport(result);

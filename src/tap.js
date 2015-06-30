@@ -2,10 +2,8 @@
 
 import { createDecorator } from './decoratorFactory';
 import { applicators } from './Applicator';
+import returnAtIndex from './utils/returnAtIndex';
 
 export default createDecorator(function tapDecorator(fn) {
-  return function(...args) {
-    fn.call(this, ...args);
-    return args[0];
-  };
+  return returnAtIndex(fn, 0);
 }, applicators.single);

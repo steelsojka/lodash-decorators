@@ -3,9 +3,9 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
 import _ from 'lodash';
-import Validate from '../../src/validate';
+import Validate from '../../src/validate/validate';
 
-describe('validate', () => {
+describe('validate.validate', () => {
   let spy, actual, person;
   let sandbox = sinon.sandbox.create();
 
