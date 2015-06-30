@@ -32,6 +32,7 @@ const methods = {
       'negate'
     ],
     pre: [
+      'modArgs',
       'ary',
       'curry',
       'curryRight',
