@@ -2,7 +2,7 @@
 
 export default {
   paths: {
-    lint: ['**/*.js', '!node_modules/**', '!dist/**'],
+    lint: ['src/**/*.js'],
     src: 'src/**/*.js',
     tests: {
       unit: 'test/**/*.spec.js'

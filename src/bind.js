@@ -9,7 +9,7 @@ export default function bindWrapper(...args) {
   return function bindDecorator(...properties) {
     return properties.length === 1 ? bindClass(...properties, ...args) : bindMethod(...properties, ...args);
   };
-};
+}
 
 function bindClass(target, name, descriptor, ...args) {
   const keys = Reflect.ownKeys(target.prototype).forEach(key => {

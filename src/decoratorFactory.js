@@ -29,13 +29,13 @@ export function createDecorator(method, applicator = applicators.pre) {
         getterSetterMap.set([target, name, 'set'], descriptor.set);
 
       } else if (value) {
-        descriptor.value = Applicator.invoke(applicator, method, target, value, ...args); 
+        descriptor.value = Applicator.invoke(applicator, method, target, value, ...args);
         Applicator.copyMetaData(value, descriptor.value);
       }
 
       return descriptor;
     };
-  };
+  }
 }
 
 export function createInstanceDecorator(method, applicator = applicators.pre) {
@@ -57,11 +57,11 @@ export function createInstanceDecorator(method, applicator = applicators.pre) {
         getterSetterMap.set([target, name, 'set'], descriptor.set);
 
       } else if (value) {
-        descriptor.value = Applicator.copyMetaData(value, partial(instanceDecoratorWrapper, value)); 
+        descriptor.value = Applicator.copyMetaData(value, partial(instanceDecoratorWrapper, value));
       }
 
       return descriptor;
-        
+
       function instanceDecoratorWrapper(toWrap, ...methodArgs) {
         if (!objectMap.has([this, toWrap])) {
           objectMap.set([this, toWrap], Applicator.invoke(applicator, method, this, toWrap, ...args));
@@ -70,7 +70,7 @@ export function createInstanceDecorator(method, applicator = applicators.pre) {
         const fn = objectMap.get([this, toWrap]);
 
         return fn.apply(this, methodArgs);
-      };
+      }
     };
-  };
+  }
 }
