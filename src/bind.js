@@ -3,24 +3,13 @@
 import isFunction from 'lodash/lang/isFunction';
 import bind from 'lodash/function/bind';
 
+import bindAll from './bindAll';
 import Applicator from './Applicator';
 
 export default function bindWrapper(...args) {
   return function bindDecorator(...properties) {
-    return properties.length === 1 ? bindClass(...properties, ...args) : bindMethod(...properties, ...args);
+    return properties.length === 1 ? bindAll(...args)(...properties) : bindMethod(...properties, ...args);
   };
-}
-
-function bindClass(target, name, descriptor, ...args) {
-  const keys = Reflect.ownKeys(target.prototype).forEach(key => {
-    if (key !== 'constructor') {
-      let descriptor = Object.getOwnPropertyDescriptor(target.prototype, key);
-
-      if (isFunction(descriptor.value) || isFunction(descriptor.get)) {
-        Object.defineProperty(target.prototype, key, bindMethod(target, key, descriptor));
-      }
-    }
-  });
 }
 
 function bindMethod(target, name, descriptor, ...args) {

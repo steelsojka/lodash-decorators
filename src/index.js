@@ -6,6 +6,7 @@ import functions from 'lodash/function';
 
 import bind from './bind';
 import tap from './tap';
+import bindAll from './bindAll';
 import { createDecorator, createInstanceDecorator } from './decoratorFactory';
 import { applicators } from './Applicator';
 import normalizeExport from './utils/normalizeExport';
@@ -75,7 +76,8 @@ forOwn(methods, (hash, createType) => {
 // All other decorators
 assign(result, {
   bind,
-  tap
+  tap,
+  bindAll
 });
 
 export default normalizeExport(result);
