@@ -70,6 +70,7 @@ describe('decoratorFactory', () => {
         wrapper = createDecorator(root[method], applicators.partial);
         decorator = wrapper('test', arg);
         actual = decorator.call(context, target, name, descriptor);
+        actual.value();
       });
 
       it('should call the method', () => {
@@ -82,15 +83,20 @@ describe('decoratorFactory', () => {
     });
 
     describe('wrap', () => {
+      let sourceValue;
+
       beforeEach(() => {
         target.test = () => null;
+        sourceValue = descriptor.value;
+
         wrapper = createDecorator(root[method], applicators.wrap);
         decorator = wrapper('test', arg);
         actual = decorator.call(context, target, name, descriptor);
+        actual.value();
       });
 
       it('should call the method', () => {
-        expect(root.method).to.have.been.calledWithExactly(target.test, descriptor.value);
+        expect(root.method).to.have.been.calledWithExactly(target.test, sourceValue);
       });
 
       it('should assign the result to the descriptor value', () => {
@@ -115,17 +121,21 @@ describe('decoratorFactory', () => {
     });
 
     describe('compose', () => {
+      let sourceValue;
+
       beforeEach(() => {
         target.test = () => null;
         target.test2 = () => null;
+        sourceValue = descriptor.value;
 
         wrapper = createDecorator(root[method], applicators.compose);
         decorator = wrapper('test', 'test2');
         actual = decorator.call(context, target, name, descriptor);
+        actual.value();
       });
 
       it('should call the method', () => {
-        expect(root.method).to.have.been.calledWithExactly(descriptor.value, target.test, target.test2);
+        expect(root.method).to.have.been.calledWithExactly(sourceValue, target.test, target.test2);
       });
 
       it('should assign the result to the descriptor value', () => {

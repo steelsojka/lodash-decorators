@@ -13,15 +13,23 @@ const applicators = {
 
   // Partials are slightly different. They partial an existing function
   // on the object referenced by string name.
-  partial: (fn, target, value, ...args) => fn(Applicator.resolveFunction(args[0], target), ...args.slice(1)),
+  partial: (fn, target, value, ...args) => {
+    return (...invokeArgs) => fn(Applicator.resolveFunction(args[0], target), ...args.slice(1))(...invokeArgs);
+  },
 
   // Wrap is a different case since the original function value
   // needs to be given to the wrap method.
-  wrap: (fn, target, value, ...args) => fn(Applicator.resolveFunction(args[0], target), value),
+  wrap: (fn, target, value, fnName) => {
+    return (...invokeArgs) => fn(Applicator.resolveFunction(fnName, target), value)(...invokeArgs);
+  },
+
   replace: (fn, target, value, ...args) => fn(...args),
 
   // Calls the function with key functions and the value
-  compose: (fn, target, value, ...args) => fn(value, ...args.map(method => Applicator.resolveFunction(method, target))),
+  compose: (fn, target, value, ...args) => {
+    return (...invokeArgs) => fn(value, ...args.map(method => Applicator.resolveFunction(method, target)))(...invokeArgs);
+  },
+
   partialed: (fn, target, value, ...args) => partial(fn, value, ...args),
   single: (fn, target, value, ...args) => applicators.pre(fn, target, value, ...args)
 };
