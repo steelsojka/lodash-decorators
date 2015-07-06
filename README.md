@@ -60,6 +60,7 @@ Many of the lodash decorators can contain arguments.
 - `delay`
 - `defer`
 - `bind`
+- `bindAll`
 - `modArgs`
 
 #### Example
@@ -252,6 +253,10 @@ person.name; //=> Joe Smith
 Bind takes arguments based on lodash's bind and binds the `Function` to
 the current instance object.
 
+__Known Issue__: When using bind on a single method the bind decorator MUST come last
+in the chain of decorators. There is no graceful solution for this currently. You can always
+use `@bindAll('fn')` on the class and only include the functions you want to include.
+
 #### Example
 
 ```javascript
@@ -281,14 +286,17 @@ person.getName.call(null); // Joe Smith
 person.getUpperCaseName(); // JOE
 ```
 
-You can also bind entire classes.
+You can also bind entire classes with `bindAll` or `bind`.
+
+__Note__: Using `@bind()` on a class delegates to the `@bindAll()` implemenation.
+
 
 #### Example
 
 ```javascript
 import { bind } from 'lodash-decorators'
 
-@bind()
+@bindAll()
 class Person {
   constructor(firstName, lastName) {
     this.firstName = firstName;
