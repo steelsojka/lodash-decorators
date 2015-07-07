@@ -2,7 +2,6 @@
 
 import assign from 'lodash/object/assign';
 import isFunction from 'lodash/lang/isFunction';
-import forOwn from 'lodash/object/forOwn';
 import partial from 'lodash/function/partial';
 
 const applicators = {
@@ -41,16 +40,6 @@ const Applicator = {
 
   resolveFunction(method, target) {
     return isFunction(method) ? method : target[method];
-  },
-
-  /**
-  * Used to copy over meta data from function to function.
-  * If meta data is attached to a function. This can get lost
-  * when wrapping functions. This tries to persist that.
-  */
-  copyMetaData(from, to) {
-    forOwn(from, (value, key) => to[key] = value);
-    return to;
   }
 };
 

@@ -5,6 +5,7 @@ import isFunction from 'lodash/lang/isFunction';
 import partial from 'lodash/function/partial';
 
 import CompositeKeyWeakMap from './utils/CompositeKeyWeakMap';
+import copyMetaData from './utils/copyMetaData';
 import Applicator from './Applicator';
 
 const { applicators } = Applicator;
@@ -20,17 +21,17 @@ export function createDecorator(method, applicator = applicators.pre) {
 
       if (get && !getterSetterMap.has([target, name, 'get'])) {
         descriptor.get = Applicator.invoke(applicator, method, target, get, ...args);
-        Applicator.copyMetaData(get, descriptor.get);
+        copyMetaData(descriptor.get, get);
         getterSetterMap.set([target, name, 'get'], descriptor.get);
 
       } else if (set && !getterSetterMap.has([target, name, 'set'])) {
         descriptor.set = Applicator.invoke(applicator, method, target, set, ...args);
-        Applicator.copyMetaData(get, descriptor.set);
+        copyMetaData(descriptor.set, set);
         getterSetterMap.set([target, name, 'set'], descriptor.set);
 
       } else if (value) {
         descriptor.value = Applicator.invoke(applicator, method, target, value, ...args);
-        Applicator.copyMetaData(value, descriptor.value);
+        copyMetaData(descriptor.value, value);
       }
 
       return descriptor;
@@ -49,15 +50,15 @@ export function createInstanceDecorator(method, applicator = applicators.pre) {
       const { value, get, set } = descriptor;
 
       if (get && !getterSetterMap.has([target, name, 'get'])) {
-        descriptor.get = Applicator.copyMetaData(get, partial(instanceDecoratorWrapper, get));
+        descriptor.get = copyMetaData(partial(instanceDecoratorWrapper, get), get);
         getterSetterMap.set([target, name, 'get'], descriptor.get);
 
       } else if (set && !getterSetterMap.has([target, name, 'set'])) {
-        descriptor.set = Applicator.copyMetaData(set, partial(instanceDecoratorWrapper, set));
+        descriptor.set = copyMetaData(partial(instanceDecoratorWrapper, set), set);
         getterSetterMap.set([target, name, 'set'], descriptor.set);
 
       } else if (value) {
-        descriptor.value = Applicator.copyMetaData(value, partial(instanceDecoratorWrapper, value));
+        descriptor.value = copyMetaData(partial(instanceDecoratorWrapper, value), value);
       }
 
       return descriptor;

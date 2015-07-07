@@ -2,6 +2,7 @@
 
 import isFunction from 'lodash/lang/isFunction';
 import isNull from 'lodash/lang/isNull';
+import copyMetaData from './copyMetaData';
 
 export default function bindAllClassMethods(object, methods = null, source = object) {
   let usePick = Array.isArray(methods);
@@ -18,6 +19,7 @@ export default function bindAllClassMethods(object, methods = null, source = obj
 
     if (!descriptor.get && isFunction(object[key]) && !object.hasOwnProperty(key) && key !== 'constructor') {
       object[key] = source[key].bind(object);
+      copyMetaData(object[key], source[key]);
     }
   }
 
