@@ -2,7 +2,15 @@
 
 import bindAllClassMethods from './utils/bindAllClassMethods';
 import flatten from 'lodash/array/flatten';
-import copyMetaData from './utils/copyMetaData';
+import assignAll from './utils/assignAll';
+
+const FUNCTION_PROPERTY_EXCLUDES = [
+  'length',
+  'name',
+  'arguments',
+  'caller',
+  'prototype'
+];
 
 export default function bindAllWrapper(...methods) {
   methods = flatten(methods);
@@ -22,6 +30,6 @@ export default function bindAllWrapper(...methods) {
 
     BindAllWrapper.prototype = ctor.prototype;
 
-    return copyMetaData(BindAllWrapper, ctor);
+    return assignAll(BindAllWrapper, ctor, FUNCTION_PROPERTY_EXCLUDES);
   };
 }
