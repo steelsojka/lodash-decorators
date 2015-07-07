@@ -2,6 +2,7 @@
 
 import bindAllClassMethods from './utils/bindAllClassMethods';
 import flatten from 'lodash/array/flatten';
+import copyMetaData from './utils/copyMetaData';
 
 export default function bindAllWrapper(...methods) {
   methods = flatten(methods);
@@ -21,6 +22,6 @@ export default function bindAllWrapper(...methods) {
 
     BindAllWrapper.prototype = ctor.prototype;
 
-    return BindAllWrapper;
+    return copyMetaData(BindAllWrapper, ctor);
   };
 }
