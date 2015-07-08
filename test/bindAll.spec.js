@@ -6,7 +6,7 @@ import _ from 'lodash';
 import bindAll from '../src/bindAll';
 
 describe('bind', () => {
-  let spy, spy2, spy3, person, actual, sandbox = sinon.sandbox.create();
+  let spy, spy2, spy3, person, actual, PersonClass, sandbox = sinon.sandbox.create();
 
   beforeEach(() => {
     spy = sandbox.spy();
@@ -30,6 +30,7 @@ describe('bind', () => {
       }
     }
 
+    PersonClass = Person;
     person = new Person();
   });
 
@@ -49,5 +50,9 @@ describe('bind', () => {
     person.fn3.call(null);
 
     expect(spy3).to.have.been.calledWith(null);
+  });
+
+  it('should retain instanceof', () => {
+    expect(person).to.be.an.instanceof(PersonClass);
   });
 });
