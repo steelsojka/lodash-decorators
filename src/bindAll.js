@@ -2,15 +2,7 @@
 
 import bindAllClassMethods from './utils/bindAllClassMethods';
 import flatten from 'lodash/array/flatten';
-import assignAll from './utils/assignAll';
-
-const FUNCTION_PROPERTY_EXCLUDES = [
-  'length',
-  'name',
-  'arguments',
-  'caller',
-  'prototype'
-];
+import assignAll, { FUNCTION_PROPERTY_EXCLUDES } from './utils/assignAll';
 
 export default function bindAllWrapper(...methods) {
   methods = flatten(methods);
@@ -20,16 +12,16 @@ export default function bindAllWrapper(...methods) {
       throw new Error('BindAll decorator can only be applied to a class');
     }
 
-    const ctor = properties[0];
+    const Ctor = properties[0];
 
-    function BindAllWrapper(...args) {
+    function BindAllConstructor(...args) {
       bindAllClassMethods(this, methods.length ? methods : null);
 
-      return ctor.apply(this, args);
+      return Ctor.apply(this, args);
     }
 
-    BindAllWrapper.prototype = ctor.prototype;
+    BindAllConstructor.prototype = Ctor.prototype;
 
-    return assignAll(BindAllWrapper, ctor, FUNCTION_PROPERTY_EXCLUDES);
+    return assignAll(BindAllConstructor, Ctor, FUNCTION_PROPERTY_EXCLUDES);
   };
 }

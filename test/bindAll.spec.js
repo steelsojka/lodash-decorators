@@ -28,6 +28,8 @@ describe('bind', () => {
       fn3() {
         spy3(this);
       }
+
+      static staticFn() {}
     }
 
     PersonClass = Person;
@@ -54,5 +56,9 @@ describe('bind', () => {
 
   it('should retain instanceof', () => {
     expect(person).to.be.an.instanceof(PersonClass);
+  });
+
+  it('should retain static functions', () => {
+    expect(PersonClass.staticFn).to.be.a.func;
   });
 });
