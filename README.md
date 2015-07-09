@@ -225,27 +225,33 @@ Most decorators can be applied directly to getter and setter methods.
 #### Example
 
 ```javascript
-import { once } from 'lodash-decorators'
+import { once, compose } from 'lodash-decorators'
 import _ from 'lodash';
+
+function alwaysArray(value) {
+  return Array.isArray(value) ? value : _.isUndefined(value) ? [] : [value];
+}
 
 class Person {
   constructor() {}
 
   @once
-  get name() {
-    return `${this.firstName} ${this.lastName}`;
+  get names() {
+    return this.nameList.join(' ');
   }
 
-  @compose(_.trim)
-  set name(name) {
-    [this.firstName, this.lastName] = name.split(' ');
+  @compose(alwaysArray)
+  set names(names) {
+    this.nameList = names;
   }
 }
 
 const person = new Person();
 
-person.name = '    Joe Smith   ';
-person.name; //=> Joe Smith
+// nameList will always be an array.
+person.names = undefined; //=> []
+person.names = 'Joe'; //=> ['Joe']
+person.names = ['Jim']; //=> ['Jim']
 ```
 
 ### Bind
