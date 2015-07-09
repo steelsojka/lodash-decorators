@@ -11,5 +11,8 @@ export default normalizeExport({
   configurable,
   enumerable,
   returnsArg,
-  writable
+  writable,
+  readonly: writable(false),
+  nonenumerable: enumerable(false),
+  nonconfigurable: configurable(false)
 });
