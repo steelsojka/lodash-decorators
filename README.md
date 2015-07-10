@@ -100,7 +100,6 @@ Some decorators don't take any arguments at all.
 #### Example
 
 ```javascript
-import { uniqueId } from 'lodash';
 import { once } from 'lodash-decorators'
 
 class Person {
@@ -319,14 +318,46 @@ const person = new Person('Joe', 'Smith');
 person.getName.call(null); // Joe Smith
 ```
 
-### Extensions
+## Extensions
 
 Extensions are decorators that aren't necessarily Lodash functions, but use Lodash under the hood. They
 provided some more basic utilities not found in Lodash;
 
-These can be found in `src/extensions`
+- `deprecated`
+- `writable`
+- `configurable`
+- `returnsArg`
+- `enumerable`
+- `nonenumerable` -> `enumerable(false)`
+- `nonconfigurable` -> `configurable(false)`
+- `readonly` -> `writable(false)`
 
-### Validate
+### Deprecated
+
+Warns when a deprecated class is istantiated or a deprecated class method is invoked.
+
+#### Example
+
+```javascript
+import { deprecated } from 'lodash-decorators/extensions'
+
+@deprecated
+class Person {
+  constructor() {}
+}
+
+class OtherPerson {
+  @deprecated
+  fn() {}
+}
+
+let person = new Person(); //=> Warning!
+
+let otherPerson = new OtherPerson();
+otherPerson.fn(); //=> Warning!
+```
+
+## Validate
 
 The validate module contains decorators that can validate function arguments and return value.
 

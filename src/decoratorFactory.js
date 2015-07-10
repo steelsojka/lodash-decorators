@@ -17,6 +17,17 @@ export const decorateTargets = {
   INITIALIZER: 'initializer'
 };
 
+/**
+ * Gets a decorators target type.
+ *
+ * @param {Object} target The decorator target.
+ * @param {String} name The property name.
+ * @param {Object} descriptor The property descriptor.
+ * @param {CompositeKeyWeakMap} getterSetterMap The getter/setter map
+ *   for the decorator. This is needed to check whether the getter or setter
+ *   has been set.
+ * @returns {String} A decorator target type.
+ */
 export function getDecoratorTarget(target, name, descriptor, getterSetterMap) {
   if (descriptor.get && !getterSetterMap.has([target, name, 'get'])) {
     return decorateTargets.GET;
@@ -31,6 +42,13 @@ export function getDecoratorTarget(target, name, descriptor, getterSetterMap) {
   throw new ReferenceError('Invalid decorator target.');
 }
 
+/**
+ * Creates a decorator that uses an applicator to wrap a transform function.
+ *
+ * @param {Function} method The method that will __wrap__ the function being decorated.
+ * @param {Function} [applicator=applicators.pre] The applicator function to apply the __method__ with.
+ * @returns {Function} The decorator function or decorator wrapper function.
+ */
 export function createDecorator(method, applicator = applicators.pre) {
   const getterSetterMap = new CompositeKeyWeakMap();
 
@@ -53,6 +71,16 @@ export function createDecorator(method, applicator = applicators.pre) {
   }
 }
 
+/**
+ * Creates an instance decorator that uses an applicator to wrap a transform function.
+ * This has different behaviour than a decorator that is applied to a class as a whole.
+ *
+ * This uses a WeakMap to keep track of instances and methods.
+ *
+ * @param {Function} method The method that will __wrap__ the function being decorated.
+ * @param {Function} [applicator=applicators.pre] The applicator function to apply the __method__ with.
+ * @returns {Function} The decorator function or decorator wrapper function.
+ */
 export function createInstanceDecorator(method, applicator = applicators.pre) {
   const objectMap = new CompositeKeyWeakMap();
   const getterSetterMap = new CompositeKeyWeakMap();

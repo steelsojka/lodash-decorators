@@ -39,11 +39,33 @@ const applicators = {
   single: (fn, target, value, ...args) => applicators.pre(fn, target, value, ...args)
 };
 
+/**
+ * Applys a specific method signature onto a set of arguments. This is due to the various different APIs
+ * these functions provide.
+ */
 const Applicator = {
+  /**
+   * Invokes an applicator method.
+   *
+   * @param {Function} applicator The applicator function.
+   * @param {Function} method The function the applicator if being applied to.
+   * @param {Object} target The target object given to the decorator.
+   * @param {Function} value The value the decorator is being applied to.
+   * @param {...*} [args] Any additional arguments passed to the applicator.
+   * @returns {Function} A function with __method__ applied to __value__
+   *   with the __applicator__s signature.
+   */
   invoke(applicator, method, target, value, ...args) {
     return applicator(method, target, value, ...args);
   },
 
+  /**
+   * Resolves a function on the current target object.
+   *
+   * @param {Function|String} method The method or method name.
+   * @param {Object} [target] The target object to resolve from.
+   * @returns {Function} The resolved function.
+   */
   resolveFunction(method, target) {
     return isFunction(method) ? method : target[method];
   }
