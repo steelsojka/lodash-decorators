@@ -18,7 +18,12 @@ export default function bindAllClassMethods(object, methods = null, source = obj
     let descriptor = Object.getOwnPropertyDescriptor(source, key) || {};
 
     if (!descriptor.get && isFunction(object[key]) && !object.hasOwnProperty(key) && key !== 'constructor') {
-      object[key] = source[key].bind(object);
+      Object.defineProperty(object, key, {
+        value: source[key].bind(object),
+        configurable: true,
+        enumerable: false
+      });
+
       copyMetaData(object[key], source[key]);
     }
   }
