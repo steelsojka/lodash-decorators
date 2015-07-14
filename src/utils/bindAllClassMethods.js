@@ -17,7 +17,7 @@ export default function bindAllClassMethods(object, methods = null, source = obj
 
     let descriptor = Object.getOwnPropertyDescriptor(source, key) || {};
 
-    if (!descriptor.get && isFunction(object[key]) && !object.hasOwnProperty(key) && key !== 'constructor') {
+    if (!descriptor.get && isFunction(source[key]) && !object.hasOwnProperty(key) && key !== 'constructor') {
       Object.defineProperty(object, key, {
         value: source[key].bind(object),
         configurable: true,
