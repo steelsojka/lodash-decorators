@@ -21,7 +21,8 @@ export default function bindAllClassMethods(object, methods = null, source = obj
       Object.defineProperty(object, key, {
         value: source[key].bind(object),
         configurable: true,
-        enumerable: false
+        enumerable: false,
+        writable: true
       });
 
       copyMetaData(object[key], source[key]);

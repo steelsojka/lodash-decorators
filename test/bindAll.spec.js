@@ -61,4 +61,17 @@ describe('bindAll', () => {
   it('should retain static functions', () => {
     expect(PersonClass.staticFn).to.be.a.func;
   });
+
+  it('should be non enumerable', () => {
+    let descriptor = Object.getOwnPropertyDescriptor(person, 'fn');
+    expect(descriptor.enumerable).to.be.false;
+  });
+
+  it('should allow you to reassign the function', () => {
+    function test() {
+      person.fn = () => null;
+    }
+
+    expect(test).not.to.throw();
+  });
 });
