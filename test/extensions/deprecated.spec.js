@@ -41,4 +41,49 @@ describe('extensions.deprecated', () => {
 
     expect(console.warn).to.have.been.calledOnce;
   });
+
+  it('should call warn when the method is invoked', () => {
+    class Person {
+      constructor() {}
+
+      @Deprecated
+      fn() {}
+    }
+
+    let person = new Person();
+    person.fn();
+
+    expect(console.warn).to.have.been.calledOnce;
+  });
+
+  it('should override the function method', () => {
+    Deprecated.methodAction = sandbox.spy();
+
+    class Person {
+      constructor() {}
+
+      @Deprecated
+      fn() {}
+    }
+
+    let person = new Person();
+    person.fn();
+
+    expect(Deprecated.methodAction).to.have.been.calledOnce;
+  });
+
+  it('should override the class', () => {
+    Deprecated.classAction = sandbox.spy();
+
+    @Deprecated
+    class Person {
+      constructor() {}
+
+      fn() {}
+    }
+
+    let person = new Person();
+
+    expect(Deprecated.classAction).to.have.been.calledOnce;
+  });
 });

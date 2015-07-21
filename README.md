@@ -335,11 +335,15 @@ provided some more basic utilities not found in Lodash;
 ### Deprecated
 
 Warns when a deprecated class is istantiated or a deprecated class method is invoked.
+You can also modify the deprecated behaviour by swapping out the method and class actions.
 
 #### Example
 
 ```javascript
 import { deprecated } from 'lodash-decorators/extensions'
+
+// This is applied globally.
+deprecated.methodAction = fn => console.log(`Don't use ${fn.name}!`);
 
 @deprecated
 class Person {
@@ -354,7 +358,7 @@ class OtherPerson {
 let person = new Person(); //=> Warning!
 
 let otherPerson = new OtherPerson();
-otherPerson.fn(); //=> Warning!
+otherPerson.fn(); //=> Don't use fn!
 ```
 
 ## Validate
