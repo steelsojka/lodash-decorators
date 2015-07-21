@@ -4,7 +4,7 @@ import isFunction from 'lodash/lang/isFunction';
 import bind from 'lodash/function/bind';
 
 import bindAll from './bindAll';
-import Applicator from './Applicator';
+import Applicator from '../Applicator';
 
 export default function bindWrapper(...args) {
   return function bindDecorator(...properties) {

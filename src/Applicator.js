@@ -3,6 +3,7 @@
 import assign from 'lodash/object/assign';
 import isFunction from 'lodash/lang/isFunction';
 import partial from 'lodash/function/partial';
+import log from './utils/log';
 
 const applicators = {
   // Methods where the function is the last argument or the first
@@ -14,7 +15,7 @@ const applicators = {
   // on the object referenced by string name.
   partial: (fn, target, value, ...args) => {
     return function(...invokeArgs) {
-      return fn(Applicator.resolveFunction(args[0], this), ...args.slice(1)).apply(this, invokeArgs);
+      return fn(Applicator.resolveFunction(args[0], this, target), ...args.slice(1)).apply(this, invokeArgs);
     };
   },
 
@@ -22,7 +23,7 @@ const applicators = {
   // needs to be given to the wrap method.
   wrap: (fn, target, value, fnName) => {
     return function(...invokeArgs) {
-      return fn(Applicator.resolveFunction(fnName, this), value).apply(this, invokeArgs);
+      return fn(Applicator.resolveFunction(fnName, this, target), value).apply(this, invokeArgs);
     };
   },
 
@@ -31,7 +32,7 @@ const applicators = {
   // Calls the function with key functions and the value
   compose: (fn, target, value, ...args) => {
     return function(...invokeArgs) {
-      return fn(value, ...args.map(method => Applicator.resolveFunction(method, this))).apply(this, invokeArgs);
+      return fn(value, ...args.map(method => Applicator.resolveFunction(method, this, target))).apply(this, invokeArgs);
     };
   },
 
@@ -60,14 +61,25 @@ const Applicator = {
   },
 
   /**
-   * Resolves a function on the current target object.
+   * Resolves a function on the current target object. It first will
+   * try and resolve on the context object, then the target object,
+   * then an error will be thrown if the method can not be resolved.
    *
    * @param {Function|String} method The method or method name.
+   * @param {Object} [context] The context object to resolve from.
    * @param {Object} [target] The target object to resolve from.
    * @returns {Function} The resolved function.
    */
-  resolveFunction(method, target) {
-    return isFunction(method) ? method : target[method];
+  resolveFunction(method, context, target) {
+    if (isFunction(method)) {
+      return method;
+    } else if (isFunction(context[method])) {
+      return context[method];
+    } else if (isFunction(target[method])) {
+      return target[method];
+    }
+
+    throw new ReferenceError(log(`Can not resolve method ${method} on any target Objects`));
   }
 };
 

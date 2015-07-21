@@ -3,7 +3,7 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
 import _ from 'lodash';
-import bindAll from '../src/bindAll';
+import bindAll from '../../src/bind/bindAll';
 
 describe('bindAll', () => {
   let spy, spy2, spy3, person, actual, PersonClass, sandbox = sinon.sandbox.create();

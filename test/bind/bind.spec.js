@@ -3,8 +3,8 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
 import _ from 'lodash';
-import bind from '../src/bind';
-import { after } from '../src';
+import bind from '../../src/bind/bind';
+import { after } from '../../src';
 
 // This is currently broken :(
 describe.skip('bind', () => {

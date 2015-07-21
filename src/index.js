@@ -4,9 +4,9 @@ import forOwn from 'lodash/object/forOwn';
 import assign from 'lodash/object/assign';
 import functions from 'lodash/function';
 
-import bind from './bind';
+import bind from './bind/bind';
 import tap from './tap';
-import bindAll from './bindAll';
+import bindAll from './bind/bindAll';
 import { createDecorator, createInstanceDecorator } from './decoratorFactory';
 import { applicators } from './Applicator';
 import normalizeExport from './utils/normalizeExport';

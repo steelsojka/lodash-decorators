@@ -1,9 +1,10 @@
 'use strict';
 
-import bindAllClassMethods from './utils/bindAllClassMethods';
+import bindAllClassMethods from '../utils/bindAllClassMethods';
 import flatten from 'lodash/array/flatten';
-import assignAll, { FUNCTION_PROPERTY_EXCLUDES } from './utils/assignAll';
-import wrapConstructor from './utils/wrapConstructor';
+import assignAll, { FUNCTION_PROPERTY_EXCLUDES } from '../utils/assignAll';
+import wrapConstructor from '../utils/wrapConstructor';
+import log from '../utils/log';
 
 /**
  * Binds all class methods to the instance upon instantiation. This
@@ -17,7 +18,7 @@ export default function bindAllWrapper(...methods) {
 
   return function bindAllDecorator(...properties) {
     if (properties.length > 1) {
-      throw new Error('BindAll decorator can only be applied to a class');
+      throw new Error(log('BindAll decorator can only be applied to a class'));
     }
 
     return wrapConstructor(properties[0], function(Ctor, ...args) {
