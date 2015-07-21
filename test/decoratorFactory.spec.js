@@ -70,7 +70,7 @@ describe('decoratorFactory', () => {
         wrapper = createDecorator(root[method], applicators.partial);
         decorator = wrapper('test', arg);
         actual = decorator.call(context, target, name, descriptor);
-        actual.value();
+        actual.value.call(target);
       });
 
       it('should call the method', () => {
@@ -92,7 +92,7 @@ describe('decoratorFactory', () => {
         wrapper = createDecorator(root[method], applicators.wrap);
         decorator = wrapper('test', arg);
         actual = decorator.call(context, target, name, descriptor);
-        actual.value();
+        actual.value.call(target);
       });
 
       it('should call the method', () => {
@@ -131,7 +131,7 @@ describe('decoratorFactory', () => {
         wrapper = createDecorator(root[method], applicators.compose);
         decorator = wrapper('test', 'test2');
         actual = decorator.call(context, target, name, descriptor);
-        actual.value();
+        actual.value.call(target);
       });
 
       it('should call the method', () => {

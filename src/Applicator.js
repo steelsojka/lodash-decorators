@@ -14,7 +14,7 @@ const applicators = {
   // on the object referenced by string name.
   partial: (fn, target, value, ...args) => {
     return function(...invokeArgs) {
-      return fn(Applicator.resolveFunction(args[0], target), ...args.slice(1)).apply(this, invokeArgs);
+      return fn(Applicator.resolveFunction(args[0], this), ...args.slice(1)).apply(this, invokeArgs);
     };
   },
 
@@ -22,7 +22,7 @@ const applicators = {
   // needs to be given to the wrap method.
   wrap: (fn, target, value, fnName) => {
     return function(...invokeArgs) {
-      return fn(Applicator.resolveFunction(fnName, target), value).apply(this, invokeArgs);
+      return fn(Applicator.resolveFunction(fnName, this), value).apply(this, invokeArgs);
     };
   },
 
@@ -31,7 +31,7 @@ const applicators = {
   // Calls the function with key functions and the value
   compose: (fn, target, value, ...args) => {
     return function(...invokeArgs) {
-      return fn(value, ...args.map(method => Applicator.resolveFunction(method, target))).apply(this, invokeArgs);
+      return fn(value, ...args.map(method => Applicator.resolveFunction(method, this))).apply(this, invokeArgs);
     };
   },
 
