@@ -3,7 +3,7 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
 import _ from 'lodash';
-import { After, Once, Memoize } from '../src';
+import { Debounce, After, Once, Memoize } from '../src';
 
 describe('instance decorators', () => {
   let spy, person, person2, actual, getSpy, setSpy;
@@ -25,14 +25,23 @@ describe('instance decorators', () => {
         return 123;
       }
 
+      @Debounce(50)
+      fn2() {
+      }
+
+      @Debounce(100)
       @After(2)
-      @Once
+      fn3() {
+      }
+
+      @After.get(2)
+      @Once.get
       get name() {
         getSpy();
         return '';
       }
 
-      @Once
+      @Once.set
       set name(name) {
         setSpy(name);
       }
@@ -44,6 +53,16 @@ describe('instance decorators', () => {
 
   afterEach(() => {
     sandbox.restore();
+  });
+
+  describe('when returning the function', () => {
+    it('should contain any metadata', () => {
+      expect(person.fn2.cancel).to.be.a.func;
+    });
+
+    it('should transfer metadata', () => {
+      expect(person.fn3.cancel).to.be.a.func;
+    });
   });
 
   describe('when using a function', () => {
@@ -68,6 +87,14 @@ describe('instance decorators', () => {
       expect(spy).to.have.been.calledTwice;
       expect(spy).to.have.been.calledWith(333);
       expect(spy).to.have.been.calledWith(444);
+    });
+
+    it('should reassign the function', () => {
+      let fn = () => null;
+
+      person.fn = fn;
+
+      expect(person.fn).to.equal(fn);
     });
   });
 
