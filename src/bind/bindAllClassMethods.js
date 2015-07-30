@@ -2,7 +2,9 @@
 
 import isFunction from 'lodash/lang/isFunction';
 import isNull from 'lodash/lang/isNull';
-import copyMetaData from './copyMetaData';
+import noop from 'lodash/utility/noop';
+import copyMetaData from '../utils/copyMetaData';
+import bindMap from './bindMap';
 
 export default function bindAllClassMethods(object, methods = null, source = object) {
   let usePick = Array.isArray(methods);
@@ -17,15 +19,19 @@ export default function bindAllClassMethods(object, methods = null, source = obj
 
     let descriptor = Object.getOwnPropertyDescriptor(source, key) || {};
 
-    if (!descriptor.get && isFunction(source[key]) && !object.hasOwnProperty(key) && key !== 'constructor') {
-      Object.defineProperty(object, key, {
-        value: source[key].bind(object),
-        configurable: true,
-        enumerable: false,
-        writable: true
-      });
-
-      copyMetaData(object[key], source[key]);
+    if (!object.hasOwnProperty(key) && key !== 'constructor') {
+      if (!descriptor.get && isFunction(descriptor.value)) {
+        Object.defineProperty(object, key, {
+          value: copyMetaData(descriptor.value.bind(object), descriptor.value),
+          configurable: true,
+          enumerable: false,
+          writable: true
+        });
+      } else if (descriptor.get) {
+        if (!bindMap.has([object, key])) {
+          bindMap.set([object, key], true);
+        }
+      }
     }
   }
 

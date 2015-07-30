@@ -217,6 +217,23 @@ decorators are applied at the instance level.
 - `after`
 - `before`
 
+__Note__: Due to the nature of how instance decorators work they MUST be processed
+after all prototype decorators in the decorator chain. There isn't a graceful way
+to get around this currently. More or less instance decorators are kind of a hack and experimental.
+
+```javascript
+class Person {
+
+  @curry(2) // <= prototype decorator
+  @debounce(100) // <= instance decorator
+  getName() {} //=> Throws an error. (╯°□°）╯︵ ┻━┻
+
+  @debounce(100) // <= instance decorator
+  @curry(2) // <= prototype decorator
+  getName2() {} //=> All is well :)
+}
+```
+
 ### Getters and Setters
 
 Most decorators can be applied directly to getter and setter methods.
@@ -234,12 +251,12 @@ function alwaysArray(value) {
 class Person {
   constructor() {}
 
-  @once
+  @once.get
   get names() {
     return this.nameList.join(' ');
   }
 
-  @compose(alwaysArray)
+  @compose.set(alwaysArray)
   set names(names) {
     this.nameList = names;
   }
@@ -252,6 +269,19 @@ person.names = undefined; //=> []
 person.names = 'Joe'; //=> ['Joe']
 person.names = ['Jim']; //=> ['Jim']
 ```
+
+#### What's with the `.get`?
+
+The decorator has no way to tell whether you are applying the decorator to the getter or setter (when both are provided).
+The decorator just receives the descriptor which has both values provided and no way to distinguish which one you are provided
+which decorator to.
+
+`@once.get` uses a form of the decorator that explicitly applies to the getter method.
+`@once.set` uses a form of the decorator that explicitly applies to the setter method.
+
+#### Can I use decorators on getters/setters without these?
+
+Use at you're own risk...
 
 ### Bind
 
