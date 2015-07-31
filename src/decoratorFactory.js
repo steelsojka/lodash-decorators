@@ -229,9 +229,11 @@ function createDecoratorFactory(executeFn, modifierFn = identity, createInstance
 }
 
 function wrapDecoratorWithAccessors(instance, decorator, method, applicator, ...args) {
+  // For an instance decorator provide a way to apply to the proto instead of instance and vice-versa
   let accessors = {
     get: instance ? createInstanceGetterDecorator(method, applicator) : createGetterDecorator(method, applicator),
-    set: instance ? createInstanceSetterDecorator(method, applicator) : createSetterDecorator(method, applicator)
+    set: instance ? createInstanceSetterDecorator(method, applicator) : createSetterDecorator(method, applicator),
+    proto: instance ? createDecorator(method, applicator) : decorator
   };
 
   return assign(decorator, normalizeExport(accessors));

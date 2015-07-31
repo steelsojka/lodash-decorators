@@ -21,11 +21,17 @@ ES7 Decorators for lodash functions.
   - [Instance Decorators](#instance-decorators)
   - [Getters and Setters](#getters-and-setters)
     - [Example](#example-4)
+    - [What's with the `.get`?](#whats-with-the-get)
+    - [Can I use decorators on getters/setters without these?](#can-i-use-decorators-on-getterssetters-without-these)
   - [Bind](#bind)
     - [Example](#example-5)
     - [Example](#example-6)
-  - [Extensions](#extensions)
-  - [Validate](#validate)
+  - [Forcing Decorator on Prototype](#forcing-decorator-on-prototype)
+    - [Example](#example-7)
+- [Extensions](#extensions)
+  - [Deprecated](#deprecated)
+    - [Example](#example-8)
+- [Validate](#validate)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -346,6 +352,36 @@ class Person {
 const person = new Person('Joe', 'Smith');
 
 person.getName.call(null); // Joe Smith
+```
+
+### Forcing Decorator on Prototype
+
+You can force an instance decorator to apply to the prototype instead of the instance.
+
+#### Example
+
+```javascript
+import { Throttle } from 'lodash-decorators';
+
+class Person {
+  @throttle(1000)
+  doStuff() {}
+
+  @throttle.proto(1000)
+  doStuffMore() {}
+}
+
+const person = new Person();
+const person2 = new Person();
+
+person.doStuff(); //=> Both are called
+person2.doStuff();
+
+person.doStuffMore(); 
+person2.doStuffMore();
+
+// Only one of these methods is actual invoked because throttle is applied to the prototype method
+// and not the instance method.
 ```
 
 ## Extensions
