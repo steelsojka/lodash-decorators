@@ -68,4 +68,34 @@ describe('proto decorators', () => {
       expect(spy).to.have.been.calledOnce;
     });
   });
+
+  describe('when a prototype decorator is applied after an instance decorator', () => {
+    it('should throw an error', () => {
+      let doit = () => {
+        class P {
+          @Once
+          @Curry(2)
+          @After(1)
+          fn() {}
+        }
+      };
+
+      expect(doit).to.throw(Error);
+    });
+  });
+
+  describe('when a prototype decorator is applied before an instance decorator', () => {
+    it('should not throw an error', () => {
+      let doit = () => {
+        class P {
+          @Once
+          @After(1)
+          @Curry(2)
+          fn() {}
+        }
+      };
+
+      expect(doit).to.not.throw(Error);
+    });
+  });
 });
