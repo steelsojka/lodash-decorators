@@ -361,7 +361,7 @@ You can force an instance decorator to apply to the prototype instead of the ins
 #### Example
 
 ```javascript
-import { Throttle } from 'lodash-decorators';
+import { throttle } from 'lodash-decorators';
 
 class Person {
   @throttle(1000)
