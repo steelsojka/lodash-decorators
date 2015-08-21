@@ -140,4 +140,21 @@ describe('instance decorators', () => {
       expect(setSpy).to.have.been.calledWith('Brian');
     });
   });
+
+  describe('when reassigning a decorator', () => {
+    it('should re define the function', () => {
+      class Person {
+        constructor() {
+          this.fn = () => spy();
+        }
+
+        @Debounce(100)
+        fn() {}
+      }
+
+      let person = new Person();
+      person.fn();
+      expect(spy).to.have.been.called;
+    });
+  });
 });
