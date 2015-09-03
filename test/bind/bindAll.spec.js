@@ -4,6 +4,7 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import _ from 'lodash';
 import bindAll from '../../src/bind/bindAll';
+import enumerable from '../../src/extensions/enumerable';
 
 describe('bindAll', () => {
   let spy, spy2, spy3, person, actual, PersonClass, sandbox = sinon.sandbox.create();
@@ -21,6 +22,7 @@ describe('bindAll', () => {
         spy(this);
       }
 
+      @enumerable(true)
       fn2() {
         spy2(this);
       }
@@ -65,6 +67,11 @@ describe('bindAll', () => {
   it('should be non enumerable', () => {
     let descriptor = Object.getOwnPropertyDescriptor(person, 'fn');
     expect(descriptor.enumerable).to.be.false;
+  });
+
+  it('should be enumerable', () => {
+    let descriptor = Object.getOwnPropertyDescriptor(person, 'fn2');
+    expect(descriptor.enumerable).to.be.true;
   });
 
   it('should allow you to reassign the function', () => {

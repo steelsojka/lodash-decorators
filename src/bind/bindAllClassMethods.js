@@ -3,6 +3,7 @@
 import isFunction from 'lodash/lang/isFunction';
 import isNull from 'lodash/lang/isNull';
 import noop from 'lodash/utility/noop';
+import isBoolean from 'lodash/lang/isBoolean';
 import copyMetaData from '../utils/copyMetaData';
 import bindMap from './bindMap';
 
@@ -24,8 +25,8 @@ export default function bindAllClassMethods(object, methods = null, source = obj
         Object.defineProperty(object, key, {
           value: copyMetaData(descriptor.value.bind(object), descriptor.value),
           configurable: true,
-          enumerable: false,
-          writable: true
+          enumerable: isBoolean(descriptor.enumerable) ? descriptor.enumerable : false,
+          writable: isBoolean(descriptor.writable) ? descriptor.writable : true
         });
       } else if (descriptor.get) {
         if (!bindMap.has([object, key])) {
