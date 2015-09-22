@@ -207,7 +207,7 @@ function createInstanceDecoratorApplicator(forcedTargetName) {
 
         const fn = instanceMap.get(keys);
 
-        return invoke ? fn.apply(this, arguments) : bindMap.has([this, name]) ? fn.bind(this) : fn;
+        return invoke ? fn.apply(this, arguments) : bindMap.has([this, name]) ? copyMetaData(fn.bind(this), fn) : fn;
       }
     }
   };
