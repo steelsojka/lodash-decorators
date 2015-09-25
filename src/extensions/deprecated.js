@@ -1,5 +1,3 @@
-'use strict';
-
 import isFunction from 'lodash/lang/isFunction';
 import { createDecorator } from '../decoratorFactory';
 import { applicators } from '../Applicator';

@@ -1,5 +1,3 @@
-'use strict';
-
 import forOwn from 'lodash/object/forOwn';
 
 /**

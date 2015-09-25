@@ -1,5 +1,3 @@
-'use strict';
-
 import every from 'lodash/collection/every';
 import { createDecorator } from '../decoratorFactory';
 import log from './log';

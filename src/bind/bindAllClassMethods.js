@@ -1,5 +1,3 @@
-'use strict';
-
 import isFunction from 'lodash/lang/isFunction';
 import isNull from 'lodash/lang/isNull';
 import noop from 'lodash/utility/noop';

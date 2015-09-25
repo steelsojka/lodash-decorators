@@ -1,5 +1,3 @@
-'use strict';
-
 import createValidateDecorator from '../utils/createValidateDecorator';
 
 export default createValidateDecorator(function validateReturn(fn, validateFn) {

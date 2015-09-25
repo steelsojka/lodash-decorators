@@ -1,5 +1,3 @@
-'use strict';
-
 import bindAllClassMethods from './bindAllClassMethods';
 import flatten from 'lodash/array/flatten';
 import assignAll, { FUNCTION_PROPERTY_EXCLUDES } from '../utils/assignAll';

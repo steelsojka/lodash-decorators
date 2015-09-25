@@ -1,5 +1,3 @@
-'use strict';
-
 import isFunction from 'lodash/lang/isFunction';
 import bind from 'lodash/function/bind';
 

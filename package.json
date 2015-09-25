@@ -6,11 +6,17 @@
   "engines": {
     "node": ">=0.12.0"
   },
+  "scripts": {
+    "test": "gulp mocha:unit",
+    "release": "npm version && gulp publish",
+    "postversion": "git push && git push --tags"
+  },
   "main": "index.js",
   "keywords": [
     "lodash",
     "decorators",
     "ES7",
+    "ES2016",
     "utility"
   ],
   "license": "MIT",

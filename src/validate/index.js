@@ -1,5 +1,3 @@
-'use strict';
-
 import normalizeExport from '../utils/normalizeExport';
 
 import validate from './validate';

@@ -1,5 +1,3 @@
-'use strict';
-
 import forOwn from 'lodash/object/forOwn';
 import isFunction from 'lodash/lang/isFunction';
 import partial from 'lodash/function/partial';

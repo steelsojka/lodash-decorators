@@ -1,5 +1,3 @@
-'use strict';
-
 import isUndefined from 'lodash/lang/isUndefined';
 
 export default class CompositeKeyWeakMap {

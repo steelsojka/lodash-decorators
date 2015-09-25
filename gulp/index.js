@@ -1,5 +1,3 @@
-'use strict';
-
 import {each} from 'lodash';
 import {readdirSync} from 'fs';
 

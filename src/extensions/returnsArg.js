@@ -1,5 +1,3 @@
-'use strict';
-
 import { createDecorator } from '../decoratorFactory';
 import returnAtIndex from '../utils/returnAtIndex';
 

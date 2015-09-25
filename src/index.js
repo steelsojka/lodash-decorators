@@ -1,5 +1,3 @@
-'use strict';
-
 import forOwn from 'lodash/object/forOwn';
 import assign from 'lodash/object/assign';
 import functions from 'lodash/function';

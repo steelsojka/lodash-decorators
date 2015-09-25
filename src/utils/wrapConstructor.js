@@ -1,5 +1,3 @@
-'use strict';
-
 import assignAll, { FUNCTION_PROPERTY_EXCLUDES } from './assignAll';
 
 /**

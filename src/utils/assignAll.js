@@ -1,5 +1,3 @@
-'use strict';
-
 import without from 'lodash/array/without';
 import isObject from 'lodash/lang/isObject';
 import attempt from 'lodash/utility/attempt';
