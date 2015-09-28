@@ -1,9 +1,18 @@
 language: node_js
 node_js:
-  - "0.12"
-
+  - '0.12'
 before_script:
   - npm install -g gulp
-
 script:
   - gulp ci
+deploy:
+  provider: npm
+  email: steelsojka@gmail.com
+  skip_cleanup: true
+  api_key:
+    secure: InuEwBDb6jFvEz5K2qhyVa1X+24fY/UYoTLONjJ8dzpy/OON7dxJFV4lux6i3N2dB+3og16Ae7pT3O7bX0cYxM2mV8XNYt4ipqve1gKnQFWGFyGM+M6uLBmlNnVe7x8z6kQWx1CS+v47PEQTbqkRq9IyHvzjFi8S5d2YO4kwSwBRKf9Y/ynWh75daaVkMyh2KznA5IyuaFQGzLSDP5JryNRN68pfVzyV4suu7CtNrhSsseTgbecLXXWuj16tP2Lt2KHSgZmzqFNzE20pJPNE8IRTmXV42xuEqiINXXrzMPH0eXQXhRn/6mwDOmqz/1SDPM8HxmW8vVdEfFxXXUsuFIe0EB+CrnVQsv5kEXQV6U3s4boHPUEXxGuXYYaQUh31qmdwEeRndg42z658UoLvdcJF563Ci/mXBqo1CxGAL86dZUB5gLEwuYuXC9RhvsT4W4EzLH1XreABHkgu3zZnQbhfrB860K0NAuA+db6jvg6NFK3ZUB48dEhg4gsYtD99jqpcniwVKWzVYTkUw/uA1vNuOfZhlrzal7/qdlYg+nQSmcD3knqvBNtxmvkYt5EfFH2I6/rwkMUbK1DGAJTVQ6nkh5KeQMsyUfprHS5t6H1rDP3UX41TI4o1gwv6HRPAOHCxKaJs/gKJsbJzo34iuOQ3z7md2zTwmT5dUXGFHSQ=
+  on:
+    tags: true
+before_deploy:
+  - gulp stage
+  - cd ./stage
