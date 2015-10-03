@@ -8,11 +8,12 @@ import { after } from '../../src';
 
 // This is currently broken :(
 describe.skip('bind', () => {
-  let spy, spy2, person, actual, sandbox = sinon.sandbox.create();
+  let spy, spy2, spy3, person, actual, sandbox = sinon.sandbox.create();
 
   beforeEach(() => {
     spy = sandbox.spy();
     spy2 = sandbox.spy();
+    spy3 = sandbox.spy();
 
     class Person {
       constructor() {}
@@ -27,6 +28,11 @@ describe.skip('bind', () => {
       @bind()
       fn2() {
         spy2(this);
+      }
+
+      @bind('John')
+      fn3(name) {
+        spy3(this, name);
       }
     }
 
@@ -66,4 +72,11 @@ describe.skip('bind', () => {
       expect(spy2).not.to.have.been.calledWith(person);
     });
   });
+
+  describe('when bind is used with an argument', () => {
+    it('should call the function with the correct argument', () => {
+      person.fn3.call(null);
+      expect(spy3).to.have.been.calledWith(person, 'John');
+    });
+  })
 });
