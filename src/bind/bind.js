@@ -1,5 +1,6 @@
 import isFunction from 'lodash/lang/isFunction';
 import bind from 'lodash/function/bind';
+import copyMetaData from '../utils/copyMetaData';
 
 import bindAll from './bindAll';
 import Applicator from '../Applicator';
@@ -34,7 +35,7 @@ function bindMethod(target, name, descriptor, ...args) {
 
       if (isFunction(thisValue)) {
         boundValue = bind(thisValue, this, ...args);
-        Applicator.copyMetaData(thisValue, boundValue);
+        copyMetaData(thisValue, boundValue);
       }
 
       Object.defineProperty(this, name, {
