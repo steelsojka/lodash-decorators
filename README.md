@@ -23,14 +23,18 @@ ES7 Decorators for lodash functions.
     - [Example](#example-4)
     - [What's with the `.get`?](#whats-with-the-get)
     - [Can I use decorators on getters/setters without these?](#can-i-use-decorators-on-getterssetters-without-these)
-  - [Bind](#bind)
+  - [Mixin](#mixin)
     - [Example](#example-5)
+  - [Attempt](#attempt)
     - [Example](#example-6)
-  - [Forcing Decorator on Prototype](#forcing-decorator-on-prototype)
+  - [Bind](#bind)
     - [Example](#example-7)
+    - [Example](#example-8)
+  - [Forcing Decorator on Prototype](#forcing-decorator-on-prototype)
+    - [Example](#example-9)
 - [Extensions](#extensions)
   - [Deprecated](#deprecated)
-    - [Example](#example-8)
+    - [Example](#example-10)
 - [Validate](#validate)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -68,6 +72,7 @@ Many of the lodash decorators can contain arguments.
 - `bind`
 - `bindAll`
 - `modArgs`
+- `mixin`
 
 #### Example
 
@@ -102,6 +107,7 @@ Some decorators don't take any arguments at all.
 - `rearg`
 - `negate`
 - `tap`
+- `attempt`
 
 #### Example
 
@@ -288,6 +294,59 @@ which decorator to.
 #### Can I use decorators on getters/setters without these?
 
 Use at you're own risk...
+
+### Mixin
+
+You can mixin methods into a class by using the `Mixin` decorator.
+
+#### Example
+
+```javascript
+import { mixin } from 'lodash-decorators';
+
+const MyOtherApi = {
+  someCoolMethod() {
+    // Do something cool
+  }
+};
+
+@mixin(MyOtherApi)
+class Person {}
+
+Person.prototype.someCoolMethod === MyOtherApi.someCoolMethod; // => true
+```
+
+### Attempt
+
+You can wrap a method in a lodash attempt method.
+
+#### Example
+
+```javascript
+import { attempt } from 'lodash-decorators';
+
+class Person {
+  @attempt
+  throwAnError() {
+    throw new Error();
+  }
+
+  @attempt
+  doNotThrowAnError() {
+    return '0_o';
+  }
+}
+
+const person = new Person();
+
+let result = person.throwAnError();
+
+result instanceof Error; // => true
+
+result = person.doNotThrowAnError();
+
+result === '0_o'; // => true
+```
 
 ### Bind
 
