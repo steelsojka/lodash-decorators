@@ -1,5 +1,3 @@
-'use strict';
-
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { createDecorator, createInstanceDecorator } from '../src/decoratorFactory';
