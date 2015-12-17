@@ -39,6 +39,10 @@ ES7 Decorators for lodash functions.
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+## Disclaimer
+The decorator proposal is still in quite a bit of flux. There will most likely be breaking changes as the spec changes. These
+will be reflected in major releases (2.0.0).
+
 ## Install
 
 `npm install --save lodash-decorators`
