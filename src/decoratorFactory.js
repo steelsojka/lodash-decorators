@@ -4,13 +4,13 @@ import partial from 'lodash/function/partial';
 import identity from 'lodash/utility/identity';
 import values from 'lodash/object/values';
 import assign from 'lodash/object/assign';
+import capitalize from 'lodash/string/capitalize';
 
 import bindMap from './bind/bindMap';
 import CompositeKeyWeakMap from './utils/CompositeKeyWeakMap';
 import copyMetaData from './utils/copyMetaData';
-import Applicator from './Applicator';
+import * as Applicator from './Applicator';
 import log from './utils/log';
-import normalizeExport from './utils/normalizeExport';
 
 const { applicators } = Applicator;
 const instanceMethodMap = new CompositeKeyWeakMap();
@@ -234,5 +234,10 @@ function wrapDecoratorWithAccessors(instance, decorator, method, applicator, ...
     proto: instance ? createDecorator(method, applicator) : decorator
   };
 
-  return assign(decorator, normalizeExport(accessors));
+  forOwn(accessors, (value, key) => {
+    decorator[key] = value;
+    decorator[capitalize(key)] = value;
+  });
+
+  return decorator;
 }
