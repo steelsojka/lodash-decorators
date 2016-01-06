@@ -5,13 +5,18 @@ export default {
     tests: {
       unit: 'test/**/*.spec.js'
     },
-    dist: 'dist',
-    stage: 'stage',
+    dist: './',
     published: [
-      'dist/**/*', 
-      'package.json',
-      'README.md',
-      'LICENSE'
+      'bind/**',
+      'extensions/**',
+      'utils/**',
+      'validate/**',
+      'Applicator.js',
+      'attempt.js',
+      'decoratorFactory.js',
+      'index.js',
+      'mixin.js',
+      'tap.js',
     ]
   }
 };

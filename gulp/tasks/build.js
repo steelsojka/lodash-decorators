@@ -8,8 +8,8 @@ gulp.task('build', done => {
   runSequence('clean:build', 'compile', done);
 });
 
-gulp.task('clean:build', done => {
-  del([`${config.paths.dist}`], done);
+gulp.task('clean:build', () => {
+  del.sync(config.paths.published);
 });
 
 gulp.task('compile', () => {
