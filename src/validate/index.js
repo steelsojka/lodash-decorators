@@ -1,9 +1,9 @@
-import normalizeExport from '../utils/normalizeExport';
-
 import validate from './validate';
 import validateReturn from './validateReturn';
 
-export default normalizeExport({
-  validate,
-  validateReturn
-});
+export { validate };
+export { validateReturn };
+
+// Uppercase aliases
+export { validate as Validate };
+export { validateReturn as ValidateReturn };

@@ -1,9 +1,7 @@
-import normalizeExport from '../utils/normalizeExport';
-
 import bind from './bind';
 import bindAll from './bindAll';
 
-export default normalizeExport({
-  bind,
-  bindAll
-});
+export { bind };
+export { bindAll };
+export { bindAll as BindAll };
+export { bind as Bind };
