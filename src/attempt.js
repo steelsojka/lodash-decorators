@@ -1,5 +1,5 @@
-import partial from 'lodash/function/partial';
-import attempt from 'lodash/utility/attempt';
+import partial from 'lodash/partial';
+import attempt from 'lodash/attempt';
 import { createDecorator } from './decoratorFactory';
 import { applicators } from './Applicator';
 

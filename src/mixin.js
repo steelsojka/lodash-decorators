@@ -1,4 +1,4 @@
-import mixin from 'lodash/utility/mixin';
+import mixin from 'lodash/mixin';
 import log from './utils/log';
 
 export default function mixinDecoratorWrapper(src, options) {

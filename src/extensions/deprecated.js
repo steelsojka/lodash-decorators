@@ -1,4 +1,4 @@
-import isFunction from 'lodash/lang/isFunction';
+import isFunction from 'lodash/isFunction';
 import { createDecorator } from '../decoratorFactory';
 import { applicators } from '../Applicator';
 import wrapConstructor from '../utils/wrapConstructor';

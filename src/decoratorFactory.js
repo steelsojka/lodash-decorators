@@ -1,10 +1,10 @@
-import forOwn from 'lodash/object/forOwn';
-import isFunction from 'lodash/lang/isFunction';
-import partial from 'lodash/function/partial';
-import identity from 'lodash/utility/identity';
-import values from 'lodash/object/values';
-import assign from 'lodash/object/assign';
-import capitalize from 'lodash/string/capitalize';
+import forOwn from 'lodash/forOwn';
+import isFunction from 'lodash/isFunction';
+import partial from 'lodash/partial';
+import identity from 'lodash/identity';
+import values from 'lodash/values';
+import assign from 'lodash/assign';
+import upperFirst from 'lodash/upperFirst';
 
 import bindMap from './bind/bindMap';
 import CompositeKeyWeakMap from './utils/CompositeKeyWeakMap';
@@ -236,7 +236,7 @@ function wrapDecoratorWithAccessors(instance, decorator, method, applicator, ...
 
   forOwn(accessors, (value, key) => {
     decorator[key] = value;
-    decorator[capitalize(key)] = value;
+    decorator[upperFirst(key)] = value;
   });
 
   return decorator;

@@ -1,6 +1,6 @@
-import without from 'lodash/array/without';
-import isObject from 'lodash/lang/isObject';
-import attempt from 'lodash/utility/attempt';
+import without from 'lodash/without';
+import isObject from 'lodash/isObject';
+import attempt from 'lodash/attempt';
 
 export const FUNCTION_PROPERTY_EXCLUDES = [
   'length',

@@ -1,6 +1,6 @@
-import assign from 'lodash/object/assign';
-import isFunction from 'lodash/lang/isFunction';
-import partial from 'lodash/function/partial';
+import assign from 'lodash/assign';
+import isFunction from 'lodash/isFunction';
+import partial from 'lodash/partial';
 import log from './utils/log';
 
 export const applicators = {

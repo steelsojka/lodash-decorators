@@ -1,4 +1,4 @@
-import isUndefined from 'lodash/lang/isUndefined';
+import isUndefined from 'lodash/isUndefined';
 
 export default class CompositeKeyWeakMap {
   constructor() {

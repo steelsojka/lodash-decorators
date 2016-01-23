@@ -1,7 +1,7 @@
-import isFunction from 'lodash/lang/isFunction';
-import isNull from 'lodash/lang/isNull';
-import noop from 'lodash/utility/noop';
-import isBoolean from 'lodash/lang/isBoolean';
+import isFunction from 'lodash/isFunction';
+import isNull from 'lodash/isNull';
+import noop from 'lodash/noop';
+import isBoolean from 'lodash/isBoolean';
 import copyMetaData from '../utils/copyMetaData';
 import bindMap from './bindMap';
 

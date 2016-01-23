@@ -1,5 +1,5 @@
-import isFunction from 'lodash/lang/isFunction';
-import bind from 'lodash/function/bind';
+import isFunction from 'lodash/isFunction';
+import bind from 'lodash/bind';
 import copyMetaData from '../utils/copyMetaData';
 
 import bindAll from './bindAll';

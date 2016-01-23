@@ -1,5 +1,3 @@
-'use strict';
-
 import { expect } from 'chai';
 import _ from 'lodash';
 import Enumerable from '../../src/extensions/enumerable';

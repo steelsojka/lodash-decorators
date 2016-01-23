@@ -1,5 +1,3 @@
-'use strict';
-
 import sinon from 'sinon';
 import { expect } from 'chai';
 import Deprecated from '../../src/extensions/deprecated';

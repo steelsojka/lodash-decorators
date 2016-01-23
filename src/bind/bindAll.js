@@ -1,5 +1,5 @@
 import bindAllClassMethods from './bindAllClassMethods';
-import flatten from 'lodash/array/flatten';
+import flatten from 'lodash/flatten';
 import assignAll, { FUNCTION_PROPERTY_EXCLUDES } from '../utils/assignAll';
 import wrapConstructor from '../utils/wrapConstructor';
 import log from '../utils/log';

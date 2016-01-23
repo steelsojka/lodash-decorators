@@ -1,4 +1,4 @@
-import every from 'lodash/collection/every';
+import every from 'lodash/every';
 import { createDecorator } from '../decoratorFactory';
 import log from './log';
 
