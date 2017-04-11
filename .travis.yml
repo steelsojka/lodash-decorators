@@ -1,10 +1,8 @@
 language: node_js
 node_js:
   - '0.12'
-before_script:
-  - npm install -g gulp
 script:
-  - gulp ci
+  - npm run ci
 deploy:
   provider: npm
   email: steelsojka@gmail.com
