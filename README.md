@@ -63,11 +63,10 @@ Many of the lodash decorators can contain arguments.
 - `ary`
 - `curry`
 - `curryRight`
-- `restParam`
+- `rest`
 - `partial`
 - `partialRight`
 - `wrap`
-- `compose`
 - `flow`
 - `flowRight`
 - `backflow`
@@ -75,7 +74,6 @@ Many of the lodash decorators can contain arguments.
 - `defer`
 - `bind`
 - `bindAll`
-- `modArgs`
 - `mixin`
 
 #### Example
@@ -107,6 +105,7 @@ class Person {
 Some decorators don't take any arguments at all.
 
 - `once`
+- `flip`
 - `spread`
 - `rearg`
 - `negate`
@@ -189,14 +188,14 @@ person.getUpperCaseName(); // JOE SMITH
 
 ### Composition
 
-You can use methods like `compose` and `flow` similiar to
+You can use methods like `flow` and `flowRight` similiar to
 partials. The arguments are resolved the same way partials
 are resolved.
 
 #### Example
 
 ```javascript
-import { compose } from 'lodash-decorators'
+import { flow } from 'lodash-decorators'
 import { kebabCase } from 'lodash';
 
 class Person {
@@ -209,7 +208,7 @@ class Person {
     return `${this.firstName} ${this.lastName}`;
   }
 
-  @compose(kebabCase, 'getName')
+  @flow(kebabCase, 'getName')
   logName(name) {
     console.log(name);
   }
