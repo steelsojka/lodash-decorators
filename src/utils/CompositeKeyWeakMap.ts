@@ -1,20 +1,18 @@
-import isUndefined from 'lodash/isUndefined';
+import { isUndefined } from 'lodash';
 
-export default class CompositeKeyWeakMap {
-  constructor() {
-    this.weakMap = new WeakMap();
-  }
+export class CompositeKeyWeakMap<T> {
+  private _weakMap = new WeakMap<any, any>();
 
-  set(keys, value) {
-    let map = this.weakMap;
+  set(keys: any[], value: T): void {
+    let map = this._weakMap;
 
     for (let i = 0, len = keys.length - 1; i < len; i++) {
-      let key = keys[i];
-      let next = map.get(keys[i]);
+      const key = keys[i];
+      let next = map.get(key);
 
       if (!next) {
         next = new Map();
-        map.set(keys[i], next);
+        map.set(key, next);
       }
 
       map = next;
@@ -23,8 +21,8 @@ export default class CompositeKeyWeakMap {
     map.set(keys[keys.length - 1], value);
   }
 
-  get(keys) {
-    let next = this.weakMap;
+  get(keys: any[]): T {
+    let next = this._weakMap;
 
     for (let i = 0, len = keys.length; i < len; i++) {
       next = next.get(keys[i]);
@@ -34,10 +32,10 @@ export default class CompositeKeyWeakMap {
       }
     }
 
-    return next;
+    return next as any;
   }
 
-  has(keys) {
+  has(keys: any[]): boolean {
     return !isUndefined(this.get(keys));
   }
 }
