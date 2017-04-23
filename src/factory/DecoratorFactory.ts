@@ -9,17 +9,11 @@ import {
   uniqueId
 } from 'lodash';
 
-import { Applicator } from '../applicators';
 import { ApplicatorFactory } from './ApplicatorFactory';
-import { ApplicatorToken, InstanceMethodMap } from './common';
-import { log } from '../utils';
+import { InstanceMethodMap } from './common';
+import { DecoratorConfig } from './DecoratorConfig';
 
 export type GenericDecorator = (...args: any[]) => MethodDecorator;
-
-export interface DecoratorConfig {
-  execute: Function;
-  applicator: ApplicatorToken;
-}
 
 export class InternalDecoratorFactory {
   createDecorator(config: DecoratorConfig): GenericDecorator {
