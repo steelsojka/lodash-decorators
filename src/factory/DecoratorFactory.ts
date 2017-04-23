@@ -89,12 +89,16 @@ export class InternalDecoratorFactory {
           delete descriptor.writable;
 
           descriptor.get = function() {
+            const newFn = fnChain.reduce((result: Function, fn: Function) => fn(result, this), value)
+
             Object.defineProperty(this, name, {
               writable,
               enumerable,
               configurable,
-              value: fnChain.reduce((result: Function, fn: Function) => fn(result, this), value)
+              value: newFn
             });
+
+            return newFn;
           };
 
           descriptor.set = noop;
