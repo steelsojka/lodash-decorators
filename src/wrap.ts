@@ -4,9 +4,9 @@ import {
   DecoratorConfig, 
   DecoratorFactory,
   ResolvableFunction,
-  LodashDecorator
+  LodashMethodDecorator
 } from './factory';
 import { WrapApplicator } from './applicators';
 
 export const WrapDecoratorConfig = new DecoratorConfig(wrap, WrapApplicator);
-export const Wrap: (wrapper?: ResolvableFunction) => LodashDecorator = DecoratorFactory.createDecorator(WrapDecoratorConfig);
+export const Wrap: (wrapper?: ResolvableFunction) => LodashMethodDecorator = DecoratorFactory.createDecorator(WrapDecoratorConfig);

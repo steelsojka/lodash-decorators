@@ -1,12 +1,12 @@
-import forOwn from 'lodash/forOwn';
+import { forOwn } from 'lodash';
 
 /**
  * Used to copy over meta data from function to function.
  * If meta data is attached to a function. This can get lost
  * when wrapping functions. This tries to persist that.
  */
-export function copyMetaData(to, from) {
-  forOwn(from, (value, key) => to[key] = value);
+export function copyMetadata(to: any, from: any): any {
+  forOwn(from, (value: any, key: string) => to[key] = value);
 
   return to;
 }

@@ -1,7 +1,7 @@
 import { bind } from 'lodash';
 
-import { DecoratorConfig, DecoratorFactory, LodashDecorator } from './factory';
+import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { BindApplicator } from './applicators';
 
 export const BindDecoratorConfig = new DecoratorConfig(bind, BindApplicator);
-export const Bind: (...partials: any[]) => LodashDecorator = DecoratorFactory.createDecorator(BindDecoratorConfig);
+export const Bind: (...partials: any[]) => LodashMethodDecorator = DecoratorFactory.createDecorator(BindDecoratorConfig);
