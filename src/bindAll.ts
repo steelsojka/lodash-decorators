@@ -2,11 +2,15 @@ import { copyMetadata } from './utils';
 
 export function BindAll(methods: string[] = []): ClassDecorator {
   return (target: Function): Function => {
-    return function BindAllWrapper(...args: any[]): any {
+    function BindAllWrapper(...args: any[]): any {
       bindAllMethods(target, this, methods);
 
       return target.apply(this, args);
     };
+
+    BindAllWrapper.prototype = target.prototype;
+
+    return BindAllWrapper;
   }
 }
 
@@ -19,6 +23,7 @@ function bindAllMethods(target: Function, instance: any, methods: string[] = [])
       const descriptor = Object.getOwnPropertyDescriptor(proto, key);
 
       if (include && key !== 'constructor' && !instance.hasOwnProperty(key)) {
+        console.log(instance[key]);
         Object.defineProperty(instance, key, {
           value: copyMetadata(instance[key].bind(instance), instance[key]),
           configurable: true,

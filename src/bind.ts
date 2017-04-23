@@ -4,4 +4,4 @@ import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './fact
 import { BindApplicator } from './applicators';
 
 export const BindDecoratorConfig = new DecoratorConfig(bind, BindApplicator);
-export const Bind: (...partials: any[]) => LodashMethodDecorator = DecoratorFactory.createDecorator(BindDecoratorConfig);
+export const Bind: (...partials: any[]) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(BindDecoratorConfig);
