@@ -1,39 +1,36 @@
-import {
-  forOwn,
-  isFunction,
-  partial,
-  identity,
-  values,
-  assign,
-  upperFirst,
-  uniqueId
-} from 'lodash';
+import { isFunction } from 'lodash';
 
 import { ApplicatorFactory } from './ApplicatorFactory';
-import { InstanceMethodMap } from './common';
+import { InstanceMethodMap, LodashDecorator } from './common';
 import { DecoratorConfig } from './DecoratorConfig';
 
-export type GenericDecorator = (...args: any[]) => MethodDecorator;
+export type GenericDecorator = (...args: any[]) => LodashDecorator;
 
 export class InternalDecoratorFactory {
   createDecorator(config: DecoratorConfig): GenericDecorator {
     const { execute, applicator:token } = config;
     const applicator = ApplicatorFactory.get(token);
 
-    return (...args: any[]): MethodDecorator => {
-      return (target: Object, name: string, descriptor: PropertyDescriptor): PropertyDescriptor => {
+    return (...args: any[]): LodashDecorator => {
+      return (target: Object, name: string, _descriptor?: PropertyDescriptor): PropertyDescriptor => {
+        const isTSProperty = !_descriptor;
+        const descriptor = this._resolveDescriptor(target, name, _descriptor);
         const { set, get, value } = descriptor;
 
         if (isFunction(value)) {
-          descriptor.value = applicator.apply(execute, target, value, ...args);
+          descriptor.value = applicator.apply({ fn: execute, target, value, args });
         } else {
           if (set) {
-            descriptor.set = applicator.apply(execute, target, set, ...args);
+            descriptor.set = applicator.apply({ fn: execute, target, value: set, args });
           }
 
           if (get) {
-            descriptor.get = applicator.apply(execute, target, get, ...args);
+            descriptor.get = applicator.apply({ fn: execute, target, value: get, args });
           }
+        }
+
+        if (isTSProperty) {
+          Object.defineProperty(target, name, descriptor);
         }
 
         return descriptor;
@@ -45,14 +42,20 @@ export class InternalDecoratorFactory {
     const { execute, applicator:token } = config;
     const applicator = ApplicatorFactory.get(token);
 
-    return (...args: any[]): MethodDecorator => {
-      return (target: Object, name: string, descriptor: PropertyDescriptor): PropertyDescriptor => {
+    return (...args: any[]): LodashDecorator => {
+      return (target: Object, name: string, _descriptor?: PropertyDescriptor): PropertyDescriptor => {
+        const isTSProperty = !_descriptor;
+        const descriptor = this._resolveDescriptor(target, name, _descriptor);
         const { set, get, value, writable, enumerable, configurable } = descriptor;
         const isFirstInstance = !InstanceMethodMap.has([ target, name ]);
         const fnChain = InstanceMethodMap.get([ target, name ]) || [];
 
-        fnChain.push((fn: Function) => {
-          return applicator.apply(execute, target, fn, ...args);
+        fnChain.push((fn: Function, instance: any) => {
+          return applicator.apply({
+            args, target, instance, 
+            value: fn,
+            fn: execute
+          });
         });
 
         InstanceMethodMap.set([ target, name ], fnChain);
@@ -70,7 +73,7 @@ export class InternalDecoratorFactory {
               writable,
               enumerable,
               configurable,
-              value: fnChain.reduce((result: Function, fn: Function) => fn(result), value)
+              value: fnChain.reduce((result: Function, fn: Function) => fn(result, this), value)
             });
           };
 
@@ -83,8 +86,22 @@ export class InternalDecoratorFactory {
             });
           };
         }
+
+        if (isTSProperty) {
+          Object.defineProperty(target, name, descriptor);
+        }
+
+        return descriptor;
       };
     };
+  }
+
+  private _resolveDescriptor(target: Object, name: string, descriptor?: PropertyDescriptor): PropertyDescriptor {
+    if (descriptor) {
+      return descriptor;
+    }
+
+    return Object.getOwnPropertyDescriptor(target, name);
   }
 }
 

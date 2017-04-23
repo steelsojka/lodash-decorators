@@ -1,11 +1,10 @@
-import { createDecorator } from './decoratorFactory';
-import { applicators } from './Applicator';
-import returnAtIndex from './utils/returnAtIndex';
+import { DecoratorConfig, DecoratorFactory } from './factory';
+import { PreValueApplicator } from './applicators';
+import { returnAtIndex } from './utils';
 
 /**
  * Returns the first argument from the function regardless of
  * the decorated functions return value.
  */
-export default createDecorator(function tapDecorator(fn) {
-  return returnAtIndex(fn, 0);
-}, applicators.single);
+export const TapDecoratorConfig = new DecoratorConfig(fn => returnAtIndex(fn, 0), PreValueApplicator);
+export const Tap = DecoratorFactory.createDecorator(TapDecoratorConfig)();

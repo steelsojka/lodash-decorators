@@ -1,3 +1,11 @@
+export interface ApplicateOptions {
+  fn: Function;
+  target: any;
+  value: any;
+  args: any[];
+  instance?: Object;
+}
+
 export abstract class Applicator {
-  abstract apply(fn: Function, target: any, value: any, ...args: any[]): any;
+  abstract apply(options: ApplicateOptions): any;
 }

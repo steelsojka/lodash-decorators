@@ -1,9 +1,9 @@
 import { partial } from 'lodash';
 
-import { Applicator } from './Applicator';
+import { Applicator, ApplicateOptions } from './Applicator';
 
 export class PartialedApplicator extends Applicator {
-  apply(fn: Function, target: any, value: any, ...args: any[]): any {
+  apply({ fn, value, args }: ApplicateOptions): any {
     return partial(fn, value, ...args);
   }
 }

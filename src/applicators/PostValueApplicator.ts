@@ -1,7 +1,7 @@
-import { Applicator } from './Applicator';
+import { Applicator, ApplicateOptions } from './Applicator';
 
 export class PostValueApplicator extends Applicator {
-  apply(fn: Function, target: any, value: any, ...args: any[]): any {
+  apply({ fn, args, value }: ApplicateOptions): any {
     return fn(...args, value);
   }
 }

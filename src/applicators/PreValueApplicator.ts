@@ -1,7 +1,7 @@
-import { Applicator } from './Applicator';
+import { Applicator, ApplicateOptions } from './Applicator';
 
 export class PreValueApplicator extends Applicator {
-  apply(fn: Function, target: any, value: any, ...args: any[]): any {
+  apply({ value, fn, args }: ApplicateOptions): any {
     return fn(value, ...args);
   }
 }
