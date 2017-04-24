@@ -4,6 +4,8 @@ import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './fact
 import { PreValueApplicator } from './applicators';
 import { ThrottleOptions } from './shared';
 
-export const ThrottleAll: (wait?: number, options?: ThrottleOptions) => LodashMethodDecorator = DecoratorFactory.createDecorator(new DecoratorConfig(throttle, PreValueApplicator));
+export const ThrottleAll: (wait?: number, options?: ThrottleOptions) => LodashMethodDecorator = DecoratorFactory.createDecorator(
+  new DecoratorConfig(throttle, PreValueApplicator, { setter: true })
+);
 export { ThrottleAll as throttleAll };
 export default ThrottleAll;

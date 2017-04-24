@@ -26,4 +26,31 @@ describe('debounce', () => {
       done();
     }, 11);
   });
+
+  it('should debounce the property setter', done => {
+    class MyClass {
+      private _value: number = 100;
+
+      @Debounce(10)
+      set value(value: number) {
+        this._value = value;
+      }
+
+      get value(): number {
+        return this._value;
+      }
+    }
+
+    const myClass = new MyClass();
+
+    myClass.value = 5;
+    myClass.value = 15;
+
+    expect(myClass.value).to.equal(100);
+
+    setTimeout(() => {
+      expect(myClass.value).to.equal(15);
+      done();
+    }, 11);
+  });
 });

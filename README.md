@@ -27,7 +27,7 @@ Method Decorators for lodash functions.
     - [Example](#example-6)
     - [Example](#example-7)
   - [v4 Breaking Changes](#v4-breaking-changes)
-    - [Decorators can only be applied to methods (with some exclusions)](#decorators-can-only-be-applied-to-methods-with-some-exclusions)
+    - [Not all decorators can be applied to or forced on getters/setters.](#not-all-decorators-can-be-applied-to-or-forced-on-getterssetters)
     - [No longer force instance decorator onto prototype](#no-longer-force-instance-decorator-onto-prototype)
     - [Curry is now an instance decorator](#curry-is-now-an-instance-decorator)
     - [Removal of extensions and validation package](#removal-of-extensions-and-validation-package)
@@ -360,12 +360,29 @@ person.getName.call(null); // Joe Smith
 
 Version 4 is a rewrite of the library and has many breaking changes.
 
-#### Decorators can only be applied to methods (with some exclusions)
+#### Not all decorators can be applied to or forced on getters/setters.
 
-This is a change that needed to happen and happened for good reason. 
-  - In version 3 we had the ability to target whether a decorator was being applied to a getter/setter. This does not line up well with the decorator spec. A property decorator should apply to both the getter and the setter and not an individual
-  - Having support for property decorators and instance decorators causes conflicts when applying multiple combinations of instance and prototype decorators. This resulted in unpredicatable behavior and being conscience of where a decorator was in the chain.
-  - Most of the lodash decorators don't really make sense being added to properties.
+Only certain decorators make sense to be applied to getters/setters. Before you could specify the target of the decorator like `debounce.set(15)`. This behavior is
+removed and decorators that make sense to apply to getters/setters are configured to be applied to methods and either the getter or the setter. For example:
+
+```javascript
+class MyClass {
+  // This only gets applied to the setter as it doesn't make sense to apply it to the getter.
+  @Debounce(1000) 
+  get value() {
+    return this._value;
+  }
+
+  set value(val) {
+    this._value = val;
+  }
+
+  @Debounce(15)
+  fn() {}
+}
+```
+
+This keeps the API cleaner and doesn't require the developer to know how the decorator applies to the descriptor.
 
 #### No longer force instance decorator onto prototype
 

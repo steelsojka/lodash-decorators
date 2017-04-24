@@ -5,7 +5,7 @@ import { PreValueApplicator } from './applicators';
 import { DebounceOptions } from './shared';
 
 export const Debounce: (wait?: number, options?: DebounceOptions) => LodashDecorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(debounce, PreValueApplicator)
+  new DecoratorConfig(debounce, PreValueApplicator, { setter: true })
 );
 export { Debounce as debounce };
 export default Debounce;
