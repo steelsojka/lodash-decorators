@@ -1,6 +1,6 @@
 import { attempt, partial } from 'lodash';
 
-import { DecoratorConfig, DecoratorFactory } from './factory';
+import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { PreValueApplicator } from './applicators';
 
 const _attempt = (fn: Function) => partial(attempt, fn);
@@ -25,6 +25,6 @@ const _attempt = (fn: Function) => partial(attempt, fn);
  * myClass.fn(10); // => 10;
  * myClass.fn(null); // => Error
  */
-export const Attempt = DecoratorFactory.createInstanceDecorator(new DecoratorConfig(_attempt, PreValueApplicator));
+export const Attempt: (...partials: any[]) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(new DecoratorConfig(_attempt, PreValueApplicator));
 export { Attempt as attempt };
 export default Attempt;

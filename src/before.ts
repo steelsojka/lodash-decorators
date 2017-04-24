@@ -1,6 +1,6 @@
 import { before } from 'lodash';
 
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
+import { DecoratorConfig, DecoratorFactory, LodashDecorator } from './factory';
 import { PostValueApplicator } from './applicators';
 /**
  * Creates a function that invokes func, with the this binding and arguments of the created function, while it's called less than n times. 
@@ -26,6 +26,6 @@ import { PostValueApplicator } from './applicators';
  * 
  * calls === 2; // => true
  */
-export const Before: (n: number) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(new DecoratorConfig(before, PostValueApplicator));
+export const Before: (n: number) => LodashDecorator = DecoratorFactory.createInstanceDecorator(new DecoratorConfig(before, PostValueApplicator));
 export { Before as before };
 export default Before;

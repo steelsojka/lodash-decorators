@@ -1,6 +1,6 @@
 import { after } from 'lodash';
 
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
+import { DecoratorConfig, DecoratorFactory, LodashDecorator } from './factory';
 import { PostValueApplicator } from './applicators';
 /**
  * The opposite of Before. This method creates a function that invokes once it's called n or more times.
@@ -19,6 +19,6 @@ import { PostValueApplicator } from './applicators';
  * myClass.fn(); // => undefined
  * myClass.fn(); // => 10
  */
-export const After: (n: number) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(new DecoratorConfig(after, PostValueApplicator));
+export const After: (n: number) => LodashDecorator = DecoratorFactory.createInstanceDecorator(new DecoratorConfig(after, PostValueApplicator, { getter: true }));
 export { After as after };
 export default After;

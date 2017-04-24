@@ -1,10 +1,10 @@
 import { debounce } from 'lodash';
 
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
+import { DecoratorConfig, DecoratorFactory, LodashDecorator } from './factory';
 import { PreValueApplicator } from './applicators';
 import { DebounceOptions } from './shared';
 
-export const Debounce: (wait?: number, options?: DebounceOptions) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(
+export const Debounce: (wait?: number, options?: DebounceOptions) => LodashDecorator = DecoratorFactory.createInstanceDecorator(
   new DecoratorConfig(debounce, PreValueApplicator)
 );
 export { Debounce as debounce };

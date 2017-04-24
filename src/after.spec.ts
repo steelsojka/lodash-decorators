@@ -7,6 +7,11 @@ describe('after', () => {
     let calls = 0;
 
     class MyClass {
+      @After(2)
+      get prop() {
+        return 10;
+      }
+
       @After(3)
       fn() {
         calls++;  
@@ -29,5 +34,8 @@ describe('after', () => {
     myClass2.fn();
 
     expect(calls, 'multiple class').to.equal(4);
+
+    expect(myClass.prop).to.be.undefined;
+    expect(myClass.prop).to.equal(10);
   });
 });
