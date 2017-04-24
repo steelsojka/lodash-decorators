@@ -4,3 +4,5 @@ import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './fact
 import { PreValueApplicator } from './applicators';
 
 export const Memoize: (resolver?: Function) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(new DecoratorConfig(memoize, PreValueApplicator));
+export { Memoize as memoize };
+export default Memoize;

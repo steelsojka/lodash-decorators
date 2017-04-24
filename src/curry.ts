@@ -29,3 +29,5 @@ import { PreValueApplicator } from './applicators';
  * add5AndMultiply(10); // => 30
  */
 export const Curry: (arity?: number) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(new DecoratorConfig(curry, PreValueApplicator, true));
+export { Curry as curry };
+export default Curry;

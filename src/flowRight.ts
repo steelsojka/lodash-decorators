@@ -9,3 +9,5 @@ import {
 import { ComposeApplicator } from './applicators';
 
 export const FlowRight: (...fns: ResolvableFunction[]) => LodashMethodDecorator = DecoratorFactory.createDecorator(new DecoratorConfig(flowRight, ComposeApplicator));
+export { FlowRight as flowRight };
+export default FlowRight;

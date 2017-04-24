@@ -5,3 +5,5 @@ import { PreValueApplicator } from './applicators';
 import { ThrottleOptions } from './shared';
 
 export const ThrottleAll: (wait?: number, options?: ThrottleOptions) => LodashMethodDecorator = DecoratorFactory.createDecorator(new DecoratorConfig(throttle, PreValueApplicator));
+export { ThrottleAll as throttleAll };
+export default ThrottleAll;

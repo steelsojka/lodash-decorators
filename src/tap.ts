@@ -7,3 +7,5 @@ import { returnAtIndex } from './utils';
  * the decorated functions return value.
  */
 export const Tap = DecoratorFactory.createDecorator(new DecoratorConfig((fn: Function) => returnAtIndex(fn, 0), PreValueApplicator))();
+export { Tap as tap };
+export default Tap;

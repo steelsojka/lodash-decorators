@@ -26,3 +26,5 @@ const _attempt = (fn: Function) => partial(attempt, fn);
  * myClass.fn(null); // => Error
  */
 export const Attempt = DecoratorFactory.createInstanceDecorator(new DecoratorConfig(_attempt, PreValueApplicator));
+export { Attempt as attempt };
+export default Attempt;

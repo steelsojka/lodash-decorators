@@ -4,3 +4,5 @@ import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './fact
 import { PartialApplicator } from './applicators';
 
 export const Partial: (...partials: any[]) => LodashMethodDecorator = DecoratorFactory.createDecorator(new DecoratorConfig(partial, PartialApplicator));
+export { Partial as partial };
+export default Partial;

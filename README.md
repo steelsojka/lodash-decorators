@@ -1,5 +1,5 @@
 # lodash-decorators
-ES7 Decorators for lodash functions.
+Method Decorators for lodash functions.
 
 [![Build Status](https://travis-ci.org/steelsojka/lodash-decorators.svg)](https://travis-ci.org/steelsojka/lodash-decorators)
 [![npm version](https://badge.fury.io/js/lodash-decorators.svg)](http://badge.fury.io/js/lodash-decorators)
@@ -26,6 +26,13 @@ ES7 Decorators for lodash functions.
   - [Bind](#bind)
     - [Example](#example-6)
     - [Example](#example-7)
+  - [v4 Breaking Changes](#v4-breaking-changes)
+    - [Decorators can only be applied to methods (with some exclusions)](#decorators-can-only-be-applied-to-methods-with-some-exclusions)
+    - [No longer force instance decorator onto prototype](#no-longer-force-instance-decorator-onto-prototype)
+    - [Curry is now an instance decorator](#curry-is-now-an-instance-decorator)
+    - [Removal of extensions and validation package](#removal-of-extensions-and-validation-package)
+    - [Other breaking changes](#other-breaking-changes)
+  - [v4 Improvements](#v4-improvements)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -36,6 +43,18 @@ ES7 Decorators for lodash functions.
 ## Usage
 
 For more in depth documentation please visit [Lodash](http://lodash.com/docs)
+
+Decorators are exported as both start case and lower case.
+
+`import { Debounce } from 'lodash-decorators';`
+
+is the same as
+
+`import { debounce } from 'lodash-decorators';`
+
+They can also be imported directly.
+
+`import Debounce from 'lodash-decorators/debounce';`
 
 ### With Arguments
 
@@ -347,24 +366,6 @@ This is a change that needed to happen and happened for good reason.
   - In version 3 we had the ability to target whether a decorator was being applied to a getter/setter. This does not line up well with the decorator spec. A property decorator should apply to both the getter and the setter and not an individual
   - Having support for property decorators and instance decorators causes conflicts when applying multiple combinations of instance and prototype decorators. This resulted in unpredicatable behavior and being conscience of where a decorator was in the chain.
   - Most of the lodash decorators don't really make sense being added to properties.
-
-#### Decorators are start case by default
-
-You can import these as different names if you prefer lowercase.
-
-```javascript
-import { Debounce as debounce } from 'lodash-decorators';
-```
-
-or
-
-```javascript
-export {
-  Debounce as debounce,
-  Flow as flow,
-  Memoize as memoize
-} from 'lodash-decorators';
-```
 
 #### No longer force instance decorator onto prototype
 

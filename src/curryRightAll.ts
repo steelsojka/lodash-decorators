@@ -4,3 +4,5 @@ import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './fact
 import { PreValueApplicator } from './applicators';
 
 export const CurryRightAll: (arity?: number) => LodashMethodDecorator = DecoratorFactory.createDecorator(new DecoratorConfig(curryRight, PreValueApplicator));
+export { CurryRightAll as curryRightAll };
+export default CurryRightAll;

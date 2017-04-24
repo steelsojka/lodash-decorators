@@ -30,3 +30,5 @@ import { PostValueApplicator } from './applicators';
  * calls === 3; // => true
  */
 export const BeforeAll: (n: number) => LodashMethodDecorator = DecoratorFactory.createDecorator(new DecoratorConfig(before, PostValueApplicator));
+export { BeforeAll as beforeAll };
+export default BeforeAll;

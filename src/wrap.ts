@@ -9,3 +9,5 @@ import {
 import { WrapApplicator } from './applicators';
 
 export const Wrap: (wrapper?: ResolvableFunction) => LodashMethodDecorator = DecoratorFactory.createDecorator(new DecoratorConfig(wrap, WrapApplicator));
+export { Wrap as wrap };
+export default Wrap;

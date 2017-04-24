@@ -7,3 +7,5 @@ export function Mixin(...srcs: Object[]): ClassDecorator {
     return target;
   }
 }
+export { Mixin as mixin };
+export default Mixin;

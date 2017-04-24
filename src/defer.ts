@@ -4,3 +4,5 @@ import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './fact
 import { PartialedApplicator } from './applicators';
 
 export const Defer: (...args: any[]) => LodashMethodDecorator = DecoratorFactory.createDecorator(new DecoratorConfig(defer, PartialedApplicator));
+export { Defer as defer };
+export default Defer;

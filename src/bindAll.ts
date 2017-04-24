@@ -58,3 +58,6 @@ function bindAllMethods(target: Function, instance: any, methods: string[] = [])
     proto = Object.getPrototypeOf(proto);
   }
 }
+
+export { BindAll as bindAll };
+export default BindAll;

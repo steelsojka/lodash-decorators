@@ -8,3 +8,5 @@ import { PreValueApplicator } from './applicators';
  * @param {Function} [resolver] Optional resolver
  */
 export const MemoizeAll: (resolver?: Function) => LodashMethodDecorator = DecoratorFactory.createDecorator(new DecoratorConfig(memoize, PreValueApplicator));
+export { MemoizeAll as memoizeAll };
+export default MemoizeAll;
