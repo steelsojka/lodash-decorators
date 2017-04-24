@@ -14,6 +14,7 @@ export * from './flip';
 export * from './flow';
 export * from './flowRight';
 export * from './memoize';
+export * from './memoizeAll';
 export * from './mixin';
 export * from './negate';
 export * from './once';

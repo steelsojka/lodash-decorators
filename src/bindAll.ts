@@ -5,7 +5,7 @@ export function BindAll(methods: string[] = []): ClassDecorator {
     function BindAllWrapper(...args: any[]): any {
       bindAllMethods(target, this, methods);
 
-      return target.apply(this, args);
+      target.apply(this, args);
     };
 
     BindAllWrapper.prototype = target.prototype;

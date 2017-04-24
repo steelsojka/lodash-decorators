@@ -27,4 +27,29 @@ describe('bindAll', () => {
     myClass.fn2.call(null);
     expect(context).to.equal(myClass);
   });
+
+  it('should bind only specified methods to the context', () => {
+    let context;
+
+    class Parent {
+      fn() {
+        context = this;
+      }
+    }
+
+    @BindAll([ 'fn' ])
+    class MyClass extends Parent {
+      fn2() {
+        context = this;
+      }
+    }
+
+    const myClass = new MyClass();
+
+    myClass.fn.call(null);
+    expect(context).to.equal(myClass);
+
+    myClass.fn2.call(null);
+    expect(context).to.equal(null);
+  });
 });

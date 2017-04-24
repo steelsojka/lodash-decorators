@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "mocha --opts mocha.opts",
-    "prebuild": "rm -rf ./dist",
+    "build:clean": "del '*.js' '*.js.map' '*.d.ts' applicators factory utils",
+    "prebuild": "npm run build:clean",
     "build": "tsc -p tsconfig.build.json",
     "ci": "gulp ci"
   },
@@ -32,28 +33,13 @@
     "@types/chai": "^3.5.1",
     "@types/lodash": "^4.14.63",
     "@types/mocha": "^2.2.41",
-    "babel": "~5.0.9",
-    "babel-eslint": "~3.1.20",
     "chai": "~2.2.0",
-    "chalk": "~1.0.0",
-    "del": "^2.2.0",
-    "escope": "3.3.0",
-    "gulp": "~3.8.11",
-    "gulp-babel": "~5.0.0",
-    "gulp-chmod": "~1.2.0",
-    "gulp-eslint": "^0.14.0",
-    "gulp-if": "^1.2.5",
-    "gulp-jshint": "~1.10.0",
-    "gulp-mocha": "~2.0.1",
-    "gulp-plumber": "~1.0.0",
-    "jshint-stylish": "~1.0.1",
+    "del-cli": "^0.2.1",
     "mocha": "~2.2.1",
-    "run-sequence": "~1.0.2",
     "sinon": "~1.14.1",
     "sinon-chai": "~2.7.0",
     "ts-node": "^3.0.2",
-    "typescript": "^2.2.2",
-    "yargs": "^3.14.0"
+    "typescript": "^2.2.2"
   },
   "dependencies": {
     "lodash": "^4.0.0"
