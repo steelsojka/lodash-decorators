@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "mocha --opts mocha.opts",
-    "build": "gulp build",
+    "prebuild": "rm -rf ./dist",
+    "build": "tsc -p tsconfig.build.json",
     "ci": "gulp ci"
   },
   "main": "index.js",

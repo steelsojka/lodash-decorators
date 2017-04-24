@@ -23,7 +23,6 @@ function bindAllMethods(target: Function, instance: any, methods: string[] = [])
       const descriptor = Object.getOwnPropertyDescriptor(proto, key);
 
       if (include && key !== 'constructor' && !instance.hasOwnProperty(key)) {
-        console.log(instance[key]);
         Object.defineProperty(instance, key, {
           value: copyMetadata(instance[key].bind(instance), instance[key]),
           configurable: true,
