@@ -8,5 +8,4 @@ import {
 } from './factory';
 import { ComposeApplicator } from './applicators';
 
-export const FlowDecoratorConfig = new DecoratorConfig(flow, ComposeApplicator);
-export const Flow: (...fns: ResolvableFunction[]) => LodashMethodDecorator = DecoratorFactory.createDecorator(FlowDecoratorConfig);
+export const Flow: (...fns: ResolvableFunction[]) => LodashMethodDecorator = DecoratorFactory.createDecorator(new DecoratorConfig(flow, ComposeApplicator));

@@ -4,6 +4,6 @@ import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './fact
 import { PreValueApplicator } from './applicators';
 import { DebounceOptions } from './shared';
 
-export const Debounce: (wait?: number, options?: DebounceOptions) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(
+export const DebounceAll: (wait?: number, options?: DebounceOptions) => LodashMethodDecorator = DecoratorFactory.createDecorator(
   new DecoratorConfig(debounce, PreValueApplicator)
 );

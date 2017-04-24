@@ -5,20 +5,18 @@ import { PreValueApplicator } from './applicators';
 /** 
  * Creates a function that accepts arguments of func and either invokes func returning its result, if at least arity number of arguments have been provided, or returns a function that accepts the remaining func arguments, and so on.
  * The arity of func may be specified if func.length is not sufficient.
- * The original function is bound to the instance. If the method is needed to call in a different context use `CurryAll`.
  * 
  * The _.curry.placeholder value, which defaults to _ in monolithic builds, may be used as a placeholder for provided arguments.
  *
  * Note: This method doesn't set the "length" property of curried functions.
+ * Note: The original function invoked will not be called in the context of the instance. Use `Curry` to for using it bound.
  * @param {number} [arity] The arity of func.
  * @example
  * 
  * class MyClass {
- *   multiplier = 2;
- * 
- *   @Curry()
+ *   @CurryAll()
  *   add(a, b) {
- *     return (a + b) * this.multiplier;
+ *     return (a + b);
  *   }
  * }
  * 
@@ -26,6 +24,6 @@ import { PreValueApplicator } from './applicators';
  * 
  * const add5 = myClass.add(5);
  * 
- * add5AndMultiply(10); // => 30
+ * add5AndMultiply(10); // => 15
  */
-export const Curry: (arity?: number) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(new DecoratorConfig(curry, PreValueApplicator, true));
+export const CurryAll: (arity?: number) => LodashMethodDecorator = DecoratorFactory.createDecorator(new DecoratorConfig(curry, PreValueApplicator));

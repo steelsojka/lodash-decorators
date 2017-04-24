@@ -19,29 +19,15 @@ ES7 Decorators for lodash functions.
   - [Composition](#composition)
     - [Example](#example-3)
   - [Instance Decorators](#instance-decorators)
-  - [Getters and Setters](#getters-and-setters)
-    - [Example](#example-4)
-    - [What's with the `.get`?](#whats-with-the-get)
-    - [Can I use decorators on getters/setters without these?](#can-i-use-decorators-on-getterssetters-without-these)
   - [Mixin](#mixin)
-    - [Example](#example-5)
+    - [Example](#example-4)
   - [Attempt](#attempt)
-    - [Example](#example-6)
+    - [Example](#example-5)
   - [Bind](#bind)
+    - [Example](#example-6)
     - [Example](#example-7)
-    - [Example](#example-8)
-  - [Forcing Decorator on Prototype](#forcing-decorator-on-prototype)
-    - [Example](#example-9)
-- [Extensions](#extensions)
-  - [Deprecated](#deprecated)
-    - [Example](#example-10)
-- [Validate](#validate)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-## Disclaimer
-The decorator proposal is still in quite a bit of flux. There will most likely be breaking changes as the spec changes. These
-will be reflected in major releases (2.0.0).
 
 ## Install
 
@@ -55,33 +41,40 @@ For more in depth documentation please visit [Lodash](http://lodash.com/docs)
 
 Many of the lodash decorators can contain arguments.
 
-- `debounce`
-- `throttle`
-- `memoize`
-- `after`
-- `before`
-- `ary`
-- `curry`
-- `curryRight`
-- `restParam`
-- `partial`
-- `partialRight`
-- `wrap`
-- `compose`
-- `flow`
-- `flowRight`
-- `backflow`
-- `delay`
-- `defer`
-- `bind`
-- `bindAll`
-- `modArgs`
-- `mixin`
+- `Debounce`
+- `DebounceAll`
+- `Throttle`
+- `ThrottleAll`
+- `Memoize`
+- `MemoizeAll`
+- `After`
+- `AfterAll`
+- `Before`
+- `BeforeAll`
+- `Ary`
+- `Curry`
+- `CurryAll`
+- `CurryRight`
+- `CurryRightAll`
+- `Rest`
+- `Partial`
+- `PartialRight`
+- `Wrap`
+- `Flow`
+- `FlowRight`
+- `Delay`
+- `Defer`
+- `Bind`
+- `BindAll`
+- `OverArgs`
+- `Rearg`
+- `Mixin`
+- `Attempt`
 
 #### Example
 
 ```javascript
-import { after, debounce, memoize, curry } from 'lodash-decorators'
+import { After, Debounce, Memoize, Curry } from 'lodash-decorators'
 
 class Person {
   constructor(firstName, lastName) {
@@ -89,14 +82,14 @@ class Person {
     this.lastName = lastName;
   }
 
-  @after(3)
-  @debounce(100)
+  @After(3)
+  @Debounce(100)
   getFullName() {
     return `${this.firstName} ${this.lastName}`
   }
 
-  @curry(2)
-  @memoize()
+  @Curry(2)
+  @Memoize()
   doSomeHeavyProcessing(arg1, arg2) {
   }
 }
@@ -106,30 +99,28 @@ class Person {
 
 Some decorators don't take any arguments at all.
 
-- `once`
-- `spread`
-- `rearg`
-- `negate`
-- `tap`
-- `attempt`
+- `Once`
+- `Spread`
+- `Negate`
+- `Tap`
 
 #### Example
 
 ```javascript
-import { once } from 'lodash-decorators'
+import { Once } from 'lodash-decorators'
 
-class Person {
-  constructor(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
+class person {
+  constructor(firstname, lastname) {
+    this.firstname = firstname;
+    this.lastname = lastname;
   }
 
-  @once
-  getFullName() {
-    return `${this.firstName} ${this.lastName}`
+  @Once
+  getfullname() {
+    return `${this.firstname} ${this.lastname}`
   }
 
-  @tap
+  @Tap
   popIt(list) {
     list.pop();
   }
@@ -145,9 +136,9 @@ person.popIt([1, 2, 3]); //=> [1, 2]
 Some decorators work slightly differently than you would expect
 them to work than lodash.
 
-- `partial`
-- `partialRight`
-- `wrap`
+- `Partial`
+- `PartialRight`
+- `Wrap`
 
 These can take a `Function` as their first argument or a `String`.
 If the argument is a `String` then a `Function` is resolved from
@@ -156,7 +147,7 @@ the current object.
 #### Example
 
 ```javascript
-import { partial } from 'lodash-decorators'
+import { Partial } from 'lodash-decorators'
 
 class Person {
   constructor(firstName, lastName) {
@@ -168,13 +159,13 @@ class Person {
     return type === 'firstName' ? this.firstName : this.lastName
   }
 
-  @partial('getName', 'firstName')
+  @Partial('getName', 'firstName')
   getFirstName() {}
 
-  @partial('getName', null)
+  @Partial('getName', null)
   getLastName() {}
 
-  @wrap('getName')
+  @Wrap('getName')
   getUpperCaseName(fn) {
     return fn().toUpperCase();
   }
@@ -196,7 +187,7 @@ are resolved.
 #### Example
 
 ```javascript
-import { compose } from 'lodash-decorators'
+import { Flow } from 'lodash-decorators'
 import { kebabCase } from 'lodash';
 
 class Person {
@@ -209,7 +200,7 @@ class Person {
     return `${this.firstName} ${this.lastName}`;
   }
 
-  @compose(kebabCase, 'getName')
+  @Flow('getName', kebabCase)
   logName(name) {
     console.log(name);
   }
@@ -227,77 +218,13 @@ of the class you are working with, but with some of these
 decorators that is not the desired behavour. These
 decorators are applied at the instance level.
 
-- `debounce`
-- `throttle`
-- `memoize`
-- `after`
-- `before`
-
-__Note__: Due to the nature of how instance decorators work they MUST be processed
-after all prototype decorators in the decorator chain. There isn't a graceful way
-to get around this currently. More or less instance decorators are kind of a hack and experimental.
-
-```javascript
-class Person {
-
-  @curry(2) // <= prototype decorator
-  @debounce(100) // <= instance decorator
-  getName() {} //=> Throws an error. (╯°□°）╯︵ ┻━┻
-
-  @debounce(100) // <= instance decorator
-  @curry(2) // <= prototype decorator
-  getName2() {} //=> All is well :)
-}
-```
-
-### Getters and Setters
-
-Most decorators can be applied directly to getter and setter methods.
-
-#### Example
-
-```javascript
-import { once, compose } from 'lodash-decorators'
-import _ from 'lodash';
-
-function alwaysArray(value) {
-  return Array.isArray(value) ? value : _.isUndefined(value) ? [] : [value];
-}
-
-class Person {
-  constructor() {}
-
-  @once.get
-  get names() {
-    return this.nameList.join(' ');
-  }
-
-  @compose.set(alwaysArray)
-  set names(names) {
-    this.nameList = names;
-  }
-}
-
-const person = new Person();
-
-// nameList will always be an array.
-person.names = undefined; //=> []
-person.names = 'Joe'; //=> ['Joe']
-person.names = ['Jim']; //=> ['Jim']
-```
-
-#### What's with the `.get`?
-
-The decorator has no way to tell whether you are applying the decorator to the getter or setter (when both are provided).
-The decorator just receives the descriptor which has both values provided and no way to distinguish which one you are provided
-which decorator to.
-
-`@once.get` uses a form of the decorator that explicitly applies to the getter method.
-`@once.set` uses a form of the decorator that explicitly applies to the setter method.
-
-#### Can I use decorators on getters/setters without these?
-
-Use at you're own risk...
+- `Debounce`
+- `Throttle`
+- `Memoize`
+- `After`
+- `Before`
+- `Curry`
+- `CurryRight`
 
 ### Mixin
 
@@ -306,7 +233,7 @@ You can mixin methods into a class by using the `Mixin` decorator.
 #### Example
 
 ```javascript
-import { mixin } from 'lodash-decorators';
+import { Mixin } from 'lodash-decorators';
 
 const MyOtherApi = {
   someCoolMethod() {
@@ -314,7 +241,7 @@ const MyOtherApi = {
   }
 };
 
-@mixin(MyOtherApi)
+@Mixin(MyOtherApi)
 class Person {}
 
 Person.prototype.someCoolMethod === MyOtherApi.someCoolMethod; // => true
@@ -327,15 +254,15 @@ You can wrap a method in a lodash attempt method.
 #### Example
 
 ```javascript
-import { attempt } from 'lodash-decorators';
+import { Attempt } from 'lodash-decorators';
 
 class Person {
-  @attempt
+  @Attempt()
   throwAnError() {
     throw new Error();
   }
 
-  @attempt
+  @Attempt()
   doNotThrowAnError() {
     return '0_o';
   }
@@ -357,14 +284,10 @@ result === '0_o'; // => true
 Bind takes arguments based on lodash's bind and binds the `Function` to
 the current instance object.
 
-__Known Issue__: When using bind on a single method the bind decorator MUST come last
-in the chain of decorators. There is no graceful solution for this currently. You can always
-use `@bindAll('fn')` on the class and only include the functions you want to include.
-
 #### Example
 
 ```javascript
-import { bind } from 'lodash-decorators'
+import { Bind } from 'lodash-decorators'
 
 class Person {
   constructor(firstName, lastName) {
@@ -372,13 +295,13 @@ class Person {
     this.lastName = lastName;
   }
 
-  @bind()
+  @Bind()
   getName() {
     return `${this.firstName} ${this.lastName}`;
   }
 
   // It can also function as a partial
-  @bind('Joe')
+  @Bind('Joe')
   getUpperCaseName(name) {
     return name.toUpperCase();
   }
@@ -392,15 +315,12 @@ person.getUpperCaseName(); // JOE
 
 You can also bind entire classes with `bindAll` or `bind`.
 
-__Note__: Using `@bind()` on a class delegates to the `@bindAll()` implemenation.
-
-
 #### Example
 
 ```javascript
-import { bind } from 'lodash-decorators'
+import { BindAll } from 'lodash-decorators'
 
-@bindAll()
+@BindAll()
 class Person {
   constructor(firstName, lastName) {
     this.firstName = firstName;
@@ -417,84 +337,64 @@ const person = new Person('Joe', 'Smith');
 person.getName.call(null); // Joe Smith
 ```
 
-### Forcing Decorator on Prototype
+### v4 Breaking Changes
 
-You can force an instance decorator to apply to the prototype instead of the instance.
+Version 4 is a rewrite of the library and has many breaking changes.
 
-#### Example
+#### Decorators can only be applied to methods (with some exclusions)
 
-```javascript
-import { throttle } from 'lodash-decorators';
+This is a change that needed to happen and happened for good reason. 
+  - In version 3 we had the ability to target whether a decorator was being applied to a getter/setter. This does not line up well with the decorator spec. A property decorator should apply to both the getter and the setter and not an individual
+  - Having support for property decorators and instance decorators causes conflicts when applying multiple combinations of instance and prototype decorators. This resulted in unpredicatable behavior and being conscience of where a decorator was in the chain.
+  - Most of the lodash decorators don't really make sense being added to properties.
 
-class Person {
-  @throttle(1000)
-  doStuff() {}
+#### Decorators are start case by default
 
-  @throttle.proto(1000)
-  doStuffMore() {}
-}
-
-const person = new Person();
-const person2 = new Person();
-
-person.doStuff(); //=> Both are called
-person2.doStuff();
-
-person.doStuffMore(); 
-person2.doStuffMore();
-
-// Only one of these methods is actual invoked because throttle is applied to the prototype method
-// and not the instance method.
-```
-
-## Extensions
-
-Extensions are decorators that aren't necessarily Lodash functions, but use Lodash under the hood. They
-provided some more basic utilities not found in Lodash;
-
-- `deprecated`
-- `writable`
-- `configurable`
-- `returnsArg`
-- `enumerable`
-- `nonenumerable` -> `enumerable(false)`
-- `nonconfigurable` -> `configurable(false)`
-- `readonly` -> `writable(false)`
-
-### Deprecated
-
-Warns when a deprecated class is istantiated or a deprecated class method is invoked.
-You can also modify the deprecated behaviour by swapping out the method and class actions.
-
-#### Example
+You can import these as different names if you prefer lowercase.
 
 ```javascript
-import { deprecated } from 'lodash-decorators/extensions'
-
-// This is applied globally.
-deprecated.methodAction = fn => console.log(`Don't use ${fn.name}!`);
-
-@deprecated
-class Person {
-  constructor() {}
-}
-
-class OtherPerson {
-  @deprecated
-  fn() {}
-}
-
-let person = new Person(); //=> Warning!
-
-let otherPerson = new OtherPerson();
-otherPerson.fn(); //=> Don't use fn!
+import { Debounce as debounce } from 'lodash-decorators';
 ```
 
-## Validate
+or
 
-The validate module contains decorators that can validate function arguments and return value.
+```javascript
+export {
+  Debounce as debounce,
+  Flow as flow,
+  Memoize as memoize
+} from 'lodash-decorators';
+```
 
-These can be found in `src/validate`
+#### No longer force instance decorator onto prototype
+
+There is no longer a `Proto` decorator attached to instance decorators. Most instance decorators now have a counterpart that applies to the prototype instead of the instance. `Debounce.Proto()` is now `DebounceAll()`.
+
+#### Curry is now an instance decorator
+
+The curry decorator is now an instance decorator in order to keep the calling context consistent. The original function before being curried is bound to the instance. You can apply curry to the prototype by using `CurryAll()`.
+
+#### Removal of extensions and validation package
+
+All extensions like `enumerable` have been removed in favor of [core-decorators](https://github.com/jayphelps/core-decorators.js). There may be some slight over lap like `debounce` and `throttle`. Fair warning, instance decorators may not play nice with other implementations of instance decorators.
+
+We want to keep lodash decorators focused specifically on lodash specific functions.
+
+#### Other breaking changes
+
+- `Attempt` now takes an argument to line up with lodash API.
+- `Bind` used on a class no longer delegates to `BindAll`. Use `BindAll` instead.
+
+### v4 Improvements
+
+- Instance and prototype decorators can be in any order.
+- Ships with TypeScript typings.
+- Predictable performance.
+- Improvements to Bind decorator.
+- Improved API for decorator factory.
+- More and better unit tests.
+- Better performance with instance decorators.
+- Single imports with `import { Debounce } from 'lodash-decorators/debounce'`;
 
 Author: Steven Sojka
 MIT Licensed

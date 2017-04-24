@@ -11,19 +11,22 @@ import { PostValueApplicator } from './applicators';
  * let calls = 0;
  * 
  * class MyClass {
- *   @Before(3)
+ *   @BeforeAll(3)
  *   fn() {
  *     calls++;
  *   }
  * }
  * 
  * const myClass = new MyClass();
+ * const myClass2 = new MyClass();
  * 
  * myClass.fn();
  * myClass.fn();
  * myClass.fn();
  * myClass.fn();
+
+ * myClass2.fn();
  * 
- * calls === 2; // => true
+ * calls === 3; // => true
  */
-export const Before: (n: number) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(new DecoratorConfig(before, PostValueApplicator));
+export const BeforeAll: (n: number) => LodashMethodDecorator = DecoratorFactory.createDecorator(new DecoratorConfig(before, PostValueApplicator));

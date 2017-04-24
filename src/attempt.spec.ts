@@ -5,12 +5,12 @@ import { Attempt } from './attempt';
 describe('attempt', () => {
   it('should catch the error and return it', () => {
     class MyClass {
-      @Attempt
+      @Attempt()
       fn() {
         throw new Error();
       }
 
-      @Attempt
+      @Attempt()
       fn2() {
         return 10;
       }

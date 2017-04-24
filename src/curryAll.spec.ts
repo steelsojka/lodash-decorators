@@ -1,11 +1,11 @@
 import { expect } from 'chai';
 
-import { Curry } from './curry';
+import { CurryAll } from './curryAll';
 
-describe('curry', () => {
+describe('curryAll', () => {
   it('should curry the method with default arity', () => {
     class MyClass {
-      @Curry()
+      @CurryAll()
       add(a: any, b?: any) {
         return a + b;
       }
@@ -20,7 +20,7 @@ describe('curry', () => {
 
   it('should curry the method with fixed arity', () => {
     class MyClass {
-      @Curry(2)
+      @CurryAll(2)
       add(a: any, b?: any, c?: any) {
         return a + b * c;
       }
@@ -33,19 +33,17 @@ describe('curry', () => {
     expect(add5(10, 2)).to.equal(25);
   });
 
-  it('should retain the class context', () => {
+  it('should not retain the class context', () => {
     class MyClass {
-      value = 10;
-
-      @Curry()
+      @CurryAll()
       add(a: any, b?: any): any {
-        return (a + b) * this.value;
+        expect(this).to.equal(global);
       }
     }
 
     const myClass = new MyClass();
     const add5 = myClass.add(5);
 
-    expect(add5(2)).to.equal(70);
+    add5(10);
   });
 });
