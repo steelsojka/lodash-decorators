@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { spy } from 'sinon';
 
-import { Delay } from './Delay';
+import { Delay } from './delay';
 
 describe('delay', () => {
   it('should delay the method', done => {
