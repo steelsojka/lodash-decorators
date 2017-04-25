@@ -4,7 +4,6 @@ export * from './PartialApplicator';
 export * from './PartialedApplicator';
 export * from './PostValueApplicator';
 export * from './PreValueApplicator';
-export * from './ReplaceApplicator';
 export * from './WrapApplicator';
 export * from './BindApplicator';
 export * from './InvokeApplicator';

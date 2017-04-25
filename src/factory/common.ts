@@ -9,7 +9,9 @@ export type ResolvableFunction = string|Function;
 export interface InstanceChainContext {
   getter?: boolean;
   setter?: boolean;
-  value: Function;
+  method?: boolean;
+  property?: boolean;
+  value: any;
 }
 
 export const InstanceChainMap = new CompositeKeyWeakMap<Function[]>();

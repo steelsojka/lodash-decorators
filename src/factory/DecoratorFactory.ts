@@ -13,14 +13,6 @@ import { copyMetadata, bind } from '../utils';
 export type GenericDecorator = (...args: any[]) => LodashDecorator;
 
 export class InternalDecoratorFactory {
-  createPropertyDecorator(config: DecoratorConfig): (...args: any[]) => any {
-    return (...args: any[]) => {
-      return (target: Object, name: string, _descriptor?: PropertyDescriptor) => {
-
-      };
-    };
-  }
-
   createDecorator(config: DecoratorConfig): GenericDecorator {
     const { applicator:token } = config;
     const applicator = ApplicatorFactory.get(token);
@@ -40,7 +32,7 @@ export class InternalDecoratorFactory {
           instanceChain.push((fn: Function, instance: any, context: InstanceChainContext) => {
             let protoFn = ProtoInstanceMap.get([ target, name ]);
 
-            if (context.getter && !config.getter || context.setter && !config.setter) {
+            if (!this._isApplicable(context, config)) {
               return fn;
             }
 
@@ -83,9 +75,11 @@ export class InternalDecoratorFactory {
         const fnChain = InstanceChainMap.get([ target, name ]) || [];
         const isGetter = isFirstInstance && isFunction(get);
         const isSetter = isFirstInstance && isFunction(set);
+        const isMethod = isFirstInstance && isFunction(value);
+        const isProperty = isFirstInstance && !isGetter && !isSetter && !isMethod;
 
         fnChain.push((fn: Function, instance: any, context: InstanceChainContext) => {
-          if (context.getter && !config.getter || context.setter && !config.setter) {
+          if (!this._isApplicable(context, config)) {
             return fn;
           }
 
@@ -105,6 +99,10 @@ export class InternalDecoratorFactory {
           return descriptor;
         }
 
+        const applyChain = (fn: any, context: InstanceChainContext, instance: any) => {
+          return fnChain.reduce((result: Function, next: Function) => next(result, instance, context), fn);
+        };
+
         const applyDecorator = (instance: any) => {
           let getter = get || undefined;
           let setter = set || undefined;
@@ -112,11 +110,11 @@ export class InternalDecoratorFactory {
           if (isGetter || isSetter) {
             // If we have a getter apply the decorators to the getter and assign it to the instance.
             if (isGetter) {
-              getter = fnChain.reduce((result: Function, fn: Function) => fn(result, instance, { start: get, getter: true }), get);
+              getter = applyChain(get, { value: get, getter: true }, instance);
             } 
 
             if (isSetter) {
-              setter = fnChain.reduce((result: Function, fn: Function) => fn(result, instance, { start: set, setter: true }), set);
+              setter = applyChain(set, { value: set, setter: true }, instance);
             } 
 
             Object.defineProperty(instance, name, {
@@ -125,8 +123,17 @@ export class InternalDecoratorFactory {
               get: getter,
               set: setter
             });
+          } else if (isMethod) {
+            const newFn = applyChain(value as Function, { value, method: true }, instance);
+
+            Object.defineProperty(instance, name, {
+              writable,
+              enumerable,
+              configurable,
+              value: newFn
+            });
           } else {
-            const newFn = fnChain.reduce((result: Function, fn: Function) => fn(result, instance, { start: value }), value);
+            const newFn = applyChain(value, { value, property: true }, instance);
 
             Object.defineProperty(instance, name, {
               writable,
@@ -137,7 +144,7 @@ export class InternalDecoratorFactory {
           }
         }
 
-        if (isFunction(value)) {
+        if (isMethod || isProperty) {
           delete descriptor.value;
           delete descriptor.writable;
         }
@@ -147,7 +154,11 @@ export class InternalDecoratorFactory {
 
           const descriptor = Object.getOwnPropertyDescriptor(this, name);
 
-          return descriptor.get ? descriptor.get.call(this) : descriptor.value;
+          if (descriptor.get) {
+            return descriptor.get.call(this);
+          }
+
+          return descriptor.value;
         };
 
         descriptor.set = function(value) {
@@ -165,12 +176,21 @@ export class InternalDecoratorFactory {
     };
   }
 
+  private _isApplicable(context: InstanceChainContext, config: DecoratorConfig): boolean {
+   return !Boolean(
+     context.getter && !config.getter 
+      || context.setter && !config.setter
+      || context.method && !config.method
+      || context.property && !config.property
+   );
+  }
+
   private _resolveDescriptor(target: Object, name: string, descriptor?: PropertyDescriptor): PropertyDescriptor {
     if (descriptor) {
       return descriptor;
     }
 
-    return Object.getOwnPropertyDescriptor(target, name);
+    return Object.getOwnPropertyDescriptor(target, name) || {};
   }
 }
 
