@@ -18,6 +18,8 @@ import { PreValueApplicator } from './applicators';
  * 
  * myClass.fn(1, 2, 3, 4); // => [ 1 ]
  */
-export const Ary: (n: number) => LodashMethodDecorator = DecoratorFactory.createDecorator(new DecoratorConfig(ary, PreValueApplicator));
+export const Ary: (n: number) => LodashMethodDecorator = DecoratorFactory.createDecorator(
+  new DecoratorConfig(ary, PreValueApplicator)
+);
 export { Ary as ary };
 export default Ary;

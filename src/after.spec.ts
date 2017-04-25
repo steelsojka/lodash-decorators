@@ -7,9 +7,11 @@ describe('after', () => {
     let calls = 0;
 
     class MyClass {
+      props: number[] = [];
+
       @After(2)
-      get prop() {
-        return 10;
+      set prop(val: number) {
+        this.props.push(val);
       }
 
       @After(3)
@@ -35,7 +37,10 @@ describe('after', () => {
 
     expect(calls, 'multiple class').to.equal(4);
 
-    expect(myClass.prop).to.be.undefined;
-    expect(myClass.prop).to.equal(10);
+    myClass.prop = 50
+    myClass.prop = 100
+
+    expect(myClass.props.length, 'setter length').to.equal(1);
+    expect(myClass.props[0], 'setter value').to.equal(100);
   });
 });

@@ -15,11 +15,15 @@
       "type": "node",
       "request": "launch",
       "name": "Mocha",
-      "program": "${workspaceRoot}/node_modules/.bin/mocha",
-      "args": ["--opts", "mocha.opts"],
+      "trace": "all",
+      "program": "${workspaceRoot}/node_modules/.bin/_mocha",
+      "args": ["--opts", "mocha.opts", "--no-timeouts"],
+      "runtimeExecutable": null,
       "sourceMaps": true,
-      "stopOnEntry": true,
-      "outFiles": []
+      "preLaunchTask": "build:test",
+      "outFiles": [
+        "${workspaceRoot}/test/**/*.js"
+      ]
     }
   ]
 }

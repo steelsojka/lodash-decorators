@@ -1,10 +1,15 @@
 import { memoize } from 'lodash';
 
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
-import { PreValueApplicator } from './applicators';
+import { 
+  DecoratorConfig, 
+  DecoratorFactory, 
+  LodashMethodDecorator, 
+  ResolvableFunction
+} from './factory';
+import { MemoizeApplicator } from './applicators';
 
-export const Memoize: (resolver?: Function) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(memoize, PreValueApplicator, { getter: true })
+export const Memoize: (resolver?: ResolvableFunction) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(
+  new DecoratorConfig(memoize, MemoizeApplicator)
 );
 export { Memoize as memoize };
 export default Memoize;
