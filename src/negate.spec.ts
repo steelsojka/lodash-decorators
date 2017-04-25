@@ -5,7 +5,7 @@ import { Negate } from './negate';
 describe('negate', () => {
   it('should inverse the result of the function', () => {
     class MyClass {
-      @Negate
+      @Negate()
       fn() {
         return true;
       }

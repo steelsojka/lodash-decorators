@@ -13,6 +13,14 @@ import { copyMetadata, bind } from '../utils';
 export type GenericDecorator = (...args: any[]) => LodashDecorator;
 
 export class InternalDecoratorFactory {
+  createPropertyDecorator(config: DecoratorConfig): (...args: any[]) => any {
+    return (...args: any[]) => {
+      return (target: Object, name: string, _descriptor?: PropertyDescriptor) => {
+
+      };
+    };
+  }
+
   createDecorator(config: DecoratorConfig): GenericDecorator {
     const { applicator:token } = config;
     const applicator = ApplicatorFactory.get(token);

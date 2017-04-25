@@ -1,8 +1,10 @@
 import { once } from 'lodash';
 
-import { DecoratorConfig, DecoratorFactory } from './factory';
+import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { PreValueApplicator } from './applicators';
 
-export const Once = DecoratorFactory.createInstanceDecorator(new DecoratorConfig(once, PreValueApplicator, { setter: true }))();
+export const Once: () => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(
+  new DecoratorConfig(once, PreValueApplicator, { setter: true })
+);
 export { Once as once };
 export default Once;

@@ -4,6 +4,7 @@ export interface DecoratorConfigOptions {
   bound?: boolean;
   setter?: boolean;
   getter?: boolean;
+  property?: boolean;
 }
 
 export class DecoratorConfig {
@@ -23,5 +24,9 @@ export class DecoratorConfig {
 
   get getter(): boolean {
     return this.options.getter != null ? this.options.getter : false;
+  }
+
+  get property(): boolean {
+    return this.options.property != null ? this.options.property : false;
   }
 }

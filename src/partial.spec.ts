@@ -1,13 +1,13 @@
 import { expect } from 'chai';
 
-import { Once } from './once';
+import { Partial } from './partial';
 
-describe('once', () => {
+describe('partial', () => {
   it('should invoke the method only once', () => {
     let calls = 0;
 
     class MyClass {
-      @Once()
+      @Partial()
       fn() {
         calls++;  
       }

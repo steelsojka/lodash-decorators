@@ -56,44 +56,53 @@ They can also be imported directly.
 
 `import Debounce from 'lodash-decorators/debounce';`
 
-### With Arguments
+### Decorators
 
-Many of the lodash decorators can contain arguments.
+These decorators are included in the package. These are also exported as lowercase for those who prefer lowercase decorators.
 
-- `Debounce`
-- `DebounceAll`
-- `Throttle`
-- `ThrottleAll`
-- `Memoize`
-- `MemoizeAll`
 - `After`
 - `AfterAll`
+- `Ary`
+- `Attempt`
 - `Before`
 - `BeforeAll`
-- `Ary`
+- `Bind`
+- `BindAll`
 - `Curry`
 - `CurryAll`
 - `CurryRight`
 - `CurryRightAll`
-- `Rest`
-- `Partial`
-- `PartialRight`
-- `Wrap`
+- `Debounce`
+- `DebounceAll`
+- `Defer`
+- `Delay`
+- `Flip`
 - `Flow`
 - `FlowRight`
-- `Delay`
-- `Defer`
-- `Bind`
-- `BindAll`
-- `OverArgs`
-- `Rearg`
+- `Memoize`
+- `MemoizeAll`
 - `Mixin`
-- `Attempt`
+- `Negate`
+- `Once`
+- `OnceAll`
+- `OverArgs`
+- `Partial`
+- `PartialRight`
+- `Rearg`
+- `Rest`
+- `Spread`
+- `Tap`
+- `Throttle`
+- `ThrottleAll`
+- `ThrottleGetter`
+- `ThrottleSetter`
+- `Unary`
+- `Wrap`
 
 #### Example
 
 ```javascript
-import { After, Debounce, Memoize, Curry } from 'lodash-decorators'
+import { Debounce, Memoize } from 'lodash-decorators';
 
 class Person {
   constructor(firstName, lastName) {
@@ -101,53 +110,14 @@ class Person {
     this.lastName = lastName;
   }
 
-  @After(3)
   @Debounce(100)
-  getFullName() {
-    return `${this.firstName} ${this.lastName}`
+  save(date) {
+    return this.httpService.post(data);
   }
 
-  @Curry(2)
-  @Memoize()
-  doSomeHeavyProcessing(arg1, arg2) {
-  }
+  @Memoize(item => item.id)
+  doSomeHeavyProcessing(arg1, arg2) {}
 }
-```
-
-### Without Arguments
-
-Some decorators don't take any arguments at all.
-
-- `Once`
-- `Spread`
-- `Negate`
-- `Tap`
-
-#### Example
-
-```javascript
-import { Once } from 'lodash-decorators'
-
-class person {
-  constructor(firstname, lastname) {
-    this.firstname = firstname;
-    this.lastname = lastname;
-  }
-
-  @Once
-  getfullname() {
-    return `${this.firstname} ${this.lastname}`
-  }
-
-  @Tap
-  popIt(list) {
-    list.pop();
-  }
-}
-
-const person = new Person();
-
-person.popIt([1, 2, 3]); //=> [1, 2]
 ```
 
 ### Partials
@@ -244,6 +214,7 @@ decorators are applied at the instance level.
 - `Before`
 - `Curry`
 - `CurryRight`
+- `Once`
 
 ### Mixin
 
@@ -382,7 +353,7 @@ class MyClass {
 }
 ```
 
-This keeps the API cleaner and doesn't require the developer to know how the decorator applies to the descriptor.
+This keeps the API cleaner and doesn't require the developer to know how the decorator applies to the descriptor. Some decorators have explicit version that apply to either getters of setters, such as `ThrottleGetter` and `ThrottleSetter`.
 
 #### No longer force instance decorator onto prototype
 

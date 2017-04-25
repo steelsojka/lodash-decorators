@@ -28,7 +28,7 @@ describe('bind', () => {
     let context;
 
     class MyClass {
-      @Once
+      @Once()
       @Bind()
       fn() {
         context = this;

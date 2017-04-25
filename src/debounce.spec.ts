@@ -53,4 +53,16 @@ describe('debounce', () => {
       done();
     }, 11);
   });
+
+  it('should contain the flush and cancel methods', () => {
+    class MyClass {
+      @Debounce(10)
+      fn() {}
+    }
+
+    const myClass = new MyClass();
+
+    expect((<any>myClass.fn).cancel).to.be.a('function');
+    expect((<any>myClass.fn).flush).to.be.a('function');
+  });
 });

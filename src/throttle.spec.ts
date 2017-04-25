@@ -25,7 +25,7 @@ describe('throttle', () => {
     setTimeout(() => {
       expect(_spy.callCount).to.equal(2);
       done();
-    }, 11);
+    }, 20);
   });
 
   it('should debounce the property setter', done => {
@@ -78,5 +78,17 @@ describe('throttle', () => {
       expect(myClass.value).to.equal(2);
       done();
     }, 11);
+  });
+
+  it('should contain the cancel and flush methods', () => {
+    class MyClass {
+      @Throttle(10)
+      fn() {}
+    }
+
+    const myClass = new MyClass();
+
+    expect((<any>myClass.fn).cancel).to.be.a('function');
+    expect((<any>myClass.fn).flush).to.be.a('function');
   });
 });
