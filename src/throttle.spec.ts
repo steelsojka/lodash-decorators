@@ -4,13 +4,12 @@ import { spy } from 'sinon';
 import { Throttle, ThrottleSetter, ThrottleGetter } from './throttle';
 
 describe('throttle', () => {
-  it.only('should throttle the method', done => {
+  it('should throttle the method', done => {
     let _spy = spy();
 
     class MyClass {
       @Throttle(10)
       fn(n: number) {
-        console.log(n);
         _spy();
       }
     }
@@ -21,9 +20,10 @@ describe('throttle', () => {
     myClass.fn(2);
 
     setTimeout(() => myClass.fn(3), 1);
+    setTimeout(() => myClass.fn(4), 2);
 
     setTimeout(() => {
-      expect(_spy.callCount).to.equal(1);
+      expect(_spy.callCount).to.equal(2);
       done();
     }, 11);
   });
@@ -49,10 +49,10 @@ describe('throttle', () => {
 
     setTimeout(() => myClass.value = 20, 5);
 
-    expect(myClass.value).to.equal(100);
+    expect(myClass.value).to.equal(5);
 
     setTimeout(() => {
-      expect(myClass.value).to.equal(5);
+      expect(myClass.value).to.equal(20);
       done();
     }, 11);
   });
@@ -63,7 +63,7 @@ describe('throttle', () => {
 
       @ThrottleGetter(10)
       get value(): number {
-        return this._value++;
+        return ++this._value;
       }
     }
 
