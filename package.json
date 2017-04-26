@@ -7,16 +7,26 @@
     "node": ">=0.12.0"
   },
   "scripts": {
+    "clean": "npm run build:clean; npm run build:docs:clean; npm run test:clean",
     "pretest": "npm run build:test",
     "test": "mocha --opts mocha.opts",
     "test:clean": "del test",
     "posttest": "npm run test:clean",
     "prebuild": "npm run build:clean",
     "prebuild:test": "npm run test:clean",
+    "prebuild:docs": "npm run build:docs:clean",
     "build:clean": "del '*.js' '*.js.map' '*.d.ts' applicators factory utils",
+    "build:docs:clean": "del buildDocs",
     "build": "tsc -p tsconfig.build.json",
     "build:test": "tsc -p tsconfig.test.json",
-    "readme": "doctoc ./README.md"
+    "build:docs": "tsc -p tsconfig.docs.json",
+    "predocs": "npm run build:docs",
+    "postdocs": "npm run build:docs:clean",
+    "docs": "del docs && esdoc",
+    "docs:serve": "http-server ./docs",
+    "docs:publish": "git subtree push --prefix docs origin gh-pages",
+    "readme": "doctoc ./README.md",
+    "release": "npm run build && npm run docs && npm run readme"
   },
   "main": "index.js",
   "keywords": [
@@ -43,12 +53,15 @@
     "chai": "~2.2.0",
     "del-cli": "^0.2.1",
     "doctoc": "^1.3.0",
+    "esdoc": "^0.5.2",
+    "http-server": "^0.9.0",
     "mocha": "^3.3.0",
     "sinon": "~1.14.1",
     "ts-node": "^3.0.2",
     "typescript": "^2.2.2"
   },
   "dependencies": {
-    "lodash": "^4.0.0"
+    "lodash": "^4.0.0",
+    "tslib": "^1.6.1"
   }
 }

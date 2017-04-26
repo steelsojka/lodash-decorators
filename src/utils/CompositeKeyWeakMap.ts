@@ -1,5 +1,12 @@
 import { isUndefined } from 'lodash';
 
+/**
+ * A map for weakly holding nested references.
+ * @private
+ * @export
+ * @class CompositeKeyWeakMap
+ * @template T 
+ */
 export class CompositeKeyWeakMap<T> {
   private _weakMap = new WeakMap<any, any>();
 

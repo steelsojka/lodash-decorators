@@ -1,0 +1,12 @@
+{
+  "source": "./buildDocs",
+  "destination": "./docs",
+  "title": "Lodash Decorators Documentation",
+  "access": [ "public" ],
+  "excludes": [ ".*\\.spec\\.js" ],
+  "test": {
+    "type": "mocha",
+    "source": "./buildDocs",
+    "includes": [ ".*\\.spec\\.js" ]
+  }
+}

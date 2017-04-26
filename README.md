@@ -1,4 +1,5 @@
 # lodash-decorators
+
 Method Decorators for lodash functions.
 
 [![Build Status](https://travis-ci.org/steelsojka/lodash-decorators.svg)](https://travis-ci.org/steelsojka/lodash-decorators)
@@ -6,26 +7,24 @@ Method Decorators for lodash functions.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [Install](#install)
 - [Usage](#usage)
-  - [With Arguments](#with-arguments)
+  - [Decorators](#decorators)
     - [Example](#example)
-  - [Without Arguments](#without-arguments)
-    - [Example](#example-1)
   - [Partials](#partials)
-    - [Example](#example-2)
+    - [Example](#example-1)
   - [Composition](#composition)
-    - [Example](#example-3)
+    - [Example](#example-2)
   - [Instance Decorators](#instance-decorators)
   - [Mixin](#mixin)
-    - [Example](#example-4)
+    - [Example](#example-3)
   - [Attempt](#attempt)
-    - [Example](#example-5)
+    - [Example](#example-4)
   - [Bind](#bind)
+    - [Example](#example-5)
     - [Example](#example-6)
-    - [Example](#example-7)
   - [v4 Breaking Changes](#v4-breaking-changes)
     - [Not all decorators can be applied to or forced on getters/setters.](#not-all-decorators-can-be-applied-to-or-forced-on-getterssetters)
     - [No longer force instance decorator onto prototype](#no-longer-force-instance-decorator-onto-prototype)
@@ -60,44 +59,44 @@ They can also be imported directly.
 
 These decorators are included in the package. These are also exported as lowercase for those who prefer lowercase decorators.
 
-- `After`
-- `AfterAll`
-- `Ary`
-- `Attempt`
-- `Before`
-- `BeforeAll`
-- `Bind`
-- `BindAll`
-- `Curry`
-- `CurryAll`
-- `CurryRight`
-- `CurryRightAll`
-- `Debounce`
-- `DebounceAll`
-- `Defer`
-- `Delay`
-- `Flip`
-- `Flow`
-- `FlowRight`
-- `Memoize`
-- `MemoizeAll`
-- `Mixin`
-- `Negate`
-- `Once`
-- `OnceAll`
-- `OverArgs`
-- `Partial`
-- `PartialRight`
-- `Rearg`
-- `Rest`
-- `Spread`
-- `Tap`
-- `Throttle`
-- `ThrottleAll`
-- `ThrottleGetter`
-- `ThrottleSetter`
-- `Unary`
-- `Wrap`
+-   `After`
+-   `AfterAll`
+-   `Ary`
+-   `Attempt`
+-   `Before`
+-   `BeforeAll`
+-   `Bind`
+-   `BindAll`
+-   `Curry`
+-   `CurryAll`
+-   `CurryRight`
+-   `CurryRightAll`
+-   `Debounce`
+-   `DebounceAll`
+-   `Defer`
+-   `Delay`
+-   `Flip`
+-   `Flow`
+-   `FlowRight`
+-   `Memoize`
+-   `MemoizeAll`
+-   `Mixin`
+-   `Negate`
+-   `Once`
+-   `OnceAll`
+-   `OverArgs`
+-   `Partial`
+-   `PartialRight`
+-   `Rearg`
+-   `Rest`
+-   `Spread`
+-   `Tap`
+-   `Throttle`
+-   `ThrottleAll`
+-   `ThrottleGetter`
+-   `ThrottleSetter`
+-   `Unary`
+-   `Wrap`
 
 #### Example
 
@@ -125,9 +124,9 @@ class Person {
 Some decorators work slightly differently than you would expect
 them to work than lodash.
 
-- `Partial`
-- `PartialRight`
-- `Wrap`
+-   `Partial`
+-   `PartialRight`
+-   `Wrap`
 
 These can take a `Function` as their first argument or a `String`.
 If the argument is a `String` then a `Function` is resolved from
@@ -207,14 +206,14 @@ of the class you are working with, but with some of these
 decorators that is not the desired behavour. These
 decorators are applied at the instance level.
 
-- `Debounce`
-- `Throttle`
-- `Memoize`
-- `After`
-- `Before`
-- `Curry`
-- `CurryRight`
-- `Once`
+-   `Debounce`
+-   `Throttle`
+-   `Memoize`
+-   `After`
+-   `Before`
+-   `Curry`
+-   `CurryRight`
+-   `Once`
 
 ### Mixin
 
@@ -371,19 +370,16 @@ We want to keep lodash decorators focused specifically on lodash specific functi
 
 #### Other breaking changes
 
-- `Attempt` now takes an argument to line up with lodash API.
-- `Bind` used on a class no longer delegates to `BindAll`. Use `BindAll` instead.
+-   `Attempt` now takes an argument to line up with lodash API.
+-   `Bind` used on a class no longer delegates to `BindAll`. Use `BindAll` instead.
 
 ### v4 Improvements
 
-- Instance and prototype decorators can be in any order.
-- Ships with TypeScript typings.
-- Predictable performance.
-- Improvements to Bind decorator.
-- Improved API for decorator factory.
-- More and better unit tests.
-- Better performance with instance decorators.
-- Single imports with `import { Debounce } from 'lodash-decorators/debounce'`;
-
-Author: Steven Sojka
-MIT Licensed
+-   Instance and prototype decorators can be in any order.
+-   Ships with TypeScript typings.
+-   Predictable performance.
+-   Improvements to Bind decorator.
+-   Improved API for decorator factory.
+-   More and better unit tests.
+-   Better performance with instance decorators.
+-   Single imports with `import { Debounce } from 'lodash-decorators/debounce'`;
