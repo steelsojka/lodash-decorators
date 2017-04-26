@@ -25,7 +25,7 @@ import { PostValueApplicator } from './applicators';
  * myClass2.fn(); // => 10
  */
 export const AfterAll: (n: number) => LodashDecorator = DecoratorFactory.createDecorator(
-  new DecoratorConfig(after, PostValueApplicator, { setter: true })
+  new DecoratorConfig(after, new PostValueApplicator(), { setter: true })
 );
 export { AfterAll as afterAll };
 export default AfterAll;

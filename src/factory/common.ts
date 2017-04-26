@@ -15,4 +15,3 @@ export interface InstanceChainContext {
 }
 
 export const InstanceChainMap = new CompositeKeyWeakMap<Function[]>();
-export const ProtoInstanceMap = new CompositeKeyWeakMap<Function>();

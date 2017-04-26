@@ -5,15 +5,15 @@ import { PreValueApplicator } from './applicators';
 import { ThrottleOptions } from './shared';
 
 export const Throttle: (wait?: number, options?: ThrottleOptions) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(throttle, PreValueApplicator, { setter: true, getter: true })
+  new DecoratorConfig(throttle, new PreValueApplicator(), { setter: true, getter: true })
 );
 
 export const ThrottleGetter: (wait?: number, options?: ThrottleOptions) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(throttle, PreValueApplicator, { getter: true })
+  new DecoratorConfig(throttle, new PreValueApplicator(), { getter: true })
 );
 
 export const ThrottleSetter: (wait?: number, options?: ThrottleOptions) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(throttle, PreValueApplicator, { setter: true })
+  new DecoratorConfig(throttle, new PreValueApplicator(), { setter: true })
 );
 
 export { Throttle as throttle };

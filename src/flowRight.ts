@@ -3,11 +3,13 @@ import { flowRight } from 'lodash';
 import {
   DecoratorConfig,
   DecoratorFactory,
-  LodashMethodDecorator,
+  LodashDecorator,
   ResolvableFunction
 } from './factory';
 import { ComposeApplicator } from './applicators';
 
-export const FlowRight: (...fns: ResolvableFunction[]) => LodashMethodDecorator = DecoratorFactory.createDecorator(new DecoratorConfig(flowRight, ComposeApplicator));
+export const FlowRight: (...fns: ResolvableFunction[]) => LodashDecorator = DecoratorFactory.createInstanceDecorator(
+  new DecoratorConfig(flowRight, new ComposeApplicator({ post: false }), { property: true })
+);
 export { FlowRight as flowRight };
 export default FlowRight;

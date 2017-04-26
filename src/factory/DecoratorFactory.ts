@@ -1,10 +1,8 @@
 import { isFunction } from 'lodash';
 
-import { ApplicatorFactory } from './ApplicatorFactory';
 import { 
   InstanceChainMap, 
   LodashDecorator,
-  ProtoInstanceMap,
   InstanceChainContext
 } from './common';
 import { DecoratorConfig } from './DecoratorConfig';
@@ -14,48 +12,23 @@ export type GenericDecorator = (...args: any[]) => LodashDecorator;
 
 export class InternalDecoratorFactory {
   createDecorator(config: DecoratorConfig): GenericDecorator {
-    const { applicator:token } = config;
-    const applicator = ApplicatorFactory.get(token);
+    const { applicator } = config;
 
     return (...args: any[]): LodashDecorator => {
       return (target: Object, name: string, _descriptor?: PropertyDescriptor): PropertyDescriptor => {
         const descriptor = this._resolveDescriptor(target, name, _descriptor);
         const { value, get, set } = descriptor;
 
-        // If this decorator is being applied after an instance decorator we
-        // need to create the applied method only once and add it to the
-        // instance decorator chain so each instance uses the same decorated method
-        // while leaving instance decorators to the instances.
-        if (InstanceChainMap.has([ target, name ])) {
-          const instanceChain = InstanceChainMap.get([ target, name ]);
-
-          instanceChain.push((fn: Function, instance: any, context: InstanceChainContext) => {
-            let protoFn = ProtoInstanceMap.get([ target, name ]);
-
-            if (!this._isApplicable(context, config)) {
-              return fn;
-            }
-
-            if (!protoFn) {
-              protoFn = applicator.apply({ config, target, value: context.value, args });
-              ProtoInstanceMap.set([ target, name ], protoFn);
-            }
-
-            return copyMetadata(function(...args: any[]): any {
-              return protoFn.apply(this, fn.apply(this, args));
-            }, fn);
-          });
-
-          // Don't change the descriptor since a getter/setter is set from an instance decorator.
-          return descriptor;
-        }
-
-        if (isFunction(value)) {
-          descriptor.value = copyMetadata(applicator.apply({ config, target, value, args }), value);
-        } else if (isFunction(get) && config.getter) {
-          descriptor.get = copyMetadata(applicator.apply({ config, target, value: get, args }), get);
-        } else if (isFunction(set) && config.setter) {
-          descriptor.set = copyMetadata(applicator.apply({ config, target, value: set, args }), get);
+        // If this decorator is being applied after an instance decorator we simply ignore it
+        // as we can't apply it correctly.
+        if (!InstanceChainMap.has([ target, name ])) {
+          if (isFunction(value)) {
+            descriptor.value = copyMetadata(applicator.apply({ config, target, value, args }), value);
+          } else if (isFunction(get) && config.getter) {
+            descriptor.get = copyMetadata(applicator.apply({ config, target, value: get, args }), get);
+          } else if (isFunction(set) && config.setter) {
+            descriptor.set = copyMetadata(applicator.apply({ config, target, value: set, args }), get);
+          }
         }
 
         return descriptor;
@@ -64,8 +37,7 @@ export class InternalDecoratorFactory {
   }
 
   createInstanceDecorator(config: DecoratorConfig): GenericDecorator {
-    const { applicator:token, bound } = config;
-    const applicator = ApplicatorFactory.get(token);
+    const { applicator, bound } = config;
 
     return (...args: any[]): LodashDecorator => {
       return (target: Object, name: string, _descriptor?: PropertyDescriptor): PropertyDescriptor => {
@@ -123,17 +95,10 @@ export class InternalDecoratorFactory {
               get: getter,
               set: setter
             });
-          } else if (isMethod) {
-            const newFn = applyChain(value as Function, { value, method: true }, instance);
-
-            Object.defineProperty(instance, name, {
-              writable,
-              enumerable,
-              configurable,
-              value: newFn
-            });
-          } else {
-            const newFn = applyChain(value, { value, property: true }, instance);
+          } else if (isMethod || isProperty) {
+            const newFn = isMethod 
+              ? applyChain(value, { value, method: true }, instance) 
+              : applyChain(value, { value, property: true }, instance);
 
             Object.defineProperty(instance, name, {
               writable,
@@ -168,6 +133,8 @@ export class InternalDecoratorFactory {
 
           if (descriptor.set) {
             descriptor.set.call(this, value);
+          } else if (isProperty || isMethod) {
+            this[name] = value;
           }
         };
 

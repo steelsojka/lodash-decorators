@@ -4,7 +4,7 @@ import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './fact
 import { PreValueApplicator } from './applicators';
 
 export const Spread: (start?: number) => LodashMethodDecorator = DecoratorFactory.createDecorator(
-  new DecoratorConfig(spread, PreValueApplicator)
+  new DecoratorConfig(spread, new PreValueApplicator())
 );
 export { Spread as spread };
 export default Spread;

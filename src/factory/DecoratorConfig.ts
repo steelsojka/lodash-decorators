@@ -1,4 +1,4 @@
-import { ApplicatorToken } from './common';
+import { Applicator } from '../applicators';
 
 export interface DecoratorConfigOptions {
   bound?: boolean;
@@ -11,7 +11,7 @@ export interface DecoratorConfigOptions {
 export class DecoratorConfig {
   constructor(
     public readonly execute: Function,
-    public readonly applicator: ApplicatorToken,
+    public readonly applicator: Applicator,
     public readonly options: DecoratorConfigOptions = {}
   ) {}
 

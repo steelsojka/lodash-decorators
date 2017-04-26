@@ -4,7 +4,7 @@ import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './fact
 import { PreValueApplicator } from './applicators';
 
 export const OverArgs: (...transforms: Function[]) => LodashMethodDecorator = DecoratorFactory.createDecorator(
-  new DecoratorConfig(overArgs, PreValueApplicator, { setter: true })
+  new DecoratorConfig(overArgs, new PreValueApplicator(), { setter: true })
 );
 export { OverArgs as overArgs };
 export default OverArgs;

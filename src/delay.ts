@@ -10,7 +10,7 @@ export const Delay: (wait: number, ...args: any[]) => LodashMethodDecorator = De
         return delay(value.bind(this), wait, ...invokeArgs, ...args);
       }
     }, 
-    PreValueApplicator, 
+    new PreValueApplicator(), 
     { setter: true }
   )
 );

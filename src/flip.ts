@@ -4,7 +4,7 @@ import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './fact
 import { PreValueApplicator } from './applicators';
 
 export const Flip: () => LodashMethodDecorator = DecoratorFactory.createDecorator(
-  new DecoratorConfig(flip, PreValueApplicator)
+  new DecoratorConfig(flip, new PreValueApplicator())
 );
 export { Flip as flip };
 export default Flip;

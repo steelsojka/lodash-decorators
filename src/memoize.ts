@@ -9,7 +9,7 @@ import {
 import { MemoizeApplicator } from './applicators';
 
 export const Memoize: (resolver?: ResolvableFunction) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(memoize, MemoizeApplicator)
+  new DecoratorConfig(memoize, new MemoizeApplicator())
 );
 export { Memoize as memoize };
 export default Memoize;

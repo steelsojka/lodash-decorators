@@ -4,7 +4,7 @@ import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './fact
 import { PreValueApplicator } from './applicators';
 
 export const Unary: () => LodashMethodDecorator = DecoratorFactory.createDecorator(
-  new DecoratorConfig(unary, PreValueApplicator)
+  new DecoratorConfig(unary, new PreValueApplicator())
 );
 export { Unary as unary };
 export default Unary;

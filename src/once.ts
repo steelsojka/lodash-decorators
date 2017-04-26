@@ -4,7 +4,7 @@ import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './fact
 import { PreValueApplicator } from './applicators';
 
 export const Once: () => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(once, PreValueApplicator, { setter: true })
+  new DecoratorConfig(once, new PreValueApplicator(), { setter: true })
 );
 export { Once as once };
 export default Once;

@@ -41,7 +41,7 @@ import { DebounceOptions } from './shared';
  * }, 11);
  */
 export const DebounceAll: (wait?: number, options?: DebounceOptions) => LodashMethodDecorator = DecoratorFactory.createDecorator(
-  new DecoratorConfig(debounce, PreValueApplicator)
+  new DecoratorConfig(debounce, new PreValueApplicator())
 );
 export { DebounceAll as debounceAll };
 export default DebounceAll;

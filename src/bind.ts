@@ -28,7 +28,7 @@ import { BindApplicator } from './applicators';
  * myClass.unbound.call(null); // => null
  */
 export const Bind: (...partials: any[]) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(bind, BindApplicator)
+  new DecoratorConfig(bind, new BindApplicator())
 );
 export { Bind as bind };
 export default Bind;

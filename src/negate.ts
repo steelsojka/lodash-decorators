@@ -4,7 +4,7 @@ import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './fact
 import { PreValueApplicator } from './applicators';
 
 export const Negate: () => LodashMethodDecorator = DecoratorFactory.createDecorator(
-  new DecoratorConfig(negate, PreValueApplicator)
+  new DecoratorConfig(negate, new PreValueApplicator())
 );
 export { Negate as negate };
 export default Negate;

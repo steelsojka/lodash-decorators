@@ -20,7 +20,7 @@ import { PostValueApplicator } from './applicators';
  * myClass.fn(); // => 10
  */
 export const After: (n: number) => LodashDecorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(after, PostValueApplicator, { setter: true })
+  new DecoratorConfig(after, new PostValueApplicator(), { setter: true })
 );
 export { After as after };
 export default After;

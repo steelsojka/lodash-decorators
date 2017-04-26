@@ -7,7 +7,7 @@ import { returnAtIndex } from './utils';
  * the decorated functions return value.
  */
 export const Tap: () => LodashMethodDecorator  = DecoratorFactory.createDecorator(
-  new DecoratorConfig((fn: Function) => returnAtIndex(fn, 0), PreValueApplicator)
+  new DecoratorConfig((fn: Function) => returnAtIndex(fn, 0), new PreValueApplicator())
 );
 export { Tap as tap };
 export default Tap;

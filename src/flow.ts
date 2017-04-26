@@ -4,12 +4,12 @@ import {
   DecoratorConfig, 
   DecoratorFactory,
   ResolvableFunction,
-  LodashMethodDecorator
+  LodashDecorator
 } from './factory';
 import { ComposeApplicator } from './applicators';
 
-export const Flow: (...fns: ResolvableFunction[]) => LodashMethodDecorator = DecoratorFactory.createDecorator(
-  new DecoratorConfig(flow, ComposeApplicator)
+export const Flow: (...fns: ResolvableFunction[]) => LodashDecorator = DecoratorFactory.createInstanceDecorator(
+  new DecoratorConfig(flow, new ComposeApplicator({ post: true }), { property: true })
 );
 export { Flow as flow };
 export default Flow;
