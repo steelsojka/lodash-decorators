@@ -1,12 +1,11 @@
 # lodash-decorators
 
-Method Decorators for lodash functions.
+Decorators using lodash functions. View the [API docs](https://steelsojka.github.io/lodash-decorators) for more in depth documentation.
 
 [![Build Status](https://travis-ci.org/steelsojka/lodash-decorators.svg)](https://travis-ci.org/steelsojka/lodash-decorators)
 [![npm version](https://badge.fury.io/js/lodash-decorators.svg)](http://badge.fury.io/js/lodash-decorators)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [Install](#install)
@@ -179,6 +178,9 @@ import { Flow } from 'lodash-decorators'
 import { kebabCase } from 'lodash';
 
 class Person {
+  @Flow('getName', kebabCase)
+  logName;
+
   constructor(firstName, lastName) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -186,11 +188,6 @@ class Person {
 
   getName() {
     return `${this.firstName} ${this.lastName}`;
-  }
-
-  @Flow('getName', kebabCase)
-  logName(name) {
-    console.log(name);
   }
 }
 
@@ -214,6 +211,8 @@ decorators are applied at the instance level.
 -   `Curry`
 -   `CurryRight`
 -   `Once`
+-   `Flow`
+-   `FlowRight`
 
 ### Mixin
 
@@ -358,9 +357,9 @@ This keeps the API cleaner and doesn't require the developer to know how the dec
 
 There is no longer a `Proto` decorator attached to instance decorators. Most instance decorators now have a counterpart that applies to the prototype instead of the instance. `Debounce.Proto()` is now `DebounceAll()`.
 
-#### Curry is now an instance decorator
+#### All decorators now take arguments
 
-The curry decorator is now an instance decorator in order to keep the calling context consistent. The original function before being curried is bound to the instance. You can apply curry to the prototype by using `CurryAll()`.
+All decorators now take arguments. So instead of `@Once` you would do `@Once()`. This keeps the API consistent and doesn't require the develop to remember which decorators take arguments.
 
 #### Removal of extensions and validation package
 
@@ -368,14 +367,18 @@ All extensions like `enumerable` have been removed in favor of [core-decorators]
 
 We want to keep lodash decorators focused specifically on lodash specific functions.
 
+#### Prototype decorator order no longer throws an error
+
+If a prototype decorator comes after an instance decorator it will be ignored since there is no way to apply it in the chain.
+
 #### Other breaking changes
 
--   `Attempt` now takes an argument to line up with lodash API.
--   `Bind` used on a class no longer delegates to `BindAll`. Use `BindAll` instead.
+-  `Attempt` now takes an argument to line up with lodash API.
+-  `Bind` used on a class no longer delegates to `BindAll`. Use `BindAll` instead.
+-  `Curry`, `Partial`, `Flow`, `FlowRight` are now instance decorators.
 
 ### v4 Improvements
 
--   Instance and prototype decorators can be in any order.
 -   Ships with TypeScript typings.
 -   Predictable performance.
 -   Improvements to Bind decorator.
@@ -383,3 +386,4 @@ We want to keep lodash decorators focused specifically on lodash specific functi
 -   More and better unit tests.
 -   Better performance with instance decorators.
 -   Single imports with `import { Debounce } from 'lodash-decorators/debounce'`;
+-   Composition decorators can be used on properties. These will generate the composed function.
