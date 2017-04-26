@@ -29,6 +29,6 @@ describe('debounceAll', () => {
     setTimeout(() => {
       expect(calls).to.equal(1);
       done();
-    }, 11);
+    }, 20);
   });
 });
