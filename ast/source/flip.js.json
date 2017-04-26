@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 299,
+  "end": 667,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 7,
+      "line": 26,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 299,
+    "end": 667,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 7,
+        "line": 26,
         "column": 0
       }
     },
@@ -333,19 +333,37 @@
             "raw": "'./applicators'"
           },
           "value": "./applicators"
-        }
+        },
+        "trailingComments": [
+          {
+            "type": "CommentBlock",
+            "value": "*\n * Creates a function that invokes func with arguments reversed. Honestly, there is probably not much\n * use for this decorator but maybe you will find one?\n *\n * @example\n *\n * class MyClass {\n *   value = 100;\n *\n *   @Flip()\n *   fn(a, b) {\n *     return [ a, b ];\n *   }\n * }\n *\n * const myClass = new MyClass();\n *\n * myClass.fn(10, 20); // => [ 20, 10 ]\n ",
+            "start": 146,
+            "end": 513,
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 0
+              },
+              "end": {
+                "line": 22,
+                "column": 3
+              }
+            }
+          }
+        ]
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 146,
-        "end": 252,
+        "start": 514,
+        "end": 620,
         "loc": {
           "start": {
-            "line": 4,
+            "line": 23,
             "column": 0
           },
           "end": {
-            "line": 4,
+            "line": 23,
             "column": 106
           }
         },
@@ -353,89 +371,90 @@
         "source": null,
         "declaration": {
           "type": "VariableDeclaration",
-          "start": 153,
-          "end": 252,
+          "start": 521,
+          "end": 620,
           "loc": {
             "start": {
-              "line": 4,
+              "line": 23,
               "column": 7
             },
             "end": {
-              "line": 4,
+              "line": 23,
               "column": 106
             }
           },
           "declarations": [
             {
               "type": "VariableDeclarator",
-              "start": 159,
-              "end": 251,
+              "start": 527,
+              "end": 619,
               "loc": {
                 "start": {
-                  "line": 4,
+                  "line": 23,
                   "column": 13
                 },
                 "end": {
-                  "line": 4,
+                  "line": 23,
                   "column": 105
                 }
               },
               "id": {
                 "type": "Identifier",
-                "start": 159,
-                "end": 163,
+                "start": 527,
+                "end": 531,
                 "loc": {
                   "start": {
-                    "line": 4,
+                    "line": 23,
                     "column": 13
                   },
                   "end": {
-                    "line": 4,
+                    "line": 23,
                     "column": 17
                   },
                   "identifierName": "Flip"
                 },
-                "name": "Flip"
+                "name": "Flip",
+                "leadingComments": null
               },
               "init": {
                 "type": "CallExpression",
-                "start": 166,
-                "end": 251,
+                "start": 534,
+                "end": 619,
                 "loc": {
                   "start": {
-                    "line": 4,
+                    "line": 23,
                     "column": 20
                   },
                   "end": {
-                    "line": 4,
+                    "line": 23,
                     "column": 105
                   }
                 },
                 "callee": {
                   "type": "MemberExpression",
-                  "start": 166,
-                  "end": 198,
+                  "start": 534,
+                  "end": 566,
                   "loc": {
                     "start": {
-                      "line": 4,
+                      "line": 23,
                       "column": 20
                     },
                     "end": {
-                      "line": 4,
+                      "line": 23,
                       "column": 52
                     }
                   },
                   "object": {
                     "type": "Identifier",
-                    "start": 166,
-                    "end": 182,
+                    "start": 534,
+                    "end": 550,
                     "loc": {
                       "start": {
-                        "line": 4,
+                        "line": 23,
                         "column": 20
                       },
                       "end": {
-                        "line": 4,
+                        "line": 23,
                         "column": 36
                       },
                       "identifierName": "DecoratorFactory"
@@ -444,15 +463,15 @@
                   },
                   "property": {
                     "type": "Identifier",
-                    "start": 183,
-                    "end": 198,
+                    "start": 551,
+                    "end": 566,
                     "loc": {
                       "start": {
-                        "line": 4,
+                        "line": 23,
                         "column": 37
                       },
                       "end": {
-                        "line": 4,
+                        "line": 23,
                         "column": 52
                       },
                       "identifierName": "createDecorator"
@@ -464,29 +483,29 @@
                 "arguments": [
                   {
                     "type": "NewExpression",
-                    "start": 199,
-                    "end": 250,
+                    "start": 567,
+                    "end": 618,
                     "loc": {
                       "start": {
-                        "line": 4,
+                        "line": 23,
                         "column": 53
                       },
                       "end": {
-                        "line": 4,
+                        "line": 23,
                         "column": 104
                       }
                     },
                     "callee": {
                       "type": "Identifier",
-                      "start": 203,
-                      "end": 218,
+                      "start": 571,
+                      "end": 586,
                       "loc": {
                         "start": {
-                          "line": 4,
+                          "line": 23,
                           "column": 57
                         },
                         "end": {
-                          "line": 4,
+                          "line": 23,
                           "column": 72
                         },
                         "identifierName": "DecoratorConfig"
@@ -496,15 +515,15 @@
                     "arguments": [
                       {
                         "type": "Identifier",
-                        "start": 219,
-                        "end": 223,
+                        "start": 587,
+                        "end": 591,
                         "loc": {
                           "start": {
-                            "line": 4,
+                            "line": 23,
                             "column": 73
                           },
                           "end": {
-                            "line": 4,
+                            "line": 23,
                             "column": 77
                           },
                           "identifierName": "flip"
@@ -513,29 +532,29 @@
                       },
                       {
                         "type": "NewExpression",
-                        "start": 225,
-                        "end": 249,
+                        "start": 593,
+                        "end": 617,
                         "loc": {
                           "start": {
-                            "line": 4,
+                            "line": 23,
                             "column": 79
                           },
                           "end": {
-                            "line": 4,
+                            "line": 23,
                             "column": 103
                           }
                         },
                         "callee": {
                           "type": "Identifier",
-                          "start": 229,
-                          "end": 247,
+                          "start": 597,
+                          "end": 615,
                           "loc": {
                             "start": {
-                              "line": 4,
+                              "line": 23,
                               "column": 83
                             },
                             "end": {
-                              "line": 4,
+                              "line": 23,
                               "column": 101
                             },
                             "identifierName": "PreValueApplicator"
@@ -547,25 +566,61 @@
                     ]
                   }
                 ]
-              }
+              },
+              "leadingComments": null
             }
           ],
           "kind": "const",
-          "leadingComments": [],
+          "leadingComments": [
+            {
+              "type": "CommentBlock",
+              "value": "*\n * Creates a function that invokes func with arguments reversed. Honestly, there is probably not much\n * use for this decorator but maybe you will find one?\n *\n * @example\n *\n * class MyClass {\n *   value = 100;\n *\n *   @Flip()\n *   fn(a, b) {\n *     return [ a, b ];\n *   }\n * }\n *\n * const myClass = new MyClass();\n *\n * myClass.fn(10, 20); // => [ 20, 10 ]\n ",
+              "start": 146,
+              "end": 513,
+              "loc": {
+                "start": {
+                  "line": 4,
+                  "column": 0
+                },
+                "end": {
+                  "line": 22,
+                  "column": 3
+                }
+              }
+            }
+          ],
           "trailingComments": []
-        }
+        },
+        "leadingComments": [
+          {
+            "type": "CommentBlock",
+            "value": "*\n * Creates a function that invokes func with arguments reversed. Honestly, there is probably not much\n * use for this decorator but maybe you will find one?\n *\n * @example\n *\n * class MyClass {\n *   value = 100;\n *\n *   @Flip()\n *   fn(a, b) {\n *     return [ a, b ];\n *   }\n * }\n *\n * const myClass = new MyClass();\n *\n * myClass.fn(10, 20); // => [ 20, 10 ]\n ",
+            "start": 146,
+            "end": 513,
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 0
+              },
+              "end": {
+                "line": 22,
+                "column": 3
+              }
+            }
+          }
+        ]
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 253,
-        "end": 277,
+        "start": 621,
+        "end": 645,
         "loc": {
           "start": {
-            "line": 5,
+            "line": 24,
             "column": 0
           },
           "end": {
-            "line": 5,
+            "line": 24,
             "column": 24
           }
         },
@@ -573,29 +628,29 @@
         "specifiers": [
           {
             "type": "ExportSpecifier",
-            "start": 262,
-            "end": 274,
+            "start": 630,
+            "end": 642,
             "loc": {
               "start": {
-                "line": 5,
+                "line": 24,
                 "column": 9
               },
               "end": {
-                "line": 5,
+                "line": 24,
                 "column": 21
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 262,
-              "end": 266,
+              "start": 630,
+              "end": 634,
               "loc": {
                 "start": {
-                  "line": 5,
+                  "line": 24,
                   "column": 9
                 },
                 "end": {
-                  "line": 5,
+                  "line": 24,
                   "column": 13
                 },
                 "identifierName": "Flip"
@@ -604,15 +659,15 @@
             },
             "exported": {
               "type": "Identifier",
-              "start": 270,
-              "end": 274,
+              "start": 638,
+              "end": 642,
               "loc": {
                 "start": {
-                  "line": 5,
+                  "line": 24,
                   "column": 17
                 },
                 "end": {
-                  "line": 5,
+                  "line": 24,
                   "column": 21
                 },
                 "identifierName": "flip"
@@ -625,29 +680,29 @@
       },
       {
         "type": "ExportDefaultDeclaration",
-        "start": 278,
-        "end": 298,
+        "start": 646,
+        "end": 666,
         "loc": {
           "start": {
-            "line": 6,
+            "line": 25,
             "column": 0
           },
           "end": {
-            "line": 6,
+            "line": 25,
             "column": 20
           }
         },
         "declaration": {
           "type": "Identifier",
-          "start": 293,
-          "end": 297,
+          "start": 661,
+          "end": 665,
           "loc": {
             "start": {
-              "line": 6,
+              "line": 25,
               "column": 15
             },
             "end": {
-              "line": 6,
+              "line": 25,
               "column": 19
             },
             "identifierName": "Flip"
@@ -660,7 +715,24 @@
     ],
     "directives": []
   },
-  "comments": [],
+  "comments": [
+    {
+      "type": "CommentBlock",
+      "value": "*\n * Creates a function that invokes func with arguments reversed. Honestly, there is probably not much\n * use for this decorator but maybe you will find one?\n *\n * @example\n *\n * class MyClass {\n *   value = 100;\n *\n *   @Flip()\n *   fn(a, b) {\n *     return [ a, b ];\n *   }\n * }\n *\n * const myClass = new MyClass();\n *\n * myClass.fn(10, 20); // => [ 20, 10 ]\n ",
+      "start": 146,
+      "end": 513,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 22,
+          "column": 3
+        }
+      }
+    }
+  ],
   "tokens": [
     {
       "type": {
@@ -1264,6 +1336,22 @@
       }
     },
     {
+      "type": "CommentBlock",
+      "value": "*\n * Creates a function that invokes func with arguments reversed. Honestly, there is probably not much\n * use for this decorator but maybe you will find one?\n *\n * @example\n *\n * class MyClass {\n *   value = 100;\n *\n *   @Flip()\n *   fn(a, b) {\n *     return [ a, b ];\n *   }\n * }\n *\n * const myClass = new MyClass();\n *\n * myClass.fn(10, 20); // => [ 20, 10 ]\n ",
+      "start": 146,
+      "end": 513,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 22,
+          "column": 3
+        }
+      }
+    },
+    {
       "type": {
         "label": "export",
         "keyword": "export",
@@ -1278,15 +1366,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 146,
-      "end": 152,
+      "start": 514,
+      "end": 520,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 23,
           "column": 0
         },
         "end": {
-          "line": 4,
+          "line": 23,
           "column": 6
         }
       }
@@ -1306,15 +1394,15 @@
         "updateContext": null
       },
       "value": "const",
-      "start": 153,
-      "end": 158,
+      "start": 521,
+      "end": 526,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 23,
           "column": 7
         },
         "end": {
-          "line": 4,
+          "line": 23,
           "column": 12
         }
       }
@@ -1332,15 +1420,15 @@
         "binop": null
       },
       "value": "Flip",
-      "start": 159,
-      "end": 163,
+      "start": 527,
+      "end": 531,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 23,
           "column": 13
         },
         "end": {
-          "line": 4,
+          "line": 23,
           "column": 17
         }
       }
@@ -1359,15 +1447,15 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 164,
-      "end": 165,
+      "start": 532,
+      "end": 533,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 23,
           "column": 18
         },
         "end": {
-          "line": 4,
+          "line": 23,
           "column": 19
         }
       }
@@ -1385,15 +1473,15 @@
         "binop": null
       },
       "value": "DecoratorFactory",
-      "start": 166,
-      "end": 182,
+      "start": 534,
+      "end": 550,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 23,
           "column": 20
         },
         "end": {
-          "line": 4,
+          "line": 23,
           "column": 36
         }
       }
@@ -1411,15 +1499,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 182,
-      "end": 183,
+      "start": 550,
+      "end": 551,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 23,
           "column": 36
         },
         "end": {
-          "line": 4,
+          "line": 23,
           "column": 37
         }
       }
@@ -1437,15 +1525,15 @@
         "binop": null
       },
       "value": "createDecorator",
-      "start": 183,
-      "end": 198,
+      "start": 551,
+      "end": 566,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 23,
           "column": 37
         },
         "end": {
-          "line": 4,
+          "line": 23,
           "column": 52
         }
       }
@@ -1462,15 +1550,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 198,
-      "end": 199,
+      "start": 566,
+      "end": 567,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 23,
           "column": 52
         },
         "end": {
-          "line": 4,
+          "line": 23,
           "column": 53
         }
       }
@@ -1490,15 +1578,15 @@
         "updateContext": null
       },
       "value": "new",
-      "start": 199,
-      "end": 202,
+      "start": 567,
+      "end": 570,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 23,
           "column": 53
         },
         "end": {
-          "line": 4,
+          "line": 23,
           "column": 56
         }
       }
@@ -1516,15 +1604,15 @@
         "binop": null
       },
       "value": "DecoratorConfig",
-      "start": 203,
-      "end": 218,
+      "start": 571,
+      "end": 586,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 23,
           "column": 57
         },
         "end": {
-          "line": 4,
+          "line": 23,
           "column": 72
         }
       }
@@ -1541,15 +1629,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 218,
-      "end": 219,
+      "start": 586,
+      "end": 587,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 23,
           "column": 72
         },
         "end": {
-          "line": 4,
+          "line": 23,
           "column": 73
         }
       }
@@ -1567,15 +1655,15 @@
         "binop": null
       },
       "value": "flip",
-      "start": 219,
-      "end": 223,
+      "start": 587,
+      "end": 591,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 23,
           "column": 73
         },
         "end": {
-          "line": 4,
+          "line": 23,
           "column": 77
         }
       }
@@ -1593,15 +1681,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 223,
-      "end": 224,
+      "start": 591,
+      "end": 592,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 23,
           "column": 77
         },
         "end": {
-          "line": 4,
+          "line": 23,
           "column": 78
         }
       }
@@ -1621,15 +1709,15 @@
         "updateContext": null
       },
       "value": "new",
-      "start": 225,
-      "end": 228,
+      "start": 593,
+      "end": 596,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 23,
           "column": 79
         },
         "end": {
-          "line": 4,
+          "line": 23,
           "column": 82
         }
       }
@@ -1647,15 +1735,15 @@
         "binop": null
       },
       "value": "PreValueApplicator",
-      "start": 229,
-      "end": 247,
+      "start": 597,
+      "end": 615,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 23,
           "column": 83
         },
         "end": {
-          "line": 4,
+          "line": 23,
           "column": 101
         }
       }
@@ -1672,15 +1760,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 247,
-      "end": 248,
+      "start": 615,
+      "end": 616,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 23,
           "column": 101
         },
         "end": {
-          "line": 4,
+          "line": 23,
           "column": 102
         }
       }
@@ -1697,15 +1785,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 248,
-      "end": 249,
+      "start": 616,
+      "end": 617,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 23,
           "column": 102
         },
         "end": {
-          "line": 4,
+          "line": 23,
           "column": 103
         }
       }
@@ -1722,15 +1810,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 249,
-      "end": 250,
+      "start": 617,
+      "end": 618,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 23,
           "column": 103
         },
         "end": {
-          "line": 4,
+          "line": 23,
           "column": 104
         }
       }
@@ -1747,15 +1835,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 250,
-      "end": 251,
+      "start": 618,
+      "end": 619,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 23,
           "column": 104
         },
         "end": {
-          "line": 4,
+          "line": 23,
           "column": 105
         }
       }
@@ -1773,15 +1861,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 251,
-      "end": 252,
+      "start": 619,
+      "end": 620,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 23,
           "column": 105
         },
         "end": {
-          "line": 4,
+          "line": 23,
           "column": 106
         }
       }
@@ -1801,15 +1889,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 253,
-      "end": 259,
+      "start": 621,
+      "end": 627,
       "loc": {
         "start": {
-          "line": 5,
+          "line": 24,
           "column": 0
         },
         "end": {
-          "line": 5,
+          "line": 24,
           "column": 6
         }
       }
@@ -1826,15 +1914,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 260,
-      "end": 261,
+      "start": 628,
+      "end": 629,
       "loc": {
         "start": {
-          "line": 5,
+          "line": 24,
           "column": 7
         },
         "end": {
-          "line": 5,
+          "line": 24,
           "column": 8
         }
       }
@@ -1852,15 +1940,15 @@
         "binop": null
       },
       "value": "Flip",
-      "start": 262,
-      "end": 266,
+      "start": 630,
+      "end": 634,
       "loc": {
         "start": {
-          "line": 5,
+          "line": 24,
           "column": 9
         },
         "end": {
-          "line": 5,
+          "line": 24,
           "column": 13
         }
       }
@@ -1878,15 +1966,15 @@
         "binop": null
       },
       "value": "as",
-      "start": 267,
-      "end": 269,
+      "start": 635,
+      "end": 637,
       "loc": {
         "start": {
-          "line": 5,
+          "line": 24,
           "column": 14
         },
         "end": {
-          "line": 5,
+          "line": 24,
           "column": 16
         }
       }
@@ -1904,15 +1992,15 @@
         "binop": null
       },
       "value": "flip",
-      "start": 270,
-      "end": 274,
+      "start": 638,
+      "end": 642,
       "loc": {
         "start": {
-          "line": 5,
+          "line": 24,
           "column": 17
         },
         "end": {
-          "line": 5,
+          "line": 24,
           "column": 21
         }
       }
@@ -1929,15 +2017,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 275,
-      "end": 276,
+      "start": 643,
+      "end": 644,
       "loc": {
         "start": {
-          "line": 5,
+          "line": 24,
           "column": 22
         },
         "end": {
-          "line": 5,
+          "line": 24,
           "column": 23
         }
       }
@@ -1955,15 +2043,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 276,
-      "end": 277,
+      "start": 644,
+      "end": 645,
       "loc": {
         "start": {
-          "line": 5,
+          "line": 24,
           "column": 23
         },
         "end": {
-          "line": 5,
+          "line": 24,
           "column": 24
         }
       }
@@ -1983,15 +2071,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 278,
-      "end": 284,
+      "start": 646,
+      "end": 652,
       "loc": {
         "start": {
-          "line": 6,
+          "line": 25,
           "column": 0
         },
         "end": {
-          "line": 6,
+          "line": 25,
           "column": 6
         }
       }
@@ -2011,15 +2099,15 @@
         "updateContext": null
       },
       "value": "default",
-      "start": 285,
-      "end": 292,
+      "start": 653,
+      "end": 660,
       "loc": {
         "start": {
-          "line": 6,
+          "line": 25,
           "column": 7
         },
         "end": {
-          "line": 6,
+          "line": 25,
           "column": 14
         }
       }
@@ -2037,15 +2125,15 @@
         "binop": null
       },
       "value": "Flip",
-      "start": 293,
-      "end": 297,
+      "start": 661,
+      "end": 665,
       "loc": {
         "start": {
-          "line": 6,
+          "line": 25,
           "column": 15
         },
         "end": {
-          "line": 6,
+          "line": 25,
           "column": 19
         }
       }
@@ -2063,15 +2151,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 297,
-      "end": 298,
+      "start": 665,
+      "end": 666,
       "loc": {
         "start": {
-          "line": 6,
+          "line": 25,
           "column": 19
         },
         "end": {
-          "line": 6,
+          "line": 25,
           "column": 20
         }
       }
@@ -2089,15 +2177,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 299,
-      "end": 299,
+      "start": 667,
+      "end": 667,
       "loc": {
         "start": {
-          "line": 7,
+          "line": 26,
           "column": 0
         },
         "end": {
-          "line": 7,
+          "line": 26,
           "column": 0
         }
       }

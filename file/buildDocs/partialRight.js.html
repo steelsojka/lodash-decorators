@@ -92,7 +92,7 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { partialRight } from &apos;lodash&apos;;
 import { DecoratorConfig, DecoratorFactory } from &apos;./factory&apos;;
 import { PartialApplicator } from &apos;./applicators&apos;;
-export const PartialRight = DecoratorFactory.createDecorator(new DecoratorConfig(partialRight, new PartialApplicator()));
+export const PartialRight = DecoratorFactory.createInstanceDecorator(new DecoratorConfig(partialRight, new PartialApplicator(), { property: true, method: false }));
 export { PartialRight as partialRight };
 export default PartialRight;
 </code></pre>

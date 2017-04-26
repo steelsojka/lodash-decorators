@@ -1552,7 +1552,7 @@
     "__docId__": 63,
     "kind": "file",
     "name": "buildDocs/defer.js",
-    "content": "import { defer } from 'lodash';\nimport { DecoratorConfig, DecoratorFactory } from './factory';\nimport { InvokeApplicator } from './applicators';\nexport const Defer = DecoratorFactory.createDecorator(new DecoratorConfig(defer, new InvokeApplicator(), { setter: true }));\nexport { Defer as defer };\nexport default Defer;\n",
+    "content": "import { defer } from 'lodash';\nimport { DecoratorConfig, DecoratorFactory } from './factory';\nimport { InvokeApplicator } from './applicators';\n/**\n * Defers invoking the func until the current call stack has cleared. Any additional arguments are provided to func when it's invoked.\n *\n * @param {...*} [args] Additional arguments to invoke the function with\n * @example\n *\n * class MyClass {\n *   value = 100;\n *\n *   @Defer()\n *   add(a) {\n *     this.value += a;\n *   }\n * }\n *\n * const myClass = new MyClass();\n *\n * myClass.add(10);\n *\n * myClass.value; // => 100;\n *\n * setTimeout(() => {\n *   myClass.value; // => 110;\n * }, 0);\n */\nexport const Defer = DecoratorFactory.createDecorator(new DecoratorConfig(defer, new InvokeApplicator(), { setter: true }));\nexport { Defer as defer };\nexport default Defer;\n",
     "static": true,
     "longname": "buildDocs/defer.js",
     "access": null,
@@ -1570,13 +1570,21 @@
     "export": true,
     "importPath": "lodash-decorators/buildDocs/defer.js",
     "importStyle": "{Defer}",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
-    "unknown": [
+    "description": "Defers invoking the func until the current call stack has cleared. Any additional arguments are provided to func when it's invoked.",
+    "examples": [
+      "\nclass MyClass {\n  value = 100;\n\n  @Defer()\n  add(a) {\n    this.value += a;\n  }\n}\n\nconst myClass = new MyClass();\n\nmyClass.add(10);\n\nmyClass.value; // => 100;\n\nsetTimeout(() => {\n  myClass.value; // => 110;\n}, 0);"
+    ],
+    "lineNumber": 29,
+    "params": [
       {
-        "tagName": "@_undocument",
-        "tagValue": ""
+        "nullable": null,
+        "types": [
+          "...*"
+        ],
+        "spread": true,
+        "optional": true,
+        "name": "args",
+        "description": "Additional arguments to invoke the function with"
       }
     ],
     "type": {
@@ -1589,7 +1597,7 @@
     "__docId__": 65,
     "kind": "file",
     "name": "buildDocs/delay.js",
-    "content": "import { delay } from 'lodash';\nimport { DecoratorConfig, DecoratorFactory } from './factory';\nimport { PreValueApplicator } from './applicators';\nexport const Delay = DecoratorFactory.createDecorator(new DecoratorConfig(function (value, wait, ...args) {\n    return function (...invokeArgs) {\n        return delay(value.bind(this), wait, ...invokeArgs, ...args);\n    };\n}, new PreValueApplicator(), { setter: true }));\nexport { Delay as delay };\nexport default Delay;\n",
+    "content": "import { delay } from 'lodash';\nimport { DecoratorConfig, DecoratorFactory } from './factory';\nimport { PreValueApplicator } from './applicators';\n/**\n * Invokes func after wait milliseconds. Any additional arguments are provided to func when it's invoked.\n *\n * @param {number} wait The number of milliseconds to delay invocation.\n * @param {...*} [args] Additional arguments to invoke the function with\n * @example\n *\n * class MyClass {\n *   value = 100;\n *\n *   @Delay(20)\n *   add(a) {\n *     this.value += a;\n *   }\n * }\n *\n * const myClass = new MyClass();\n *\n * myClass.add(10);\n *\n * myClass.value; // => 100;\n *\n * setTimeout(() => {\n *   myClass.value; // => 110;\n * }, 30);\n */\nexport const Delay = DecoratorFactory.createDecorator(new DecoratorConfig(function (value, wait, ...args) {\n    return function (...invokeArgs) {\n        return delay(value.bind(this), wait, ...invokeArgs, ...args);\n    };\n}, new PreValueApplicator(), { setter: true }));\nexport { Delay as delay };\nexport default Delay;\n",
     "static": true,
     "longname": "buildDocs/delay.js",
     "access": null,
@@ -1607,13 +1615,31 @@
     "export": true,
     "importPath": "lodash-decorators/buildDocs/delay.js",
     "importStyle": "{Delay}",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
-    "unknown": [
+    "description": "Invokes func after wait milliseconds. Any additional arguments are provided to func when it's invoked.",
+    "examples": [
+      "\nclass MyClass {\n  value = 100;\n\n  @Delay(20)\n  add(a) {\n    this.value += a;\n  }\n}\n\nconst myClass = new MyClass();\n\nmyClass.add(10);\n\nmyClass.value; // => 100;\n\nsetTimeout(() => {\n  myClass.value; // => 110;\n}, 30);"
+    ],
+    "lineNumber": 30,
+    "params": [
       {
-        "tagName": "@_undocument",
-        "tagValue": ""
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "wait",
+        "description": "The number of milliseconds to delay invocation."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "...*"
+        ],
+        "spread": true,
+        "optional": true,
+        "name": "args",
+        "description": "Additional arguments to invoke the function with"
       }
     ],
     "type": {
@@ -2176,7 +2202,7 @@
     "__docId__": 89,
     "kind": "file",
     "name": "buildDocs/flip.js",
-    "content": "import { flip } from 'lodash';\nimport { DecoratorConfig, DecoratorFactory } from './factory';\nimport { PreValueApplicator } from './applicators';\nexport const Flip = DecoratorFactory.createDecorator(new DecoratorConfig(flip, new PreValueApplicator()));\nexport { Flip as flip };\nexport default Flip;\n",
+    "content": "import { flip } from 'lodash';\nimport { DecoratorConfig, DecoratorFactory } from './factory';\nimport { PreValueApplicator } from './applicators';\n/**\n * Creates a function that invokes func with arguments reversed. Honestly, there is probably not much\n * use for this decorator but maybe you will find one?\n *\n * @example\n *\n * class MyClass {\n *   value = 100;\n *\n *   @Flip()\n *   fn(a, b) {\n *     return [ a, b ];\n *   }\n * }\n *\n * const myClass = new MyClass();\n *\n * myClass.fn(10, 20); // => [ 20, 10 ]\n */\nexport const Flip = DecoratorFactory.createDecorator(new DecoratorConfig(flip, new PreValueApplicator()));\nexport { Flip as flip };\nexport default Flip;\n",
     "static": true,
     "longname": "buildDocs/flip.js",
     "access": null,
@@ -2194,15 +2220,11 @@
     "export": true,
     "importPath": "lodash-decorators/buildDocs/flip.js",
     "importStyle": "{Flip}",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
-    "unknown": [
-      {
-        "tagName": "@_undocument",
-        "tagValue": ""
-      }
+    "description": "Creates a function that invokes func with arguments reversed. Honestly, there is probably not much\nuse for this decorator but maybe you will find one?",
+    "examples": [
+      "\nclass MyClass {\n  value = 100;\n\n  @Flip()\n  fn(a, b) {\n    return [ a, b ];\n  }\n}\n\nconst myClass = new MyClass();\n\nmyClass.fn(10, 20); // => [ 20, 10 ]"
     ],
+    "lineNumber": 23,
     "type": {
       "types": [
         "*"
@@ -2213,7 +2235,7 @@
     "__docId__": 91,
     "kind": "file",
     "name": "buildDocs/flow.js",
-    "content": "import { flow } from 'lodash';\nimport { DecoratorConfig, DecoratorFactory } from './factory';\nimport { ComposeApplicator } from './applicators';\nexport const Flow = DecoratorFactory.createInstanceDecorator(new DecoratorConfig(flow, new ComposeApplicator({ post: true }), { property: true }));\nexport { Flow as flow };\nexport default Flow;\n",
+    "content": "import { flow } from 'lodash';\nimport { DecoratorConfig, DecoratorFactory } from './factory';\nimport { ComposeApplicator } from './applicators';\n/**\n * Creates a function that returns the result of invoking the given functions with the this binding of the created function,\n * where each successive invocation is supplied the return value of the previous.\n *\n * @example\n *\n * class MyClass {\n *   name = 'Ted';\n *\n *   @Flow('getName', toUpperCase)\n *   getUpperCaseName: () => string;\n *\n *   getName() {\n *     return this.name;\n *   }\n * }\n *\n * const myClass = new MyClass();\n *\n * myClass.getUpperCaseName(); // => 'TED'\n */\nexport const Flow = DecoratorFactory.createInstanceDecorator(new DecoratorConfig(flow, new ComposeApplicator({ post: true }), { property: true }));\nexport { Flow as flow };\nexport default Flow;\n",
     "static": true,
     "longname": "buildDocs/flow.js",
     "access": null,
@@ -2231,15 +2253,11 @@
     "export": true,
     "importPath": "lodash-decorators/buildDocs/flow.js",
     "importStyle": "{Flow}",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
-    "unknown": [
-      {
-        "tagName": "@_undocument",
-        "tagValue": ""
-      }
+    "description": "Creates a function that returns the result of invoking the given functions with the this binding of the created function,\nwhere each successive invocation is supplied the return value of the previous.",
+    "examples": [
+      "\nclass MyClass {\n  name = 'Ted';\n\n  @Flow('getName', toUpperCase)\n  getUpperCaseName: () => string;\n\n  getName() {\n    return this.name;\n  }\n}\n\nconst myClass = new MyClass();\n\nmyClass.getUpperCaseName(); // => 'TED'"
     ],
+    "lineNumber": 25,
     "type": {
       "types": [
         "*"
@@ -2250,7 +2268,7 @@
     "__docId__": 93,
     "kind": "file",
     "name": "buildDocs/flowRight.js",
-    "content": "import { flowRight } from 'lodash';\nimport { DecoratorConfig, DecoratorFactory } from './factory';\nimport { ComposeApplicator } from './applicators';\nexport const FlowRight = DecoratorFactory.createInstanceDecorator(new DecoratorConfig(flowRight, new ComposeApplicator({ post: false }), { property: true }));\nexport { FlowRight as flowRight };\nexport default FlowRight;\n",
+    "content": "import { flowRight } from 'lodash';\nimport { DecoratorConfig, DecoratorFactory } from './factory';\nimport { ComposeApplicator } from './applicators';\n/**\n * Creates a function that returns the result of invoking the given functions with the this binding of the created function,\n * where each successive invocation is supplied the return value of the previous.\n *\n * @example\n *\n * class MyClass {\n *   name = 'Ted';\n *\n *   @FlowRight(toUpperCase, 'getName')\n *   getUpperCaseName: () => string;\n *\n *   getName() {\n *     return this.name;\n *   }\n * }\n *\n * const myClass = new MyClass();\n *\n * myClass.getUpperCaseName(); // => 'TED'\n */\nexport const FlowRight = DecoratorFactory.createInstanceDecorator(new DecoratorConfig(flowRight, new ComposeApplicator({ post: false }), { property: true }));\nexport { FlowRight as flowRight };\nexport default FlowRight;\n",
     "static": true,
     "longname": "buildDocs/flowRight.js",
     "access": null,
@@ -2268,15 +2286,11 @@
     "export": true,
     "importPath": "lodash-decorators/buildDocs/flowRight.js",
     "importStyle": "{FlowRight}",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
-    "unknown": [
-      {
-        "tagName": "@_undocument",
-        "tagValue": ""
-      }
+    "description": "Creates a function that returns the result of invoking the given functions with the this binding of the created function,\nwhere each successive invocation is supplied the return value of the previous.",
+    "examples": [
+      "\nclass MyClass {\n  name = 'Ted';\n\n  @FlowRight(toUpperCase, 'getName')\n  getUpperCaseName: () => string;\n\n  getName() {\n    return this.name;\n  }\n}\n\nconst myClass = new MyClass();\n\nmyClass.getUpperCaseName(); // => 'TED'"
     ],
+    "lineNumber": 25,
     "type": {
       "types": [
         "*"
@@ -2610,7 +2624,7 @@
     "__docId__": 112,
     "kind": "file",
     "name": "buildDocs/partialRight.js",
-    "content": "import { partialRight } from 'lodash';\nimport { DecoratorConfig, DecoratorFactory } from './factory';\nimport { PartialApplicator } from './applicators';\nexport const PartialRight = DecoratorFactory.createDecorator(new DecoratorConfig(partialRight, new PartialApplicator()));\nexport { PartialRight as partialRight };\nexport default PartialRight;\n",
+    "content": "import { partialRight } from 'lodash';\nimport { DecoratorConfig, DecoratorFactory } from './factory';\nimport { PartialApplicator } from './applicators';\nexport const PartialRight = DecoratorFactory.createInstanceDecorator(new DecoratorConfig(partialRight, new PartialApplicator(), { property: true, method: false }));\nexport { PartialRight as partialRight };\nexport default PartialRight;\n",
     "static": true,
     "longname": "buildDocs/partialRight.js",
     "access": null,
@@ -4853,7 +4867,7 @@
     "__docId__": 264,
     "kind": "testFile",
     "name": "buildDocs/debounceAll.spec.js",
-    "content": "import * as tslib_1 from \"tslib\";\nimport { expect } from 'chai';\nimport { DebounceAll } from './debounceAll';\ndescribe('debounceAll', () => {\n    it('should debounce the method across instances', done => {\n        let calls = 0;\n        class MyClass {\n            fn() {\n                calls++;\n            }\n        }\n        tslib_1.__decorate([\n            DebounceAll(10)\n        ], MyClass.prototype, \"fn\", null);\n        const myClass = new MyClass();\n        const myClass2 = new MyClass();\n        myClass.fn();\n        myClass.fn();\n        myClass.fn();\n        myClass.fn();\n        myClass.fn();\n        myClass2.fn();\n        myClass2.fn();\n        myClass2.fn();\n        setTimeout(() => {\n            expect(calls).to.equal(1);\n            done();\n        }, 11);\n    });\n});\n",
+    "content": "import * as tslib_1 from \"tslib\";\nimport { expect } from 'chai';\nimport { DebounceAll } from './debounceAll';\ndescribe('debounceAll', () => {\n    it('should debounce the method across instances', done => {\n        let calls = 0;\n        class MyClass {\n            fn() {\n                calls++;\n            }\n        }\n        tslib_1.__decorate([\n            DebounceAll(10)\n        ], MyClass.prototype, \"fn\", null);\n        const myClass = new MyClass();\n        const myClass2 = new MyClass();\n        myClass.fn();\n        myClass.fn();\n        myClass.fn();\n        myClass.fn();\n        myClass.fn();\n        myClass2.fn();\n        myClass2.fn();\n        myClass2.fn();\n        setTimeout(() => {\n            expect(calls).to.equal(1);\n            done();\n        }, 20);\n    });\n});\n",
     "static": true,
     "longname": "buildDocs/debounceAll.spec.js",
     "access": null,
@@ -5463,10 +5477,10 @@
   {
     "__docId__": 313,
     "kind": "testFile",
-    "name": "buildDocs/throttle.spec.js",
-    "content": "import * as tslib_1 from \"tslib\";\nimport { expect } from 'chai';\nimport { spy } from 'sinon';\nimport { Throttle, ThrottleSetter, ThrottleGetter } from './throttle';\ndescribe('throttle', () => {\n    it('should throttle the method', done => {\n        let _spy = spy();\n        class MyClass {\n            fn(n) {\n                _spy();\n            }\n        }\n        tslib_1.__decorate([\n            Throttle(10)\n        ], MyClass.prototype, \"fn\", null);\n        const myClass = new MyClass();\n        myClass.fn(1);\n        myClass.fn(2);\n        setTimeout(() => myClass.fn(3), 1);\n        setTimeout(() => myClass.fn(4), 2);\n        setTimeout(() => {\n            expect(_spy.callCount).to.equal(2);\n            done();\n        }, 20);\n    });\n    it('should debounce the property setter', done => {\n        class MyClass {\n            constructor() {\n                this._value = 100;\n            }\n            set value(value) {\n                this._value = value;\n            }\n            get value() {\n                return this._value;\n            }\n        }\n        tslib_1.__decorate([\n            ThrottleSetter(10)\n        ], MyClass.prototype, \"value\", null);\n        const myClass = new MyClass();\n        myClass.value = 5;\n        myClass.value = 15;\n        setTimeout(() => myClass.value = 20, 5);\n        expect(myClass.value).to.equal(5);\n        setTimeout(() => {\n            expect(myClass.value).to.equal(20);\n            done();\n        }, 11);\n    });\n    it('should debounce the property getter', done => {\n        class MyClass {\n            constructor() {\n                this._value = 0;\n            }\n            get value() {\n                return ++this._value;\n            }\n        }\n        tslib_1.__decorate([\n            ThrottleGetter(10)\n        ], MyClass.prototype, \"value\", null);\n        const myClass = new MyClass();\n        expect(myClass.value).to.equal(1);\n        expect(myClass.value).to.equal(1);\n        setTimeout(() => expect(myClass.value).to.equal(1), 5);\n        setTimeout(() => {\n            expect(myClass.value).to.equal(2);\n            done();\n        }, 11);\n    });\n    it('should contain the cancel and flush methods', () => {\n        class MyClass {\n            fn() { }\n        }\n        tslib_1.__decorate([\n            Throttle(10)\n        ], MyClass.prototype, \"fn\", null);\n        const myClass = new MyClass();\n        expect(myClass.fn.cancel).to.be.a('function');\n        expect(myClass.fn.flush).to.be.a('function');\n    });\n});\n",
+    "name": "buildDocs/partialRight.spec.js",
+    "content": "import * as tslib_1 from \"tslib\";\nimport { expect } from 'chai';\nimport { PartialRight } from './partialRight';\ndescribe('partialRight', () => {\n    it('should create a partially applied function', () => {\n        class MyClass {\n            constructor() {\n                this.firstName = 'Avry';\n            }\n            fn(name) {\n                return `${this.firstName} ${name}`;\n            }\n        }\n        tslib_1.__decorate([\n            PartialRight('fn', 'Sojka')\n        ], MyClass.prototype, \"fn2\", void 0);\n        const myClass = new MyClass();\n        expect(myClass.fn2).to.be.a('function');\n        expect(myClass.fn2()).to.equal('Avry Sojka');\n    });\n});\n",
     "static": true,
-    "longname": "buildDocs/throttle.spec.js",
+    "longname": "buildDocs/partialRight.spec.js",
     "access": null,
     "description": null,
     "lineNumber": 1
@@ -5476,64 +5490,323 @@
     "kind": "testDescribe",
     "name": "describe78",
     "testId": 78,
-    "memberof": "buildDocs/throttle.spec.js",
+    "memberof": "buildDocs/partialRight.spec.js",
     "testDepth": 0,
     "static": true,
-    "longname": "buildDocs/throttle.spec.js~describe78",
+    "longname": "buildDocs/partialRight.spec.js~describe78",
     "access": null,
-    "description": "throttle",
-    "lineNumber": 5
+    "description": "partialRight",
+    "lineNumber": 4
   },
   {
     "__docId__": 315,
     "kind": "testIt",
     "name": "it79",
     "testId": 79,
-    "memberof": "buildDocs/throttle.spec.js~describe78",
+    "memberof": "buildDocs/partialRight.spec.js~describe78",
     "testDepth": 1,
     "static": true,
-    "longname": "buildDocs/throttle.spec.js~describe78.it79",
+    "longname": "buildDocs/partialRight.spec.js~describe78.it79",
+    "access": null,
+    "description": "should create a partially applied function",
+    "lineNumber": 5
+  },
+  {
+    "__docId__": 316,
+    "kind": "testFile",
+    "name": "buildDocs/rearg.spec.js",
+    "content": "import * as tslib_1 from \"tslib\";\nimport { expect } from 'chai';\nimport { Rearg } from './rearg';\ndescribe('rearg', () => {\n    it('should change the order of arguments', () => {\n        class MyClass {\n            fn(a, b, c) {\n                return [a, b, c];\n            }\n        }\n        tslib_1.__decorate([\n            Rearg(2, 1, 0)\n        ], MyClass.prototype, \"fn\", null);\n        const myClass = new MyClass();\n        expect(myClass.fn(1, 2, 3)).to.eql([3, 2, 1]);\n    });\n});\n",
+    "static": true,
+    "longname": "buildDocs/rearg.spec.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 317,
+    "kind": "testDescribe",
+    "name": "describe80",
+    "testId": 80,
+    "memberof": "buildDocs/rearg.spec.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "buildDocs/rearg.spec.js~describe80",
+    "access": null,
+    "description": "rearg",
+    "lineNumber": 4
+  },
+  {
+    "__docId__": 318,
+    "kind": "testIt",
+    "name": "it81",
+    "testId": 81,
+    "memberof": "buildDocs/rearg.spec.js~describe80",
+    "testDepth": 1,
+    "static": true,
+    "longname": "buildDocs/rearg.spec.js~describe80.it81",
+    "access": null,
+    "description": "should change the order of arguments",
+    "lineNumber": 5
+  },
+  {
+    "__docId__": 319,
+    "kind": "testFile",
+    "name": "buildDocs/rest.spec.js",
+    "content": "import * as tslib_1 from \"tslib\";\nimport { expect } from 'chai';\nimport { Rest } from './rest';\ndescribe('rest', () => {\n    it('should change the order of arguments', () => {\n        class MyClass {\n            fn(...args) {\n                expect(args.length).to.equal(2);\n                expect(args[0]).to.equal(1);\n                expect(args[1]).to.eql([2, 3, 4]);\n            }\n        }\n        tslib_1.__decorate([\n            Rest(1)\n        ], MyClass.prototype, \"fn\", null);\n        const myClass = new MyClass();\n        myClass.fn(1, 2, 3, 4);\n    });\n});\n",
+    "static": true,
+    "longname": "buildDocs/rest.spec.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 320,
+    "kind": "testDescribe",
+    "name": "describe82",
+    "testId": 82,
+    "memberof": "buildDocs/rest.spec.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "buildDocs/rest.spec.js~describe82",
+    "access": null,
+    "description": "rest",
+    "lineNumber": 4
+  },
+  {
+    "__docId__": 321,
+    "kind": "testIt",
+    "name": "it83",
+    "testId": 83,
+    "memberof": "buildDocs/rest.spec.js~describe82",
+    "testDepth": 1,
+    "static": true,
+    "longname": "buildDocs/rest.spec.js~describe82.it83",
+    "access": null,
+    "description": "should change the order of arguments",
+    "lineNumber": 5
+  },
+  {
+    "__docId__": 322,
+    "kind": "testFile",
+    "name": "buildDocs/spread.spec.js",
+    "content": "import * as tslib_1 from \"tslib\";\nimport { expect } from 'chai';\nimport { Spread } from './spread';\ndescribe('spread', () => {\n    it('should spread the arguments', () => {\n        class MyClass {\n            fn(...args) {\n                expect(args.length).to.equal(4);\n                expect(args).to.eql([1, 2, 3, 4]);\n            }\n        }\n        tslib_1.__decorate([\n            Spread()\n        ], MyClass.prototype, \"fn\", null);\n        const myClass = new MyClass();\n        myClass.fn([1, 2, 3, 4]);\n    });\n});\n",
+    "static": true,
+    "longname": "buildDocs/spread.spec.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 323,
+    "kind": "testDescribe",
+    "name": "describe84",
+    "testId": 84,
+    "memberof": "buildDocs/spread.spec.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "buildDocs/spread.spec.js~describe84",
+    "access": null,
+    "description": "spread",
+    "lineNumber": 4
+  },
+  {
+    "__docId__": 324,
+    "kind": "testIt",
+    "name": "it85",
+    "testId": 85,
+    "memberof": "buildDocs/spread.spec.js~describe84",
+    "testDepth": 1,
+    "static": true,
+    "longname": "buildDocs/spread.spec.js~describe84.it85",
+    "access": null,
+    "description": "should spread the arguments",
+    "lineNumber": 5
+  },
+  {
+    "__docId__": 325,
+    "kind": "testFile",
+    "name": "buildDocs/tap.spec.js",
+    "content": "import * as tslib_1 from \"tslib\";\nimport { expect } from 'chai';\nimport { Tap } from './tap';\ndescribe('tap', () => {\n    it('should return the first argument', () => {\n        class MyClass {\n            fn(n) {\n                return 10;\n            }\n        }\n        tslib_1.__decorate([\n            Tap()\n        ], MyClass.prototype, \"fn\", null);\n        const myClass = new MyClass();\n        expect(myClass.fn(50)).to.equal(50);\n    });\n});\n",
+    "static": true,
+    "longname": "buildDocs/tap.spec.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 326,
+    "kind": "testDescribe",
+    "name": "describe86",
+    "testId": 86,
+    "memberof": "buildDocs/tap.spec.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "buildDocs/tap.spec.js~describe86",
+    "access": null,
+    "description": "tap",
+    "lineNumber": 4
+  },
+  {
+    "__docId__": 327,
+    "kind": "testIt",
+    "name": "it87",
+    "testId": 87,
+    "memberof": "buildDocs/tap.spec.js~describe86",
+    "testDepth": 1,
+    "static": true,
+    "longname": "buildDocs/tap.spec.js~describe86.it87",
+    "access": null,
+    "description": "should return the first argument",
+    "lineNumber": 5
+  },
+  {
+    "__docId__": 328,
+    "kind": "testFile",
+    "name": "buildDocs/throttle.spec.js",
+    "content": "import * as tslib_1 from \"tslib\";\nimport { expect } from 'chai';\nimport { spy } from 'sinon';\nimport { Throttle, ThrottleSetter, ThrottleGetter } from './throttle';\ndescribe('throttle', () => {\n    it('should throttle the method', done => {\n        let _spy = spy();\n        class MyClass {\n            fn(n) {\n                _spy();\n            }\n        }\n        tslib_1.__decorate([\n            Throttle(10)\n        ], MyClass.prototype, \"fn\", null);\n        const myClass = new MyClass();\n        myClass.fn(1);\n        myClass.fn(2);\n        setTimeout(() => myClass.fn(3), 1);\n        setTimeout(() => myClass.fn(4), 2);\n        setTimeout(() => {\n            expect(_spy.callCount).to.equal(2);\n            done();\n        }, 20);\n    });\n    it('should debounce the property setter', done => {\n        class MyClass {\n            constructor() {\n                this._value = 100;\n            }\n            set value(value) {\n                this._value = value;\n            }\n            get value() {\n                return this._value;\n            }\n        }\n        tslib_1.__decorate([\n            ThrottleSetter(10)\n        ], MyClass.prototype, \"value\", null);\n        const myClass = new MyClass();\n        myClass.value = 5;\n        myClass.value = 15;\n        setTimeout(() => myClass.value = 20, 5);\n        expect(myClass.value).to.equal(5);\n        setTimeout(() => {\n            expect(myClass.value).to.equal(20);\n            done();\n        }, 11);\n    });\n    it('should debounce the property getter', done => {\n        class MyClass {\n            constructor() {\n                this._value = 0;\n            }\n            get value() {\n                return ++this._value;\n            }\n        }\n        tslib_1.__decorate([\n            ThrottleGetter(10)\n        ], MyClass.prototype, \"value\", null);\n        const myClass = new MyClass();\n        expect(myClass.value).to.equal(1);\n        expect(myClass.value).to.equal(1);\n        setTimeout(() => expect(myClass.value).to.equal(1), 5);\n        setTimeout(() => {\n            expect(myClass.value).to.equal(2);\n            done();\n        }, 11);\n    });\n    it('should contain the cancel and flush methods', () => {\n        class MyClass {\n            fn() { }\n        }\n        tslib_1.__decorate([\n            Throttle(10)\n        ], MyClass.prototype, \"fn\", null);\n        const myClass = new MyClass();\n        expect(myClass.fn.cancel).to.be.a('function');\n        expect(myClass.fn.flush).to.be.a('function');\n    });\n});\n",
+    "static": true,
+    "longname": "buildDocs/throttle.spec.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 329,
+    "kind": "testDescribe",
+    "name": "describe88",
+    "testId": 88,
+    "memberof": "buildDocs/throttle.spec.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "buildDocs/throttle.spec.js~describe88",
+    "access": null,
+    "description": "throttle",
+    "lineNumber": 5
+  },
+  {
+    "__docId__": 330,
+    "kind": "testIt",
+    "name": "it89",
+    "testId": 89,
+    "memberof": "buildDocs/throttle.spec.js~describe88",
+    "testDepth": 1,
+    "static": true,
+    "longname": "buildDocs/throttle.spec.js~describe88.it89",
     "access": null,
     "description": "should throttle the method",
     "lineNumber": 6
   },
   {
-    "__docId__": 316,
+    "__docId__": 331,
     "kind": "testIt",
-    "name": "it80",
-    "testId": 80,
-    "memberof": "buildDocs/throttle.spec.js~describe78",
+    "name": "it90",
+    "testId": 90,
+    "memberof": "buildDocs/throttle.spec.js~describe88",
     "testDepth": 1,
     "static": true,
-    "longname": "buildDocs/throttle.spec.js~describe78.it80",
+    "longname": "buildDocs/throttle.spec.js~describe88.it90",
     "access": null,
     "description": "should debounce the property setter",
     "lineNumber": 26
   },
   {
-    "__docId__": 317,
+    "__docId__": 332,
     "kind": "testIt",
-    "name": "it81",
-    "testId": 81,
-    "memberof": "buildDocs/throttle.spec.js~describe78",
+    "name": "it91",
+    "testId": 91,
+    "memberof": "buildDocs/throttle.spec.js~describe88",
     "testDepth": 1,
     "static": true,
-    "longname": "buildDocs/throttle.spec.js~describe78.it81",
+    "longname": "buildDocs/throttle.spec.js~describe88.it91",
     "access": null,
     "description": "should debounce the property getter",
     "lineNumber": 51
   },
   {
-    "__docId__": 318,
+    "__docId__": 333,
     "kind": "testIt",
-    "name": "it82",
-    "testId": 82,
-    "memberof": "buildDocs/throttle.spec.js~describe78",
+    "name": "it92",
+    "testId": 92,
+    "memberof": "buildDocs/throttle.spec.js~describe88",
     "testDepth": 1,
     "static": true,
-    "longname": "buildDocs/throttle.spec.js~describe78.it82",
+    "longname": "buildDocs/throttle.spec.js~describe88.it92",
     "access": null,
     "description": "should contain the cancel and flush methods",
     "lineNumber": 72
+  },
+  {
+    "__docId__": 334,
+    "kind": "testFile",
+    "name": "buildDocs/unary.spec.js",
+    "content": "import * as tslib_1 from \"tslib\";\nimport { expect } from 'chai';\nimport { Unary } from './unary';\ndescribe('unary', () => {\n    it('should only invoke with one argument', () => {\n        class MyClass {\n            fn(...args) {\n                expect(args.length).to.equal(1);\n            }\n        }\n        tslib_1.__decorate([\n            Unary()\n        ], MyClass.prototype, \"fn\", null);\n        const myClass = new MyClass();\n        myClass.fn(1, 2, 3, 4);\n    });\n});\n",
+    "static": true,
+    "longname": "buildDocs/unary.spec.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 335,
+    "kind": "testDescribe",
+    "name": "describe93",
+    "testId": 93,
+    "memberof": "buildDocs/unary.spec.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "buildDocs/unary.spec.js~describe93",
+    "access": null,
+    "description": "unary",
+    "lineNumber": 4
+  },
+  {
+    "__docId__": 336,
+    "kind": "testIt",
+    "name": "it94",
+    "testId": 94,
+    "memberof": "buildDocs/unary.spec.js~describe93",
+    "testDepth": 1,
+    "static": true,
+    "longname": "buildDocs/unary.spec.js~describe93.it94",
+    "access": null,
+    "description": "should only invoke with one argument",
+    "lineNumber": 5
+  },
+  {
+    "__docId__": 337,
+    "kind": "testFile",
+    "name": "buildDocs/wrap.spec.js",
+    "content": "import * as tslib_1 from \"tslib\";\nimport { expect } from 'chai';\nimport { Wrap } from './wrap';\ndescribe('wrap', () => {\n    it('should wrap the function', () => {\n        class MyClass {\n            fn2(fn, arg) {\n                return fn(arg);\n            }\n            fn(n) {\n                return n;\n            }\n        }\n        tslib_1.__decorate([\n            Wrap('fn')\n        ], MyClass.prototype, \"fn2\", null);\n        const myClass = new MyClass();\n        expect(myClass.fn2(50)).to.equal(50);\n    });\n});\n",
+    "static": true,
+    "longname": "buildDocs/wrap.spec.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 338,
+    "kind": "testDescribe",
+    "name": "describe95",
+    "testId": 95,
+    "memberof": "buildDocs/wrap.spec.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "buildDocs/wrap.spec.js~describe95",
+    "access": null,
+    "description": "wrap",
+    "lineNumber": 4
+  },
+  {
+    "__docId__": 339,
+    "kind": "testIt",
+    "name": "it96",
+    "testId": 96,
+    "memberof": "buildDocs/wrap.spec.js~describe95",
+    "testDepth": 1,
+    "static": true,
+    "longname": "buildDocs/wrap.spec.js~describe95.it96",
+    "access": null,
+    "description": "should wrap the function",
+    "lineNumber": 5
   }
 ]

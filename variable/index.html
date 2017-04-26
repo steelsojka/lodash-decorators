@@ -499,13 +499,14 @@ Subsequent calls to the created function return the result of the last func invo
         <p>
           
           
-          <span data-ice="name"><span><a href="variable/index.html#static-variable-Defer">Defer</a></span></span><span data-ice="signature">: <span>*</span></span>
+          <span data-ice="name"><span><a href="variable/index.html#static-variable-Defer">Defer</a></span></span><span data-ice="signature">(args: ...<span>*</span>): <span>*</span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>Defers invoking the func until the current call stack has cleared.</p>
+</div>
       </div>
     </td>
     <td>
@@ -526,13 +527,14 @@ Subsequent calls to the created function return the result of the last func invo
         <p>
           
           
-          <span data-ice="name"><span><a href="variable/index.html#static-variable-Delay">Delay</a></span></span><span data-ice="signature">: <span>*</span></span>
+          <span data-ice="name"><span><a href="variable/index.html#static-variable-Delay">Delay</a></span></span><span data-ice="signature">(wait: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, args: ...<span>*</span>): <span>*</span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>Invokes func after wait milliseconds.</p>
+</div>
       </div>
     </td>
     <td>
@@ -559,7 +561,8 @@ Subsequent calls to the created function return the result of the last func invo
       <div>
         
         
-        
+        <div data-ice="description"><p>Creates a function that invokes func with arguments reversed.</p>
+</div>
       </div>
     </td>
     <td>
@@ -586,7 +589,9 @@ Subsequent calls to the created function return the result of the last func invo
       <div>
         
         
-        
+        <div data-ice="description"><p>Creates a function that returns the result of invoking the given functions with the this binding of the created function,
+where each successive invocation is supplied the return value of the previous.</p>
+</div>
       </div>
     </td>
     <td>
@@ -613,7 +618,9 @@ Subsequent calls to the created function return the result of the last func invo
       <div>
         
         
-        
+        <div data-ice="description"><p>Creates a function that returns the result of invoking the given functions with the this binding of the created function,
+where each successive invocation is supplied the return value of the previous.</p>
+</div>
       </div>
     </td>
     <td>
@@ -2083,18 +2090,19 @@ setTimeout(() =&gt; {
     
     
     
-    <span data-ice="name">Defer</span><span data-ice="signature">: <span>*</span></span>
+    <span data-ice="name">Defer</span><span data-ice="signature">(args: ...<span>*</span>): <span>*</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/buildDocs/defer.js.html#lineNumber4">source</a></span></span>
+      <span data-ice="source"><span><a href="file/buildDocs/defer.js.html#lineNumber29">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {Defer} from &apos;<span><a href="file/buildDocs/defer.js.html#lineNumber4">lodash-decorators/buildDocs/defer.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {Defer} from &apos;<span><a href="file/buildDocs/defer.js.html#lineNumber29">lodash-decorators/buildDocs/defer.js</a></span>&apos;</code></pre></div>
   
   
-  
+  <div data-ice="description"><p>Defers invoking the func until the current call stack has cleared. Any additional arguments are provided to func when it&apos;s invoked.</p>
+</div>
 
   
 
@@ -2111,7 +2119,32 @@ setTimeout(() =&gt; {
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">
+class MyClass {
+  value = 100;
+
+  @Defer()
+  add(a) {
+    this.value += a;
+  }
+}
+
+const myClass = new MyClass();
+
+myClass.add(10);
+
+myClass.value; // =&gt; 100;
+
+setTimeout(() =&gt; {
+  myClass.value; // =&gt; 110;
+}, 0);</code></pre>
+    </div>
+</div>
 
   
 
@@ -2126,18 +2159,19 @@ setTimeout(() =&gt; {
     
     
     
-    <span data-ice="name">Delay</span><span data-ice="signature">: <span>*</span></span>
+    <span data-ice="name">Delay</span><span data-ice="signature">(wait: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, args: ...<span>*</span>): <span>*</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/buildDocs/delay.js.html#lineNumber4">source</a></span></span>
+      <span data-ice="source"><span><a href="file/buildDocs/delay.js.html#lineNumber30">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {Delay} from &apos;<span><a href="file/buildDocs/delay.js.html#lineNumber4">lodash-decorators/buildDocs/delay.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {Delay} from &apos;<span><a href="file/buildDocs/delay.js.html#lineNumber30">lodash-decorators/buildDocs/delay.js</a></span>&apos;</code></pre></div>
   
   
-  
+  <div data-ice="description"><p>Invokes func after wait milliseconds. Any additional arguments are provided to func when it&apos;s invoked.</p>
+</div>
 
   
 
@@ -2154,7 +2188,32 @@ setTimeout(() =&gt; {
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">
+class MyClass {
+  value = 100;
+
+  @Delay(20)
+  add(a) {
+    this.value += a;
+  }
+}
+
+const myClass = new MyClass();
+
+myClass.add(10);
+
+myClass.value; // =&gt; 100;
+
+setTimeout(() =&gt; {
+  myClass.value; // =&gt; 110;
+}, 30);</code></pre>
+    </div>
+</div>
 
   
 
@@ -2173,14 +2232,16 @@ setTimeout(() =&gt; {
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/buildDocs/flip.js.html#lineNumber4">source</a></span></span>
+      <span data-ice="source"><span><a href="file/buildDocs/flip.js.html#lineNumber23">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {Flip} from &apos;<span><a href="file/buildDocs/flip.js.html#lineNumber4">lodash-decorators/buildDocs/flip.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {Flip} from &apos;<span><a href="file/buildDocs/flip.js.html#lineNumber23">lodash-decorators/buildDocs/flip.js</a></span>&apos;</code></pre></div>
   
   
-  
+  <div data-ice="description"><p>Creates a function that invokes func with arguments reversed. Honestly, there is probably not much
+use for this decorator but maybe you will find one?</p>
+</div>
 
   
 
@@ -2197,7 +2258,26 @@ setTimeout(() =&gt; {
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">
+class MyClass {
+  value = 100;
+
+  @Flip()
+  fn(a, b) {
+    return [ a, b ];
+  }
+}
+
+const myClass = new MyClass();
+
+myClass.fn(10, 20); // =&gt; [ 20, 10 ]</code></pre>
+    </div>
+</div>
 
   
 
@@ -2216,14 +2296,16 @@ setTimeout(() =&gt; {
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/buildDocs/flow.js.html#lineNumber4">source</a></span></span>
+      <span data-ice="source"><span><a href="file/buildDocs/flow.js.html#lineNumber25">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {Flow} from &apos;<span><a href="file/buildDocs/flow.js.html#lineNumber4">lodash-decorators/buildDocs/flow.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {Flow} from &apos;<span><a href="file/buildDocs/flow.js.html#lineNumber25">lodash-decorators/buildDocs/flow.js</a></span>&apos;</code></pre></div>
   
   
-  
+  <div data-ice="description"><p>Creates a function that returns the result of invoking the given functions with the this binding of the created function,
+where each successive invocation is supplied the return value of the previous.</p>
+</div>
 
   
 
@@ -2240,7 +2322,28 @@ setTimeout(() =&gt; {
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">
+class MyClass {
+  name = &apos;Ted&apos;;
+
+  @Flow(&apos;getName&apos;, toUpperCase)
+  getUpperCaseName: () =&gt; string;
+
+  getName() {
+    return this.name;
+  }
+}
+
+const myClass = new MyClass();
+
+myClass.getUpperCaseName(); // =&gt; &apos;TED&apos;</code></pre>
+    </div>
+</div>
 
   
 
@@ -2259,14 +2362,16 @@ setTimeout(() =&gt; {
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/buildDocs/flowRight.js.html#lineNumber4">source</a></span></span>
+      <span data-ice="source"><span><a href="file/buildDocs/flowRight.js.html#lineNumber25">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {FlowRight} from &apos;<span><a href="file/buildDocs/flowRight.js.html#lineNumber4">lodash-decorators/buildDocs/flowRight.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {FlowRight} from &apos;<span><a href="file/buildDocs/flowRight.js.html#lineNumber25">lodash-decorators/buildDocs/flowRight.js</a></span>&apos;</code></pre></div>
   
   
-  
+  <div data-ice="description"><p>Creates a function that returns the result of invoking the given functions with the this binding of the created function,
+where each successive invocation is supplied the return value of the previous.</p>
+</div>
 
   
 
@@ -2283,7 +2388,28 @@ setTimeout(() =&gt; {
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">
+class MyClass {
+  name = &apos;Ted&apos;;
+
+  @FlowRight(toUpperCase, &apos;getName&apos;)
+  getUpperCaseName: () =&gt; string;
+
+  getName() {
+    return this.name;
+  }
+}
+
+const myClass = new MyClass();
+
+myClass.getUpperCaseName(); // =&gt; &apos;TED&apos;</code></pre>
+    </div>
+</div>
 
   
 
