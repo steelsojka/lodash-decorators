@@ -92,6 +92,25 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { flip } from &apos;lodash&apos;;
 import { DecoratorConfig, DecoratorFactory } from &apos;./factory&apos;;
 import { PreValueApplicator } from &apos;./applicators&apos;;
+/**
+ * Creates a function that invokes func with arguments reversed. Honestly, there is probably not much
+ * use for this decorator but maybe you will find one?
+ *
+ * @example
+ *
+ * class MyClass {
+ *   value = 100;
+ *
+ *   @Flip()
+ *   fn(a, b) {
+ *     return [ a, b ];
+ *   }
+ * }
+ *
+ * const myClass = new MyClass();
+ *
+ * myClass.fn(10, 20); // =&gt; [ 20, 10 ]
+ */
 export const Flip = DecoratorFactory.createDecorator(new DecoratorConfig(flip, new PreValueApplicator()));
 export { Flip as flip };
 export default Flip;

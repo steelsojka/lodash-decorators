@@ -92,6 +92,31 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { defer } from &apos;lodash&apos;;
 import { DecoratorConfig, DecoratorFactory } from &apos;./factory&apos;;
 import { InvokeApplicator } from &apos;./applicators&apos;;
+/**
+ * Defers invoking the func until the current call stack has cleared. Any additional arguments are provided to func when it&apos;s invoked.
+ *
+ * @param {...*} [args] Additional arguments to invoke the function with
+ * @example
+ *
+ * class MyClass {
+ *   value = 100;
+ *
+ *   @Defer()
+ *   add(a) {
+ *     this.value += a;
+ *   }
+ * }
+ *
+ * const myClass = new MyClass();
+ *
+ * myClass.add(10);
+ *
+ * myClass.value; // =&gt; 100;
+ *
+ * setTimeout(() =&gt; {
+ *   myClass.value; // =&gt; 110;
+ * }, 0);
+ */
 export const Defer = DecoratorFactory.createDecorator(new DecoratorConfig(defer, new InvokeApplicator(), { setter: true }));
 export { Defer as defer };
 export default Defer;

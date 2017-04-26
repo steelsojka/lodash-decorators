@@ -8,6 +8,7 @@ Decorators using lodash functions. View the [API docs](https://steelsojka.github
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+
 - [Install](#install)
 - [Usage](#usage)
   - [Decorators](#decorators)
@@ -27,8 +28,9 @@ Decorators using lodash functions. View the [API docs](https://steelsojka.github
   - [v4 Breaking Changes](#v4-breaking-changes)
     - [Not all decorators can be applied to or forced on getters/setters.](#not-all-decorators-can-be-applied-to-or-forced-on-getterssetters)
     - [No longer force instance decorator onto prototype](#no-longer-force-instance-decorator-onto-prototype)
-    - [Curry is now an instance decorator](#curry-is-now-an-instance-decorator)
+    - [All decorators now take arguments](#all-decorators-now-take-arguments)
     - [Removal of extensions and validation package](#removal-of-extensions-and-validation-package)
+    - [Prototype decorator order no longer throws an error](#prototype-decorator-order-no-longer-throws-an-error)
     - [Other breaking changes](#other-breaking-changes)
   - [v4 Improvements](#v4-improvements)
 

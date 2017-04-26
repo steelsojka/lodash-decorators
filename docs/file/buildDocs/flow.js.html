@@ -92,6 +92,27 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { flow } from &apos;lodash&apos;;
 import { DecoratorConfig, DecoratorFactory } from &apos;./factory&apos;;
 import { ComposeApplicator } from &apos;./applicators&apos;;
+/**
+ * Creates a function that returns the result of invoking the given functions with the this binding of the created function,
+ * where each successive invocation is supplied the return value of the previous.
+ *
+ * @example
+ *
+ * class MyClass {
+ *   name = &apos;Ted&apos;;
+ *
+ *   @Flow(&apos;getName&apos;, toUpperCase)
+ *   getUpperCaseName: () =&gt; string;
+ *
+ *   getName() {
+ *     return this.name;
+ *   }
+ * }
+ *
+ * const myClass = new MyClass();
+ *
+ * myClass.getUpperCaseName(); // =&gt; &apos;TED&apos;
+ */
 export const Flow = DecoratorFactory.createInstanceDecorator(new DecoratorConfig(flow, new ComposeApplicator({ post: true }), { property: true }));
 export { Flow as flow };
 export default Flow;

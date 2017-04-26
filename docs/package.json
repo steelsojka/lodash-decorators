@@ -2,7 +2,7 @@
   "name": "lodash-decorators",
   "author": "Steven Sojka <steelsojka@gmail.com>",
   "description": "A collection of decorators using lodash at it's core.",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "engines": {
     "node": ">=0.12.0"
   },
@@ -24,6 +24,7 @@
     "postdocs": "npm run build:docs:clean",
     "docs": "del docs && esdoc",
     "docs:serve": "http-server ./docs",
+    "docs:publish": "git subtree push --prefix docs origin gh-pages",
     "readme": "doctoc ./README.md",
     "release": "npm run build && npm run docs && npm run readme"
   },

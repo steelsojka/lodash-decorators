@@ -1314,16 +1314,34 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "builddocs/partialright.spec.js",
+    "test-file/buildDocs/partialRight.spec.js.html",
+    "buildDocs/partialRight.spec.js",
+    "testFile"
+  ],
+  [
     "builddocs/rearg.js",
     "file/buildDocs/rearg.js.html",
     "buildDocs/rearg.js",
     "file"
   ],
   [
+    "builddocs/rearg.spec.js",
+    "test-file/buildDocs/rearg.spec.js.html",
+    "buildDocs/rearg.spec.js",
+    "testFile"
+  ],
+  [
     "builddocs/rest.js",
     "file/buildDocs/rest.js.html",
     "buildDocs/rest.js",
     "file"
+  ],
+  [
+    "builddocs/rest.spec.js",
+    "test-file/buildDocs/rest.spec.js.html",
+    "buildDocs/rest.spec.js",
+    "testFile"
   ],
   [
     "builddocs/shared.js",
@@ -1338,10 +1356,22 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "builddocs/spread.spec.js",
+    "test-file/buildDocs/spread.spec.js.html",
+    "buildDocs/spread.spec.js",
+    "testFile"
+  ],
+  [
     "builddocs/tap.js",
     "file/buildDocs/tap.js.html",
     "buildDocs/tap.js",
     "file"
+  ],
+  [
+    "builddocs/tap.spec.js",
+    "test-file/buildDocs/tap.spec.js.html",
+    "buildDocs/tap.spec.js",
+    "testFile"
   ],
   [
     "builddocs/throttle.js",
@@ -1366,6 +1396,12 @@ window.esdocSearchIndex = [
     "file/buildDocs/unary.js.html",
     "buildDocs/unary.js",
     "file"
+  ],
+  [
+    "builddocs/unary.spec.js",
+    "test-file/buildDocs/unary.spec.js.html",
+    "buildDocs/unary.spec.js",
+    "testFile"
   ],
   [
     "builddocs/utils/compositekeyweakmap.js",
@@ -1414,6 +1450,12 @@ window.esdocSearchIndex = [
     "file/buildDocs/wrap.js.html",
     "buildDocs/wrap.js",
     "file"
+  ],
+  [
+    "builddocs/wrap.spec.js",
+    "test-file/buildDocs/wrap.spec.js.html",
+    "buildDocs/wrap.spec.js",
+    "testFile"
   ],
   [
     "",
@@ -1777,6 +1819,66 @@ window.esdocSearchIndex = [
   ],
   [
     "",
+    "test-file/buildDocs/partialRight.spec.js.html#lineNumber4",
+    "partialRight",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/partialRight.spec.js.html#lineNumber5",
+    "partialRight should create a partially applied function",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/rearg.spec.js.html#lineNumber4",
+    "rearg",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/rearg.spec.js.html#lineNumber5",
+    "rearg should change the order of arguments",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/rest.spec.js.html#lineNumber4",
+    "rest",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/rest.spec.js.html#lineNumber5",
+    "rest should change the order of arguments",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/spread.spec.js.html#lineNumber4",
+    "spread",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/spread.spec.js.html#lineNumber5",
+    "spread should spread the arguments",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/tap.spec.js.html#lineNumber4",
+    "tap",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/tap.spec.js.html#lineNumber5",
+    "tap should return the first argument",
+    "test"
+  ],
+  [
+    "",
     "test-file/buildDocs/throttle.spec.js.html#lineNumber5",
     "throttle",
     "test"
@@ -1803,6 +1905,30 @@ window.esdocSearchIndex = [
     "",
     "test-file/buildDocs/throttle.spec.js.html#lineNumber6",
     "throttle should throttle the method",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/unary.spec.js.html#lineNumber4",
+    "unary",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/unary.spec.js.html#lineNumber5",
+    "unary should only invoke with one argument",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/wrap.spec.js.html#lineNumber4",
+    "wrap",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/wrap.spec.js.html#lineNumber5",
+    "wrap should wrap the function",
     "test"
   ]
 ]
