@@ -100,4 +100,38 @@ describe('memoize', () => {
       expect(_spy.callCount).to.equal(2);
     });
   });
+
+  describe('with custom map type', () => {
+    it('should create the map of type', () => {
+      class MyClass {
+        @Memoize({ type: WeakMap })
+        fn(item: any): any {
+          return item.value;
+        }
+      }
+
+      const myClass = new MyClass();
+
+      expect((<any>myClass.fn).cache).to.be.an.instanceOf(WeakMap);
+    });
+  });
+
+  describe('with custom cache', () => {
+    it('should use the provided map', () => {
+      const cache = new Map();
+
+      class MyClass {
+        @Memoize({ cache })
+        fn(item: any): any {
+          return item.value;
+        }
+      }
+
+      const myClass = new MyClass();
+      const myClass2 = new MyClass();
+
+      expect((<any>myClass.fn).cache).to.equal(cache);
+      expect((<any>myClass2.fn).cache).to.equal(cache);
+    });
+  });
 });

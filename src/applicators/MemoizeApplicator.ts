@@ -1,18 +1,33 @@
+import { isFunction, isObject } from 'lodash';
+
 import { Applicator, ApplicateOptions } from './Applicator';
 import { resolveFunction } from '../utils';
 
 export class MemoizeApplicator extends Applicator {
   apply({ value, instance, config: { execute }, args, target }: ApplicateOptions): any {
-    if (!instance) {
-      return execute(value, ...args);
-    }
+    let resolver = resolveFunction(
+      isFunction(args[0]) ? args[0] : isObject(args[0]) ? args[0].resolver : args[0],
+      instance,
+      target,
+      false
+    );
 
-    let resolver = resolveFunction(args[0], instance, target, false);
-
-    if (resolver) {
+    if (resolver && instance) {
       resolver = resolver.bind(instance);
     }
 
-    return resolver ? execute(value, resolver) : execute(value);
+    const memoized = resolver ? execute(value, resolver) : execute(value);
+
+    if (isObject(args[0])) {
+      const { cache, type } = args[0];
+
+      if (cache) {
+        memoized.cache = cache;
+      } else if (isFunction(type)) {
+        memoized.cache = new type();
+      }
+    }
+
+    return memoized;
   }
 }

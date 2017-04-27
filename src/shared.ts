@@ -1,4 +1,4 @@
-import { DecoratorConfig } from './factory';
+import { DecoratorConfig, ResolvableFunction } from './factory';
 
 export interface DebounceOptions {
   wait?: number;
@@ -18,4 +18,18 @@ export interface ApplicateOptions {
 export interface ThrottleOptions {
   leading?: boolean;
   trailing?: boolean;
+}
+
+export interface MemoizeMap<T, U> {
+  get(key: T): U;
+  has(key: T): boolean;
+  set(key: T, value: U): void;
+  delete(key: T): void;
+  clear?(): void;
+}
+
+export interface MemoizeConfig<T, U> {
+  resolver?: ResolvableFunction;
+  type?: { new (...args: any[]): MemoizeMap<T, U> };
+  cache?: MemoizeMap<T, U>;
 }

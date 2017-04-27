@@ -7,8 +7,9 @@ import {
   ResolvableFunction
 } from './factory';
 import { MemoizeApplicator } from './applicators';
+import { MemoizeConfig } from './shared';
 
-export const Memoize: (resolver?: ResolvableFunction) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(
+export const Memoize: (resolver?: ResolvableFunction|MemoizeConfig<any, any>) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(
   new DecoratorConfig(memoize, new MemoizeApplicator())
 );
 export { Memoize as memoize };
