@@ -89,18 +89,26 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/applicators/MemoizeApplicator.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { Applicator } from &apos;./Applicator&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { isFunction, isObject } from &apos;lodash&apos;;
+import { Applicator } from &apos;./Applicator&apos;;
 import { resolveFunction } from &apos;../utils&apos;;
 export class MemoizeApplicator extends Applicator {
     apply({ value, instance, config: { execute }, args, target }) {
-        if (!instance) {
-            return execute(value, ...args);
-        }
-        let resolver = resolveFunction(args[0], instance, target, false);
-        if (resolver) {
+        let resolver = resolveFunction(isFunction(args[0]) ? args[0] : isObject(args[0]) ? args[0].resolver : args[0], instance, target, false);
+        if (resolver &amp;&amp; instance) {
             resolver = resolver.bind(instance);
         }
-        return resolver ? execute(value, resolver) : execute(value);
+        const memoized = resolver ? execute(value, resolver) : execute(value);
+        if (isObject(args[0])) {
+            const { cache, type } = args[0];
+            if (cache) {
+                memoized.cache = cache;
+            }
+            else if (isFunction(type)) {
+                memoized.cache = new type();
+            }
+        }
+        return memoized;
     }
 }
 </code></pre>

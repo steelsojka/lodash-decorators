@@ -171,6 +171,37 @@ describe(&apos;memoize&apos;, () =&gt; {
             expect(_spy.callCount).to.equal(2);
         });
     });
+    describe(&apos;with custom map type&apos;, () =&gt; {
+        it(&apos;should create the map of type&apos;, () =&gt; {
+            class MyClass {
+                fn(item) {
+                    return item.value;
+                }
+            }
+            tslib_1.__decorate([
+                Memoize({ type: WeakMap })
+            ], MyClass.prototype, &quot;fn&quot;, null);
+            const myClass = new MyClass();
+            expect(myClass.fn.cache).to.be.an.instanceOf(WeakMap);
+        });
+    });
+    describe(&apos;with custom cache&apos;, () =&gt; {
+        it(&apos;should use the provided map&apos;, () =&gt; {
+            const cache = new Map();
+            class MyClass {
+                fn(item) {
+                    return item.value;
+                }
+            }
+            tslib_1.__decorate([
+                Memoize({ cache })
+            ], MyClass.prototype, &quot;fn&quot;, null);
+            const myClass = new MyClass();
+            const myClass2 = new MyClass();
+            expect(myClass.fn.cache).to.equal(cache);
+            expect(myClass2.fn.cache).to.equal(cache);
+        });
+    });
 });
 </code></pre>
 

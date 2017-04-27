@@ -1669,6 +1669,30 @@ window.esdocSearchIndex = [
   ],
   [
     "",
+    "test-file/buildDocs/memoize.spec.js.html#lineNumber97",
+    "memoize with custom cache",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/memoize.spec.js.html#lineNumber98",
+    "memoize with custom cache should use the provided map",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/memoize.spec.js.html#lineNumber83",
+    "memoize with custom map type",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/memoize.spec.js.html#lineNumber84",
+    "memoize with custom map type should create the map of type",
+    "test"
+  ],
+  [
+    "",
     "test-file/buildDocs/memoize.spec.js.html#lineNumber31",
     "memoize with function resolver",
     "test"
