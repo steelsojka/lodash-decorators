@@ -38,7 +38,7 @@ Decorators using lodash functions. View the [API docs](https://steelsojka.github
 
 ## Install
 
-`npm install --save lodash-decorators`
+`npm install --save lodash lodash-decorators`
 
 ## Usage
 
