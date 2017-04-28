@@ -1,9 +1,9 @@
 import { memoize } from 'lodash';
 
-import { 
-  DecoratorConfig, 
-  DecoratorFactory, 
-  LodashMethodDecorator, 
+import {
+  DecoratorConfig,
+  DecoratorFactory,
+  LodashMethodDecorator,
   ResolvableFunction
 } from './factory';
 import { MemoizeApplicator } from './applicators';

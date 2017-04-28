@@ -9,7 +9,7 @@ describe('once', () => {
     class MyClass {
       @Once()
       fn() {
-        calls++;  
+        calls++;
       }
     }
 

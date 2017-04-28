@@ -4,8 +4,8 @@ import { spy } from 'sinon';
 import { Throttle, ThrottleSetter, ThrottleGetter } from './throttle';
 
 describe('throttle', () => {
-  it('should throttle the method', done => {
-    let _spy = spy();
+  it('should throttle the method', (done) => {
+    const _spy = spy();
 
     class MyClass {
       @Throttle(10)
@@ -28,7 +28,7 @@ describe('throttle', () => {
     }, 20);
   });
 
-  it('should debounce the property setter', done => {
+  it('should debounce the property setter', (done) => {
     class MyClass {
       private _value: number = 100;
 
@@ -57,7 +57,7 @@ describe('throttle', () => {
     }, 11);
   });
 
-  it('should debounce the property getter', done => {
+  it('should debounce the property getter', (done) => {
     class MyClass {
       private _value: number = 0;
 
@@ -88,7 +88,7 @@ describe('throttle', () => {
 
     const myClass = new MyClass();
 
-    expect((<any>myClass.fn).cancel).to.be.a('function');
-    expect((<any>myClass.fn).flush).to.be.a('function');
+    expect((myClass.fn as any).cancel).to.be.a('function');
+    expect((myClass.fn as any).flush).to.be.a('function');
   });
 });

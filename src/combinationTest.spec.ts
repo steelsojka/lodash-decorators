@@ -9,7 +9,7 @@ import { Delay } from './delay';
 describe('multiple decorators', () => {
   describe('when using multiple instance decorators', () => {
     it('should apply both decorators', () => {
-      const _spy = spy(); 
+      const _spy = spy();
 
       class MyClass {
         @Bind()
@@ -28,13 +28,13 @@ describe('multiple decorators', () => {
       myClass.fn.call(null, 1);
       myClass.fn.call(null, 2);
 
-      expect(_spy.callCount).to.equal(2)
+      expect(_spy.callCount).to.equal(2);
     });
   });
 
   describe('when combining proto and instance decorators', () => {
-    it('should apply both decorators', done => {
-      const _spy = spy(); 
+    it('should apply both decorators', (done) => {
+      const _spy = spy();
 
       class MyClass {
         @Curry(2)
@@ -63,7 +63,7 @@ describe('multiple decorators', () => {
 
     describe('when proto is after instance', () => {
       it('should only apply the instance decorator', () => {
-        const _spy = spy(); 
+        const _spy = spy();
 
         class MyClass {
           @Delay(10)

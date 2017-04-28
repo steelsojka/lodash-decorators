@@ -4,8 +4,8 @@ import { spy } from 'sinon';
 import { Delay } from './delay';
 
 describe('delay', () => {
-  it('should delay the method', done => {
-    let _spy = spy();
+  it('should delay the method', (done) => {
+    const _spy = spy();
 
     class MyClass {
       @Delay(15, 'test')
@@ -22,12 +22,12 @@ describe('delay', () => {
 
     setTimeout(() => {
       expect(_spy.callCount).to.equal(1);
-      expect(_spy.getCalls()[0].args).to.eql([ 10, 'test' ])
+      expect(_spy.getCalls()[0].args).to.eql([ 10, 'test' ]);
       done();
     }, 16);
   });
 
-  it('should debounce the property setter', done => {
+  it('should debounce the property setter', (done) => {
     class MyClass {
       private _value: number = 100;
 

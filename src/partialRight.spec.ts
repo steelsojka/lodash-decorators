@@ -8,7 +8,7 @@ describe('partialRight', () => {
       firstName: string = 'Avry';
 
       @PartialRight('fn', 'Sojka')
-      fn2: () => string; 
+      fn2: () => string;
 
       fn(name: string): string {
         return `${this.firstName} ${name}`;

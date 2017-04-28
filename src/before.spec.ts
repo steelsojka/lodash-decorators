@@ -9,7 +9,7 @@ describe('before', () => {
     class MyClass {
       @Before(3)
       fn() {
-        calls++;  
+        calls++;
       }
     }
 

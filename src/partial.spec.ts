@@ -8,7 +8,7 @@ describe('partial', () => {
       lastName: string = 'Sojka';
 
       @Partial('fn', 'Avry')
-      fn2: () => string; 
+      fn2: () => string;
 
       fn(name: string): string {
         return `${name} ${this.lastName}`;

@@ -41,5 +41,5 @@ describe('flow', () => {
     const myClass = new MyClass();
 
     expect(myClass.fn()).to.equal('AVRY');
-  })
+  });
 });

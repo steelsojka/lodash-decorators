@@ -7,7 +7,7 @@ describe('ary', () => {
     class MyClass {
       @Ary(2)
       fn(...args: any[]) {
-        expect(args.length).to.equal(2)
+        expect(args.length).to.equal(2);
       }
     }
 

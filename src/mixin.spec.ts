@@ -15,7 +15,7 @@ describe('mixin', () => {
 
     const myClass = new MyClass();
 
-    expect((<any>myClass).fn2).to.be.a('function');
-    expect((<any>MyClass.prototype).fn2).to.be.a('function');
+    expect((myClass as any).fn2).to.be.a('function');
+    expect((MyClass.prototype as any).fn2).to.be.a('function');
   });
 });

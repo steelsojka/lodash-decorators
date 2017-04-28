@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { DebounceAll } from './debounceAll';
 
 describe('debounceAll', () => {
-  it('should debounce the method across instances', done => {
+  it('should debounce the method across instances', (done) => {
     let calls = 0;
 
     class MyClass {

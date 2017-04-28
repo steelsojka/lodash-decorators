@@ -4,8 +4,8 @@ import { spy } from 'sinon';
 import { Defer } from './defer';
 
 describe('defer', () => {
-  it('should defer the method', done => {
-    let _spy = spy();
+  it('should defer the method', (done) => {
+    const _spy = spy();
 
     class MyClass {
       @Defer('test')
@@ -22,12 +22,12 @@ describe('defer', () => {
 
     setTimeout(() => {
       expect(_spy.callCount).to.equal(1);
-      expect(_spy.getCalls()[0].args).to.eql([ 10, 'test' ])
+      expect(_spy.getCalls()[0].args).to.eql([ 10, 'test' ]);
       done();
     }, 0);
   });
 
-  it('should debounce the property setter', done => {
+  it('should debounce the property setter', (done) => {
     class MyClass {
       private _value: number = 100;
 

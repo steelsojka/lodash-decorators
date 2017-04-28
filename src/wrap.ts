@@ -1,7 +1,7 @@
 import { wrap } from 'lodash';
 
-import { 
-  DecoratorConfig, 
+import {
+  DecoratorConfig,
   DecoratorFactory,
   ResolvableFunction,
   LodashMethodDecorator

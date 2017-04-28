@@ -3,23 +3,23 @@ import { copyMetadata } from './utils';
 /**
  * Binds methods of an object to the object itself, overwriting the existing method.
  * @export
- * @param {string[]} [methods=[]] 
- * @returns {ClassDecorator} 
+ * @param {string[]} [methods=[]]
+ * @returns {ClassDecorator}
  * @example
- * 
+ *
  * @BindAll()
  * class MyClass {
  *   bound() {
  *     return this;
  *   }
- * 
+ *
  *   unbound() {
  *     return this;
- *   } 
+ *   }
  * }
- * 
+ *
  * const myClass = new MyClass();
- * 
+ *
  * myClass.bound.call(null); // => MyClass {}
  * myClass.unbound.call(null); // => MyClass {}
  */
@@ -29,12 +29,12 @@ export function BindAll(methods: string[] = []): ClassDecorator {
       bindAllMethods(target, this, methods);
 
       target.apply(this, args);
-    };
+    }
 
     BindAllWrapper.prototype = target.prototype;
 
     return BindAllWrapper;
-  }
+  };
 }
 
 function bindAllMethods(target: Function, instance: any, methods: string[] = []): void {
@@ -47,9 +47,9 @@ function bindAllMethods(target: Function, instance: any, methods: string[] = [])
 
       if (include && key !== 'constructor' && !instance.hasOwnProperty(key)) {
         Object.defineProperty(instance, key, {
-          value: copyMetadata(instance[key].bind(instance), instance[key]),
           configurable: true,
           enumerable: descriptor.enumerable,
+          value: copyMetadata(instance[key].bind(instance), instance[key]),
           writable: descriptor.writable
         });
       }

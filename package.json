@@ -12,7 +12,7 @@
     "test": "mocha --opts mocha.opts",
     "test:clean": "del test",
     "posttest": "npm run test:clean",
-    "prebuild": "npm run build:clean",
+    "prebuild": "npm run lint && npm run build:clean",
     "prebuild:test": "npm run test:clean",
     "prebuild:docs": "npm run build:docs:clean",
     "build:clean": "del '*.js' '*.js.map' '*.d.ts' applicators factory utils",
@@ -26,7 +26,9 @@
     "docs:serve": "http-server ./docs",
     "docs:publish": "git subtree push --prefix docs origin gh-pages",
     "readme": "doctoc ./README.md",
-    "release": "npm run build && npm run docs && npm run readme"
+    "release": "npm run build && npm run docs && npm run readme",
+    "lint": "tslint src/**",
+    "lint:fix": "tslint src/** --fix"
   },
   "main": "index.js",
   "keywords": [
@@ -58,6 +60,8 @@
     "mocha": "^3.3.0",
     "sinon": "~1.14.1",
     "ts-node": "^3.0.2",
+    "tslint": "^5.1.0",
+    "tslint-language-service": "^0.9.2",
     "typescript": "^2.2.2"
   },
   "peerDependencies": {

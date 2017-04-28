@@ -9,7 +9,7 @@ describe('afterAll', () => {
     class MyClass {
       @AfterAll(3)
       fn() {
-        calls++;  
+        calls++;
       }
     }
 

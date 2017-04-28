@@ -16,7 +16,7 @@ describe('after', () => {
 
       @After(3)
       fn() {
-        calls++;  
+        calls++;
       }
     }
 
@@ -37,8 +37,8 @@ describe('after', () => {
 
     expect(calls, 'multiple class').to.equal(4);
 
-    myClass.prop = 50
-    myClass.prop = 100
+    myClass.prop = 50;
+    myClass.prop = 100;
 
     expect(myClass.props.length, 'setter length').to.equal(1);
     expect(myClass.props[0], 'setter value').to.equal(100);

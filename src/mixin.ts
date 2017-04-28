@@ -5,7 +5,7 @@ export function Mixin(...srcs: Object[]): ClassDecorator {
     assign(target.prototype, ...srcs);
 
     return target;
-  }
+  };
 }
 export { Mixin as mixin };
 export default Mixin;

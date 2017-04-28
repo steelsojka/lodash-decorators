@@ -112,7 +112,7 @@ describe('memoize', () => {
 
       const myClass = new MyClass();
 
-      expect((<any>myClass.fn).cache).to.be.an.instanceOf(WeakMap);
+      expect((myClass.fn as any).cache).to.be.an.instanceOf(WeakMap);
     });
   });
 
@@ -130,8 +130,8 @@ describe('memoize', () => {
       const myClass = new MyClass();
       const myClass2 = new MyClass();
 
-      expect((<any>myClass.fn).cache).to.equal(cache);
-      expect((<any>myClass2.fn).cache).to.equal(cache);
+      expect((myClass.fn as any).cache).to.equal(cache);
+      expect((myClass2.fn as any).cache).to.equal(cache);
     });
   });
 });

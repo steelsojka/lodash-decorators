@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { Debounce } from './debounce';
 
 describe('debounce', () => {
-  it('should debounce the method', done => {
+  it('should debounce the method', (done) => {
     let calls = 0;
 
     class MyClass {
@@ -24,10 +24,10 @@ describe('debounce', () => {
     setTimeout(() => {
       expect(calls).to.equal(1);
       done();
-    }, 11);
+    }, 20);
   });
 
-  it('should debounce the property setter', done => {
+  it('should debounce the property setter', (done) => {
     class MyClass {
       private _value: number = 100;
 
@@ -51,7 +51,7 @@ describe('debounce', () => {
     setTimeout(() => {
       expect(myClass.value).to.equal(15);
       done();
-    }, 11);
+    }, 20);
   });
 
   it('should contain the flush and cancel methods', () => {
@@ -62,7 +62,7 @@ describe('debounce', () => {
 
     const myClass = new MyClass();
 
-    expect((<any>myClass.fn).cancel).to.be.a('function');
-    expect((<any>myClass.fn).flush).to.be.a('function');
+    expect((myClass.fn as any).cancel).to.be.a('function');
+    expect((myClass.fn as any).flush).to.be.a('function');
   });
 });
