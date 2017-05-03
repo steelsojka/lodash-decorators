@@ -1,4 +1,4 @@
-import { flip } from 'lodash';
+import flip = require('lodash/flip');
 
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { PreValueApplicator } from './applicators';

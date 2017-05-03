@@ -1,4 +1,4 @@
-import { partialRight } from 'lodash';
+import partialRight = require('lodash/partialRight');
 
 import { DecoratorConfig, DecoratorFactory } from './factory';
 import { PartialApplicator } from './applicators';

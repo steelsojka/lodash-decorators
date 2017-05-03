@@ -1,4 +1,4 @@
-import { flow } from 'lodash';
+import flow = require('lodash/flow');
 
 import {
   DecoratorConfig,

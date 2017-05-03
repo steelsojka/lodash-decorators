@@ -1,4 +1,5 @@
-import { attempt, partial } from 'lodash';
+import attempt = require('lodash/attempt');
+import partial = require('lodash/partial');
 
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { PreValueApplicator } from './applicators';

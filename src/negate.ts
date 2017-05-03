@@ -1,4 +1,4 @@
-import { negate } from 'lodash';
+import negate = require('lodash/negate');
 
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { PreValueApplicator } from './applicators';

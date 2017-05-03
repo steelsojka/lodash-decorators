@@ -1,4 +1,4 @@
-import { spread } from 'lodash';
+import spread = require('lodash/spread');
 
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { PreValueApplicator } from './applicators';

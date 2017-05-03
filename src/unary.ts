@@ -1,4 +1,4 @@
-import { unary } from 'lodash';
+import unary = require('lodash/unary');
 
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { PreValueApplicator } from './applicators';

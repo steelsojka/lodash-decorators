@@ -1,4 +1,4 @@
-import { identity } from 'lodash';
+import identity = require('lodash/identity');
 
 import { Applicator, ApplicateOptions } from './Applicator';
 import { resolveFunction } from '../utils';
@@ -11,7 +11,7 @@ export class ComposeApplicator extends Applicator {
   get post(): boolean {
     return this._config.post === true;
   }
-  
+
   apply({ config: { execute }, value = identity, args, target }: ApplicateOptions): any {
     const applicator = this;
 

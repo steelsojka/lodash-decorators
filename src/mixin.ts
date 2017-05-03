@@ -1,4 +1,4 @@
-import { assign } from 'lodash';
+import assign = require('lodash/assign');
 
 export function Mixin(...srcs: Object[]): ClassDecorator {
   return (target: Function) => {

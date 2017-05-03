@@ -1,11 +1,11 @@
-import { isUndefined } from 'lodash';
+import isUndefined = require('lodash/isUndefined');
 
 /**
  * A map for weakly holding nested references.
  * @private
  * @export
  * @class CompositeKeyWeakMap
- * @template T 
+ * @template T
  */
 export class CompositeKeyWeakMap<T> {
   private _weakMap = new WeakMap<any, any>();

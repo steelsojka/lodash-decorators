@@ -1,4 +1,4 @@
-import { partial } from 'lodash';
+import partial = require('lodash/partial');
 
 import { Applicator, ApplicateOptions } from './Applicator';
 

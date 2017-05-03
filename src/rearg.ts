@@ -1,4 +1,4 @@
-import { rearg } from 'lodash';
+import rearg = require('lodash/rearg');
 
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { PreValueApplicator } from './applicators';

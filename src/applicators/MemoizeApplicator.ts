@@ -1,4 +1,5 @@
-import { isFunction, isObject } from 'lodash';
+import isFunction = require('lodash/isFunction');
+import isObject = require('lodash/isObject');
 
 import { Applicator, ApplicateOptions } from './Applicator';
 import { resolveFunction } from '../utils';

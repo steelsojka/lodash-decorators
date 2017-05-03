@@ -1,4 +1,4 @@
-import { rest } from 'lodash';
+import rest = require('lodash/rest');
 
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { PreValueApplicator } from './applicators';

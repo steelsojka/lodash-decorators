@@ -1,7 +1,7 @@
-import { isFunction } from 'lodash';
+import isFunction = require('lodash/isFunction');
 
-import { 
-  InstanceChainMap, 
+import {
+  InstanceChainMap,
   LodashDecorator,
   InstanceChainContext
 } from './common';
@@ -60,7 +60,7 @@ export class InternalDecoratorFactory {
           }
 
           return copyMetadata(
-            applicator.apply({ args, target, instance, value: fn, config }), 
+            applicator.apply({ args, target, instance, value: fn, config }),
             fn
           );
         });
@@ -83,11 +83,11 @@ export class InternalDecoratorFactory {
             // If we have a getter apply the decorators to the getter and assign it to the instance.
             if (isGetter) {
               getter = applyChain(get, { value: get, getter: true }, instance);
-            } 
+            }
 
             if (isSetter) {
               setter = applyChain(set, { value: set, setter: true }, instance);
-            } 
+            }
 
             Object.defineProperty(instance, name, {
               enumerable,
@@ -96,8 +96,8 @@ export class InternalDecoratorFactory {
               set: setter
             });
           } else if (isMethod || isProperty) {
-            const newFn = isMethod 
-              ? applyChain(value, { value, method: true }, instance) 
+            const newFn = isMethod
+              ? applyChain(value, { value, method: true }, instance)
               : applyChain(value, { value, property: true }, instance);
 
             Object.defineProperty(instance, name, {
@@ -145,7 +145,7 @@ export class InternalDecoratorFactory {
 
   private _isApplicable(context: InstanceChainContext, config: DecoratorConfig): boolean {
    return !Boolean(
-     context.getter && !config.getter 
+     context.getter && !config.getter
       || context.setter && !config.setter
       || context.method && !config.method
       || context.property && !config.property

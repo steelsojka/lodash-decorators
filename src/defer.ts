@@ -1,4 +1,4 @@
-import { defer } from 'lodash';
+import defer = require('lodash/defer');
 
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { InvokeApplicator } from './applicators';

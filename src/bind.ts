@@ -1,4 +1,4 @@
-import { bind } from 'lodash';
+import bind = require('lodash/bind');
 
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { BindApplicator } from './applicators';
