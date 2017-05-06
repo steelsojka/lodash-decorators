@@ -215,6 +215,12 @@ decorators are applied at the instance level.
 -   `Once`
 -   `Flow`
 -   `FlowRight`
+-   `Rearg`
+-   `Negate`
+-   `Flip`
+-   `Bind`
+-   `Partial`
+-   `PartialRight`
 
 ### Mixin
 

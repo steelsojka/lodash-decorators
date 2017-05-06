@@ -1,10 +1,15 @@
 import rearg = require('lodash/rearg');
 
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
-import { PreValueApplicator } from './applicators';
+import {
+  DecoratorConfig,
+  DecoratorFactory,
+  LodashDecorator,
+  ResolvableFunction
+} from './factory';
+import { PartialValueApplicator } from './applicators';
 
-export const Rearg: (indexes: number|number[], ...args: number[]) => LodashMethodDecorator = DecoratorFactory.createDecorator(
-  new DecoratorConfig(rearg, new PreValueApplicator())
+export const Rearg: (indexes: ResolvableFunction|number|number[], ...args: (number|number[])[]) => LodashDecorator = DecoratorFactory.createInstanceDecorator(
+  new DecoratorConfig(rearg, new PartialValueApplicator(), { property: true })
 );
 export { Rearg as rearg };
 export default Rearg;

@@ -1,10 +1,15 @@
 import negate = require('lodash/negate');
 
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
-import { PreValueApplicator } from './applicators';
+import {
+  DecoratorConfig,
+  DecoratorFactory,
+  LodashDecorator,
+  ResolvableFunction
+} from './factory';
+import { PartialValueApplicator } from './applicators';
 
-export const Negate: () => LodashMethodDecorator = DecoratorFactory.createDecorator(
-  new DecoratorConfig(negate, new PreValueApplicator())
+export const Negate: (fn?: ResolvableFunction) => LodashDecorator = DecoratorFactory.createInstanceDecorator(
+  new DecoratorConfig(negate, new PartialValueApplicator(), { property: true })
 );
 export { Negate as negate };
 export default Negate;
