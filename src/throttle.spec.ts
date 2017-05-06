@@ -54,7 +54,7 @@ describe('throttle', () => {
     setTimeout(() => {
       expect(myClass.value).to.equal(20);
       done();
-    }, 11);
+    }, 20);
   });
 
   it('should debounce the property getter', (done) => {
@@ -77,7 +77,7 @@ describe('throttle', () => {
     setTimeout(() => {
       expect(myClass.value).to.equal(2);
       done();
-    }, 11);
+    }, 20);
   });
 
   it('should contain the cancel and flush methods', () => {
