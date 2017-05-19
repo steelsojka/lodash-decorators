@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.3.3"></a>
+## [4.3.3](https://github.com/steelsojka/lodash-decorators/compare/v4.3.2...v4.3.3) (2017-05-19)
+
+
+### Bug Fixes
+
+* **bindAll:** fix bind all should only apply to methods ([4b86629](https://github.com/steelsojka/lodash-decorators/commit/4b86629))
+
+
+
 <a name="4.3.2"></a>
 ## [4.3.2](https://github.com/steelsojka/lodash-decorators/compare/v4.3.1...v4.3.2) (2017-05-19)
 
