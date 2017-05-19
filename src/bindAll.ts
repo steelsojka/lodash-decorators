@@ -1,3 +1,4 @@
+import isFunction = require('lodash/isFunction');
 import { copyMetadata } from './utils';
 
 /**
@@ -46,12 +47,16 @@ function bindAllMethods(target: Function, instance: any, methods: string[] = [])
       const descriptor = Object.getOwnPropertyDescriptor(proto, key);
 
       if (include && key !== 'constructor' && !instance.hasOwnProperty(key)) {
-        Object.defineProperty(instance, key, {
-          configurable: true,
-          enumerable: descriptor.enumerable,
-          value: copyMetadata(instance[key].bind(instance), instance[key]),
-          writable: descriptor.writable
-        });
+        const value = instance[key];
+
+        if (isFunction(value)) {
+          Object.defineProperty(instance, key, {
+            configurable: true,
+            enumerable: descriptor.enumerable,
+            value: copyMetadata(value.bind(instance), value),
+            writable: descriptor.writable
+          });
+        }
       }
     }
 

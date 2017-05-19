@@ -52,4 +52,22 @@ describe('bindAll', () => {
     myClass.fn2.call(null);
     expect(context).to.equal(null);
   });
+
+  it('should work with getters', () => {
+    @BindAll()
+    class MyClass {
+      get prop(): string {
+        return 'blorg';
+      }
+
+      fn() {
+        return this.prop;
+      }
+    }
+
+    const myClass = new MyClass();
+
+    myClass.fn.call(null);
+    expect(myClass.fn()).to.equal('blorg');
+  });
 });
