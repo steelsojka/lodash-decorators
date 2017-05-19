@@ -44,13 +44,14 @@ export class InternalDecoratorFactory {
         const descriptor = this._resolveDescriptor(target, name, _descriptor);
         const { value, writable, enumerable, configurable, get, set } = descriptor;
         const isFirstInstance = !InstanceChainMap.has([ target, name ]);
-        const fnChain = InstanceChainMap.get([ target, name ]) || [];
+        const chainData = InstanceChainMap.get([ target, name ]) || { fns: [], properties: [] };
         const isGetter = isFirstInstance && isFunction(get);
         const isSetter = isFirstInstance && isFunction(set);
         const isMethod = isFirstInstance && isFunction(value);
         const isProperty = isFirstInstance && !isGetter && !isSetter && !isMethod;
 
-        fnChain.push((fn: Function, instance: any, context: InstanceChainContext) => {
+        chainData.properties.push(name);
+        chainData.fns.push((fn: Function, instance: any, context: InstanceChainContext) => {
           if (!this._isApplicable(context, config)) {
             return fn;
           }
@@ -65,14 +66,19 @@ export class InternalDecoratorFactory {
           );
         });
 
-        InstanceChainMap.set([ target, name ], fnChain);
+        InstanceChainMap.set([ target, name ], chainData);
 
         if (!isFirstInstance) {
           return descriptor;
         }
 
+        chainData.isSetter = isSetter;
+        chainData.isGetter = isGetter;
+        chainData.isMethod = isMethod;
+        chainData.isProperty = isProperty;
+
         const applyChain = (fn: any, context: InstanceChainContext, instance: any) => {
-          return fnChain.reduce((result: Function, next: Function) => next(result, instance, context), fn);
+          return chainData.fns.reduce((result: Function, next: Function) => next(result, instance, context), fn);
         };
 
         const applyDecorator = (instance: any) => {

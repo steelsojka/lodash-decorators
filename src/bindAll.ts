@@ -1,5 +1,7 @@
 import isFunction = require('lodash/isFunction');
+
 import { copyMetadata } from './utils';
+import { InstanceChainMap } from './factory';
 
 /**
  * Binds methods of an object to the object itself, overwriting the existing method.
@@ -47,6 +49,16 @@ function bindAllMethods(target: Function, instance: any, methods: string[] = [])
       const descriptor = Object.getOwnPropertyDescriptor(proto, key);
 
       if (include && key !== 'constructor' && !instance.hasOwnProperty(key)) {
+        // If this property is a getter and it's NOT an instance decorated
+        // method, ignore it. Instance decorators are getters until first accessed.
+        if (descriptor.get) {
+          const chainData = InstanceChainMap.get([ proto, key ]);
+
+          if (!chainData || !chainData.isMethod) {
+            continue;
+          }
+        }
+
         const value = instance[key];
 
         if (isFunction(value)) {

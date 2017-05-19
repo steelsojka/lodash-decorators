@@ -14,4 +14,13 @@ export interface InstanceChainContext {
   value: any;
 }
 
-export const InstanceChainMap = new CompositeKeyWeakMap<Function[]>();
+export interface InstanceChainData {
+  properties: string[];
+  fns: Function[];
+  isGetter: boolean;
+  isSetter: boolean;
+  isMethod: boolean;
+  isProperty: boolean;
+}
+
+export const InstanceChainMap = new CompositeKeyWeakMap<InstanceChainData>();
