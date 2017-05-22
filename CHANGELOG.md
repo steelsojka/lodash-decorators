@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.3.4"></a>
+## [4.3.4](https://github.com/steelsojka/lodash-decorators/compare/v4.3.3...v4.3.4) (2017-05-22)
+
+
+### Bug Fixes
+
+* **sourceMaps:** include src folder in build to not break source maps ([5f2d875](https://github.com/steelsojka/lodash-decorators/commit/5f2d875))
+
+
+
 <a name="4.3.3"></a>
 ## [4.3.3](https://github.com/steelsojka/lodash-decorators/compare/v4.3.2...v4.3.3) (2017-05-19)
 
