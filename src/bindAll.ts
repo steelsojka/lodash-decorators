@@ -1,6 +1,6 @@
 import isFunction = require('lodash/isFunction');
 
-import { copyMetadata } from './utils';
+import { copyMetadata, wrapConstructor } from './utils';
 import { InstanceChainMap } from './factory';
 
 /**
@@ -28,15 +28,11 @@ import { InstanceChainMap } from './factory';
  */
 export function BindAll(methods: string[] = []): ClassDecorator {
   return (target: Function): Function => {
-    function BindAllWrapper(...args: any[]): any {
+    return wrapConstructor(target, function(Ctor: Function, ...args: any[]) {
       bindAllMethods(target, this, methods);
 
-      target.apply(this, args);
-    }
-
-    BindAllWrapper.prototype = target.prototype;
-
-    return BindAllWrapper;
+      Ctor.apply(this, args);
+    });
   };
 }
 

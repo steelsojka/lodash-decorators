@@ -100,4 +100,13 @@ describe('bindAll', () => {
     expect(myClass.hasOwnProperty('prop')).to.be.false;
     expect(myClass.hasOwnProperty('prop2')).to.be.false;
   });
+
+  it('should copy over any static properties on the constructor', () => {
+    @BindAll()
+    class MyClass {
+      static $inject = [];
+    }
+
+    expect(MyClass.$inject).to.be.an('array');
+  });
 });
