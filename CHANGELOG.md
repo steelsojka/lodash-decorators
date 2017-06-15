@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.3.5"></a>
+## [4.3.5](https://github.com/steelsojka/lodash-decorators/compare/v4.3.4...v4.3.5) (2017-06-15)
+
+
+### Bug Fixes
+
+* **BindAll:** copy over static properties from base constructor ([489aaa4](https://github.com/steelsojka/lodash-decorators/commit/489aaa4))
+
+
+
 <a name="4.3.4"></a>
 ## [4.3.4](https://github.com/steelsojka/lodash-decorators/compare/v4.3.3...v4.3.4) (2017-05-22)
 
