@@ -109,4 +109,21 @@ describe('bindAll', () => {
 
     expect(MyClass.$inject).to.be.an('array');
   });
+
+  it('should pass babels class call check', () => {
+    function classCallCheck(instance: any, Constructor: any): void {
+      if (!(instance instanceof Constructor)) {
+        throw new TypeError('Cannot call a class as a function');
+      }
+    }
+
+    @BindAll()
+    class MyClass {
+      constructor() {
+        classCallCheck(this, MyClass);
+      }
+    }
+
+    expect(() => new MyClass()).not.to.throw();
+  });
 });
