@@ -35,7 +35,7 @@ describe('memoizeAll', () => {
       const _spy = spy();
 
       class MyClass {
-        @MemoizeAll((item: any) => item.key)
+        @MemoizeAll((i: any) => i.key)
         fn(item: any): any {
           _spy();
           expect(this, 'context').to.equal(myClass);
