@@ -21,7 +21,7 @@ import { PreValueApplicator } from './applicators';
 export function Ary(n: number): LodashMethodDecorator {
   return DecoratorFactory.createDecorator(
     new DecoratorConfig(ary, new PreValueApplicator())
-  );
+  )(n);
 }
 export { Ary as ary };
 export default Ary;

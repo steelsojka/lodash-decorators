@@ -11,7 +11,7 @@ import { MemoizeConfig } from './shared';
 export function MemoizeAll(resolver?: Function | MemoizeConfig<any, any>): LodashMethodDecorator {
   return DecoratorFactory.createDecorator(
     new DecoratorConfig(memoize, new MemoizeApplicator())
-  );
+  )(resolver);
 }
 export { MemoizeAll as memoizeAll };
 export default MemoizeAll;

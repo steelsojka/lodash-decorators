@@ -31,7 +31,7 @@ import { PreValueApplicator } from './applicators';
 export function CurryRight(arity?: number): LodashMethodDecorator {
   return DecoratorFactory.createInstanceDecorator(
     new DecoratorConfig(curryRight, new PreValueApplicator(), { bound: true })
-  );
+  )(arity);
 }
 export { CurryRight as curryRight };
 export default CurryRight;

@@ -31,7 +31,7 @@ import { ComposeApplicator } from './applicators';
 export function Flow(...fns: ResolvableFunction[]): LodashDecorator {
   return DecoratorFactory.createInstanceDecorator(
     new DecoratorConfig(flow, new ComposeApplicator({ post: true }), { property: true })
-  );
+  )(...fns);
 }
 export { Flow as flow };
 export default Flow;

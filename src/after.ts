@@ -22,7 +22,7 @@ import { PostValueApplicator } from './applicators';
 export function After(n: number): LodashDecorator {
   return DecoratorFactory.createInstanceDecorator(
     new DecoratorConfig(after, new PostValueApplicator(), { setter: true })
-  );
+  )(n);
 }
 export { After as after };
 export default After;

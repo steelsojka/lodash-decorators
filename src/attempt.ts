@@ -29,7 +29,7 @@ const attemptFn = (fn: () => void) => partial(attempt, fn);
 export function Attempt(...partials: any[]): LodashMethodDecorator {
   return DecoratorFactory.createDecorator(
     new DecoratorConfig(attemptFn, new PreValueApplicator())
-  );
+  )(...partials);
 }
 export { Attempt as attempt };
 export default Attempt;

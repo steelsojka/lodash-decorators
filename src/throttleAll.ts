@@ -7,7 +7,7 @@ import { ThrottleOptions } from './shared';
 export function ThrottleAll(wait?: number, options?: ThrottleOptions): LodashMethodDecorator {
   return DecoratorFactory.createDecorator(
     new DecoratorConfig(throttle, new PreValueApplicator(), { setter: true })
-  );
+  )(wait, options);
 }
 export { ThrottleAll as throttleAll };
 export default ThrottleAll;

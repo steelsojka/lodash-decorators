@@ -29,7 +29,7 @@ import { PreValueApplicator } from './applicators';
 export function CurryAll(arity?: number): LodashMethodDecorator {
   return DecoratorFactory.createDecorator(
     new DecoratorConfig(curry, new PreValueApplicator())
-  );
+  )(arity);
 }
 export { CurryAll as curryAll };
 export default CurryAll;

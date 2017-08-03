@@ -41,7 +41,7 @@ import { DebounceOptions } from './shared';
 export function Debounce(wait?: number, options?: DebounceOptions): LodashDecorator {
   return DecoratorFactory.createInstanceDecorator(
     new DecoratorConfig(debounce, new PreValueApplicator(), { setter: true })
-  );
+  )(wait, options);
 }
 export { Debounce as debounce };
 export default Debounce;

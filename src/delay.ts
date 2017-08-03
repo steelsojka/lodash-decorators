@@ -39,7 +39,7 @@ export function Delay(wait: number, ...args: any[]): LodashMethodDecorator {
       new PreValueApplicator(),
       { setter: true }
     )
-  );
+  )(wait, ...args);
 }
 export { Delay as delay };
 export default Delay;

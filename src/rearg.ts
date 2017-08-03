@@ -11,7 +11,7 @@ import { PartialValueApplicator } from './applicators';
 export function Rearg(indexes: ResolvableFunction | number | number[], ...args: Array<number | number[]>): LodashDecorator {
   return DecoratorFactory.createInstanceDecorator(
     new DecoratorConfig(rearg, new PartialValueApplicator(), { property: true })
-  );
+  )(indexes, ...args);
 }
 export { Rearg as rearg };
 export default Rearg;

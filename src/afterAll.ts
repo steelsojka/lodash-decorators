@@ -27,7 +27,7 @@ import { PostValueApplicator } from './applicators';
 export function AfterAll(n: number): LodashDecorator {
   return DecoratorFactory.createDecorator(
     new DecoratorConfig(after, new PostValueApplicator(), { setter: true })
-  );
+  )(n);
 }
 export { AfterAll as afterAll };
 export default AfterAll;

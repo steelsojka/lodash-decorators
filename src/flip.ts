@@ -31,7 +31,7 @@ import { PartialValueApplicator } from './applicators';
 export function Flip(fn?: ResolvableFunction): LodashDecorator {
   return DecoratorFactory.createInstanceDecorator(
     new DecoratorConfig(flip, new PartialValueApplicator(), { property: true })
-  );
+  )(fn);
 }
 export { Flip as flip };
 export default Flip;

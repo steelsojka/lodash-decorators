@@ -11,7 +11,7 @@ import { PartialValueApplicator } from './applicators';
 export function Negate(fn?: ResolvableFunction): LodashDecorator {
   return DecoratorFactory.createInstanceDecorator(
     new DecoratorConfig(negate, new PartialValueApplicator(), { property: true })
-  );
+  )(fn);
 }
 export { Negate as negate };
 export default Negate;

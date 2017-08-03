@@ -30,7 +30,7 @@ import { InvokeApplicator } from './applicators';
 export function Defer(...args: any[]): LodashMethodDecorator {
   return DecoratorFactory.createDecorator(
     new DecoratorConfig(defer, new InvokeApplicator(), { setter: true })
-  );
+  )(...args);
 }
 export { Defer as defer };
 export default Defer;

@@ -35,7 +35,7 @@ import { MemoizeConfig } from './shared';
 export function Memoize(resolver?: ResolvableFunction | MemoizeConfig<any, any>): LodashMethodDecorator {
   return DecoratorFactory.createInstanceDecorator(
     new DecoratorConfig(memoize, new MemoizeApplicator())
-  );
+  )(resolver);
 }
 export { Memoize as memoize };
 export default Memoize;

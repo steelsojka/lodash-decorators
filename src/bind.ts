@@ -30,7 +30,7 @@ import { BindApplicator } from './applicators';
 export function Bind(...partials: any[]): LodashMethodDecorator {
   return DecoratorFactory.createInstanceDecorator(
     new DecoratorConfig(bind, new BindApplicator())
-  );
+  )(...partials);
 }
 export { Bind as bind };
 export default Bind;

@@ -29,7 +29,7 @@ import { PostValueApplicator } from './applicators';
 export function Before(n: number): LodashDecorator {
   return DecoratorFactory.createInstanceDecorator(
     new DecoratorConfig(before, new PostValueApplicator(), { setter: true })
-  );
+  )(n);
 }
 export { Before as before };
 export default Before;

@@ -11,7 +11,7 @@ import { WrapApplicator } from './applicators';
 export function Wrap(fnToWrap?: ResolvableFunction): LodashMethodDecorator {
   return DecoratorFactory.createDecorator(
     new DecoratorConfig(wrap, new WrapApplicator())
-  );
+  )(fnToWrap);
 }
 export { Wrap as wrap };
 export default Wrap;

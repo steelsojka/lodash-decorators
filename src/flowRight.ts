@@ -31,7 +31,7 @@ import { ComposeApplicator } from './applicators';
 export function FlowRight(...fns: ResolvableFunction[]): LodashDecorator {
   return DecoratorFactory.createInstanceDecorator(
     new DecoratorConfig(flowRight, new ComposeApplicator({ post: false }), { property: true })
-  );
+  )(...fns);
 }
 export { FlowRight as flowRight };
 export default FlowRight;
