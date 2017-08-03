@@ -27,8 +27,10 @@ import { InvokeApplicator } from './applicators';
  *   myClass.value; // => 110;
  * }, 0);
  */
-export const Defer: (...args: any[]) => LodashMethodDecorator = DecoratorFactory.createDecorator(
-  new DecoratorConfig(defer, new InvokeApplicator(), { setter: true })
-);
+export function Defer(...args: any[]): LodashMethodDecorator {
+  return DecoratorFactory.createDecorator(
+    new DecoratorConfig(defer, new InvokeApplicator(), { setter: true })
+  )(...args);
+}
 export { Defer as defer };
 export default Defer;

@@ -38,9 +38,10 @@ import { DebounceOptions } from './shared';
  *   myClass.value; // => 120;
  * }, 11);
  */
-export const Debounce: (wait?: number, options?: DebounceOptions) => LodashDecorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(debounce, new PreValueApplicator(), { setter: true })
-);
-
+export function Debounce(wait?: number, options?: DebounceOptions): LodashDecorator {
+  return DecoratorFactory.createInstanceDecorator(
+    new DecoratorConfig(debounce, new PreValueApplicator(), { setter: true })
+  )(wait, options);
+}
 export { Debounce as debounce };
 export default Debounce;

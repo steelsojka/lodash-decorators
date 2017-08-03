@@ -38,7 +38,6 @@ export class InternalDecoratorFactory {
 
   createInstanceDecorator(config: DecoratorConfig): GenericDecorator {
     const { applicator, bound } = config;
-
     return (...args: any[]): LodashDecorator => {
       return (target: Object, name: string, _descriptor?: PropertyDescriptor): PropertyDescriptor => {
         const descriptor = this._resolveDescriptor(target, name, _descriptor);

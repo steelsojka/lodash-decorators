@@ -4,17 +4,23 @@ import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './fact
 import { PreValueApplicator } from './applicators';
 import { ThrottleOptions } from './shared';
 
-export const Throttle: (wait?: number, options?: ThrottleOptions) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(throttle, new PreValueApplicator(), { setter: true, getter: true })
-);
+export function Throttle(wait?: number, options?: ThrottleOptions): LodashMethodDecorator {
+  return DecoratorFactory.createInstanceDecorator(
+    new DecoratorConfig(throttle, new PreValueApplicator(), { setter: true, getter: true })
+  )(wait, options);
+}
 
-export const ThrottleGetter: (wait?: number, options?: ThrottleOptions) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(throttle, new PreValueApplicator(), { getter: true })
-);
+export function ThrottleGetter(wait?: number, options?: ThrottleOptions): LodashMethodDecorator {
+  return DecoratorFactory.createInstanceDecorator(
+    new DecoratorConfig(throttle, new PreValueApplicator(), { getter: true })
+  )(wait, options);
+}
 
-export const ThrottleSetter: (wait?: number, options?: ThrottleOptions) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(throttle, new PreValueApplicator(), { setter: true })
-);
+export function ThrottleSetter(wait?: number, options?: ThrottleOptions): LodashMethodDecorator {
+  return DecoratorFactory.createInstanceDecorator(
+    new DecoratorConfig(throttle, new PreValueApplicator(), { setter: true })
+  )(wait, options);
+}
 
 export { Throttle as throttle };
 export { ThrottleGetter as throttleGetter };

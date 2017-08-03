@@ -26,8 +26,10 @@ const attemptFn = (fn: () => void) => partial(attempt, fn);
  * myClass.fn(10); // => 10;
  * myClass.fn(null); // => Error
  */
-export const Attempt: (...partials: any[]) => LodashMethodDecorator = DecoratorFactory.createDecorator(
-  new DecoratorConfig(attemptFn, new PreValueApplicator())
-);
+export function Attempt(...partials: any[]): LodashMethodDecorator {
+  return DecoratorFactory.createDecorator(
+    new DecoratorConfig(attemptFn, new PreValueApplicator())
+  )(...partials);
+}
 export { Attempt as attempt };
 export default Attempt;

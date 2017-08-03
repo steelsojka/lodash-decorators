@@ -26,8 +26,10 @@ import { PreValueApplicator } from './applicators';
  *
  * add5AndMultiply(10); // => 15
  */
-export const CurryRightAll: (arity?: number) => LodashMethodDecorator = DecoratorFactory.createDecorator(
-  new DecoratorConfig(curryRight, new PreValueApplicator())
-);
+export function CurryRightAll(arity?: number): LodashMethodDecorator {
+  return DecoratorFactory.createDecorator(
+    new DecoratorConfig(curryRight, new PreValueApplicator())
+  )(arity);
+}
 export { CurryRightAll as curryRightAll };
 export default CurryRightAll;
