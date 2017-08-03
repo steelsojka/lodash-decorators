@@ -8,8 +8,10 @@ import {
 } from './factory';
 import { WrapApplicator } from './applicators';
 
-export const Wrap: (fnToWrap?: ResolvableFunction) => LodashMethodDecorator = DecoratorFactory.createDecorator(
-  new DecoratorConfig(wrap, new WrapApplicator())
-);
+export function Wrap(fnToWrap?: ResolvableFunction): LodashMethodDecorator {
+  return DecoratorFactory.createDecorator(
+    new DecoratorConfig(wrap, new WrapApplicator())
+  );
+}
 export { Wrap as wrap };
 export default Wrap;

@@ -28,16 +28,18 @@ import { PreValueApplicator } from './applicators';
  *   myClass.value; // => 110;
  * }, 30);
  */
-export const Delay: (wait: number, ...args: any[]) => LodashMethodDecorator = DecoratorFactory.createDecorator(
-  new DecoratorConfig(
-    function(value: Function, wait: number, ...args: any[]) {
-      return function(...invokeArgs: any[]): any {
-        return delay(value.bind(this), wait, ...invokeArgs, ...args);
-      };
-    },
-    new PreValueApplicator(),
-    { setter: true }
-  )
-);
+export function Delay(wait: number, ...args: any[]): LodashMethodDecorator {
+  return DecoratorFactory.createDecorator(
+    new DecoratorConfig(
+      function(_value: Function, _wait: number, ..._args: any[]) {
+        return function(...invokeArgs: any[]): any {
+          return delay(_value.bind(this), _wait, ...invokeArgs, ..._args);
+        };
+      },
+      new PreValueApplicator(),
+      { setter: true }
+    )
+  );
+}
 export { Delay as delay };
 export default Delay;

@@ -28,8 +28,10 @@ import { ComposeApplicator } from './applicators';
  *
  * myClass.getUpperCaseName(); // => 'TED'
  */
-export const Flow: (...fns: ResolvableFunction[]) => LodashDecorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(flow, new ComposeApplicator({ post: true }), { property: true })
-);
+export function Flow(...fns: ResolvableFunction[]): LodashDecorator {
+  return DecoratorFactory.createInstanceDecorator(
+    new DecoratorConfig(flow, new ComposeApplicator({ post: true }), { property: true })
+  );
+}
 export { Flow as flow };
 export default Flow;

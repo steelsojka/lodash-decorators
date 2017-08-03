@@ -28,8 +28,10 @@ import { PartialValueApplicator } from './applicators';
  *
  * myClass.fn2(10, '20'); // => [ '20', 10 ]
  */
-export const Flip: (fn?: ResolvableFunction) => LodashDecorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(flip, new PartialValueApplicator(), { property: true })
-);
+export function Flip(fn?: ResolvableFunction): LodashDecorator {
+  return DecoratorFactory.createInstanceDecorator(
+    new DecoratorConfig(flip, new PartialValueApplicator(), { property: true })
+  );
+}
 export { Flip as flip };
 export default Flip;
