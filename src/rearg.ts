@@ -8,8 +8,12 @@ import {
 } from './factory';
 import { PartialValueApplicator } from './applicators';
 
-export const Rearg: (indexes: ResolvableFunction|number|number[], ...args: Array<number|number[]>) => LodashDecorator = DecoratorFactory.createInstanceDecorator(
+const decorator = DecoratorFactory.createInstanceDecorator(
   new DecoratorConfig(rearg, new PartialValueApplicator(), { property: true })
 );
+
+export function Rearg(indexes: ResolvableFunction | number | number[], ...args: Array<number | number[]>): LodashDecorator {
+  return decorator(indexes, ...args);
+}
 export { Rearg as rearg };
-export default Rearg;
+export default decorator;

@@ -1,8 +1,14 @@
 import once = require('lodash/once');
 
-import { DecoratorConfig, DecoratorFactory } from './factory';
+import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { PreValueApplicator } from './applicators';
 
-export const OnceAll = DecoratorFactory.createDecorator(new DecoratorConfig(once, new PreValueApplicator(), { setter: true }))();
+const decorator = DecoratorFactory.createDecorator(
+  new DecoratorConfig(once, new PreValueApplicator(), { setter: true })
+);
+
+export function OnceAll(): LodashMethodDecorator {
+  return decorator();
+}
 export { OnceAll as onceAll };
-export default OnceAll;
+export default decorator;

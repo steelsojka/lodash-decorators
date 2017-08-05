@@ -8,6 +8,10 @@ import {
 } from './factory';
 import { MemoizeApplicator } from './applicators';
 import { MemoizeConfig } from './shared';
+
+const decorator = DecoratorFactory.createInstanceDecorator(
+  new DecoratorConfig(memoize, new MemoizeApplicator())
+);
 /**
  * Creates a function that memoizes the result of func. If resolver is provided,
  * it determines the cache key for storing the result based on the arguments provided to the memoized function.
@@ -32,8 +36,8 @@ import { MemoizeConfig } from './shared';
  *   }
  * }
  */
-export const Memoize: (resolver?: ResolvableFunction|MemoizeConfig<any, any>) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(memoize, new MemoizeApplicator())
-);
+export function Memoize(resolver?: ResolvableFunction | MemoizeConfig<any, any>): LodashMethodDecorator {
+  return decorator(resolver);
+}
 export { Memoize as memoize };
-export default Memoize;
+export default decorator;

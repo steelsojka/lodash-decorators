@@ -5,6 +5,10 @@ import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './fact
 import { PreValueApplicator } from './applicators';
 
 const attemptFn = (fn: () => void) => partial(attempt, fn);
+const decorator = DecoratorFactory.createDecorator(
+  new DecoratorConfig(attemptFn, new PreValueApplicator())
+);
+
 /**
  * Attempts to invoke func, returning either the result or the caught error object. Any additional arguments are provided to func when it's invoked.
  * @param {...*} [args] The arguments to invoke func with.
@@ -26,8 +30,8 @@ const attemptFn = (fn: () => void) => partial(attempt, fn);
  * myClass.fn(10); // => 10;
  * myClass.fn(null); // => Error
  */
-export const Attempt: (...partials: any[]) => LodashMethodDecorator = DecoratorFactory.createDecorator(
-  new DecoratorConfig(attemptFn, new PreValueApplicator())
-);
+export function Attempt(...partials: any[]): LodashMethodDecorator {
+  return decorator(...partials);
+}
 export { Attempt as attempt };
-export default Attempt;
+export default decorator;

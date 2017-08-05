@@ -7,6 +7,11 @@ import {
   LodashDecorator
 } from './factory';
 import { ComposeApplicator } from './applicators';
+
+const decorator = DecoratorFactory.createInstanceDecorator(
+  new DecoratorConfig(flow, new ComposeApplicator({ post: true }), { property: true })
+);
+
 /**
  * Creates a function that returns the result of invoking the given functions with the this binding of the created function,
  * where each successive invocation is supplied the return value of the previous.
@@ -28,8 +33,8 @@ import { ComposeApplicator } from './applicators';
  *
  * myClass.getUpperCaseName(); // => 'TED'
  */
-export const Flow: (...fns: ResolvableFunction[]) => LodashDecorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(flow, new ComposeApplicator({ post: true }), { property: true })
-);
+export function Flow(...fns: ResolvableFunction[]): LodashDecorator {
+  return decorator(...fns);
+}
 export { Flow as flow };
-export default Flow;
+export default decorator;
