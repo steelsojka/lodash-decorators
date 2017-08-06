@@ -2,6 +2,11 @@ import bind = require('lodash/bind');
 
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { BindApplicator } from './applicators';
+
+const decorator = DecoratorFactory.createInstanceDecorator(
+  new DecoratorConfig(bind, new BindApplicator())
+);
+
 /**
  * Creates a function that invokes func with the this binding of thisArg and partials prepended to the arguments it receives.
  *
@@ -27,8 +32,8 @@ import { BindApplicator } from './applicators';
  * myClass.bound.call(null); // => myClass {}
  * myClass.unbound.call(null); // => null
  */
-export const Bind: (...partials: any[]) => LodashMethodDecorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(bind, new BindApplicator())
-);
+export function Bind(...partials: any[]): LodashMethodDecorator {
+  return decorator(...partials);
+}
 export { Bind as bind };
-export default Bind;
+export default decorator;

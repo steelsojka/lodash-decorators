@@ -2,6 +2,11 @@ import before = require('lodash/before');
 
 import { DecoratorConfig, DecoratorFactory, LodashDecorator } from './factory';
 import { PostValueApplicator } from './applicators';
+
+const decorator = DecoratorFactory.createInstanceDecorator(
+  new DecoratorConfig(before, new PostValueApplicator(), { setter: true })
+);
+
 /**
  * Creates a function that invokes func, with the this binding and arguments of the created function, while it's called less than n times.
  * Subsequent calls to the created function return the result of the last func invocation.
@@ -26,8 +31,8 @@ import { PostValueApplicator } from './applicators';
  *
  * calls === 2; // => true
  */
-export const Before: (n: number) => LodashDecorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(before, new PostValueApplicator(), { setter: true })
-);
+export function Before(n: number): LodashDecorator {
+  return decorator(n);
+}
 export { Before as before };
-export default Before;
+export default decorator;

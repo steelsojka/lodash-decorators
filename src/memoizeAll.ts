@@ -4,12 +4,16 @@ import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './fact
 import { MemoizeApplicator } from './applicators';
 import { MemoizeConfig } from './shared';
 
+const decorator = DecoratorFactory.createDecorator(
+  new DecoratorConfig(memoize, new MemoizeApplicator())
+);
+
 /**
  * Memoizes a function on the prototype instead of the instance. All instances of the class use the same memoize cache.
  * @param {Function} [resolver] Optional resolver
  */
-export const MemoizeAll: (resolver?: Function|MemoizeConfig<any, any>) => LodashMethodDecorator = DecoratorFactory.createDecorator(
-  new DecoratorConfig(memoize, new MemoizeApplicator())
-);
+export function MemoizeAll(resolver?: Function | MemoizeConfig<any, any>): LodashMethodDecorator {
+  return decorator(resolver);
+}
 export { MemoizeAll as memoizeAll };
-export default MemoizeAll;
+export default decorator;

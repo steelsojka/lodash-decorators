@@ -2,6 +2,11 @@ import defer = require('lodash/defer');
 
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { InvokeApplicator } from './applicators';
+
+const decorator = DecoratorFactory.createDecorator(
+  new DecoratorConfig(defer, new InvokeApplicator(), { setter: true })
+);
+
 /**
  * Defers invoking the func until the current call stack has cleared. Any additional arguments are provided to func when it's invoked.
  *
@@ -27,8 +32,8 @@ import { InvokeApplicator } from './applicators';
  *   myClass.value; // => 110;
  * }, 0);
  */
-export const Defer: (...args: any[]) => LodashMethodDecorator = DecoratorFactory.createDecorator(
-  new DecoratorConfig(defer, new InvokeApplicator(), { setter: true })
-);
+export function Defer(...args: any[]): LodashMethodDecorator {
+  return decorator(...args);
+}
 export { Defer as defer };
-export default Defer;
+export default decorator;

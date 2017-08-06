@@ -8,8 +8,12 @@ import {
 } from './factory';
 import { PartialValueApplicator } from './applicators';
 
-export const Negate: (fn?: ResolvableFunction) => LodashDecorator = DecoratorFactory.createInstanceDecorator(
+const decorator = DecoratorFactory.createInstanceDecorator(
   new DecoratorConfig(negate, new PartialValueApplicator(), { property: true })
 );
+
+export function Negate(fn?: ResolvableFunction): LodashDecorator {
+  return decorator(fn);
+}
 export { Negate as negate };
-export default Negate;
+export default decorator;
