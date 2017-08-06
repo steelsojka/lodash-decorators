@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.4.0"></a>
+# [4.4.0](https://github.com/steelsojka/lodash-decorators/compare/v4.3.5...v4.4.0) (2017-08-06)
+
+
+### Features
+
+* add support for Angular 2+ in AOT mode ([d0a602d](https://github.com/steelsojka/lodash-decorators/commit/d0a602d))
+* inline source code in sourceMaps rather than shipping it ([8e75951](https://github.com/steelsojka/lodash-decorators/commit/8e75951))
+
+
+
 <a name="4.3.5"></a>
 ## [4.3.5](https://github.com/steelsojka/lodash-decorators/compare/v4.3.4...v4.3.5) (2017-06-15)
 
