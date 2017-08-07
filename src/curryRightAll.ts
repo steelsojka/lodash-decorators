@@ -2,6 +2,11 @@ import curryRight = require('lodash/curryRight');
 
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { PreValueApplicator } from './applicators';
+
+const decorator = DecoratorFactory.createDecorator(
+  new DecoratorConfig(curryRight, new PreValueApplicator())
+);
+
 /**
  * This method is like _.curry except that arguments are applied to func in the manner of _.partialRight instead of _.partial.
  * The arity of func may be specified if func.length is not sufficient.
@@ -27,9 +32,7 @@ import { PreValueApplicator } from './applicators';
  * add5AndMultiply(10); // => 15
  */
 export function CurryRightAll(arity?: number): LodashMethodDecorator {
-  return DecoratorFactory.createDecorator(
-    new DecoratorConfig(curryRight, new PreValueApplicator())
-  );
+  return decorator(arity);
 }
 export { CurryRightAll as curryRightAll };
-export default CurryRightAll;
+export default decorator;

@@ -2,6 +2,19 @@ import delay = require('lodash/delay');
 
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { PreValueApplicator } from './applicators';
+
+const decorator = DecoratorFactory.createDecorator(
+  new DecoratorConfig(
+    function(value: Function, wait: number, ...args: any[]) {
+      return function(...invokeArgs: any[]): any {
+        return delay(value.bind(this), wait, ...invokeArgs, ...args);
+      };
+    },
+    new PreValueApplicator(),
+    { setter: true }
+  )
+);
+
 /**
  * Invokes func after wait milliseconds. Any additional arguments are provided to func when it's invoked.
  *
@@ -29,17 +42,7 @@ import { PreValueApplicator } from './applicators';
  * }, 30);
  */
 export function Delay(wait: number, ...args: any[]): LodashMethodDecorator {
-  return DecoratorFactory.createDecorator(
-    new DecoratorConfig(
-      function(_value: Function, _wait: number, ..._args: any[]) {
-        return function(...invokeArgs: any[]): any {
-          return delay(_value.bind(this), _wait, ...invokeArgs, ..._args);
-        };
-      },
-      new PreValueApplicator(),
-      { setter: true }
-    )
-  );
+  return decorator(wait, ...args);
 }
 export { Delay as delay };
-export default Delay;
+export default decorator;

@@ -2,12 +2,16 @@ import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './fact
 import { PreValueApplicator } from './applicators';
 import { returnAtIndex } from './utils';
 
+const decorator = DecoratorFactory.createDecorator(
+  new DecoratorConfig((fn: Function) => returnAtIndex(fn, 0), new PreValueApplicator())
+);
+
 /**
  * Returns the first argument from the function regardless of
  * the decorated functions return value.
  */
-export const Tap: () => LodashMethodDecorator  = DecoratorFactory.createDecorator(
-  new DecoratorConfig((fn: Function) => returnAtIndex(fn, 0), new PreValueApplicator())
-);
+export function Tap(): LodashMethodDecorator {
+  return decorator();
+}
 export { Tap as tap };
-export default Tap;
+export default decorator;

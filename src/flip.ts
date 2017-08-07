@@ -7,6 +7,11 @@ import {
   ResolvableFunction
 } from './factory';
 import { PartialValueApplicator } from './applicators';
+
+const decorator = DecoratorFactory.createInstanceDecorator(
+  new DecoratorConfig(flip, new PartialValueApplicator(), { property: true })
+);
+
 /**
  * Creates a function that invokes func with arguments reversed. Honestly, there is probably not much
  * use for this decorator but maybe you will find one?
@@ -29,9 +34,7 @@ import { PartialValueApplicator } from './applicators';
  * myClass.fn2(10, '20'); // => [ '20', 10 ]
  */
 export function Flip(fn?: ResolvableFunction): LodashDecorator {
-  return DecoratorFactory.createInstanceDecorator(
-    new DecoratorConfig(flip, new PartialValueApplicator(), { property: true })
-  );
+  return decorator(fn);
 }
 export { Flip as flip };
-export default Flip;
+export default decorator;

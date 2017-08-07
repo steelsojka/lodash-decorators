@@ -3,10 +3,12 @@ import once = require('lodash/once');
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { PreValueApplicator } from './applicators';
 
+const decorator = DecoratorFactory.createInstanceDecorator(
+  new DecoratorConfig(once, new PreValueApplicator(), { setter: true })
+);
+
 export function Once(): LodashMethodDecorator {
-  return DecoratorFactory.createInstanceDecorator(
-    new DecoratorConfig(once, new PreValueApplicator(), { setter: true })
-  );
+  return decorator();
 }
 export { Once as once };
-export default Once;
+export default decorator;
