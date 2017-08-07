@@ -1,6 +1,6 @@
 import isFunction = require('lodash/isFunction');
 
-import { copyMetadata, wrapConstructor } from './utils';
+import { copyMetadata, wrapConstructor } from './utils/index';
 import { InstanceChainMap } from './factory/index';
 
 /**

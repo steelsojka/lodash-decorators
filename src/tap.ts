@@ -1,6 +1,6 @@
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory/index';
 import { PreValueApplicator } from './applicators/index';
-import { returnAtIndex } from './utils';
+import { returnAtIndex } from './utils/index';
 
 const decorator = DecoratorFactory.createDecorator(
   new DecoratorConfig((fn: Function) => returnAtIndex(fn, 0), new PreValueApplicator())
