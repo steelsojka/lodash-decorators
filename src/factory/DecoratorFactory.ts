@@ -66,7 +66,7 @@ export class InternalDecoratorFactory {
           );
         });
 
-        InstanceChainMap.set([target, name], chainData);
+        InstanceChainMap.set([ target, name ], chainData);
 
         if (!isFirstInstance) {
           return descriptor;
