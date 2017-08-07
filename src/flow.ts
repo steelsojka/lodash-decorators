@@ -5,8 +5,8 @@ import {
   DecoratorFactory,
   ResolvableFunction,
   LodashDecorator
-} from './factory';
-import { ComposeApplicator } from './applicators';
+} from './factory/index';
+import { ComposeApplicator } from './applicators/index';
 
 const decorator = DecoratorFactory.createInstanceDecorator(
   new DecoratorConfig(flow, new ComposeApplicator({ post: true }), { property: true })

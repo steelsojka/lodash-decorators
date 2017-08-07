@@ -1,4 +1,4 @@
-import { DecoratorConfig, ResolvableFunction } from './factory';
+import { DecoratorConfig, ResolvableFunction } from './factory/index';
 
 export interface DebounceOptions {
   wait?: number;
