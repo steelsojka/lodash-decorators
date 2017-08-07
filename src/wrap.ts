@@ -5,8 +5,8 @@ import {
   DecoratorFactory,
   ResolvableFunction,
   LodashMethodDecorator
-} from './factory';
-import { WrapApplicator } from './applicators';
+} from './factory/index';
+import { WrapApplicator } from './applicators/index';
 
 const decorator = DecoratorFactory.createDecorator(
   new DecoratorConfig(wrap, new WrapApplicator())

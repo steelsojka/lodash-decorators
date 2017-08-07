@@ -5,8 +5,8 @@ import {
   DecoratorFactory,
   LodashDecorator,
   ResolvableFunction
-} from './factory';
-import { PartialValueApplicator } from './applicators';
+} from './factory/index';
+import { PartialValueApplicator } from './applicators/index';
 
 const decorator = DecoratorFactory.createInstanceDecorator(
   new DecoratorConfig(negate, new PartialValueApplicator(), { property: true })
