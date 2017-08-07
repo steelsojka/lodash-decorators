@@ -1,8 +1,8 @@
 import attempt = require('lodash/attempt');
 import partial = require('lodash/partial');
 
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
-import { PreValueApplicator } from './applicators';
+import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory/index';
+import { PreValueApplicator } from './applicators/index';
 
 const attemptFn = (fn: () => void) => partial(attempt, fn);
 const decorator = DecoratorFactory.createDecorator(

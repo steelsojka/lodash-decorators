@@ -1,7 +1,7 @@
 import curry = require('lodash/curry');
 
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
-import { PreValueApplicator } from './applicators';
+import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory/index';
+import { PreValueApplicator } from './applicators/index';
 
 const decorator = DecoratorFactory.createDecorator(
   new DecoratorConfig(curry, new PreValueApplicator())

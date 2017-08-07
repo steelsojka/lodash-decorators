@@ -1,7 +1,7 @@
 import memoize = require('lodash/memoize');
 
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
-import { MemoizeApplicator } from './applicators';
+import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory/index';
+import { MemoizeApplicator } from './applicators/index';
 import { MemoizeConfig } from './shared';
 
 const decorator = DecoratorFactory.createDecorator(
