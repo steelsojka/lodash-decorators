@@ -1,7 +1,7 @@
 import partial = require('lodash/partial');
 
-import { DecoratorConfig, DecoratorFactory } from './factory';
-import { PartialApplicator } from './applicators';
+import { DecoratorConfig, DecoratorFactory } from './factory/index';
+import { PartialApplicator } from './applicators/index';
 
 const decorator = DecoratorFactory.createInstanceDecorator(
   new DecoratorConfig(partial, new PartialApplicator(), { property: true, method: false })

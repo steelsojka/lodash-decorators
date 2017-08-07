@@ -1,7 +1,7 @@
 import after = require('lodash/after');
 
-import { DecoratorConfig, DecoratorFactory, LodashDecorator } from './factory';
-import { PostValueApplicator } from './applicators';
+import { DecoratorConfig, DecoratorFactory, LodashDecorator } from './factory/index';
+import { PostValueApplicator } from './applicators/index';
 
 const decorator = DecoratorFactory.createInstanceDecorator(
   new DecoratorConfig(after, new PostValueApplicator(), { setter: true })
