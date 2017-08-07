@@ -1,4 +1,4 @@
-import assign = require('lodash/assign');
+import { assign } from 'lodash';
 
 /**
  * Mixins an object into the classes prototype.

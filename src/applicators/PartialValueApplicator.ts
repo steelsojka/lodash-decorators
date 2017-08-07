@@ -1,11 +1,11 @@
-import isFunction = require('lodash/isFunction');
+import { isFunction } from 'lodash';
 
 import { Applicator, ApplicateOptions } from './Applicator';
 import { resolveFunction } from '../utils';
 
 export class PartialValueApplicator extends Applicator {
   apply({ args, target, value, config: { execute } }: ApplicateOptions): any {
-    return function(...invokeArgs: any[]): any {
+    return function (...invokeArgs: any[]): any {
       let fn = value;
       let argIndex = 0;
 

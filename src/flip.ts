@@ -1,4 +1,4 @@
-import flip = require('lodash/flip');
+import { flip } from 'lodash';
 
 import {
   DecoratorConfig,

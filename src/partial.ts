@@ -1,4 +1,4 @@
-import partial = require('lodash/partial');
+import { partial } from 'lodash';
 
 import { DecoratorConfig, DecoratorFactory } from './factory';
 import { PartialApplicator } from './applicators';

@@ -1,5 +1,4 @@
-import isFunction = require('lodash/isFunction');
-import isString = require('lodash/isString');
+import { isFunction, isString } from 'lodash';
 import { log } from './log';
 
 /**
@@ -12,7 +11,7 @@ import { log } from './log';
   * @param {Object} [target] The target object to resolve from.
   * @returns {Function} The resolved function.
   */
-export function resolveFunction(method?: string|Function, context?: any, target?: any, throwNotFound: boolean = true): any {
+export function resolveFunction(method?: string | Function, context?: any, target?: any, throwNotFound: boolean = true): any {
   if (isFunction(method)) {
     return method;
   } else if (isString(method)) {

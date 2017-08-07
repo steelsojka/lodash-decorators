@@ -1,4 +1,4 @@
-import isUndefined = require('lodash/isUndefined');
+import { isUndefined } from 'lodash';
 
 /**
  * A map for weakly holding nested references.

@@ -1,4 +1,4 @@
-import memoize = require('lodash/memoize');
+import { memoize } from 'lodash';
 
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { MemoizeApplicator } from './applicators';

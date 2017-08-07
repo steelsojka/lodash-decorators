@@ -1,4 +1,4 @@
-import before = require('lodash/before');
+import { before } from 'lodash';
 
 import { DecoratorConfig, DecoratorFactory, LodashDecorator } from './factory';
 import { PostValueApplicator } from './applicators';
