@@ -1,7 +1,7 @@
 import bind = require('lodash/bind');
 
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
-import { BindApplicator } from './applicators';
+import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory/index';
+import { BindApplicator } from './applicators/index';
 
 const decorator = DecoratorFactory.createInstanceDecorator(
   new DecoratorConfig(bind, new BindApplicator())
