@@ -5,8 +5,8 @@ import {
   DecoratorFactory,
   LodashMethodDecorator,
   ResolvableFunction
-} from './factory';
-import { MemoizeApplicator } from './applicators';
+} from './factory/index';
+import { MemoizeApplicator } from './applicators/index';
 import { MemoizeConfig } from './shared';
 
 const decorator = DecoratorFactory.createInstanceDecorator(

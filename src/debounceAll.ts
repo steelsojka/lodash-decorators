@@ -1,7 +1,7 @@
 import debounce = require('lodash/debounce');
 
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
-import { PreValueApplicator } from './applicators';
+import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory/index';
+import { PreValueApplicator } from './applicators/index';
 import { DebounceOptions } from './shared';
 
 const decorator = DecoratorFactory.createDecorator(

@@ -1,7 +1,7 @@
 import throttle = require('lodash/throttle');
 
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
-import { PreValueApplicator } from './applicators';
+import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory/index';
+import { PreValueApplicator } from './applicators/index';
 import { ThrottleOptions } from './shared';
 
 const decorator = DecoratorFactory.createInstanceDecorator(

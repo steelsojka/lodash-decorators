@@ -1,4 +1,4 @@
-export * from './factory';
+export * from './factory/index';
 export * from './after';
 export * from './afterAll';
 export * from './ary';
