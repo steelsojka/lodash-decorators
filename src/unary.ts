@@ -6,6 +6,7 @@ import { PreValueApplicator } from './applicators';
 const decorator = DecoratorFactory.createDecorator(
   new DecoratorConfig(unary, new PreValueApplicator())
 );
+
 export function Unary(): LodashMethodDecorator {
   return decorator();
 }

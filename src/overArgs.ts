@@ -6,6 +6,7 @@ import { PreValueApplicator } from './applicators';
 const decorator = DecoratorFactory.createDecorator(
   new DecoratorConfig(overArgs, new PreValueApplicator(), { setter: true })
 );
+
 export function OverArgs(...transforms: Function[]): LodashMethodDecorator {
   return decorator(...transforms);
 }

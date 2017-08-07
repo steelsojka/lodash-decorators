@@ -12,6 +12,7 @@ import { MemoizeConfig } from './shared';
 const decorator = DecoratorFactory.createInstanceDecorator(
   new DecoratorConfig(memoize, new MemoizeApplicator())
 );
+
 /**
  * Creates a function that memoizes the result of func. If resolver is provided,
  * it determines the cache key for storing the result based on the arguments provided to the memoized function.

@@ -6,6 +6,7 @@ import { PreValueApplicator } from './applicators';
 const decorator = DecoratorFactory.createDecorator(
   new DecoratorConfig(rest, new PreValueApplicator())
 );
+
 export function Rest(start?: number): LodashMethodDecorator {
   return decorator(start);
 }

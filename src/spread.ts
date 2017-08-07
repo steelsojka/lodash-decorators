@@ -6,6 +6,7 @@ import { PreValueApplicator } from './applicators';
 const decorator = DecoratorFactory.createDecorator(
   new DecoratorConfig(spread, new PreValueApplicator())
 );
+
 export function Spread(start?: number): LodashMethodDecorator {
   return decorator(start);
 }

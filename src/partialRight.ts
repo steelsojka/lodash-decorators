@@ -6,6 +6,7 @@ import { PartialApplicator } from './applicators';
 const decorator = DecoratorFactory.createInstanceDecorator(
   new DecoratorConfig(partialRight, new PartialApplicator(), { property: true, method: false })
 );
+
 export function PartialRight(...partials: any[]): PropertyDecorator {
   return decorator(...partials);
 }
