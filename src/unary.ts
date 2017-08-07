@@ -1,7 +1,7 @@
 import unary = require('lodash/unary');
 
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
-import { PreValueApplicator } from './applicators';
+import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory/index';
+import { PreValueApplicator } from './applicators/index';
 
 const decorator = DecoratorFactory.createDecorator(
   new DecoratorConfig(unary, new PreValueApplicator())

@@ -1,7 +1,7 @@
 import isFunction = require('lodash/isFunction');
 
 import { copyMetadata, wrapConstructor } from './utils';
-import { InstanceChainMap } from './factory';
+import { InstanceChainMap } from './factory/index';
 
 /**
  * Binds methods of an object to the object itself, overwriting the existing method.

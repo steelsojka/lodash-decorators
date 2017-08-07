@@ -1,7 +1,7 @@
 import defer = require('lodash/defer');
 
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
-import { InvokeApplicator } from './applicators';
+import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory/index';
+import { InvokeApplicator } from './applicators/index';
 
 const decorator = DecoratorFactory.createDecorator(
   new DecoratorConfig(defer, new InvokeApplicator(), { setter: true })
