@@ -1,4 +1,4 @@
-import after = require('lodash/after');
+import { after } from 'lodash';
 
 import { DecoratorConfig, DecoratorFactory, LodashDecorator } from './factory';
 import { PostValueApplicator } from './applicators';

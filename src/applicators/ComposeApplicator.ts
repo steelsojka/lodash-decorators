@@ -1,4 +1,4 @@
-import identity = require('lodash/identity');
+import { identity } from 'lodash';
 
 import { Applicator, ApplicateOptions } from './Applicator';
 import { resolveFunction } from '../utils';

@@ -1,4 +1,4 @@
-import isFunction = require('lodash/isFunction');
+import { isFunction } from 'lodash';
 
 import {
   InstanceChainMap,
@@ -150,12 +150,12 @@ export class InternalDecoratorFactory {
   }
 
   private _isApplicable(context: InstanceChainContext, config: DecoratorConfig): boolean {
-   return !Boolean(
-     context.getter && !config.getter
+    return !Boolean(
+      context.getter && !config.getter
       || context.setter && !config.setter
       || context.method && !config.method
       || context.property && !config.property
-   );
+    );
   }
 
   private _resolveDescriptor(target: Object, name: string, descriptor?: PropertyDescriptor): PropertyDescriptor {

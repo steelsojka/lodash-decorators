@@ -1,6 +1,4 @@
-import without = require('lodash/without');
-import attempt = require('lodash/attempt');
-import isObject = require('lodash/isObject');
+import { without, attempt, isObject } from 'lodash';
 
 /**
  * Assigns all properties from an object to another object including non enumerable

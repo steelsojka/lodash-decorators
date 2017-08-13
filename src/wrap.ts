@@ -1,4 +1,4 @@
-import wrap = require('lodash/wrap');
+import { wrap } from 'lodash';
 
 import {
   DecoratorConfig,

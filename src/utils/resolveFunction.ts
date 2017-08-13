@@ -1,5 +1,4 @@
-import isFunction = require('lodash/isFunction');
-import isString = require('lodash/isString');
+import { isFunction, isString } from 'lodash';
 import { log } from './log';
 
 /**

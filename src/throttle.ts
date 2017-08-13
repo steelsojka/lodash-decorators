@@ -1,4 +1,4 @@
-import throttle = require('lodash/throttle');
+import { throttle } from 'lodash';
 
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { PreValueApplicator } from './applicators';

@@ -1,4 +1,4 @@
-import flowRight = require('lodash/flowRight');
+import { flowRight } from 'lodash';
 
 import {
   DecoratorConfig,
