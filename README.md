@@ -10,6 +10,7 @@ Decorators using lodash functions. View the [API docs](https://steelsojka.github
 
 
 - [Install](#install)
+  - [Polyfills](#polyfills)
 - [Usage](#usage)
   - [Decorators](#decorators)
     - [Example](#example)
@@ -39,6 +40,10 @@ Decorators using lodash functions. View the [API docs](https://steelsojka.github
 ## Install
 
 `npm install --save lodash lodash-decorators`
+
+### Polyfills
+
+This library requires `Map` to be available globally. If `Map` is not supported in your environment then use a polyfill.
 
 ## Usage
 
