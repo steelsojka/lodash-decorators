@@ -43,7 +43,7 @@ Decorators using lodash functions. View the [API docs](https://steelsojka.github
 
 ### Polyfills
 
-This library requires `Map` to be available globally. If `Map` is not supported in your environment then use a polyfill.
+This library requires `Map` and `WeakMap` to be available globally. If `Map` or `WeakMap` is not supported in your environment then use a polyfill.
 
 ## Usage
 
