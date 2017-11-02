@@ -22,6 +22,8 @@ export function wrapConstructor(Ctor: Function, wrapper: (Ctor: Function, ...arg
   }
 
   ConstructorWrapper.prototype = Ctor.prototype;
+  Object.defineProperty(ConstructorWrapper, 'name', { writable: true });
+  (ConstructorWrapper as any).name = Ctor.name;
 
   return assignAll(ConstructorWrapper, Ctor, PROPERTY_EXCLUDES);
 }
