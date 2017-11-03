@@ -22,8 +22,13 @@ export function wrapConstructor(Ctor: Function, wrapper: (Ctor: Function, ...arg
   }
 
   ConstructorWrapper.prototype = Ctor.prototype;
-  Object.defineProperty(ConstructorWrapper, 'name', { writable: true });
-  (ConstructorWrapper as any).name = Ctor.name;
+  Object.defineProperty(ConstructorWrapper, 'name', {
+    // These values should coincide with the default descriptor values for `name`.
+    configurable: true,
+    enumerable: false,
+    value: Ctor.name,
+    writable: false
+  });
 
   return assignAll(ConstructorWrapper, Ctor, PROPERTY_EXCLUDES);
 }
