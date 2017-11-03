@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.5.0"></a>
+# [4.5.0](https://github.com/steelsojka/lodash-decorators/compare/v4.4.0...v4.5.0) (2017-11-03)
+
+
+### Bug Fixes
+
+* **BindAll:** Copy original function name to wrapper ([73b8537](https://github.com/steelsojka/lodash-decorators/commit/73b8537))
+* **factory:** use barrel files instead of node module resolution ([fda1c73](https://github.com/steelsojka/lodash-decorators/commit/fda1c73))
+
+
+### Features
+
+* **packages:** update tslib dependency to `^1.7.1` as this is the minimum version required for `typescript` `2.3.3` + ([c8985fb](https://github.com/steelsojka/lodash-decorators/commit/c8985fb))
+
+
+
 <a name="4.4.1"></a>
 ## [4.4.1](https://github.com/steelsojka/lodash-decorators/compare/v4.4.0...v4.4.1) (2017-08-12)
 
