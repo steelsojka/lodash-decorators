@@ -372,7 +372,7 @@ There is no longer a `Proto` decorator attached to instance decorators. Most ins
 
 #### All decorators now take arguments
 
-All decorators now take arguments. So instead of `@Once` you would do `@Once()`. This keeps the API consistent and doesn't require the develop to remember which decorators take arguments.
+All decorators now take arguments. So instead of `@Once` you would do `@Once()`. This keeps the API consistent and doesn't require the developer to remember which decorators take arguments.
 
 #### Removal of extensions and validation package
 
