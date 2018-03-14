@@ -6,6 +6,14 @@ export type LodashMethodDecorator = MethodDecorator;
 export type LodashDecorator = MethodDecorator & PropertyDecorator;
 export type ResolvableFunction = string|Function;
 
+export type TypedMethodDecorator = (() => LodashMethodDecorator) & LodashMethodDecorator;
+export type TypedMethodDecorator1<T> = ((arg?: T) => LodashMethodDecorator) & LodashMethodDecorator;
+export type TypedMethodDecorator2<T, T2> = ((arg1?: T, arg2?: T2) => LodashMethodDecorator) & LodashMethodDecorator;
+export type TypedMethodDecorator3<T, T2, T3> = ((arg1?: T, arg2?: T2, arg3?: T3) => LodashMethodDecorator) & LodashMethodDecorator;
+export type TypedDecorator1<T> = ((arg?: T) => LodashDecorator) & LodashDecorator;
+export type TypedDecorator2<T, T2> = ((arg1?: T, arg2?: T2) => LodashDecorator) & LodashDecorator;
+export type TypedDecorator3<T, T2, T3> = ((arg1?: T, arg2?: T2, arg3?: T3) => LodashDecorator) & LodashDecorator;
+
 export interface InstanceChainContext {
   getter?: boolean;
   setter?: boolean;

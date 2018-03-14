@@ -12,10 +12,10 @@ export type GenericDecorator = (...args: any[]) => LodashDecorator;
 
 export class InternalDecoratorFactory {
   createDecorator(config: DecoratorConfig): GenericDecorator {
-    const { applicator } = config;
+    const { applicator, optionalParams } = config;
 
     return (...args: any[]): LodashDecorator => {
-      return (target: Object, name: string, _descriptor?: PropertyDescriptor): PropertyDescriptor => {
+      const decorator = (target: Object, name: string, _descriptor?: PropertyDescriptor): PropertyDescriptor => {
         const descriptor = this._resolveDescriptor(target, name, _descriptor);
         const { value, get, set } = descriptor;
 
@@ -33,14 +33,16 @@ export class InternalDecoratorFactory {
 
         return descriptor;
       };
+
+      return optionalParams && args.length >= 2 ? decorator(args[0], args[1], args[2]) as any : decorator;
     };
   }
 
   createInstanceDecorator(config: DecoratorConfig): GenericDecorator {
-    const { applicator, bound } = config;
+    const { applicator, bound, optionalParams } = config;
 
     return (...args: any[]): LodashDecorator => {
-      return (target: Object, name: string, _descriptor?: PropertyDescriptor): PropertyDescriptor => {
+      const decorator = (target: Object, name: string, _descriptor?: PropertyDescriptor): PropertyDescriptor => {
         const descriptor = this._resolveDescriptor(target, name, _descriptor);
         const { value, writable, enumerable, configurable, get, set } = descriptor;
         const isFirstInstance = !InstanceChainMap.has([ target, name ]);
@@ -146,6 +148,8 @@ export class InternalDecoratorFactory {
 
         return descriptor;
       };
+
+      return optionalParams && args.length >= 2 ? decorator(args[0], args[1], args[2]) as any: decorator;
     };
   }
 
