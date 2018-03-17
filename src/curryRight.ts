@@ -1,11 +1,7 @@
 import curryRight = require('lodash/curryRight');
 
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
+import { DecoratorConfig, DecoratorFactory, BiTypedMethodDecorator1 } from './factory';
 import { PreValueApplicator } from './applicators';
-
-const decorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(curryRight, new PreValueApplicator(), { bound: true })
-);
 
 /**
  * This method is like _.curry except that arguments are applied to func in the manner of _.partialRight instead of _.partial.
@@ -33,8 +29,8 @@ const decorator = DecoratorFactory.createInstanceDecorator(
  *
  * add5AndMultiply(10); // => 30
  */
-export function CurryRight(arity?: number): LodashMethodDecorator {
-  return decorator(arity);
-}
+export const CurryRight = DecoratorFactory.createInstanceDecorator(
+  new DecoratorConfig(curryRight, new PreValueApplicator(), { bound: true, optionalParams: true })
+) as BiTypedMethodDecorator1<number>;
 export { CurryRight as curryRight };
-export default decorator;
+export default CurryRight;

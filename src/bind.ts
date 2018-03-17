@@ -1,6 +1,6 @@
 import bind = require('lodash/bind');
 
-import { DecoratorConfig, DecoratorFactory, TypedMethodDecorator1 } from './factory';
+import { DecoratorConfig, DecoratorFactory, BiTypedMethodDecorator1 } from './factory';
 import { BindApplicator } from './applicators';
 
 /**
@@ -32,6 +32,6 @@ export const Bind = DecoratorFactory.createInstanceDecorator(
   new DecoratorConfig(bind, new BindApplicator(), {
     optionalParams: true
   })
-) as TypedMethodDecorator1<any>;
+) as BiTypedMethodDecorator1<any>;
 export { Bind as bind, };
 export default Bind;

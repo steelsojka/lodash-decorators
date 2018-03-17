@@ -19,11 +19,11 @@ import assign = require('lodash/assign');
  * myClass.blorg(); // => 'blorg!'
  */
 export function Mixin(...srcs: Object[]): ClassDecorator {
-  return (target: Function) => {
+  return ((target: Function) => {
     assign(target.prototype, ...srcs);
 
     return target;
-  };
+  }) as any;
 }
 export { Mixin as mixin };
 export default Mixin;
