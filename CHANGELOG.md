@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.6.0"></a>
+# [4.6.0](https://github.com/steelsojka/lodash-decorators/compare/v4.5.0...v4.6.0) (2018-03-17)
+
+
+### Features
+
+* **all:** decorators with optional arguments do not require invocation ([8950986](https://github.com/steelsojka/lodash-decorators/commit/8950986))
+* **all:** initial work for paramless decorators ([5300a2e](https://github.com/steelsojka/lodash-decorators/commit/5300a2e))
+
+
+
 <a name="4.5.0"></a>
 # [4.5.0](https://github.com/steelsojka/lodash-decorators/compare/v4.4.0...v4.5.0) (2017-11-03)
 
