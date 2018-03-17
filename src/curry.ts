@@ -1,6 +1,6 @@
 import curry = require('lodash/curry');
 
-import { DecoratorConfig, DecoratorFactory, TypedMethodDecorator1 } from './factory';
+import { DecoratorConfig, DecoratorFactory, BiTypedMethodDecorator1 } from './factory';
 import { PreValueApplicator } from './applicators';
 
 /**
@@ -31,6 +31,6 @@ import { PreValueApplicator } from './applicators';
  */
 export const Curry = DecoratorFactory.createInstanceDecorator(
   new DecoratorConfig(curry, new PreValueApplicator(), { bound: true, optionalParams: true })
-) as TypedMethodDecorator1<number>;
+) as BiTypedMethodDecorator1<number>;
 export { Curry as curry };
 export default Curry;

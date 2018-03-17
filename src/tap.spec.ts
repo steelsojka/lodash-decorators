@@ -15,4 +15,17 @@ describe('tap', () => {
 
     expect(myClass.fn(50)).to.equal(50);
   });
+
+  it('should return the first argument (paramless)', () => {
+    class MyClass {
+      @Tap
+      fn(n: number): any {
+        return 10;
+      }
+    }
+
+    const myClass = new MyClass();
+
+    expect(myClass.fn(50)).to.equal(50);
+  });
 });

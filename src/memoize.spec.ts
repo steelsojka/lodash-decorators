@@ -35,6 +35,37 @@ describe('memoize', () => {
     expect(_spy.callCount).to.equal(2);
   });
 
+  it('should memoize the function (paramless)', () => {
+    const _spy = spy();
+
+    class MyClass {
+      @Memoize
+      fn(n: number): number {
+        _spy(n);
+        expect(this, 'context').to.equal(myClass);
+
+        return n;
+      }
+    }
+
+    const myClass = new MyClass();
+
+    myClass.fn(1);
+    myClass.fn(1);
+    myClass.fn(1);
+    myClass.fn(1);
+    myClass.fn(1);
+
+    expect(myClass.fn(1)).to.equal(1);
+    expect(_spy.callCount).to.equal(1);
+
+    myClass.fn(2);
+    myClass.fn(2);
+
+    expect(myClass.fn(2)).to.equal(2);
+    expect(_spy.callCount).to.equal(2);
+  });
+
   describe('with function resolver', () => {
     it('should resolve the key', () => {
       const _spy = spy();

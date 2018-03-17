@@ -28,6 +28,27 @@ describe('throttle', () => {
     }, 20);
   });
 
+  it('should throttle the method (paramless)', (done) => {
+    const _spy = spy();
+
+    class MyClass {
+      @Throttle
+      fn(n: number) {
+        _spy();
+      }
+    }
+
+    const myClass = new MyClass();
+
+    myClass.fn(1);
+    myClass.fn(2);
+
+    setTimeout(() => {
+      expect(_spy.callCount).to.equal(2);
+      done();
+    }, 20);
+  });
+
   it('should debounce the property setter', (done) => {
     class MyClass {
       private _value: number = 100;

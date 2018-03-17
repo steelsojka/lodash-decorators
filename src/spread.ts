@@ -1,14 +1,10 @@
 import spread = require('lodash/spread');
 
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
+import { DecoratorConfig, DecoratorFactory, BiTypedMethodDecorator1 } from './factory';
 import { PreValueApplicator } from './applicators';
 
-const decorator = DecoratorFactory.createDecorator(
-  new DecoratorConfig(spread, new PreValueApplicator())
-);
-
-export function Spread(start?: number): LodashMethodDecorator {
-  return decorator(start);
-}
+export const Spread = DecoratorFactory.createDecorator(
+  new DecoratorConfig(spread, new PreValueApplicator(), { optionalParams: true })
+) as BiTypedMethodDecorator1<number>;
 export { Spread as spread };
-export default decorator;
+export default Spread;

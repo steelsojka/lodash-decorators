@@ -1,14 +1,10 @@
 import rest = require('lodash/rest');
 
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
+import { DecoratorConfig, DecoratorFactory, BiTypedMethodDecorator1 } from './factory';
 import { PreValueApplicator } from './applicators';
 
-const decorator = DecoratorFactory.createDecorator(
-  new DecoratorConfig(rest, new PreValueApplicator())
-);
-
-export function Rest(start?: number): LodashMethodDecorator {
-  return decorator(start);
-}
+export const Rest = DecoratorFactory.createDecorator(
+  new DecoratorConfig(rest, new PreValueApplicator(), { optionalParams: true })
+) as BiTypedMethodDecorator1<number>;
 export { Rest as rest };
-export default decorator;
+export default Rest;
