@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.0"></a>
+# [5.0.0](https://github.com/steelsojka/lodash-decorators/compare/v4.5.0...v5.0.0) (2018-03-17)
+
+
+### Features
+
+* **all:** decorators with optional arguments do not require invocation ([59a71d7](https://github.com/steelsojka/lodash-decorators/commit/59a71d7))
+* **all:** initial work for paramless decorators ([5300a2e](https://github.com/steelsojka/lodash-decorators/commit/5300a2e))
+
+
+### BREAKING CHANGES
+
+* **all:** This may cause issue with tools that rely on static analysis of the
+decorators. Since the deocorators are typed with intersections they must
+be removed from a static function wrapper.
+
+
+
 <a name="4.5.0"></a>
 # [4.5.0](https://github.com/steelsojka/lodash-decorators/compare/v4.4.0...v4.5.0) (2017-11-03)
 
