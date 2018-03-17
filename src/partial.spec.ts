@@ -5,9 +5,9 @@ import { Partial } from './partial';
 describe('partial', () => {
   it('should create a partially applied function', () => {
     class MyClass {
-      lastName: string = 'Sojka';
+      lastName: string = 'Schmo';
 
-      @Partial('fn', 'Avry')
+      @Partial('fn', 'Joe')
       fn2: () => string;
 
       fn(name: string): string {
@@ -18,6 +18,6 @@ describe('partial', () => {
     const myClass = new MyClass();
 
     expect(myClass.fn2).to.be.a('function');
-    expect(myClass.fn2()).to.equal('Avry Sojka');
+    expect(myClass.fn2()).to.equal('Joe Schmo');
   });
 });

@@ -6,6 +6,7 @@ export interface DecoratorConfigOptions {
   getter?: boolean;
   property?: boolean;
   method?: boolean;
+  optionalParams?: boolean;
 }
 
 export class DecoratorConfig {
@@ -33,5 +34,9 @@ export class DecoratorConfig {
 
   get method(): boolean {
     return this.options.method != null ? this.options.method : true;
+  }
+
+  get optionalParams(): boolean {
+    return this.options.optionalParams != null ? this.options.optionalParams : false;
   }
 }

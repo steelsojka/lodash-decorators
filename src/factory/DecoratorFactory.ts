@@ -6,16 +6,18 @@ import {
   InstanceChainContext
 } from './common';
 import { DecoratorConfig } from './DecoratorConfig';
-import { copyMetadata, bind } from '../utils';
+import { copyMetadata, bind, isMethodOrPropertyDecoratorArgs } from '../utils';
 
 export type GenericDecorator = (...args: any[]) => LodashDecorator;
 
 export class InternalDecoratorFactory {
   createDecorator(config: DecoratorConfig): GenericDecorator {
-    const { applicator } = config;
+    const { applicator, optionalParams } = config;
 
     return (...args: any[]): LodashDecorator => {
-      return (target: Object, name: string, _descriptor?: PropertyDescriptor): PropertyDescriptor => {
+      let params = args;
+
+      const decorator = (target: Object, name: string, _descriptor?: PropertyDescriptor): PropertyDescriptor => {
         const descriptor = this._resolveDescriptor(target, name, _descriptor);
         const { value, get, set } = descriptor;
 
@@ -23,24 +25,33 @@ export class InternalDecoratorFactory {
         // as we can't apply it correctly.
         if (!InstanceChainMap.has([ target, name ])) {
           if (isFunction(value)) {
-            descriptor.value = copyMetadata(applicator.apply({ config, target, value, args }), value);
+            descriptor.value = copyMetadata(applicator.apply({ config, target, value, args: params }), value);
           } else if (isFunction(get) && config.getter) {
-            descriptor.get = copyMetadata(applicator.apply({ config, target, value: get, args }), get);
+            descriptor.get = copyMetadata(applicator.apply({ config, target, value: get, args: params }), get);
           } else if (isFunction(set) && config.setter) {
-            descriptor.set = copyMetadata(applicator.apply({ config, target, value: set, args }), get);
+            descriptor.set = copyMetadata(applicator.apply({ config, target, value: set, args: params }), set);
           }
         }
 
         return descriptor;
       };
+
+      if (optionalParams && isMethodOrPropertyDecoratorArgs(...args)) {
+        params = [];
+
+        return decorator(args[0], args[1], args[2]) as any;
+      }
+
+      return decorator;
     };
   }
 
   createInstanceDecorator(config: DecoratorConfig): GenericDecorator {
-    const { applicator, bound } = config;
+    const { applicator, bound, optionalParams } = config;
 
     return (...args: any[]): LodashDecorator => {
-      return (target: Object, name: string, _descriptor?: PropertyDescriptor): PropertyDescriptor => {
+      let params = args;
+      const decorator = (target: Object, name: string, _descriptor?: PropertyDescriptor): PropertyDescriptor => {
         const descriptor = this._resolveDescriptor(target, name, _descriptor);
         const { value, writable, enumerable, configurable, get, set } = descriptor;
         const isFirstInstance = !InstanceChainMap.has([ target, name ]);
@@ -61,7 +72,7 @@ export class InternalDecoratorFactory {
           }
 
           return copyMetadata(
-            applicator.apply({ args, target, instance, value: fn, config }),
+            applicator.apply({ args: params, target, instance, value: fn, config }),
             fn
           );
         });
@@ -123,7 +134,7 @@ export class InternalDecoratorFactory {
         descriptor.get = function() {
           applyDecorator(this);
 
-          const descriptor = Object.getOwnPropertyDescriptor(this, name);
+          const descriptor = Object.getOwnPropertyDescriptor(this, name)!;
 
           if (descriptor.get) {
             return descriptor.get.call(this);
@@ -135,7 +146,7 @@ export class InternalDecoratorFactory {
         descriptor.set = function(value) {
           applyDecorator(this);
 
-          const descriptor = Object.getOwnPropertyDescriptor(this, name);
+          const descriptor = Object.getOwnPropertyDescriptor(this, name)!;
 
           if (descriptor.set) {
             descriptor.set.call(this, value);
@@ -146,6 +157,14 @@ export class InternalDecoratorFactory {
 
         return descriptor;
       };
+
+      if (optionalParams && isMethodOrPropertyDecoratorArgs(...args)) {
+        params = [];
+
+        return decorator(args[0], args[1], args[2]) as any;
+      }
+
+      return decorator;
     };
   }
 

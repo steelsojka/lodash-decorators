@@ -18,6 +18,21 @@ describe('curry', () => {
     expect(add5(10)).to.equal(15);
   });
 
+  it('should curry the method with default arity (paramless)', () => {
+    class MyClass {
+      @Curry
+      add(a: any, b?: any) {
+        return a + b;
+      }
+    }
+
+    const myClass = new MyClass();
+    const add5 = myClass.add(5);
+
+    expect(add5).to.be.an.instanceOf(Function);
+    expect(add5(10)).to.equal(15);
+  });
+
   it('should curry the method with fixed arity', () => {
     class MyClass {
       @Curry(2)
