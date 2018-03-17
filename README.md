@@ -14,6 +14,8 @@ Decorators using lodash functions. View the [API docs](https://steelsojka.github
 - [Usage](#usage)
   - [Decorators](#decorators)
     - [Example](#example)
+  - [Optional Params and Casing](#optional-params-and-casing)
+    - [Example](#example)
   - [Partials](#partials)
     - [Example](#example-1)
   - [Composition](#composition)
@@ -122,6 +124,30 @@ class Person {
 
   @Memoize(item => item.id)
   doSomeHeavyProcessing(arg1, arg2) {}
+}
+```
+
+### Optional Params and Casing
+
+If a decorator does not require params or has optional params then the decorator does not require invocation.
+Decorators are also exported in lower case as well as start case.
+
+#### Example
+
+```javascript
+// These are both valid decorator usages.
+class Person {
+  @Memoize()
+  doSomething() {}
+
+  @Memoize
+  doSomething2() {}
+
+  @memoize()
+  doSomething3() {}
+
+  @memoize
+  doSomething4() {}
 }
 ```
 
@@ -350,7 +376,7 @@ removed and decorators that make sense to apply to getters/setters are configure
 ```javascript
 class MyClass {
   // This only gets applied to the setter as it doesn't make sense to apply it to the getter.
-  @Debounce(1000) 
+  @Debounce(1000)
   get value() {
     return this._value;
   }
