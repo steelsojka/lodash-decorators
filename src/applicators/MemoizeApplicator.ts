@@ -25,7 +25,7 @@ export class MemoizeApplicator extends Applicator {
       if (cache) {
         memoized.cache = cache;
       } else if (isFunction(type)) {
-        memoized.cache = new type();
+        memoized.cache = new (type as any)();
       }
     }
 
