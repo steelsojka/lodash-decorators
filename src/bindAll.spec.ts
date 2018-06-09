@@ -96,7 +96,7 @@ describe('bindAll', () => {
 
     const myClass = new MyClass();
 
-    expect(myClass.hasOwnProperty('fn')).to.be.true;
+    expect(accessed).to.be.false;
     expect(myClass.hasOwnProperty('prop')).to.be.false;
     expect(myClass.hasOwnProperty('prop2')).to.be.false;
   });
