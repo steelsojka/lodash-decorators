@@ -6,7 +6,12 @@ import {
   InstanceChainContext
 } from './common';
 import { DecoratorConfig } from './DecoratorConfig';
-import { copyMetadata, bind, isMethodOrPropertyDecoratorArgs } from '../utils';
+import {
+  copyMetadata,
+  bind,
+  isMethodOrPropertyDecoratorArgs,
+  isPrototypeAccess
+} from '../utils';
 
 export type GenericDecorator = (...args: any[]) => LodashDecorator;
 
@@ -60,6 +65,7 @@ export class InternalDecoratorFactory {
         const isSetter = isFirstInstance && isFunction(set);
         const isMethod = isFirstInstance && isFunction(value);
         const isProperty = isFirstInstance && !isGetter && !isSetter && !isMethod;
+        const baseValue = isGetter ? get : isMethod ? value : undefined;
 
         chainData.properties.push(name);
         chainData.fns.push((fn: Function, instance: any, context: InstanceChainContext) => {
@@ -132,6 +138,12 @@ export class InternalDecoratorFactory {
         }
 
         descriptor.get = function() {
+          // Check for direct access on the prototype.
+          // MyClass.prototype.fn <-- This should not apply the decorator.
+          if (isPrototypeAccess(this, target)) {
+            return baseValue;
+          }
+
           applyDecorator(this);
 
           const descriptor = Object.getOwnPropertyDescriptor(this, name)!;

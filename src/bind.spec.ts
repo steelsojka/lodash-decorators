@@ -60,4 +60,23 @@ describe('bind', () => {
     myClass2.fn.call(null);
     expect(context).to.equal(myClass2);
   });
+
+  it('should not bind when accessed on the prototype', () => {
+    let context;
+
+    class MyClass {
+      @Bind
+      fn() {
+        context = this;
+      }
+    }
+
+    MyClass.prototype.fn();
+
+    const myClass = new MyClass();
+
+    myClass.fn.call(null);
+
+    expect(context).to.equal(myClass);
+  });
 });

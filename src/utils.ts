@@ -7,3 +7,4 @@ export * from './utils/bind';
 export * from './utils/wrapConstructor';
 export * from './utils/assignAll';
 export * from './utils/isDecoratorArgs';
+export * from './utils/isPrototypeAccess';
