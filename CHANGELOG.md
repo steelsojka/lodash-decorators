@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.0"></a>
+# [6.0.0](https://github.com/steelsojka/lodash-decorators/compare/v5.0.1...v6.0.0) (2018-06-17)
+
+
+### Bug Fixes
+
+* **bindAll:** fix constructor not being called with new ([4e72d0c](https://github.com/steelsojka/lodash-decorators/commit/4e72d0c))
+* **decorators:** don't apply instance decorators when accessing from a ([17caeb6](https://github.com/steelsojka/lodash-decorators/commit/17caeb6))
+
+
+### BREAKING CHANGES
+
+* **bindAll:** Properties will use the bind decorator to apply getter/setters
+on the prototype instead of the instance. This could cause
+issues with consumers currently using the implementain that
+assigns the bound properties to the instance through the constructor
+rather than on the prototype. The value on the prototype will now be
+a getter instead of the original function value.
+
+
+
 <a name="5.0.1"></a>
 ## [5.0.1](https://github.com/steelsojka/lodash-decorators/compare/v5.0.0...v5.0.1) (2018-06-02)
 
