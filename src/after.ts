@@ -4,7 +4,7 @@ import { DecoratorConfig, DecoratorFactory, LodashDecorator } from './factory';
 import { PostValueApplicator } from './applicators';
 
 const decorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(after, new PostValueApplicator(), { setter: true })
+  new DecoratorConfig(after, new PostValueApplicator(), { setter: true, property: true })
 );
 
 /**

@@ -5,7 +5,7 @@ import { PreValueApplicator } from './applicators';
 import { DebounceOptions } from './shared';
 
 const decorator = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(debounce, new PreValueApplicator(), { setter: true })
+  new DecoratorConfig(debounce, new PreValueApplicator(), { setter: true, property: true })
 );
 
 /**

@@ -98,7 +98,7 @@ export class InternalDecoratorFactory {
           return chainData.fns.reduce((result: Function, next: Function) => next(result, instance, context), fn);
         };
 
-        const applyDecorator = (instance: any) => {
+        const applyDecorator = (instance: any, setValue?: any) => {
           let getter = get || undefined;
           let setter = set || undefined;
 
@@ -119,9 +119,10 @@ export class InternalDecoratorFactory {
               set: setter
             });
           } else if (isMethod || isProperty) {
+            const propValue = isFunction(setValue) ? setValue : value;
             const newFn = isMethod
               ? applyChain(value, { value, method: true }, instance)
-              : applyChain(value, { value, property: true }, instance);
+              : applyChain(propValue, { value: propValue, property: true }, instance);
 
             Object.defineProperty(instance, name, {
               writable,
@@ -156,14 +157,16 @@ export class InternalDecoratorFactory {
         };
 
         descriptor.set = function(value) {
-          applyDecorator(this);
+          applyDecorator(this, value);
 
-          const descriptor = Object.getOwnPropertyDescriptor(this, name)!;
+          if (config.setter && isSetter) {
+            const descriptor = Object.getOwnPropertyDescriptor(this, name)!;
 
-          if (descriptor.set) {
-            descriptor.set.call(this, value);
-          } else if (isProperty || isMethod) {
-            this[name] = value;
+            if (descriptor.set) {
+              descriptor.set.call(this, value);
+            } else if (isProperty || isMethod) {
+              this[name] = value;
+            }
           }
         };
 
@@ -181,12 +184,12 @@ export class InternalDecoratorFactory {
   }
 
   private _isApplicable(context: InstanceChainContext, config: DecoratorConfig): boolean {
-   return !Boolean(
-     context.getter && !config.getter
-      || context.setter && !config.setter
-      || context.method && !config.method
-      || context.property && !config.property
-   );
+    return Boolean(
+      (context.getter && config.getter)
+        || (context.setter && config.setter)
+        || (context.method && config.method)
+        || (context.property && config.property)
+    );
   }
 
   private _resolveDescriptor(target: Object, name: string, descriptor?: PropertyDescriptor): PropertyDescriptor {
@@ -194,7 +197,11 @@ export class InternalDecoratorFactory {
       return descriptor;
     }
 
-    return Object.getOwnPropertyDescriptor(target, name) || {};
+    return Object.getOwnPropertyDescriptor(target, name) || {
+      writable: true,
+      enumerable: true,
+      configurable: true
+    };
   }
 }
 
