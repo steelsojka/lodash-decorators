@@ -167,7 +167,7 @@ the current object.
 #### Example
 
 ```javascript
-import { Partial } from 'lodash-decorators'
+import { Partial, Wrap } from 'lodash-decorators'
 
 class Person {
   constructor(firstName, lastName) {
