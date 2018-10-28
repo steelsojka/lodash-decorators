@@ -1,4 +1,4 @@
-import { DecoratorConfig, DecoratorFactory, BiTypedMethodDecorator } from './factory';
+import { DecoratorConfig, DecoratorFactory, LegacyBiTypedMethodDecorator } from './factory';
 import { PreValueApplicator } from './applicators';
 import { returnAtIndex } from './utils';
 
@@ -8,6 +8,6 @@ import { returnAtIndex } from './utils';
  */
 export const Tap = DecoratorFactory.createDecorator(
   new DecoratorConfig((fn: Function) => returnAtIndex(fn, 0), new PreValueApplicator(), { optionalParams: true })
-) as BiTypedMethodDecorator;
+) as LegacyBiTypedMethodDecorator;
 export { Tap as tap };
 export default Tap;

@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 
-import { AfterAll } from './afterAll';
+import { specFactory } from './specFactory';
 
-describe('afterAll', () => {
+export default specFactory('afterAll', (AfterAll: (n: number) => any) => {
   it('should invoke the method after 3 times', () => {
     let calls = 0;
 

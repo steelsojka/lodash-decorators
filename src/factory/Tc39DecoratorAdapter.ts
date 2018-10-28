@@ -6,7 +6,7 @@ import {
   Tc39ClassDecoratorMetadata,
   Tc39FieldDecoratorMetadata,
   Tc39MethodDecoratorMetadata
-} from '../tc39';
+} from './common';
 import { copyMetadata } from '../utils';
 
 export class Tc39DecoratorAdapter extends AbstractDecoratorAdapter {
@@ -58,7 +58,11 @@ export class Tc39DecoratorAdapter extends AbstractDecoratorAdapter {
     params: any[],
     decoratorArgs: [ Tc39ClassDecoratorMetadata | Tc39FieldDecoratorMetadata | Tc39MethodDecoratorMetadata ]
   ): Tc39FieldDecoratorMetadata | Tc39ClassDecoratorMetadata | Tc39MethodDecoratorMetadata {
-    return this.createDecorator(config, params, decoratorArgs);
+    const metadata = this.createDecorator(config, params, decoratorArgs);
+
+    return metadata.kind !== 'class'
+      ? { ...metadata, placement: 'own' }
+      : metadata;
   }
 
   isDecoratorArgs(args: any[]): boolean {

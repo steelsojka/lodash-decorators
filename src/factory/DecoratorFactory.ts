@@ -1,55 +1,49 @@
-import {
-  LodashDecorator,
-  InstanceChainContext
-} from './common';
+import { InstanceChainContext } from './common';
 import { DecoratorConfig } from './DecoratorConfig';
 import { AbstractDecoratorAdapter } from './AbstractDecoratorAdapter';
-import { LegacyDecoratorAdapter } from './LegacyDecoratorAdapter';
 
-export type GenericDecorator = (...args: any[]) => LodashDecorator;
+export type GenericDecorator<T extends (...args: any[]) => any> = (...args: any[]) => T;
 
-export class InternalDecoratorFactory {
-  private adapter: AbstractDecoratorAdapter = new LegacyDecoratorAdapter();
+export class DecoratorFactory {
+  constructor(private adapter: AbstractDecoratorAdapter) {}
 
-  createDecorator(config: DecoratorConfig): GenericDecorator {
+  createDecorator<T extends (...args: any[]) => any>(config: DecoratorConfig): GenericDecorator<T> {
     const { optionalParams } = config;
 
-    return (...args: any[]): LodashDecorator => {
+    return (...args: any[]): T => {
       let params = args;
-      const adapter = this.adapter;
 
-      const decorator = (...decoratorArgs: any[]): PropertyDescriptor => {
-        return adapter.createDecorator(config, params, decoratorArgs);
+      const decorator = (...decoratorArgs: any[]): any => {
+        return this.adapter.createDecorator(config, params, decoratorArgs);
       };
 
-      if (optionalParams && adapter.isDecoratorArgs(args)) {
+      if (optionalParams && this.adapter.isDecoratorArgs(args)) {
         params = [];
 
-        return decorator(...args) as any;
+        return decorator(...args) as ReturnType<T>;
       }
 
-      return decorator;
+      return decorator as T;
     };
   }
 
-  createInstanceDecorator(config: DecoratorConfig): GenericDecorator {
+  createInstanceDecorator<T extends (...args: any) => any>(config: DecoratorConfig): GenericDecorator<T> {
     const { optionalParams } = config;
 
-    return (...args: any[]): LodashDecorator => {
+    return (...args: any[]): T => {
       let params = args;
-      const adapter = this.adapter;
 
       const decorator = (...decoratorArgs: any[]): PropertyDescriptor => {
-        return adapter.createInstanceDecorator(config, params, decoratorArgs);
+        return this.adapter.createInstanceDecorator(config, params, decoratorArgs);
       };
 
-      if (optionalParams && adapter.isDecoratorArgs(args)) {
+      if (optionalParams && this.adapter.isDecoratorArgs(args)) {
         params = [];
 
-        return decorator(...args) as any;
+        return decorator(...args) as ReturnType<T>;
       }
 
-      return decorator;
+      return decorator as T;
     };
   }
 
@@ -78,5 +72,3 @@ export function resolveDescriptor(target: Object, name: string, descriptor?: Pro
 
   return Object.getOwnPropertyDescriptor(target, name) || {};
 }
-
-export const DecoratorFactory = new InternalDecoratorFactory();

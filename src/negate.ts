@@ -4,7 +4,7 @@ import {
   DecoratorConfig,
   DecoratorFactory,
   ResolvableFunction,
-  BiTypedDecorator1
+  LegacyBiTypedDecorator1
 } from './factory';
 import { PartialValueApplicator } from './applicators';
 
@@ -28,6 +28,6 @@ import { PartialValueApplicator } from './applicators';
  */
 export const Negate = DecoratorFactory.createInstanceDecorator(
   new DecoratorConfig(negate, new PartialValueApplicator(), { property: true, optionalParams: true })
-) as BiTypedDecorator1<ResolvableFunction>;
+) as LegacyBiTypedDecorator1<ResolvableFunction>;
 export { Negate as negate };
 export default Negate;

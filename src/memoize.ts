@@ -4,7 +4,7 @@ import {
   DecoratorConfig,
   DecoratorFactory,
   ResolvableFunction,
-  BiTypedMethodDecorator1
+  LegacyBiTypedMethodDecorator1
 } from './factory';
 import { MemoizeApplicator } from './applicators';
 import { MemoizeConfig } from './shared';
@@ -35,6 +35,6 @@ import { MemoizeConfig } from './shared';
  */
 export const Memoize = DecoratorFactory.createInstanceDecorator(
   new DecoratorConfig(memoize, new MemoizeApplicator(), { optionalParams: true })
-) as BiTypedMethodDecorator1<ResolvableFunction | MemoizeConfig<any, any>>;
+) as LegacyBiTypedMethodDecorator1<ResolvableFunction | MemoizeConfig<any, any>>;
 export { Memoize as memoize };
 export default Memoize;

@@ -1,6 +1,6 @@
 import memoize = require('lodash/memoize');
 
-import { DecoratorConfig, DecoratorFactory, BiTypedMethodDecorator1 } from './factory';
+import { DecoratorConfig, DecoratorFactory, LegacyBiTypedMethodDecorator1 } from './factory';
 import { MemoizeApplicator } from './applicators';
 import { MemoizeConfig } from './shared';
 
@@ -10,6 +10,6 @@ import { MemoizeConfig } from './shared';
  */
 export const MemoizeAll = DecoratorFactory.createDecorator(
   new DecoratorConfig(memoize, new MemoizeApplicator(), { optionalParams: true })
-) as BiTypedMethodDecorator1<Function | MemoizeConfig<any, any>>;
+) as LegacyBiTypedMethodDecorator1<Function | MemoizeConfig<any, any>>;
 export { MemoizeAll as memoizeAll };
 export default MemoizeAll;

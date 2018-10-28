@@ -1,6 +1,6 @@
 import defer = require('lodash/defer');
 
-import { DecoratorConfig, DecoratorFactory, BiTypedDecoratorN } from './factory';
+import { DecoratorConfig, DecoratorFactory, LegacyBiTypedDecoratorN } from './factory';
 import { InvokeApplicator } from './applicators';
 
 /**
@@ -30,6 +30,6 @@ import { InvokeApplicator } from './applicators';
  */
 export const Defer = DecoratorFactory.createDecorator(
   new DecoratorConfig(defer, new InvokeApplicator(), { setter: true, optionalParams: true })
-) as BiTypedDecoratorN;
+) as LegacyBiTypedDecoratorN;
 export { Defer as defer };
 export default Defer;

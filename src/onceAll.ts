@@ -1,6 +1,6 @@
 import once = require('lodash/once');
 
-import { DecoratorConfig, DecoratorFactory, BiTypedDecorator } from './factory';
+import { DecoratorConfig, DecoratorFactory, LegacyBiTypedDecorator } from './factory';
 import { PreValueApplicator } from './applicators';
 
 /**
@@ -24,6 +24,6 @@ import { PreValueApplicator } from './applicators';
  */
 export const OnceAll = DecoratorFactory.createDecorator(
   new DecoratorConfig(once, new PreValueApplicator(), { setter: true, optionalParams: true })
-) as BiTypedDecorator;
+) as LegacyBiTypedDecorator;
 export { OnceAll as onceAll };
 export default OnceAll;

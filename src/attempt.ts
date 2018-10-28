@@ -1,7 +1,7 @@
 import attempt = require('lodash/attempt');
 import partial = require('lodash/partial');
 
-import { DecoratorConfig, DecoratorFactory, BiTypedMethodDecorator } from './factory';
+import { DecoratorConfig, DecoratorFactory, LegacyBiTypedMethodDecorator } from './factory';
 import { PreValueApplicator } from './applicators';
 
 const attemptFn = (fn: () => void) => partial(attempt, fn);
@@ -31,6 +31,6 @@ export const Attempt = DecoratorFactory.createDecorator(
   new DecoratorConfig(attemptFn, new PreValueApplicator(), {
     optionalParams: true
   })
-) as BiTypedMethodDecorator;
+) as LegacyBiTypedMethodDecorator;
 export { Attempt as attempt };
 export default Attempt;

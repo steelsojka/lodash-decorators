@@ -1,8 +1,7 @@
 import { expect } from 'chai';
+import { specFactory } from './specFactory';
 
-import { After } from './after';
-
-describe('after', () => {
+export default specFactory('after', (After: (time: number) => any) => {
   it('should invoke the method after 3 times', () => {
     let calls = 0;
 
