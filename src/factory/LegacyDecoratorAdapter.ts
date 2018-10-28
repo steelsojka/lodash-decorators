@@ -153,6 +153,6 @@ export class LegacyDecoratorAdapter extends AbstractDecoratorAdapter {
   }
 
   isDecoratorArgs(args: any[]): boolean {
-    return isMethodOrPropertyDecoratorArgs(args);
+    return isMethodOrPropertyDecoratorArgs(...args);
   }
 }

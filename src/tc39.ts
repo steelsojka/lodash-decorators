@@ -1,6 +1,5 @@
 export interface DecoratorMetadata {
   kind: 'field' | 'method' | 'class';
-
 }
 
 export interface Tc39FieldDecoratorMetadata<T = any> extends DecoratorMetadata {

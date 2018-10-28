@@ -52,6 +52,14 @@ export class InternalDecoratorFactory {
       return decorator;
     };
   }
+
+  /**
+   * Sets the adapter to use for creating decorator.
+   * @param {AbstractDecoratorAdapter} adapter
+   */
+  useAdapter(adapter: AbstractDecoratorAdapter): void {
+    this.adapter = adapter;
+  }
 }
 
 export function isApplicable(context: InstanceChainContext, config: DecoratorConfig): boolean {
