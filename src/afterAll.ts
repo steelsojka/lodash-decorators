@@ -1,1 +1,1 @@
-export * from './tc39/afterAll';
+export * from './legacy/afterAll';

@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+
 import { specFactory } from './specFactory';
 
 export default specFactory('after', (After: (time: number) => any) => {

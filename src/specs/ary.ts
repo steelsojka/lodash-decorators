@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 
-import { Ary } from './ary';
+import { specFactory } from './specFactory';
 
-describe('ary', () => {
+export default specFactory('ary', (Ary: (arity: number) => any) => {
   it('should invoke the method with specified arguments', () => {
     class MyClass {
       @Ary(2)
