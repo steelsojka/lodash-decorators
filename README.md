@@ -2,7 +2,7 @@
 
 Decorators using lodash functions. View the [API docs](https://steelsojka.github.io/lodash-decorators) for more in depth documentation.
 
-[![Build Status](https://travis-ci.org/steelsojka/lodash-decorators.svg)](https://travis-ci.org/steelsojka/lodash-decorators)
+[![Build Status](https://travis-ci.org/steelsojka/lodash-decorators.svg?branch=master)](https://travis-ci.org/steelsojka/lodash-decorators)
 [![npm version](https://badge.fury.io/js/lodash-decorators.svg)](http://badge.fury.io/js/lodash-decorators)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
