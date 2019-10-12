@@ -7,7 +7,7 @@ import forOwn = require('lodash/forOwn');
  * @private
  */
 export function copyMetadata(to: any, from: any): any {
-  forOwn(from, (value: any, key: string) => to[key] = value);
+  forOwn(from, (value: any, key: string) => (to[key] = value));
 
   return to;
 }

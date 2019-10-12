@@ -22,7 +22,7 @@ import { PreValueApplicator } from './applicators';
  * myClass.fn(); //=> 1
  * myClass2.fn(); //=> 1
  */
-export const OnceAll = DecoratorFactory.createDecorator(
+export const OnceAll = DecoratorFactory.tc39.createDecorator(
   new DecoratorConfig(once, new PreValueApplicator(), { setter: true, optionalParams: true })
 ) as BiTypedDecorator;
 export { OnceAll as onceAll };

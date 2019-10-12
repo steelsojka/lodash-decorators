@@ -28,7 +28,7 @@ import { InvokeApplicator } from './applicators';
  *   myClass.value; // => 110;
  * }, 0);
  */
-export const Defer = DecoratorFactory.createDecorator(
+export const Defer = DecoratorFactory.tc39.createDecorator(
   new DecoratorConfig(defer, new InvokeApplicator(), { setter: true, optionalParams: true })
 ) as BiTypedDecoratorN;
 export { Defer as defer };

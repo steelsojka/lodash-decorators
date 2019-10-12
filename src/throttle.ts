@@ -1,19 +1,33 @@
 import throttle = require('lodash/throttle');
 
-import { DecoratorConfig, DecoratorFactory, BiTypedDecorator2 } from './factory';
+import {
+  DecoratorConfig,
+  DecoratorFactory,
+  BiTypedDecorator2,
+} from './factory';
 import { PreValueApplicator } from './applicators';
 import { ThrottleOptions } from './shared';
 
-export const Throttle = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(throttle, new PreValueApplicator(), { setter: true, getter: true, optionalParams: true })
+export const Throttle = DecoratorFactory.tc39.createInstanceDecorator(
+  new DecoratorConfig(throttle, new PreValueApplicator(), {
+    getter: true,
+    optionalParams: true,
+    setter: true,
+  })
 ) as BiTypedDecorator2<number, ThrottleOptions>;
 
-export const ThrottleGetter = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(throttle, new PreValueApplicator(), { getter: true, optionalParams: true })
+export const ThrottleGetter = DecoratorFactory.tc39.createInstanceDecorator(
+  new DecoratorConfig(throttle, new PreValueApplicator(), {
+    getter: true,
+    optionalParams: true,
+  })
 ) as BiTypedDecorator2<number, ThrottleOptions>;
 
-export const ThrottleSetter = DecoratorFactory.createInstanceDecorator(
-  new DecoratorConfig(throttle, new PreValueApplicator(), { setter: true, optionalParams: true })
+export const ThrottleSetter = DecoratorFactory.tc39.createInstanceDecorator(
+  new DecoratorConfig(throttle, new PreValueApplicator(), {
+    optionalParams: true,
+    setter: true,
+  })
 ) as BiTypedDecorator2<number, ThrottleOptions>;
 
 export { Throttle as throttle };

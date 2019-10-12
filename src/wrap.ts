@@ -8,7 +8,7 @@ import {
 } from './factory';
 import { WrapApplicator } from './applicators';
 
-const decorator = DecoratorFactory.createDecorator(
+const decorator = DecoratorFactory.tc39.createDecorator(
   new DecoratorConfig(wrap, new WrapApplicator())
 );
 

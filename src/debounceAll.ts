@@ -4,7 +4,7 @@ import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './fact
 import { PreValueApplicator } from './applicators';
 import { DebounceOptions } from './shared';
 
-const decorator = DecoratorFactory.createDecorator(
+const decorator = DecoratorFactory.tc39.createDecorator(
   new DecoratorConfig(debounce, new PreValueApplicator())
 );
 

@@ -1,7 +1,7 @@
 import { Applicator, ApplicateOptions } from './Applicator';
 
 export class BindApplicator extends Applicator {
-  apply({ value, config: { execute } , args, instance, target }: ApplicateOptions): any {
+  apply({ value, config: { execute }, args, instance }: ApplicateOptions): any {
     if (!instance) {
       return value;
     }

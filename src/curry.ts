@@ -29,7 +29,7 @@ import { PreValueApplicator } from './applicators';
  *
  * add5AndMultiply(10); // => 30
  */
-export const Curry = DecoratorFactory.createInstanceDecorator(
+export const Curry = DecoratorFactory.tc39.createInstanceDecorator(
   new DecoratorConfig(curry, new PreValueApplicator(), { bound: true, optionalParams: true })
 ) as BiTypedMethodDecorator1<number>;
 export { Curry as curry };

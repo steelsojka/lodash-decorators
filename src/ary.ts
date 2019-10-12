@@ -1,9 +1,13 @@
 import ary = require('lodash/ary');
 
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
+import {
+  DecoratorConfig,
+  DecoratorFactory,
+  LodashMethodDecorator,
+} from './factory';
 import { PreValueApplicator } from './applicators';
 
-const decorator = DecoratorFactory.createDecorator(
+const decorator = DecoratorFactory.tc39.createDecorator(
   new DecoratorConfig(ary, new PreValueApplicator())
 );
 

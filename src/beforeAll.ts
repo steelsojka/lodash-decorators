@@ -3,7 +3,7 @@ import before = require('lodash/before');
 import { DecoratorConfig, DecoratorFactory, LodashDecorator } from './factory';
 import { PostValueApplicator } from './applicators';
 
-const decorator = DecoratorFactory.createDecorator(
+const decorator = DecoratorFactory.tc39.createDecorator(
   new DecoratorConfig(before, new PostValueApplicator(), { setter: true })
 );
 

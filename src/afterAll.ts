@@ -3,7 +3,7 @@ import after = require('lodash/after');
 import { DecoratorConfig, DecoratorFactory, LodashDecorator } from './factory';
 import { PostValueApplicator } from './applicators';
 
-const decorator = DecoratorFactory.createDecorator(
+const decorator = DecoratorFactory.tc39.createDecorator(
   new DecoratorConfig(after, new PostValueApplicator(), { setter: true })
 );
 

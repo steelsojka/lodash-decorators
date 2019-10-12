@@ -12,7 +12,12 @@ export class ComposeApplicator extends Applicator {
     return this._config.post === true;
   }
 
-  apply({ config: { execute }, value = identity, args, target }: ApplicateOptions): any {
+  apply({
+    config: { execute },
+    value = identity,
+    args,
+    target
+  }: ApplicateOptions): any {
     const applicator = this;
 
     return function(...invokeArgs: any[]): any {

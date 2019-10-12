@@ -27,7 +27,7 @@ const attemptFn = (fn: () => void) => partial(attempt, fn);
  * myClass.fn(10); // => 10;
  * myClass.fn(null); // => Error
  */
-export const Attempt = DecoratorFactory.createDecorator(
+export const Attempt = DecoratorFactory.tc39.createDecorator(
   new DecoratorConfig(attemptFn, new PreValueApplicator(), {
     optionalParams: true
   })

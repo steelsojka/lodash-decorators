@@ -26,7 +26,7 @@ import { PartialValueApplicator } from './applicators';
  *
  * myClass.fn2(); //=> false
  */
-export const Negate = DecoratorFactory.createInstanceDecorator(
+export const Negate = DecoratorFactory.tc39.createInstanceDecorator(
   new DecoratorConfig(negate, new PartialValueApplicator(), { property: true, optionalParams: true })
 ) as BiTypedDecorator1<ResolvableFunction>;
 export { Negate as negate };

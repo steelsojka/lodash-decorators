@@ -4,7 +4,7 @@ import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './fact
 import { PreValueApplicator } from './applicators';
 import { ThrottleOptions } from './shared';
 
-const decorator = DecoratorFactory.createDecorator(
+const decorator = DecoratorFactory.tc39.createDecorator(
   new DecoratorConfig(throttle, new PreValueApplicator(), { setter: true })
 );
 export function ThrottleAll(wait?: number, options?: ThrottleOptions): LodashMethodDecorator {

@@ -3,7 +3,7 @@ import spread = require('lodash/spread');
 import { DecoratorConfig, DecoratorFactory, BiTypedMethodDecorator1 } from './factory';
 import { PreValueApplicator } from './applicators';
 
-export const Spread = DecoratorFactory.createDecorator(
+export const Spread = DecoratorFactory.tc39.createDecorator(
   new DecoratorConfig(spread, new PreValueApplicator(), { optionalParams: true })
 ) as BiTypedMethodDecorator1<number>;
 export { Spread as spread };

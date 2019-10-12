@@ -3,7 +3,7 @@ import partial = require('lodash/partial');
 import { DecoratorConfig, DecoratorFactory } from './factory';
 import { PartialApplicator } from './applicators';
 
-const decorator = DecoratorFactory.createInstanceDecorator(
+const decorator = DecoratorFactory.tc39.createInstanceDecorator(
   new DecoratorConfig(partial, new PartialApplicator(), { property: true, method: false })
 );
 

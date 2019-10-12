@@ -33,7 +33,7 @@ import { MemoizeConfig } from './shared';
  *   }
  * }
  */
-export const Memoize = DecoratorFactory.createInstanceDecorator(
+export const Memoize = DecoratorFactory.tc39.createInstanceDecorator(
   new DecoratorConfig(memoize, new MemoizeApplicator(), { optionalParams: true })
 ) as BiTypedMethodDecorator1<ResolvableFunction | MemoizeConfig<any, any>>;
 export { Memoize as memoize };

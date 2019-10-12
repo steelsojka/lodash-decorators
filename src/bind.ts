@@ -28,7 +28,7 @@ import { BindApplicator } from './applicators';
  * myClass.bound.call(null); // => myClass {}
  * myClass.unbound.call(null); // => null
  */
-export const Bind = DecoratorFactory.createInstanceDecorator(
+export const Bind = DecoratorFactory.tc39.createInstanceDecorator(
   new DecoratorConfig(bind, new BindApplicator(), {
     optionalParams: true
   })

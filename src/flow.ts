@@ -8,7 +8,7 @@ import {
 } from './factory';
 import { ComposeApplicator } from './applicators';
 
-const decorator = DecoratorFactory.createInstanceDecorator(
+const decorator = DecoratorFactory.tc39.createInstanceDecorator(
   new DecoratorConfig(flow, new ComposeApplicator({ post: true }), { property: true })
 );
 

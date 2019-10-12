@@ -8,7 +8,7 @@ import {
 } from './factory';
 import { PartialValueApplicator } from './applicators';
 
-const decorator = DecoratorFactory.createInstanceDecorator(
+const decorator = DecoratorFactory.tc39.createInstanceDecorator(
   new DecoratorConfig(flip, new PartialValueApplicator(), { property: true })
 );
 

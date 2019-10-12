@@ -1,4 +1,4 @@
-import { Applicator } from '../applicators';
+import { Applicator } from './applicators';
 
 export interface DecoratorConfigOptions {
   bound?: boolean;
@@ -37,6 +37,8 @@ export class DecoratorConfig {
   }
 
   get optionalParams(): boolean {
-    return this.options.optionalParams != null ? this.options.optionalParams : false;
+    return this.options.optionalParams != null
+      ? this.options.optionalParams
+      : false;
   }
 }

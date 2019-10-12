@@ -3,7 +3,7 @@ import overArgs = require('lodash/overArgs');
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { PreValueApplicator } from './applicators';
 
-const decorator = DecoratorFactory.createDecorator(
+const decorator = DecoratorFactory.tc39.createDecorator(
   new DecoratorConfig(overArgs, new PreValueApplicator(), { setter: true })
 );
 

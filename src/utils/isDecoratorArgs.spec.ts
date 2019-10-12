@@ -11,7 +11,8 @@ describe('when determining if args are from a decorator', () => {
             it('should return true', () => {
               class Test {}
 
-              expect(isMethodOrPropertyDecoratorArgs(Test.prototype, 'test')).to.be.true;
+              expect(isMethodOrPropertyDecoratorArgs(Test.prototype, 'test')).to
+                .be.true;
             });
           });
 
@@ -19,7 +20,9 @@ describe('when determining if args are from a decorator', () => {
             it('should return false', () => {
               class Test {}
 
-              expect(isMethodOrPropertyDecoratorArgs({ constructor: Test }, 'test')).to.be.false;
+              expect(
+                isMethodOrPropertyDecoratorArgs({ constructor: Test }, 'test')
+              ).to.be.false;
             });
           });
         });
@@ -53,4 +56,3 @@ describe('when determining if args are from a decorator', () => {
     });
   });
 });
-

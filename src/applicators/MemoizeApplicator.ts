@@ -5,9 +5,19 @@ import { Applicator, ApplicateOptions } from './Applicator';
 import { resolveFunction } from '../utils';
 
 export class MemoizeApplicator extends Applicator {
-  apply({ value, instance, config: { execute }, args, target }: ApplicateOptions): any {
+  apply({
+    value,
+    instance,
+    config: { execute },
+    args,
+    target
+  }: ApplicateOptions): any {
     let resolver = resolveFunction(
-      isFunction(args[0]) ? args[0] : isObject(args[0]) ? args[0].resolver : args[0],
+      isFunction(args[0])
+        ? args[0]
+        : isObject(args[0])
+        ? args[0].resolver
+        : args[0],
       instance,
       target,
       false

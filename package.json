@@ -29,7 +29,8 @@
     "release": "npm run build && npm run docs && npm run readme",
     "lint": "tslint src/**",
     "lint:fix": "tslint src/** --fix",
-    "version": "standard-version"
+    "version": "standard-version",
+    "prettier": "prettier src/**/*.ts --write"
   },
   "main": "index.js",
   "typings": "index.d.ts",
@@ -61,17 +62,18 @@
     "http-server": "^0.11.1",
     "lodash": "^4.17.10",
     "mocha": "^5.2.0",
+    "prettier": "^1.18.2",
     "sinon": "~1.14.1",
     "standard-version": "^4.4.0",
     "ts-node": "^3.0.2",
     "tslint": "^5.10.0",
     "tslint-language-service": "^0.9.9",
-    "typescript": "~2.3.4"
+    "typescript": "^3.6.4"
   },
   "peerDependencies": {
     "lodash": "4.x"
   },
   "dependencies": {
-    "tslib": "^1.9.2"
+    "tslib": "^1.10.0"
   }
 }

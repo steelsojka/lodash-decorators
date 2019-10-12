@@ -16,7 +16,10 @@ const PROPERTY_EXCLUDES = [
  * @param {(Ctor: Function, ...args: any[]) => any} wrapper
  * @returns {Function}
  */
-export function wrapConstructor(Ctor: Function, wrapper: (Ctor: Function, ...args: any[]) => any): Function {
+export function wrapConstructor(
+  Ctor: Function,
+  wrapper: (Ctor: Function, ...args: any[]) => any
+): Function {
   function ConstructorWrapper(...args: any[]) {
     return wrapper.call(this, Ctor, ...args);
   }

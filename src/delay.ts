@@ -3,7 +3,7 @@ import delay = require('lodash/delay');
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { PreValueApplicator } from './applicators';
 
-const decorator = DecoratorFactory.createDecorator(
+const decorator = DecoratorFactory.tc39.createDecorator(
   new DecoratorConfig(
     function(value: Function, wait: number, ...args: any[]) {
       return function(...invokeArgs: any[]): any {
