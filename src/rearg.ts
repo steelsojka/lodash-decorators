@@ -1,18 +1,16 @@
-import rearg = require('lodash/rearg');
-
 import {
-  DecoratorConfig,
   DecoratorFactory,
   LodashDecorator,
   ResolvableFunction
 } from './factory';
-import { PartialValueApplicator } from './applicators';
+import config from './configs/partialRight';
 
-const decorator = DecoratorFactory.tc39.createInstanceDecorator(
-  new DecoratorConfig(rearg, new PartialValueApplicator(), { property: true })
-);
+const decorator = DecoratorFactory.tc39.createInstanceDecorator(config);
 
-export function Rearg(indexes: ResolvableFunction | number | number[], ...args: Array<number | number[]>): LodashDecorator {
+export function Rearg(
+  indexes: ResolvableFunction | number | number[],
+  ...args: Array<number | number[]>
+): LodashDecorator {
   return decorator(indexes, ...args);
 }
 export { Rearg as rearg };

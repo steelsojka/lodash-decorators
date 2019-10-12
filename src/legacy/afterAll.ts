@@ -1,11 +1,7 @@
-import after = require('lodash/after');
+import { DecoratorFactory, LodashDecorator } from './factory';
+import config from '../configs/afterAll';
 
-import { DecoratorConfig, DecoratorFactory, LodashDecorator } from './factory';
-import { PostValueApplicator } from './applicators';
-
-const decorator = DecoratorFactory.legacy.createDecorator(
-  new DecoratorConfig(after, new PostValueApplicator(), { setter: true })
-);
+const decorator = DecoratorFactory.legacy.createDecorator(config);
 
 /**
  * The opposite of Before. This method creates a function that invokes once it's called n or more times.

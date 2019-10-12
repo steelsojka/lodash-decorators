@@ -1,11 +1,7 @@
-import before = require('lodash/before');
+import { DecoratorFactory, LodashDecorator } from './factory';
+import config from './configs/beforeAll';
 
-import { DecoratorConfig, DecoratorFactory, LodashDecorator } from './factory';
-import { PostValueApplicator } from './applicators';
-
-const decorator = DecoratorFactory.tc39.createDecorator(
-  new DecoratorConfig(before, new PostValueApplicator(), { setter: true })
-);
+const decorator = DecoratorFactory.tc39.createDecorator(config);
 
 /**
  * Creates a function that invokes func, with the this binding and arguments of the created function, while it's called less than n times.

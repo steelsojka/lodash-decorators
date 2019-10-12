@@ -1,13 +1,12 @@
-import throttle = require('lodash/throttle');
-
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
-import { PreValueApplicator } from './applicators';
+import { DecoratorFactory, LodashMethodDecorator } from './factory';
 import { ThrottleOptions } from './shared';
+import config from './configs/throttleAll';
 
-const decorator = DecoratorFactory.tc39.createDecorator(
-  new DecoratorConfig(throttle, new PreValueApplicator(), { setter: true })
-);
-export function ThrottleAll(wait?: number, options?: ThrottleOptions): LodashMethodDecorator {
+const decorator = DecoratorFactory.tc39.createDecorator(config);
+export function ThrottleAll(
+  wait?: number,
+  options?: ThrottleOptions
+): LodashMethodDecorator {
   return decorator(wait, options);
 }
 export { ThrottleAll as throttleAll };

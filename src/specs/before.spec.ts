@@ -1,13 +1,14 @@
 import { expect } from 'chai';
 
+import { Before as _Before } from '../legacy/before';
 import { specFactory } from './specFactory';
 
-export default specFactory('afterAll', (AfterAll: (n: number) => any) => {
-  it('should invoke the method after 3 times', () => {
+export default specFactory('before', Before => {
+  it('should invoke the method before 3 times', () => {
     let calls = 0;
 
     class MyClass {
-      @AfterAll(3)
+      @Before(3)
       fn() {
         calls++;
       }
@@ -20,6 +21,8 @@ export default specFactory('afterAll', (AfterAll: (n: number) => any) => {
     myClass.fn();
     myClass.fn();
     myClass.fn();
+    myClass.fn();
+    myClass.fn();
 
     expect(calls, 'single class').to.equal(2);
 
@@ -27,7 +30,10 @@ export default specFactory('afterAll', (AfterAll: (n: number) => any) => {
     myClass2.fn();
     myClass2.fn();
     myClass2.fn();
+    myClass2.fn();
+    myClass2.fn();
 
-    expect(calls, 'multiple class').to.equal(6);
+    expect(calls, 'multiple class').to.equal(4);
   });
 });
+

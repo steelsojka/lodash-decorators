@@ -1,11 +1,7 @@
-import overArgs = require('lodash/overArgs');
+import { DecoratorFactory, LodashMethodDecorator } from './factory';
+import config from './configs/overArgs';
 
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
-import { PreValueApplicator } from './applicators';
-
-const decorator = DecoratorFactory.tc39.createDecorator(
-  new DecoratorConfig(overArgs, new PreValueApplicator(), { setter: true })
-);
+const decorator = DecoratorFactory.tc39.createDecorator(config);
 
 /**
  * Creates a function that invokes func with its arguments transformed.

@@ -1,11 +1,7 @@
-import partial = require('lodash/partial');
+import { DecoratorFactory } from './factory';
+import config from './configs/partial';
 
-import { DecoratorConfig, DecoratorFactory } from './factory';
-import { PartialApplicator } from './applicators';
-
-const decorator = DecoratorFactory.tc39.createInstanceDecorator(
-  new DecoratorConfig(partial, new PartialApplicator(), { property: true, method: false })
-);
+const decorator = DecoratorFactory.tc39.createInstanceDecorator(config);
 
 /**
  * Partially applies arguments to a function.

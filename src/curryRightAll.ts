@@ -1,7 +1,5 @@
-import curryRight = require('lodash/curryRight');
-
-import { DecoratorConfig, DecoratorFactory, BiTypedMethodDecorator1 } from './factory';
-import { PreValueApplicator } from './applicators';
+import { DecoratorFactory, BiTypedMethodDecorator1 } from './factory';
+import config from './configs/curryRightAll';
 
 /**
  * This method is like _.curry except that arguments are applied to func in the manner of _.partialRight instead of _.partial.
@@ -28,7 +26,7 @@ import { PreValueApplicator } from './applicators';
  * add5AndMultiply(10); // => 15
  */
 export const CurryRightAll = DecoratorFactory.tc39.createDecorator(
-  new DecoratorConfig(curryRight, new PreValueApplicator(), { optionalParams: true })
+  config
 ) as BiTypedMethodDecorator1<number>;
 export { CurryRightAll as curryRightAll };
 export default CurryRightAll;

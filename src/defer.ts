@@ -1,7 +1,5 @@
-import defer = require('lodash/defer');
-
-import { DecoratorConfig, DecoratorFactory, BiTypedDecoratorN } from './factory';
-import { InvokeApplicator } from './applicators';
+import { DecoratorFactory, BiTypedDecoratorN } from './factory';
+import config from './configs/defer';
 
 /**
  * Defers invoking the func until the current call stack has cleared. Any additional arguments are provided to func when it's invoked.
@@ -29,7 +27,7 @@ import { InvokeApplicator } from './applicators';
  * }, 0);
  */
 export const Defer = DecoratorFactory.tc39.createDecorator(
-  new DecoratorConfig(defer, new InvokeApplicator(), { setter: true, optionalParams: true })
+  config
 ) as BiTypedDecoratorN;
 export { Defer as defer };
 export default Defer;

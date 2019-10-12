@@ -1,7 +1,5 @@
-import once = require('lodash/once');
-
-import { DecoratorConfig, DecoratorFactory, BiTypedDecorator } from './factory';
-import { PreValueApplicator } from './applicators';
+import { DecoratorFactory, BiTypedDecorator } from './factory';
+import config from '../configs/once';
 
 /**
  * Creates a function that is restricted to invoking func once. Repeat calls to the function return the value of the first invocation.
@@ -22,10 +20,7 @@ import { PreValueApplicator } from './applicators';
  * myClass.fn(); //=> 1
  */
 export const Once = DecoratorFactory.legacy.createInstanceDecorator(
-  new DecoratorConfig(once, new PreValueApplicator(), {
-    setter: true,
-    optionalParams: true
-  })
+  config
 ) as BiTypedDecorator;
 export { Once as once };
 export default Once;

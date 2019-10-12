@@ -1,12 +1,8 @@
-import debounce = require('lodash/debounce');
-
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
-import { PreValueApplicator } from './applicators';
+import { DecoratorFactory, LodashMethodDecorator } from './factory';
 import { DebounceOptions } from './shared';
+import config from './configs/debounceAll';
 
-const decorator = DecoratorFactory.tc39.createDecorator(
-  new DecoratorConfig(debounce, new PreValueApplicator())
-);
+const decorator = DecoratorFactory.tc39.createDecorator(config);
 
 /**
  * Creates a debounced function that delays invoking func until after wait milliseconds have elapsed since the last time the debounced function was invoked.
@@ -45,7 +41,10 @@ const decorator = DecoratorFactory.tc39.createDecorator(
  *   myClass.value; // => 120;
  * }, 11);
  */
-export function DebounceAll(wait?: number, options?: DebounceOptions): LodashMethodDecorator {
+export function DebounceAll(
+  wait?: number,
+  options?: DebounceOptions
+): LodashMethodDecorator {
   return decorator(wait, options);
 }
 export { DebounceAll as debounceAll };

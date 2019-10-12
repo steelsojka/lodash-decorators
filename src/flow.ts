@@ -1,16 +1,11 @@
-import flow = require('lodash/flow');
-
 import {
-  DecoratorConfig,
   DecoratorFactory,
   ResolvableFunction,
   LodashDecorator
 } from './factory';
-import { ComposeApplicator } from './applicators';
+import config from './configs/flow';
 
-const decorator = DecoratorFactory.tc39.createInstanceDecorator(
-  new DecoratorConfig(flow, new ComposeApplicator({ post: true }), { property: true })
-);
+const decorator = DecoratorFactory.tc39.createInstanceDecorator(config);
 
 /**
  * Creates a function that returns the result of invoking the given functions with the this binding of the created function,

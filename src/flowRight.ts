@@ -1,16 +1,11 @@
-import flowRight = require('lodash/flowRight');
-
 import {
-  DecoratorConfig,
   DecoratorFactory,
   LodashDecorator,
   ResolvableFunction
 } from './factory';
-import { ComposeApplicator } from './applicators';
+import config from './configs/flowRight';
 
-const decorator = DecoratorFactory.tc39.createInstanceDecorator(
-  new DecoratorConfig(flowRight, new ComposeApplicator({ post: false }), { property: true })
-);
+const decorator = DecoratorFactory.tc39.createInstanceDecorator(config);
 
 /**
  * Creates a function that returns the result of invoking the given functions with the this binding of the created function,

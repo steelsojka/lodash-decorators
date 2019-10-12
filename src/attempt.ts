@@ -1,10 +1,5 @@
-import attempt = require('lodash/attempt');
-import partial = require('lodash/partial');
-
-import { DecoratorConfig, DecoratorFactory, BiTypedMethodDecorator } from './factory';
-import { PreValueApplicator } from './applicators';
-
-const attemptFn = (fn: () => void) => partial(attempt, fn);
+import { DecoratorFactory, BiTypedMethodDecorator } from './factory';
+import config from './configs/attempt';
 
 /**
  * Attempts to invoke func, returning either the result or the caught error object. Any additional arguments are provided to func when it's invoked.
@@ -27,10 +22,6 @@ const attemptFn = (fn: () => void) => partial(attempt, fn);
  * myClass.fn(10); // => 10;
  * myClass.fn(null); // => Error
  */
-export const Attempt = DecoratorFactory.tc39.createDecorator(
-  new DecoratorConfig(attemptFn, new PreValueApplicator(), {
-    optionalParams: true
-  })
-) as BiTypedMethodDecorator;
+export const Attempt = DecoratorFactory.tc39.createDecorator(config) as BiTypedMethodDecorator;
 export { Attempt as attempt };
 export default Attempt;

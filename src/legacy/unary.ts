@@ -1,14 +1,8 @@
-import unary = require('lodash/unary');
-
-import {
-  DecoratorConfig,
-  DecoratorFactory,
-  BiTypedMethodDecorator
-} from './factory';
-import { PreValueApplicator } from './applicators';
+import { DecoratorFactory, BiTypedMethodDecorator } from './factory';
+import config from '../configs/unary';
 
 export const Unary = DecoratorFactory.legacy.createDecorator(
-  new DecoratorConfig(unary, new PreValueApplicator(), { optionalParams: true })
+  config
 ) as BiTypedMethodDecorator;
 export { Unary as unary };
 export default Unary;

@@ -1,13 +1,10 @@
-import memoize = require('lodash/memoize');
-
 import {
-  DecoratorConfig,
   DecoratorFactory,
   ResolvableFunction,
   BiTypedMethodDecorator1
 } from './factory';
-import { MemoizeApplicator } from './applicators';
 import { MemoizeConfig } from './shared';
+import config from '../configs/memoize';
 
 /**
  * Creates a function that memoizes the result of func. If resolver is provided,
@@ -34,9 +31,7 @@ import { MemoizeConfig } from './shared';
  * }
  */
 export const Memoize = DecoratorFactory.legacy.createInstanceDecorator(
-  new DecoratorConfig(memoize, new MemoizeApplicator(), {
-    optionalParams: true
-  })
+  config
 ) as BiTypedMethodDecorator1<ResolvableFunction | MemoizeConfig<any, any>>;
 export { Memoize as memoize };
 export default Memoize;

@@ -1,16 +1,11 @@
-import flip = require('lodash/flip');
-
 import {
-  DecoratorConfig,
   DecoratorFactory,
   LodashDecorator,
   ResolvableFunction
 } from './factory';
-import { PartialValueApplicator } from './applicators';
+import config from '../configs/flip';
 
-const decorator = DecoratorFactory.legacy.createInstanceDecorator(
-  new DecoratorConfig(flip, new PartialValueApplicator(), { property: true })
-);
+const decorator = DecoratorFactory.legacy.createInstanceDecorator(config);
 
 /**
  * Creates a function that invokes func with arguments reversed. Honestly, there is probably not much

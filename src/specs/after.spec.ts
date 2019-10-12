@@ -1,8 +1,9 @@
 import { expect } from 'chai';
 
+import { After as _After } from '../legacy/after';
 import { specFactory } from './specFactory';
 
-export default specFactory('after', (After: (time: number) => any) => {
+export default specFactory<typeof _After>('after', After => {
   it('should invoke the method after 3 times', () => {
     let calls = 0;
 
@@ -44,3 +45,4 @@ export default specFactory('after', (After: (time: number) => any) => {
     expect(myClass.props[0], 'setter value').to.equal(100);
   });
 });
+

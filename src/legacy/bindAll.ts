@@ -42,11 +42,11 @@ function bindAllMethods(target: Function, methods: string[] = []): void {
       const include = methods.length ? methods.indexOf(key) !== -1 : true;
       const descriptor = Object.getOwnPropertyDescriptor(proto, key);
 
-      if (include && key !== 'constructor') {
+      if (include && descriptor && key !== 'constructor') {
         // If this property is a getter and it's NOT an instance decorated
         // method, ignore it. Instance decorators are getters until first accessed.
         if (descriptor.get) {
-          const chainData = InstanceChainMap.get([proto, key]);
+          const chainData = InstanceChainMap.get([ proto, key ]);
 
           if (!chainData || !chainData.isMethod) {
             continue;
@@ -54,11 +54,7 @@ function bindAllMethods(target: Function, methods: string[] = []): void {
         }
 
         if (isFunction(proto[key]) && boundKeys.indexOf(key) === -1) {
-          Object.defineProperty(
-            targetProto,
-            key,
-            Bind(proto, key, descriptor)!
-          );
+          Object.defineProperty(targetProto, key, Bind(proto, key, descriptor) as PropertyDescriptor);
           boundKeys.push(key);
         }
       }

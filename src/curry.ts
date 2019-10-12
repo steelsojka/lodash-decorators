@@ -1,7 +1,5 @@
-import curry = require('lodash/curry');
-
-import { DecoratorConfig, DecoratorFactory, BiTypedMethodDecorator1 } from './factory';
-import { PreValueApplicator } from './applicators';
+import { DecoratorFactory, BiTypedMethodDecorator1 } from './factory';
+import config from './configs/curry';
 
 /**
  * Creates a function that accepts arguments of func and either invokes func returning its result, if at least arity number of arguments have been provided, or returns a function that accepts the remaining func arguments, and so on.
@@ -29,8 +27,6 @@ import { PreValueApplicator } from './applicators';
  *
  * add5AndMultiply(10); // => 30
  */
-export const Curry = DecoratorFactory.tc39.createInstanceDecorator(
-  new DecoratorConfig(curry, new PreValueApplicator(), { bound: true, optionalParams: true })
-) as BiTypedMethodDecorator1<number>;
+export const Curry = DecoratorFactory.tc39.createInstanceDecorator(config) as BiTypedMethodDecorator1<number>;
 export { Curry as curry };
 export default Curry;

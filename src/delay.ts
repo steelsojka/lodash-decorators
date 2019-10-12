@@ -1,19 +1,7 @@
-import delay = require('lodash/delay');
+import { DecoratorFactory, LodashMethodDecorator } from './factory';
+import config from './configs/delay';
 
-import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
-import { PreValueApplicator } from './applicators';
-
-const decorator = DecoratorFactory.tc39.createDecorator(
-  new DecoratorConfig(
-    function(value: Function, wait: number, ...args: any[]) {
-      return function(...invokeArgs: any[]): any {
-        return delay(value.bind(this), wait, ...invokeArgs, ...args);
-      };
-    },
-    new PreValueApplicator(),
-    { setter: true }
-  )
-);
+const decorator = DecoratorFactory.tc39.createDecorator(config);
 
 /**
  * Invokes func after wait milliseconds. Any additional arguments are provided to func when it's invoked.

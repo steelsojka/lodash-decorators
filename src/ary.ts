@@ -1,15 +1,7 @@
-import ary = require('lodash/ary');
+import { DecoratorFactory, LodashMethodDecorator } from './factory';
+import config from './configs/ary';
 
-import {
-  DecoratorConfig,
-  DecoratorFactory,
-  LodashMethodDecorator,
-} from './factory';
-import { PreValueApplicator } from './applicators';
-
-const decorator = DecoratorFactory.tc39.createDecorator(
-  new DecoratorConfig(ary, new PreValueApplicator())
-);
+const decorator = DecoratorFactory.tc39.createDecorator(config);
 
 /**
  * Creates a function that invokes func, with up to n arguments, ignoring any additional arguments.

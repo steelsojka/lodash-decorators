@@ -1,12 +1,9 @@
-import negate = require('lodash/negate');
-
 import {
-  DecoratorConfig,
   DecoratorFactory,
   ResolvableFunction,
   BiTypedDecorator1
 } from './factory';
-import { PartialValueApplicator } from './applicators';
+import config from '../configs/negate';
 
 /**
  * Negates a functions result or, when used on a property, creates a function that
@@ -27,10 +24,7 @@ import { PartialValueApplicator } from './applicators';
  * myClass.fn2(); //=> false
  */
 export const Negate = DecoratorFactory.legacy.createInstanceDecorator(
-  new DecoratorConfig(negate, new PartialValueApplicator(), {
-    property: true,
-    optionalParams: true
-  })
+  config
 ) as BiTypedDecorator1<ResolvableFunction>;
 export { Negate as negate };
 export default Negate;

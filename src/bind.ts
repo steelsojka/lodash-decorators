@@ -1,7 +1,5 @@
-import bind = require('lodash/bind');
-
-import { DecoratorConfig, DecoratorFactory, BiTypedMethodDecorator1 } from './factory';
-import { BindApplicator } from './applicators';
+import { DecoratorFactory, BiTypedMethodDecorator1 } from './factory';
+import config from './configs/bind';
 
 /**
  * Creates a function that invokes func with the this binding of thisArg and partials prepended to the arguments it receives.
@@ -28,10 +26,6 @@ import { BindApplicator } from './applicators';
  * myClass.bound.call(null); // => myClass {}
  * myClass.unbound.call(null); // => null
  */
-export const Bind = DecoratorFactory.tc39.createInstanceDecorator(
-  new DecoratorConfig(bind, new BindApplicator(), {
-    optionalParams: true
-  })
-) as BiTypedMethodDecorator1<any>;
+export const Bind = DecoratorFactory.tc39.createInstanceDecorator(config) as BiTypedMethodDecorator1<any>;
 export { Bind as bind, };
 export default Bind;

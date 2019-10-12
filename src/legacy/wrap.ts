@@ -1,16 +1,11 @@
-import wrap = require('lodash/wrap');
-
 import {
-  DecoratorConfig,
   DecoratorFactory,
   ResolvableFunction,
   LodashMethodDecorator
 } from './factory';
-import { WrapApplicator } from './applicators';
+import config from '../configs/wrap';
 
-const decorator = DecoratorFactory.legacy.createDecorator(
-  new DecoratorConfig(wrap, new WrapApplicator())
-);
+const decorator = DecoratorFactory.legacy.createDecorator(config);
 
 export function Wrap(fnToWrap?: ResolvableFunction): LodashMethodDecorator {
   return decorator(fnToWrap);

@@ -1,16 +1,11 @@
-import rearg = require('lodash/rearg');
-
 import {
-  DecoratorConfig,
   DecoratorFactory,
   LodashDecorator,
   ResolvableFunction
 } from './factory';
-import { PartialValueApplicator } from './applicators';
+import config from '../configs/partialRight';
 
-const decorator = DecoratorFactory.legacy.createInstanceDecorator(
-  new DecoratorConfig(rearg, new PartialValueApplicator(), { property: true })
-);
+const decorator = DecoratorFactory.legacy.createInstanceDecorator(config);
 
 export function Rearg(
   indexes: ResolvableFunction | number | number[],
