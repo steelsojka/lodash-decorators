@@ -39,7 +39,7 @@ export function assignProperty<T, U>(to: T, from: U, prop: string): void {
     const srcDescriptor = Object.getOwnPropertyDescriptor(from, prop);
 
     if (isObject(srcDescriptor)) {
-      Object.defineProperty(to, prop, srcDescriptor);
+      Object.defineProperty(to, prop, srcDescriptor!);
     } else {
       (to as any)[prop] = (from as any)[prop];
     }

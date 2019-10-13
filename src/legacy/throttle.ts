@@ -4,7 +4,7 @@ import {
   throttleConfig,
   throttleGetterConfig,
   throttleSetterConfig
-} from './configs/throttle';
+} from '../configs/throttle';
 
 export const Throttle = DecoratorFactory.legacy.createInstanceDecorator(
   throttleConfig
@@ -14,7 +14,7 @@ export const ThrottleGetter = DecoratorFactory.legacy.createInstanceDecorator(
   throttleGetterConfig
 ) as BiTypedDecorator2<number, ThrottleOptions>;
 
-export const ThrottleSetter = DecoratorFactory.tc39.createInstanceDecorator(
+export const ThrottleSetter = DecoratorFactory.legacy.createInstanceDecorator(
   throttleSetterConfig
 ) as BiTypedDecorator2<number, ThrottleOptions>;
 

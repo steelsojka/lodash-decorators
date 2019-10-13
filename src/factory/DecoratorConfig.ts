@@ -1,4 +1,4 @@
-import { Applicator } from './applicators';
+import { Applicator } from '../applicators';
 
 export interface DecoratorConfigOptions {
   bound?: boolean;

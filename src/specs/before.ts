@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { Before as _Before } from '../legacy/before';
 import { specFactory } from './specFactory';
 
-export default specFactory('before', Before => {
+export default specFactory<typeof _Before>('before', Before => {
   it('should invoke the method before 3 times', () => {
     let calls = 0;
 

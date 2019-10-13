@@ -53,7 +53,7 @@ export default specFactory<typeof _CurryAll>('curryAll', CurryAll => {
     class MyClass {
       @CurryAll()
       add(a: any, b?: any): any {
-        expect(this).to.equal(global);
+        expect(this).to.equal(global as any);
       }
     }
 

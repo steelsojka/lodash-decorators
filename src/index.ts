@@ -6,7 +6,6 @@ export * from './attempt';
 export * from './before';
 export * from './beforeAll';
 export * from './bind';
-export * from './bindAll';
 export * from './curry';
 export * from './curryAll';
 export * from './curryRight';

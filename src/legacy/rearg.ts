@@ -3,7 +3,7 @@ import {
   LodashDecorator,
   ResolvableFunction
 } from './factory';
-import config from '../configs/partialRight';
+import config from '../configs/rearg';
 
 const decorator = DecoratorFactory.legacy.createInstanceDecorator(config);
 

@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { CurryRightAll as _CurryRightAll } from '../legacy/curryRightAll';
 import { specFactory } from './specFactory';
 
-export default specFactory('curryRightAll', CurryRightAll => {
+export default specFactory<typeof _CurryRightAll>('curryRightAll', CurryRightAll => {
   it('should curry the method with default arity', () => {
     class MyClass {
       @CurryRightAll()
