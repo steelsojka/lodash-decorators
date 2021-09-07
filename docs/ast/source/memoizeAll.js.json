@@ -1,123 +1,37 @@
 {
   "type": "File",
   "start": 0,
-  "end": 505,
+  "end": 629,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 11,
+      "line": 13,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 505,
+    "end": 629,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 11,
+        "line": 13,
         "column": 0
       }
     },
     "sourceType": "module",
     "body": [
       {
-        "type": "ImportDeclaration",
-        "start": 0,
-        "end": 33,
-        "loc": {
-          "start": {
-            "line": 1,
-            "column": 0
-          },
-          "end": {
-            "line": 1,
-            "column": 33
-          }
-        },
-        "specifiers": [
-          {
-            "type": "ImportSpecifier",
-            "start": 9,
-            "end": 16,
-            "loc": {
-              "start": {
-                "line": 1,
-                "column": 9
-              },
-              "end": {
-                "line": 1,
-                "column": 16
-              }
-            },
-            "imported": {
-              "type": "Identifier",
-              "start": 9,
-              "end": 16,
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 9
-                },
-                "end": {
-                  "line": 1,
-                  "column": 16
-                },
-                "identifierName": "memoize"
-              },
-              "name": "memoize"
-            },
-            "local": {
-              "type": "Identifier",
-              "start": 9,
-              "end": 16,
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 9
-                },
-                "end": {
-                  "line": 1,
-                  "column": 16
-                },
-                "identifierName": "memoize"
-              },
-              "name": "memoize"
-            }
-          }
-        ],
-        "source": {
-          "type": "StringLiteral",
-          "start": 24,
-          "end": 32,
-          "loc": {
-            "start": {
-              "line": 1,
-              "column": 24
-            },
-            "end": {
-              "line": 1,
-              "column": 32
-            }
-          },
-          "extra": {
-            "rawValue": "lodash",
-            "raw": "'lodash'"
-          },
-          "value": "lodash"
-        }
-      },
-      {
-        "type": "ImportDeclaration",
-        "start": 34,
-        "end": 96,
+        "type": "ExpressionStatement",
+        "start": 14,
+        "end": 76,
         "loc": {
           "start": {
             "line": 2,
@@ -128,131 +42,183 @@
             "column": 62
           }
         },
-        "specifiers": [
-          {
-            "type": "ImportSpecifier",
-            "start": 43,
-            "end": 58,
-            "loc": {
-              "start": {
-                "line": 2,
-                "column": 9
-              },
-              "end": {
-                "line": 2,
-                "column": 24
-              }
-            },
-            "imported": {
-              "type": "Identifier",
-              "start": 43,
-              "end": 58,
-              "loc": {
-                "start": {
-                  "line": 2,
-                  "column": 9
-                },
-                "end": {
-                  "line": 2,
-                  "column": 24
-                },
-                "identifierName": "DecoratorConfig"
-              },
-              "name": "DecoratorConfig"
-            },
-            "local": {
-              "type": "Identifier",
-              "start": 43,
-              "end": 58,
-              "loc": {
-                "start": {
-                  "line": 2,
-                  "column": 9
-                },
-                "end": {
-                  "line": 2,
-                  "column": 24
-                },
-                "identifierName": "DecoratorConfig"
-              },
-              "name": "DecoratorConfig"
-            }
-          },
-          {
-            "type": "ImportSpecifier",
-            "start": 60,
-            "end": 76,
-            "loc": {
-              "start": {
-                "line": 2,
-                "column": 26
-              },
-              "end": {
-                "line": 2,
-                "column": 42
-              }
-            },
-            "imported": {
-              "type": "Identifier",
-              "start": 60,
-              "end": 76,
-              "loc": {
-                "start": {
-                  "line": 2,
-                  "column": 26
-                },
-                "end": {
-                  "line": 2,
-                  "column": 42
-                },
-                "identifierName": "DecoratorFactory"
-              },
-              "name": "DecoratorFactory"
-            },
-            "local": {
-              "type": "Identifier",
-              "start": 60,
-              "end": 76,
-              "loc": {
-                "start": {
-                  "line": 2,
-                  "column": 26
-                },
-                "end": {
-                  "line": 2,
-                  "column": 42
-                },
-                "identifierName": "DecoratorFactory"
-              },
-              "name": "DecoratorFactory"
-            }
-          }
-        ],
-        "source": {
-          "type": "StringLiteral",
-          "start": 84,
-          "end": 95,
+        "expression": {
+          "type": "CallExpression",
+          "start": 14,
+          "end": 75,
           "loc": {
             "start": {
               "line": 2,
-              "column": 50
+              "column": 0
             },
             "end": {
               "line": 2,
               "column": 61
             }
           },
-          "extra": {
-            "rawValue": "./factory",
-            "raw": "'./factory'"
+          "callee": {
+            "type": "MemberExpression",
+            "start": 14,
+            "end": 35,
+            "loc": {
+              "start": {
+                "line": 2,
+                "column": 0
+              },
+              "end": {
+                "line": 2,
+                "column": 21
+              }
+            },
+            "object": {
+              "type": "Identifier",
+              "start": 14,
+              "end": 20,
+              "loc": {
+                "start": {
+                  "line": 2,
+                  "column": 0
+                },
+                "end": {
+                  "line": 2,
+                  "column": 6
+                },
+                "identifierName": "Object"
+              },
+              "name": "Object"
+            },
+            "property": {
+              "type": "Identifier",
+              "start": 21,
+              "end": 35,
+              "loc": {
+                "start": {
+                  "line": 2,
+                  "column": 7
+                },
+                "end": {
+                  "line": 2,
+                  "column": 21
+                },
+                "identifierName": "defineProperty"
+              },
+              "name": "defineProperty"
+            },
+            "computed": false
           },
-          "value": "./factory"
+          "arguments": [
+            {
+              "type": "Identifier",
+              "start": 36,
+              "end": 43,
+              "loc": {
+                "start": {
+                  "line": 2,
+                  "column": 22
+                },
+                "end": {
+                  "line": 2,
+                  "column": 29
+                },
+                "identifierName": "exports"
+              },
+              "name": "exports"
+            },
+            {
+              "type": "StringLiteral",
+              "start": 45,
+              "end": 57,
+              "loc": {
+                "start": {
+                  "line": 2,
+                  "column": 31
+                },
+                "end": {
+                  "line": 2,
+                  "column": 43
+                }
+              },
+              "extra": {
+                "rawValue": "__esModule",
+                "raw": "\"__esModule\""
+              },
+              "value": "__esModule"
+            },
+            {
+              "type": "ObjectExpression",
+              "start": 59,
+              "end": 74,
+              "loc": {
+                "start": {
+                  "line": 2,
+                  "column": 45
+                },
+                "end": {
+                  "line": 2,
+                  "column": 60
+                }
+              },
+              "properties": [
+                {
+                  "type": "ObjectProperty",
+                  "start": 61,
+                  "end": 72,
+                  "loc": {
+                    "start": {
+                      "line": 2,
+                      "column": 47
+                    },
+                    "end": {
+                      "line": 2,
+                      "column": 58
+                    }
+                  },
+                  "method": false,
+                  "shorthand": false,
+                  "computed": false,
+                  "key": {
+                    "type": "Identifier",
+                    "start": 61,
+                    "end": 66,
+                    "loc": {
+                      "start": {
+                        "line": 2,
+                        "column": 47
+                      },
+                      "end": {
+                        "line": 2,
+                        "column": 52
+                      },
+                      "identifierName": "value"
+                    },
+                    "name": "value"
+                  },
+                  "value": {
+                    "type": "BooleanLiteral",
+                    "start": 68,
+                    "end": 72,
+                    "loc": {
+                      "start": {
+                        "line": 2,
+                        "column": 54
+                      },
+                      "end": {
+                        "line": 2,
+                        "column": 58
+                      }
+                    },
+                    "value": true
+                  }
+                }
+              ]
+            }
+          ]
         }
       },
       {
-        "type": "ImportDeclaration",
-        "start": 97,
-        "end": 147,
+        "type": "VariableDeclaration",
+        "start": 77,
+        "end": 117,
         "loc": {
           "start": {
             "line": 3,
@@ -260,93 +226,319 @@
           },
           "end": {
             "line": 3,
-            "column": 50
+            "column": 40
           }
         },
-        "specifiers": [
+        "declarations": [
           {
-            "type": "ImportSpecifier",
-            "start": 106,
-            "end": 123,
+            "type": "VariableDeclarator",
+            "start": 81,
+            "end": 116,
             "loc": {
               "start": {
                 "line": 3,
-                "column": 9
+                "column": 4
               },
               "end": {
                 "line": 3,
-                "column": 26
+                "column": 39
               }
             },
-            "imported": {
+            "id": {
               "type": "Identifier",
-              "start": 106,
-              "end": 123,
+              "start": 81,
+              "end": 88,
               "loc": {
                 "start": {
                   "line": 3,
-                  "column": 9
+                  "column": 4
                 },
                 "end": {
                   "line": 3,
-                  "column": 26
+                  "column": 11
                 },
-                "identifierName": "MemoizeApplicator"
+                "identifierName": "memoize"
               },
-              "name": "MemoizeApplicator"
+              "name": "memoize"
             },
-            "local": {
-              "type": "Identifier",
-              "start": 106,
-              "end": 123,
+            "init": {
+              "type": "CallExpression",
+              "start": 91,
+              "end": 116,
               "loc": {
                 "start": {
                   "line": 3,
-                  "column": 9
+                  "column": 14
                 },
                 "end": {
                   "line": 3,
-                  "column": 26
-                },
-                "identifierName": "MemoizeApplicator"
+                  "column": 39
+                }
               },
-              "name": "MemoizeApplicator"
+              "callee": {
+                "type": "Identifier",
+                "start": 91,
+                "end": 98,
+                "loc": {
+                  "start": {
+                    "line": 3,
+                    "column": 14
+                  },
+                  "end": {
+                    "line": 3,
+                    "column": 21
+                  },
+                  "identifierName": "require"
+                },
+                "name": "require"
+              },
+              "arguments": [
+                {
+                  "type": "StringLiteral",
+                  "start": 99,
+                  "end": 115,
+                  "loc": {
+                    "start": {
+                      "line": 3,
+                      "column": 22
+                    },
+                    "end": {
+                      "line": 3,
+                      "column": 38
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "lodash/memoize",
+                    "raw": "\"lodash/memoize\""
+                  },
+                  "value": "lodash/memoize"
+                }
+              ]
             }
           }
         ],
-        "source": {
-          "type": "StringLiteral",
-          "start": 131,
-          "end": 146,
-          "loc": {
-            "start": {
-              "line": 3,
-              "column": 34
-            },
-            "end": {
-              "line": 3,
-              "column": 49
-            }
+        "kind": "var"
+      },
+      {
+        "type": "VariableDeclaration",
+        "start": 118,
+        "end": 155,
+        "loc": {
+          "start": {
+            "line": 4,
+            "column": 0
           },
-          "extra": {
-            "rawValue": "./applicators",
-            "raw": "'./applicators'"
-          },
-          "value": "./applicators"
+          "end": {
+            "line": 4,
+            "column": 37
+          }
         },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 122,
+            "end": 154,
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 4
+              },
+              "end": {
+                "line": 4,
+                "column": 36
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 122,
+              "end": 131,
+              "loc": {
+                "start": {
+                  "line": 4,
+                  "column": 4
+                },
+                "end": {
+                  "line": 4,
+                  "column": 13
+                },
+                "identifierName": "factory_1"
+              },
+              "name": "factory_1"
+            },
+            "init": {
+              "type": "CallExpression",
+              "start": 134,
+              "end": 154,
+              "loc": {
+                "start": {
+                  "line": 4,
+                  "column": 16
+                },
+                "end": {
+                  "line": 4,
+                  "column": 36
+                }
+              },
+              "callee": {
+                "type": "Identifier",
+                "start": 134,
+                "end": 141,
+                "loc": {
+                  "start": {
+                    "line": 4,
+                    "column": 16
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 23
+                  },
+                  "identifierName": "require"
+                },
+                "name": "require"
+              },
+              "arguments": [
+                {
+                  "type": "StringLiteral",
+                  "start": 142,
+                  "end": 153,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 24
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 35
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "./factory",
+                    "raw": "\"./factory\""
+                  },
+                  "value": "./factory"
+                }
+              ]
+            }
+          }
+        ],
+        "kind": "var"
+      },
+      {
+        "type": "VariableDeclaration",
+        "start": 156,
+        "end": 201,
+        "loc": {
+          "start": {
+            "line": 5,
+            "column": 0
+          },
+          "end": {
+            "line": 5,
+            "column": 45
+          }
+        },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 160,
+            "end": 200,
+            "loc": {
+              "start": {
+                "line": 5,
+                "column": 4
+              },
+              "end": {
+                "line": 5,
+                "column": 44
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 160,
+              "end": 173,
+              "loc": {
+                "start": {
+                  "line": 5,
+                  "column": 4
+                },
+                "end": {
+                  "line": 5,
+                  "column": 17
+                },
+                "identifierName": "applicators_1"
+              },
+              "name": "applicators_1"
+            },
+            "init": {
+              "type": "CallExpression",
+              "start": 176,
+              "end": 200,
+              "loc": {
+                "start": {
+                  "line": 5,
+                  "column": 20
+                },
+                "end": {
+                  "line": 5,
+                  "column": 44
+                }
+              },
+              "callee": {
+                "type": "Identifier",
+                "start": 176,
+                "end": 183,
+                "loc": {
+                  "start": {
+                    "line": 5,
+                    "column": 20
+                  },
+                  "end": {
+                    "line": 5,
+                    "column": 27
+                  },
+                  "identifierName": "require"
+                },
+                "name": "require"
+              },
+              "arguments": [
+                {
+                  "type": "StringLiteral",
+                  "start": 184,
+                  "end": 199,
+                  "loc": {
+                    "start": {
+                      "line": 5,
+                      "column": 28
+                    },
+                    "end": {
+                      "line": 5,
+                      "column": 43
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "./applicators",
+                    "raw": "\"./applicators\""
+                  },
+                  "value": "./applicators"
+                }
+              ]
+            }
+          }
+        ],
+        "kind": "var",
         "trailingComments": [
           {
             "type": "CommentBlock",
             "value": "*\n * Memoizes a function on the prototype instead of the instance. All instances of the class use the same memoize cache.\n * @param {Function} [resolver] Optional resolver\n ",
-            "start": 148,
-            "end": 325,
+            "start": 202,
+            "end": 379,
             "loc": {
               "start": {
-                "line": 4,
+                "line": 6,
                 "column": 0
               },
               "end": {
-                "line": 7,
+                "line": 9,
                 "column": 3
               }
             }
@@ -354,516 +546,745 @@
         ]
       },
       {
-        "type": "ExportNamedDeclaration",
-        "start": 326,
-        "end": 440,
+        "type": "ExpressionStatement",
+        "start": 380,
+        "end": 549,
         "loc": {
           "start": {
-            "line": 8,
+            "line": 10,
             "column": 0
           },
           "end": {
-            "line": 8,
-            "column": 114
+            "line": 10,
+            "column": 169
           }
         },
-        "specifiers": [],
-        "source": null,
-        "declaration": {
-          "type": "VariableDeclaration",
-          "start": 333,
-          "end": 440,
+        "expression": {
+          "type": "AssignmentExpression",
+          "start": 380,
+          "end": 548,
           "loc": {
             "start": {
-              "line": 8,
-              "column": 7
+              "line": 10,
+              "column": 0
             },
             "end": {
-              "line": 8,
-              "column": 114
+              "line": 10,
+              "column": 168
             }
           },
-          "declarations": [
-            {
-              "type": "VariableDeclarator",
-              "start": 339,
-              "end": 439,
+          "operator": "=",
+          "left": {
+            "type": "MemberExpression",
+            "start": 380,
+            "end": 398,
+            "loc": {
+              "start": {
+                "line": 10,
+                "column": 0
+              },
+              "end": {
+                "line": 10,
+                "column": 18
+              }
+            },
+            "object": {
+              "type": "Identifier",
+              "start": 380,
+              "end": 387,
               "loc": {
                 "start": {
-                  "line": 8,
-                  "column": 13
-                },
-                "end": {
-                  "line": 8,
-                  "column": 113
-                }
-              },
-              "id": {
-                "type": "Identifier",
-                "start": 339,
-                "end": 349,
-                "loc": {
-                  "start": {
-                    "line": 8,
-                    "column": 13
-                  },
-                  "end": {
-                    "line": 8,
-                    "column": 23
-                  },
-                  "identifierName": "MemoizeAll"
-                },
-                "name": "MemoizeAll",
-                "leadingComments": null
-              },
-              "init": {
-                "type": "CallExpression",
-                "start": 352,
-                "end": 439,
-                "loc": {
-                  "start": {
-                    "line": 8,
-                    "column": 26
-                  },
-                  "end": {
-                    "line": 8,
-                    "column": 113
-                  }
-                },
-                "callee": {
-                  "type": "MemberExpression",
-                  "start": 352,
-                  "end": 384,
-                  "loc": {
-                    "start": {
-                      "line": 8,
-                      "column": 26
-                    },
-                    "end": {
-                      "line": 8,
-                      "column": 58
-                    }
-                  },
-                  "object": {
-                    "type": "Identifier",
-                    "start": 352,
-                    "end": 368,
-                    "loc": {
-                      "start": {
-                        "line": 8,
-                        "column": 26
-                      },
-                      "end": {
-                        "line": 8,
-                        "column": 42
-                      },
-                      "identifierName": "DecoratorFactory"
-                    },
-                    "name": "DecoratorFactory"
-                  },
-                  "property": {
-                    "type": "Identifier",
-                    "start": 369,
-                    "end": 384,
-                    "loc": {
-                      "start": {
-                        "line": 8,
-                        "column": 43
-                      },
-                      "end": {
-                        "line": 8,
-                        "column": 58
-                      },
-                      "identifierName": "createDecorator"
-                    },
-                    "name": "createDecorator"
-                  },
-                  "computed": false
-                },
-                "arguments": [
-                  {
-                    "type": "NewExpression",
-                    "start": 385,
-                    "end": 438,
-                    "loc": {
-                      "start": {
-                        "line": 8,
-                        "column": 59
-                      },
-                      "end": {
-                        "line": 8,
-                        "column": 112
-                      }
-                    },
-                    "callee": {
-                      "type": "Identifier",
-                      "start": 389,
-                      "end": 404,
-                      "loc": {
-                        "start": {
-                          "line": 8,
-                          "column": 63
-                        },
-                        "end": {
-                          "line": 8,
-                          "column": 78
-                        },
-                        "identifierName": "DecoratorConfig"
-                      },
-                      "name": "DecoratorConfig"
-                    },
-                    "arguments": [
-                      {
-                        "type": "Identifier",
-                        "start": 405,
-                        "end": 412,
-                        "loc": {
-                          "start": {
-                            "line": 8,
-                            "column": 79
-                          },
-                          "end": {
-                            "line": 8,
-                            "column": 86
-                          },
-                          "identifierName": "memoize"
-                        },
-                        "name": "memoize"
-                      },
-                      {
-                        "type": "NewExpression",
-                        "start": 414,
-                        "end": 437,
-                        "loc": {
-                          "start": {
-                            "line": 8,
-                            "column": 88
-                          },
-                          "end": {
-                            "line": 8,
-                            "column": 111
-                          }
-                        },
-                        "callee": {
-                          "type": "Identifier",
-                          "start": 418,
-                          "end": 435,
-                          "loc": {
-                            "start": {
-                              "line": 8,
-                              "column": 92
-                            },
-                            "end": {
-                              "line": 8,
-                              "column": 109
-                            },
-                            "identifierName": "MemoizeApplicator"
-                          },
-                          "name": "MemoizeApplicator"
-                        },
-                        "arguments": []
-                      }
-                    ]
-                  }
-                ]
-              },
-              "leadingComments": null
-            }
-          ],
-          "kind": "const",
-          "leadingComments": [
-            {
-              "type": "CommentBlock",
-              "value": "*\n * Memoizes a function on the prototype instead of the instance. All instances of the class use the same memoize cache.\n * @param {Function} [resolver] Optional resolver\n ",
-              "start": 148,
-              "end": 325,
-              "loc": {
-                "start": {
-                  "line": 4,
+                  "line": 10,
                   "column": 0
                 },
                 "end": {
-                  "line": 7,
-                  "column": 3
-                }
-              }
-            }
-          ],
-          "trailingComments": []
-        },
-        "leadingComments": [
-          {
-            "type": "CommentBlock",
-            "value": "*\n * Memoizes a function on the prototype instead of the instance. All instances of the class use the same memoize cache.\n * @param {Function} [resolver] Optional resolver\n ",
-            "start": 148,
-            "end": 325,
-            "loc": {
-              "start": {
-                "line": 4,
-                "column": 0
+                  "line": 10,
+                  "column": 7
+                },
+                "identifierName": "exports"
               },
-              "end": {
-                "line": 7,
-                "column": 3
-              }
-            }
-          }
-        ]
-      },
-      {
-        "type": "ExportNamedDeclaration",
-        "start": 441,
-        "end": 477,
-        "loc": {
-          "start": {
-            "line": 9,
-            "column": 0
-          },
-          "end": {
-            "line": 9,
-            "column": 36
-          }
-        },
-        "declaration": null,
-        "specifiers": [
-          {
-            "type": "ExportSpecifier",
-            "start": 450,
-            "end": 474,
-            "loc": {
-              "start": {
-                "line": 9,
-                "column": 9
-              },
-              "end": {
-                "line": 9,
-                "column": 33
-              }
+              "name": "exports",
+              "leadingComments": null
             },
-            "local": {
+            "property": {
               "type": "Identifier",
-              "start": 450,
-              "end": 460,
+              "start": 388,
+              "end": 398,
               "loc": {
                 "start": {
-                  "line": 9,
-                  "column": 9
+                  "line": 10,
+                  "column": 8
                 },
                 "end": {
-                  "line": 9,
-                  "column": 19
+                  "line": 10,
+                  "column": 18
                 },
                 "identifierName": "MemoizeAll"
               },
               "name": "MemoizeAll"
             },
-            "exported": {
-              "type": "Identifier",
-              "start": 464,
-              "end": 474,
+            "computed": false,
+            "leadingComments": null
+          },
+          "right": {
+            "type": "CallExpression",
+            "start": 401,
+            "end": 548,
+            "loc": {
+              "start": {
+                "line": 10,
+                "column": 21
+              },
+              "end": {
+                "line": 10,
+                "column": 168
+              }
+            },
+            "callee": {
+              "type": "MemberExpression",
+              "start": 401,
+              "end": 443,
               "loc": {
                 "start": {
-                  "line": 9,
-                  "column": 23
+                  "line": 10,
+                  "column": 21
                 },
                 "end": {
-                  "line": 9,
-                  "column": 33
+                  "line": 10,
+                  "column": 63
+                }
+              },
+              "object": {
+                "type": "MemberExpression",
+                "start": 401,
+                "end": 427,
+                "loc": {
+                  "start": {
+                    "line": 10,
+                    "column": 21
+                  },
+                  "end": {
+                    "line": 10,
+                    "column": 47
+                  }
+                },
+                "object": {
+                  "type": "Identifier",
+                  "start": 401,
+                  "end": 410,
+                  "loc": {
+                    "start": {
+                      "line": 10,
+                      "column": 21
+                    },
+                    "end": {
+                      "line": 10,
+                      "column": 30
+                    },
+                    "identifierName": "factory_1"
+                  },
+                  "name": "factory_1"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "start": 411,
+                  "end": 427,
+                  "loc": {
+                    "start": {
+                      "line": 10,
+                      "column": 31
+                    },
+                    "end": {
+                      "line": 10,
+                      "column": 47
+                    },
+                    "identifierName": "DecoratorFactory"
+                  },
+                  "name": "DecoratorFactory"
+                },
+                "computed": false
+              },
+              "property": {
+                "type": "Identifier",
+                "start": 428,
+                "end": 443,
+                "loc": {
+                  "start": {
+                    "line": 10,
+                    "column": 48
+                  },
+                  "end": {
+                    "line": 10,
+                    "column": 63
+                  },
+                  "identifierName": "createDecorator"
+                },
+                "name": "createDecorator"
+              },
+              "computed": false
+            },
+            "arguments": [
+              {
+                "type": "NewExpression",
+                "start": 444,
+                "end": 547,
+                "loc": {
+                  "start": {
+                    "line": 10,
+                    "column": 64
+                  },
+                  "end": {
+                    "line": 10,
+                    "column": 167
+                  }
+                },
+                "callee": {
+                  "type": "MemberExpression",
+                  "start": 448,
+                  "end": 473,
+                  "loc": {
+                    "start": {
+                      "line": 10,
+                      "column": 68
+                    },
+                    "end": {
+                      "line": 10,
+                      "column": 93
+                    }
+                  },
+                  "object": {
+                    "type": "Identifier",
+                    "start": 448,
+                    "end": 457,
+                    "loc": {
+                      "start": {
+                        "line": 10,
+                        "column": 68
+                      },
+                      "end": {
+                        "line": 10,
+                        "column": 77
+                      },
+                      "identifierName": "factory_1"
+                    },
+                    "name": "factory_1"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "start": 458,
+                    "end": 473,
+                    "loc": {
+                      "start": {
+                        "line": 10,
+                        "column": 78
+                      },
+                      "end": {
+                        "line": 10,
+                        "column": 93
+                      },
+                      "identifierName": "DecoratorConfig"
+                    },
+                    "name": "DecoratorConfig"
+                  },
+                  "computed": false
+                },
+                "arguments": [
+                  {
+                    "type": "Identifier",
+                    "start": 474,
+                    "end": 481,
+                    "loc": {
+                      "start": {
+                        "line": 10,
+                        "column": 94
+                      },
+                      "end": {
+                        "line": 10,
+                        "column": 101
+                      },
+                      "identifierName": "memoize"
+                    },
+                    "name": "memoize"
+                  },
+                  {
+                    "type": "NewExpression",
+                    "start": 483,
+                    "end": 520,
+                    "loc": {
+                      "start": {
+                        "line": 10,
+                        "column": 103
+                      },
+                      "end": {
+                        "line": 10,
+                        "column": 140
+                      }
+                    },
+                    "callee": {
+                      "type": "MemberExpression",
+                      "start": 487,
+                      "end": 518,
+                      "loc": {
+                        "start": {
+                          "line": 10,
+                          "column": 107
+                        },
+                        "end": {
+                          "line": 10,
+                          "column": 138
+                        }
+                      },
+                      "object": {
+                        "type": "Identifier",
+                        "start": 487,
+                        "end": 500,
+                        "loc": {
+                          "start": {
+                            "line": 10,
+                            "column": 107
+                          },
+                          "end": {
+                            "line": 10,
+                            "column": 120
+                          },
+                          "identifierName": "applicators_1"
+                        },
+                        "name": "applicators_1"
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "start": 501,
+                        "end": 518,
+                        "loc": {
+                          "start": {
+                            "line": 10,
+                            "column": 121
+                          },
+                          "end": {
+                            "line": 10,
+                            "column": 138
+                          },
+                          "identifierName": "MemoizeApplicator"
+                        },
+                        "name": "MemoizeApplicator"
+                      },
+                      "computed": false
+                    },
+                    "arguments": []
+                  },
+                  {
+                    "type": "ObjectExpression",
+                    "start": 522,
+                    "end": 546,
+                    "loc": {
+                      "start": {
+                        "line": 10,
+                        "column": 142
+                      },
+                      "end": {
+                        "line": 10,
+                        "column": 166
+                      }
+                    },
+                    "properties": [
+                      {
+                        "type": "ObjectProperty",
+                        "start": 524,
+                        "end": 544,
+                        "loc": {
+                          "start": {
+                            "line": 10,
+                            "column": 144
+                          },
+                          "end": {
+                            "line": 10,
+                            "column": 164
+                          }
+                        },
+                        "method": false,
+                        "shorthand": false,
+                        "computed": false,
+                        "key": {
+                          "type": "Identifier",
+                          "start": 524,
+                          "end": 538,
+                          "loc": {
+                            "start": {
+                              "line": 10,
+                              "column": 144
+                            },
+                            "end": {
+                              "line": 10,
+                              "column": 158
+                            },
+                            "identifierName": "optionalParams"
+                          },
+                          "name": "optionalParams"
+                        },
+                        "value": {
+                          "type": "BooleanLiteral",
+                          "start": 540,
+                          "end": 544,
+                          "loc": {
+                            "start": {
+                              "line": 10,
+                              "column": 160
+                            },
+                            "end": {
+                              "line": 10,
+                              "column": 164
+                            }
+                          },
+                          "value": true
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "leadingComments": null
+        },
+        "leadingComments": [
+          {
+            "type": "CommentBlock",
+            "value": "*\n * Memoizes a function on the prototype instead of the instance. All instances of the class use the same memoize cache.\n * @param {Function} [resolver] Optional resolver\n ",
+            "start": 202,
+            "end": 379,
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 0
+              },
+              "end": {
+                "line": 9,
+                "column": 3
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "ExpressionStatement",
+        "start": 550,
+        "end": 590,
+        "loc": {
+          "start": {
+            "line": 11,
+            "column": 0
+          },
+          "end": {
+            "line": 11,
+            "column": 40
+          }
+        },
+        "expression": {
+          "type": "AssignmentExpression",
+          "start": 550,
+          "end": 589,
+          "loc": {
+            "start": {
+              "line": 11,
+              "column": 0
+            },
+            "end": {
+              "line": 11,
+              "column": 39
+            }
+          },
+          "operator": "=",
+          "left": {
+            "type": "MemberExpression",
+            "start": 550,
+            "end": 568,
+            "loc": {
+              "start": {
+                "line": 11,
+                "column": 0
+              },
+              "end": {
+                "line": 11,
+                "column": 18
+              }
+            },
+            "object": {
+              "type": "Identifier",
+              "start": 550,
+              "end": 557,
+              "loc": {
+                "start": {
+                  "line": 11,
+                  "column": 0
+                },
+                "end": {
+                  "line": 11,
+                  "column": 7
+                },
+                "identifierName": "exports"
+              },
+              "name": "exports"
+            },
+            "property": {
+              "type": "Identifier",
+              "start": 558,
+              "end": 568,
+              "loc": {
+                "start": {
+                  "line": 11,
+                  "column": 8
+                },
+                "end": {
+                  "line": 11,
+                  "column": 18
                 },
                 "identifierName": "memoizeAll"
               },
               "name": "memoizeAll"
-            }
+            },
+            "computed": false
+          },
+          "right": {
+            "type": "MemberExpression",
+            "start": 571,
+            "end": 589,
+            "loc": {
+              "start": {
+                "line": 11,
+                "column": 21
+              },
+              "end": {
+                "line": 11,
+                "column": 39
+              }
+            },
+            "object": {
+              "type": "Identifier",
+              "start": 571,
+              "end": 578,
+              "loc": {
+                "start": {
+                  "line": 11,
+                  "column": 21
+                },
+                "end": {
+                  "line": 11,
+                  "column": 28
+                },
+                "identifierName": "exports"
+              },
+              "name": "exports"
+            },
+            "property": {
+              "type": "Identifier",
+              "start": 579,
+              "end": 589,
+              "loc": {
+                "start": {
+                  "line": 11,
+                  "column": 29
+                },
+                "end": {
+                  "line": 11,
+                  "column": 39
+                },
+                "identifierName": "MemoizeAll"
+              },
+              "name": "MemoizeAll"
+            },
+            "computed": false
           }
-        ],
-        "source": null
+        }
       },
       {
-        "type": "ExportDefaultDeclaration",
-        "start": 478,
-        "end": 504,
+        "type": "ExpressionStatement",
+        "start": 591,
+        "end": 628,
         "loc": {
           "start": {
-            "line": 10,
+            "line": 12,
             "column": 0
           },
           "end": {
-            "line": 10,
-            "column": 26
+            "line": 12,
+            "column": 37
           }
         },
-        "declaration": {
-          "type": "Identifier",
-          "start": 493,
-          "end": 503,
+        "expression": {
+          "type": "AssignmentExpression",
+          "start": 591,
+          "end": 627,
           "loc": {
             "start": {
-              "line": 10,
-              "column": 15
+              "line": 12,
+              "column": 0
             },
             "end": {
-              "line": 10,
-              "column": 25
-            },
-            "identifierName": "MemoizeAll"
+              "line": 12,
+              "column": 36
+            }
           },
-          "name": "MemoizeAll",
-          "leadingComments": [],
-          "trailingComments": []
+          "operator": "=",
+          "left": {
+            "type": "MemberExpression",
+            "start": 591,
+            "end": 606,
+            "loc": {
+              "start": {
+                "line": 12,
+                "column": 0
+              },
+              "end": {
+                "line": 12,
+                "column": 15
+              }
+            },
+            "object": {
+              "type": "Identifier",
+              "start": 591,
+              "end": 598,
+              "loc": {
+                "start": {
+                  "line": 12,
+                  "column": 0
+                },
+                "end": {
+                  "line": 12,
+                  "column": 7
+                },
+                "identifierName": "exports"
+              },
+              "name": "exports"
+            },
+            "property": {
+              "type": "Identifier",
+              "start": 599,
+              "end": 606,
+              "loc": {
+                "start": {
+                  "line": 12,
+                  "column": 8
+                },
+                "end": {
+                  "line": 12,
+                  "column": 15
+                },
+                "identifierName": "default"
+              },
+              "name": "default"
+            },
+            "computed": false
+          },
+          "right": {
+            "type": "MemberExpression",
+            "start": 609,
+            "end": 627,
+            "loc": {
+              "start": {
+                "line": 12,
+                "column": 18
+              },
+              "end": {
+                "line": 12,
+                "column": 36
+              }
+            },
+            "object": {
+              "type": "Identifier",
+              "start": 609,
+              "end": 616,
+              "loc": {
+                "start": {
+                  "line": 12,
+                  "column": 18
+                },
+                "end": {
+                  "line": 12,
+                  "column": 25
+                },
+                "identifierName": "exports"
+              },
+              "name": "exports"
+            },
+            "property": {
+              "type": "Identifier",
+              "start": 617,
+              "end": 627,
+              "loc": {
+                "start": {
+                  "line": 12,
+                  "column": 26
+                },
+                "end": {
+                  "line": 12,
+                  "column": 36
+                },
+                "identifierName": "MemoizeAll"
+              },
+              "name": "MemoizeAll"
+            },
+            "computed": false
+          }
         }
       }
     ],
-    "directives": []
+    "directives": [
+      {
+        "type": "Directive",
+        "start": 0,
+        "end": 13,
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 1,
+            "column": 13
+          }
+        },
+        "value": {
+          "type": "DirectiveLiteral",
+          "start": 0,
+          "end": 12,
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 12
+            }
+          },
+          "value": "use strict",
+          "extra": {
+            "raw": "\"use strict\"",
+            "rawValue": "use strict"
+          }
+        }
+      }
+    ]
   },
   "comments": [
     {
       "type": "CommentBlock",
       "value": "*\n * Memoizes a function on the prototype instead of the instance. All instances of the class use the same memoize cache.\n * @param {Function} [resolver] Optional resolver\n ",
-      "start": 148,
-      "end": 325,
+      "start": 202,
+      "end": 379,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 6,
           "column": 0
         },
         "end": {
-          "line": 7,
+          "line": 9,
           "column": 3
         }
       }
     }
   ],
   "tokens": [
-    {
-      "type": {
-        "label": "import",
-        "keyword": "import",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "import",
-      "start": 0,
-      "end": 6,
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 0
-        },
-        "end": {
-          "line": 1,
-          "column": 6
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "{",
-        "beforeExpr": true,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 7,
-      "end": 8,
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 7
-        },
-        "end": {
-          "line": 1,
-          "column": 8
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "memoize",
-      "start": 9,
-      "end": 16,
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 9
-        },
-        "end": {
-          "line": 1,
-          "column": 16
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "}",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 17,
-      "end": 18,
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 17
-        },
-        "end": {
-          "line": 1,
-          "column": 18
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "from",
-      "start": 19,
-      "end": 23,
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 19
-        },
-        "end": {
-          "line": 1,
-          "column": 23
-        }
-      }
-    },
     {
       "type": {
         "label": "string",
@@ -877,17 +1298,17 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "lodash",
-      "start": 24,
-      "end": 32,
+      "value": "use strict",
+      "start": 0,
+      "end": 12,
       "loc": {
         "start": {
           "line": 1,
-          "column": 24
+          "column": 0
         },
         "end": {
           "line": 1,
-          "column": 32
+          "column": 12
         }
       }
     },
@@ -904,69 +1325,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 32,
-      "end": 33,
+      "start": 12,
+      "end": 13,
       "loc": {
         "start": {
           "line": 1,
-          "column": 32
+          "column": 12
         },
         "end": {
           "line": 1,
-          "column": 33
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "import",
-        "keyword": "import",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "import",
-      "start": 34,
-      "end": 40,
-      "loc": {
-        "start": {
-          "line": 2,
-          "column": 0
-        },
-        "end": {
-          "line": 2,
-          "column": 6
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "{",
-        "beforeExpr": true,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 41,
-      "end": 42,
-      "loc": {
-        "start": {
-          "line": 2,
-          "column": 7
-        },
-        "end": {
-          "line": 2,
-          "column": 8
+          "column": 13
         }
       }
     },
@@ -982,17 +1350,120 @@
         "postfix": false,
         "binop": null
       },
-      "value": "DecoratorConfig",
-      "start": 43,
-      "end": 58,
+      "value": "Object",
+      "start": 14,
+      "end": 20,
       "loc": {
         "start": {
           "line": 2,
-          "column": 9
+          "column": 0
         },
         "end": {
           "line": 2,
-          "column": 24
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 20,
+      "end": 21,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 6
+        },
+        "end": {
+          "line": 2,
+          "column": 7
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "defineProperty",
+      "start": 21,
+      "end": 35,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 7
+        },
+        "end": {
+          "line": 2,
+          "column": 21
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 35,
+      "end": 36,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 21
+        },
+        "end": {
+          "line": 2,
+          "column": 22
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "exports",
+      "start": 36,
+      "end": 43,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 22
+        },
+        "end": {
+          "line": 2,
+          "column": 29
         }
       }
     },
@@ -1009,93 +1480,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 58,
-      "end": 59,
+      "start": 43,
+      "end": 44,
       "loc": {
         "start": {
           "line": 2,
-          "column": 24
+          "column": 29
         },
         "end": {
           "line": 2,
-          "column": 25
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "DecoratorFactory",
-      "start": 60,
-      "end": 76,
-      "loc": {
-        "start": {
-          "line": 2,
-          "column": 26
-        },
-        "end": {
-          "line": 2,
-          "column": 42
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "}",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 77,
-      "end": 78,
-      "loc": {
-        "start": {
-          "line": 2,
-          "column": 43
-        },
-        "end": {
-          "line": 2,
-          "column": 44
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "from",
-      "start": 79,
-      "end": 83,
-      "loc": {
-        "start": {
-          "line": 2,
-          "column": 45
-        },
-        "end": {
-          "line": 2,
-          "column": 49
+          "column": 30
         }
       }
     },
@@ -1112,23 +1506,23 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "./factory",
-      "start": 84,
-      "end": 95,
+      "value": "__esModule",
+      "start": 45,
+      "end": 57,
       "loc": {
         "start": {
           "line": 2,
-          "column": 50
+          "column": 31
         },
         "end": {
           "line": 2,
-          "column": 61
+          "column": 43
         }
       }
     },
     {
       "type": {
-        "label": ";",
+        "label": ",",
         "beforeExpr": true,
         "startsExpr": false,
         "rightAssociative": false,
@@ -1139,44 +1533,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 95,
-      "end": 96,
+      "start": 57,
+      "end": 58,
       "loc": {
         "start": {
           "line": 2,
-          "column": 61
+          "column": 43
         },
         "end": {
           "line": 2,
-          "column": 62
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "import",
-        "keyword": "import",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "import",
-      "start": 97,
-      "end": 103,
-      "loc": {
-        "start": {
-          "line": 3,
-          "column": 0
-        },
-        "end": {
-          "line": 3,
-          "column": 6
+          "column": 44
         }
       }
     },
@@ -1192,16 +1558,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 104,
-      "end": 105,
+      "start": 59,
+      "end": 60,
       "loc": {
         "start": {
-          "line": 3,
-          "column": 7
+          "line": 2,
+          "column": 45
         },
         "end": {
-          "line": 3,
-          "column": 8
+          "line": 2,
+          "column": 46
         }
       }
     },
@@ -1217,17 +1583,71 @@
         "postfix": false,
         "binop": null
       },
-      "value": "MemoizeApplicator",
-      "start": 106,
-      "end": 123,
+      "value": "value",
+      "start": 61,
+      "end": 66,
       "loc": {
         "start": {
-          "line": 3,
-          "column": 9
+          "line": 2,
+          "column": 47
         },
         "end": {
-          "line": 3,
-          "column": 26
+          "line": 2,
+          "column": 52
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ":",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 66,
+      "end": 67,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 52
+        },
+        "end": {
+          "line": 2,
+          "column": 53
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "true",
+        "keyword": "true",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "true",
+      "start": 68,
+      "end": 72,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 54
+        },
+        "end": {
+          "line": 2,
+          "column": 58
         }
       }
     },
@@ -1243,24 +1663,24 @@
         "postfix": false,
         "binop": null
       },
-      "start": 124,
-      "end": 125,
+      "start": 73,
+      "end": 74,
       "loc": {
         "start": {
-          "line": 3,
-          "column": 27
+          "line": 2,
+          "column": 59
         },
         "end": {
-          "line": 3,
-          "column": 28
+          "line": 2,
+          "column": 60
         }
       }
     },
     {
       "type": {
-        "label": "name",
+        "label": ")",
         "beforeExpr": false,
-        "startsExpr": true,
+        "startsExpr": false,
         "rightAssociative": false,
         "isLoop": false,
         "isAssign": false,
@@ -1268,44 +1688,16 @@
         "postfix": false,
         "binop": null
       },
-      "value": "from",
-      "start": 126,
-      "end": 130,
+      "start": 74,
+      "end": 75,
       "loc": {
         "start": {
-          "line": 3,
-          "column": 29
+          "line": 2,
+          "column": 60
         },
         "end": {
-          "line": 3,
-          "column": 33
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "string",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "./applicators",
-      "start": 131,
-      "end": 146,
-      "loc": {
-        "start": {
-          "line": 3,
-          "column": 34
-        },
-        "end": {
-          "line": 3,
-          "column": 49
+          "line": 2,
+          "column": 61
         }
       }
     },
@@ -1322,88 +1714,44 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 146,
-      "end": 147,
+      "start": 75,
+      "end": 76,
       "loc": {
         "start": {
-          "line": 3,
-          "column": 49
+          "line": 2,
+          "column": 61
         },
         "end": {
-          "line": 3,
-          "column": 50
+          "line": 2,
+          "column": 62
         }
       }
     },
     {
-      "type": "CommentBlock",
-      "value": "*\n * Memoizes a function on the prototype instead of the instance. All instances of the class use the same memoize cache.\n * @param {Function} [resolver] Optional resolver\n ",
-      "start": 148,
-      "end": 325,
+      "type": {
+        "label": "var",
+        "keyword": "var",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "var",
+      "start": 77,
+      "end": 80,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 3,
           "column": 0
         },
         "end": {
-          "line": 7,
+          "line": 3,
           "column": 3
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "export",
-        "keyword": "export",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "export",
-      "start": 326,
-      "end": 332,
-      "loc": {
-        "start": {
-          "line": 8,
-          "column": 0
-        },
-        "end": {
-          "line": 8,
-          "column": 6
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "const",
-        "keyword": "const",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "const",
-      "start": 333,
-      "end": 338,
-      "loc": {
-        "start": {
-          "line": 8,
-          "column": 7
-        },
-        "end": {
-          "line": 8,
-          "column": 12
         }
       }
     },
@@ -1419,17 +1767,17 @@
         "postfix": false,
         "binop": null
       },
-      "value": "MemoizeAll",
-      "start": 339,
-      "end": 349,
+      "value": "memoize",
+      "start": 81,
+      "end": 88,
       "loc": {
         "start": {
-          "line": 8,
-          "column": 13
+          "line": 3,
+          "column": 4
         },
         "end": {
-          "line": 8,
-          "column": 23
+          "line": 3,
+          "column": 11
         }
       }
     },
@@ -1447,16 +1795,16 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 350,
-      "end": 351,
+      "start": 89,
+      "end": 90,
       "loc": {
         "start": {
-          "line": 8,
-          "column": 24
+          "line": 3,
+          "column": 12
         },
         "end": {
-          "line": 8,
-          "column": 25
+          "line": 3,
+          "column": 13
         }
       }
     },
@@ -1472,69 +1820,17 @@
         "postfix": false,
         "binop": null
       },
-      "value": "DecoratorFactory",
-      "start": 352,
-      "end": 368,
+      "value": "require",
+      "start": 91,
+      "end": 98,
       "loc": {
         "start": {
-          "line": 8,
-          "column": 26
+          "line": 3,
+          "column": 14
         },
         "end": {
-          "line": 8,
-          "column": 42
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ".",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 368,
-      "end": 369,
-      "loc": {
-        "start": {
-          "line": 8,
-          "column": 42
-        },
-        "end": {
-          "line": 8,
-          "column": 43
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "createDecorator",
-      "start": 369,
-      "end": 384,
-      "loc": {
-        "start": {
-          "line": 8,
-          "column": 43
-        },
-        "end": {
-          "line": 8,
-          "column": 58
+          "line": 3,
+          "column": 21
         }
       }
     },
@@ -1550,24 +1846,23 @@
         "postfix": false,
         "binop": null
       },
-      "start": 384,
-      "end": 385,
+      "start": 98,
+      "end": 99,
       "loc": {
         "start": {
-          "line": 8,
-          "column": 58
+          "line": 3,
+          "column": 21
         },
         "end": {
-          "line": 8,
-          "column": 59
+          "line": 3,
+          "column": 22
         }
       }
     },
     {
       "type": {
-        "label": "new",
-        "keyword": "new",
-        "beforeExpr": true,
+        "label": "string",
+        "beforeExpr": false,
         "startsExpr": true,
         "rightAssociative": false,
         "isLoop": false,
@@ -1577,199 +1872,17 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "new",
-      "start": 385,
-      "end": 388,
+      "value": "lodash/memoize",
+      "start": 99,
+      "end": 115,
       "loc": {
         "start": {
-          "line": 8,
-          "column": 59
+          "line": 3,
+          "column": 22
         },
         "end": {
-          "line": 8,
-          "column": 62
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "DecoratorConfig",
-      "start": 389,
-      "end": 404,
-      "loc": {
-        "start": {
-          "line": 8,
-          "column": 63
-        },
-        "end": {
-          "line": 8,
-          "column": 78
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "(",
-        "beforeExpr": true,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 404,
-      "end": 405,
-      "loc": {
-        "start": {
-          "line": 8,
-          "column": 78
-        },
-        "end": {
-          "line": 8,
-          "column": 79
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "memoize",
-      "start": 405,
-      "end": 412,
-      "loc": {
-        "start": {
-          "line": 8,
-          "column": 79
-        },
-        "end": {
-          "line": 8,
-          "column": 86
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ",",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 412,
-      "end": 413,
-      "loc": {
-        "start": {
-          "line": 8,
-          "column": 86
-        },
-        "end": {
-          "line": 8,
-          "column": 87
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "new",
-        "keyword": "new",
-        "beforeExpr": true,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "new",
-      "start": 414,
-      "end": 417,
-      "loc": {
-        "start": {
-          "line": 8,
-          "column": 88
-        },
-        "end": {
-          "line": 8,
-          "column": 91
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "MemoizeApplicator",
-      "start": 418,
-      "end": 435,
-      "loc": {
-        "start": {
-          "line": 8,
-          "column": 92
-        },
-        "end": {
-          "line": 8,
-          "column": 109
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "(",
-        "beforeExpr": true,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 435,
-      "end": 436,
-      "loc": {
-        "start": {
-          "line": 8,
-          "column": 109
-        },
-        "end": {
-          "line": 8,
-          "column": 110
+          "line": 3,
+          "column": 38
         }
       }
     },
@@ -1785,66 +1898,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 436,
-      "end": 437,
+      "start": 115,
+      "end": 116,
       "loc": {
         "start": {
-          "line": 8,
-          "column": 110
+          "line": 3,
+          "column": 38
         },
         "end": {
-          "line": 8,
-          "column": 111
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ")",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 437,
-      "end": 438,
-      "loc": {
-        "start": {
-          "line": 8,
-          "column": 111
-        },
-        "end": {
-          "line": 8,
-          "column": 112
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ")",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 438,
-      "end": 439,
-      "loc": {
-        "start": {
-          "line": 8,
-          "column": 112
-        },
-        "end": {
-          "line": 8,
-          "column": 113
+          "line": 3,
+          "column": 39
         }
       }
     },
@@ -1861,23 +1924,23 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 439,
-      "end": 440,
+      "start": 116,
+      "end": 117,
       "loc": {
         "start": {
-          "line": 8,
-          "column": 113
+          "line": 3,
+          "column": 39
         },
         "end": {
-          "line": 8,
-          "column": 114
+          "line": 3,
+          "column": 40
         }
       }
     },
     {
       "type": {
-        "label": "export",
-        "keyword": "export",
+        "label": "var",
+        "keyword": "var",
         "beforeExpr": false,
         "startsExpr": false,
         "rightAssociative": false,
@@ -1888,23 +1951,102 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "export",
-      "start": 441,
-      "end": 447,
+      "value": "var",
+      "start": 118,
+      "end": 121,
       "loc": {
         "start": {
-          "line": 9,
+          "line": 4,
           "column": 0
         },
         "end": {
-          "line": 9,
-          "column": 6
+          "line": 4,
+          "column": 3
         }
       }
     },
     {
       "type": {
-        "label": "{",
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "factory_1",
+      "start": 122,
+      "end": 131,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 4
+        },
+        "end": {
+          "line": 4,
+          "column": 13
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 132,
+      "end": 133,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 14
+        },
+        "end": {
+          "line": 4,
+          "column": 15
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "require",
+      "start": 134,
+      "end": 141,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 16
+        },
+        "end": {
+          "line": 4,
+          "column": 23
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
         "beforeExpr": true,
         "startsExpr": true,
         "rightAssociative": false,
@@ -1914,15 +2056,371 @@
         "postfix": false,
         "binop": null
       },
-      "start": 448,
-      "end": 449,
+      "start": 141,
+      "end": 142,
       "loc": {
         "start": {
-          "line": 9,
-          "column": 7
+          "line": 4,
+          "column": 23
+        },
+        "end": {
+          "line": 4,
+          "column": 24
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "./factory",
+      "start": 142,
+      "end": 153,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 24
+        },
+        "end": {
+          "line": 4,
+          "column": 35
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 153,
+      "end": 154,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 35
+        },
+        "end": {
+          "line": 4,
+          "column": 36
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 154,
+      "end": 155,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 36
+        },
+        "end": {
+          "line": 4,
+          "column": 37
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "var",
+        "keyword": "var",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "var",
+      "start": 156,
+      "end": 159,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "applicators_1",
+      "start": 160,
+      "end": 173,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 4
+        },
+        "end": {
+          "line": 5,
+          "column": 17
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 174,
+      "end": 175,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 18
+        },
+        "end": {
+          "line": 5,
+          "column": 19
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "require",
+      "start": 176,
+      "end": 183,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 20
+        },
+        "end": {
+          "line": 5,
+          "column": 27
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 183,
+      "end": 184,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 27
+        },
+        "end": {
+          "line": 5,
+          "column": 28
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "./applicators",
+      "start": 184,
+      "end": 199,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 28
+        },
+        "end": {
+          "line": 5,
+          "column": 43
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 199,
+      "end": 200,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 43
+        },
+        "end": {
+          "line": 5,
+          "column": 44
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 200,
+      "end": 201,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 44
+        },
+        "end": {
+          "line": 5,
+          "column": 45
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n * Memoizes a function on the prototype instead of the instance. All instances of the class use the same memoize cache.\n * @param {Function} [resolver] Optional resolver\n ",
+      "start": 202,
+      "end": 379,
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
         },
         "end": {
           "line": 9,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "exports",
+      "start": 380,
+      "end": 387,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 0
+        },
+        "end": {
+          "line": 10,
+          "column": 7
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 387,
+      "end": 388,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 7
+        },
+        "end": {
+          "line": 10,
           "column": 8
         }
       }
@@ -1940,42 +2438,43 @@
         "binop": null
       },
       "value": "MemoizeAll",
-      "start": 450,
-      "end": 460,
+      "start": 388,
+      "end": 398,
       "loc": {
         "start": {
-          "line": 9,
-          "column": 9
+          "line": 10,
+          "column": 8
         },
         "end": {
-          "line": 9,
+          "line": 10,
+          "column": 18
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 399,
+      "end": 400,
+      "loc": {
+        "start": {
+          "line": 10,
           "column": 19
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "as",
-      "start": 461,
-      "end": 463,
-      "loc": {
-        "start": {
-          "line": 9,
-          "column": 20
         },
         "end": {
-          "line": 9,
-          "column": 22
+          "line": 10,
+          "column": 20
         }
       }
     },
@@ -1991,17 +2490,616 @@
         "postfix": false,
         "binop": null
       },
-      "value": "memoizeAll",
-      "start": 464,
+      "value": "factory_1",
+      "start": 401,
+      "end": 410,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 21
+        },
+        "end": {
+          "line": 10,
+          "column": 30
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 410,
+      "end": 411,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 30
+        },
+        "end": {
+          "line": 10,
+          "column": 31
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "DecoratorFactory",
+      "start": 411,
+      "end": 427,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 31
+        },
+        "end": {
+          "line": 10,
+          "column": 47
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 427,
+      "end": 428,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 47
+        },
+        "end": {
+          "line": 10,
+          "column": 48
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "createDecorator",
+      "start": 428,
+      "end": 443,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 48
+        },
+        "end": {
+          "line": 10,
+          "column": 63
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 443,
+      "end": 444,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 63
+        },
+        "end": {
+          "line": 10,
+          "column": 64
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "new",
+        "keyword": "new",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "new",
+      "start": 444,
+      "end": 447,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 64
+        },
+        "end": {
+          "line": 10,
+          "column": 67
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "factory_1",
+      "start": 448,
+      "end": 457,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 68
+        },
+        "end": {
+          "line": 10,
+          "column": 77
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 457,
+      "end": 458,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 77
+        },
+        "end": {
+          "line": 10,
+          "column": 78
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "DecoratorConfig",
+      "start": 458,
+      "end": 473,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 78
+        },
+        "end": {
+          "line": 10,
+          "column": 93
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 473,
       "end": 474,
       "loc": {
         "start": {
-          "line": 9,
-          "column": 23
+          "line": 10,
+          "column": 93
         },
         "end": {
-          "line": 9,
-          "column": 33
+          "line": 10,
+          "column": 94
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "memoize",
+      "start": 474,
+      "end": 481,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 94
+        },
+        "end": {
+          "line": 10,
+          "column": 101
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 481,
+      "end": 482,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 101
+        },
+        "end": {
+          "line": 10,
+          "column": 102
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "new",
+        "keyword": "new",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "new",
+      "start": 483,
+      "end": 486,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 103
+        },
+        "end": {
+          "line": 10,
+          "column": 106
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "applicators_1",
+      "start": 487,
+      "end": 500,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 107
+        },
+        "end": {
+          "line": 10,
+          "column": 120
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 500,
+      "end": 501,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 120
+        },
+        "end": {
+          "line": 10,
+          "column": 121
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "MemoizeApplicator",
+      "start": 501,
+      "end": 518,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 121
+        },
+        "end": {
+          "line": 10,
+          "column": 138
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 518,
+      "end": 519,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 138
+        },
+        "end": {
+          "line": 10,
+          "column": 139
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 519,
+      "end": 520,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 139
+        },
+        "end": {
+          "line": 10,
+          "column": 140
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 520,
+      "end": 521,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 140
+        },
+        "end": {
+          "line": 10,
+          "column": 141
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 522,
+      "end": 523,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 142
+        },
+        "end": {
+          "line": 10,
+          "column": 143
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "optionalParams",
+      "start": 524,
+      "end": 538,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 144
+        },
+        "end": {
+          "line": 10,
+          "column": 158
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ":",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 538,
+      "end": 539,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 158
+        },
+        "end": {
+          "line": 10,
+          "column": 159
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "true",
+        "keyword": "true",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "true",
+      "start": 540,
+      "end": 544,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 160
+        },
+        "end": {
+          "line": 10,
+          "column": 164
         }
       }
     },
@@ -2017,16 +3115,66 @@
         "postfix": false,
         "binop": null
       },
-      "start": 475,
-      "end": 476,
+      "start": 545,
+      "end": 546,
       "loc": {
         "start": {
-          "line": 9,
-          "column": 34
+          "line": 10,
+          "column": 165
         },
         "end": {
-          "line": 9,
-          "column": 35
+          "line": 10,
+          "column": 166
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 546,
+      "end": 547,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 166
+        },
+        "end": {
+          "line": 10,
+          "column": 167
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 547,
+      "end": 548,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 167
+        },
+        "end": {
+          "line": 10,
+          "column": 168
         }
       }
     },
@@ -2043,23 +3191,48 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 476,
-      "end": 477,
+      "start": 548,
+      "end": 549,
       "loc": {
         "start": {
-          "line": 9,
-          "column": 35
+          "line": 10,
+          "column": 168
         },
         "end": {
-          "line": 9,
-          "column": 36
+          "line": 10,
+          "column": 169
         }
       }
     },
     {
       "type": {
-        "label": "export",
-        "keyword": "export",
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "exports",
+      "start": 550,
+      "end": 557,
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 0
+        },
+        "end": {
+          "line": 11,
+          "column": 7
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
         "beforeExpr": false,
         "startsExpr": false,
         "rightAssociative": false,
@@ -2070,17 +3243,225 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "export",
-      "start": 478,
-      "end": 484,
+      "start": 557,
+      "end": 558,
       "loc": {
         "start": {
-          "line": 10,
+          "line": 11,
+          "column": 7
+        },
+        "end": {
+          "line": 11,
+          "column": 8
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "memoizeAll",
+      "start": 558,
+      "end": 568,
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 8
+        },
+        "end": {
+          "line": 11,
+          "column": 18
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 569,
+      "end": 570,
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 19
+        },
+        "end": {
+          "line": 11,
+          "column": 20
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "exports",
+      "start": 571,
+      "end": 578,
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 21
+        },
+        "end": {
+          "line": 11,
+          "column": 28
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 578,
+      "end": 579,
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 28
+        },
+        "end": {
+          "line": 11,
+          "column": 29
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "MemoizeAll",
+      "start": 579,
+      "end": 589,
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 29
+        },
+        "end": {
+          "line": 11,
+          "column": 39
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 589,
+      "end": 590,
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 39
+        },
+        "end": {
+          "line": 11,
+          "column": 40
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "exports",
+      "start": 591,
+      "end": 598,
+      "loc": {
+        "start": {
+          "line": 12,
           "column": 0
         },
         "end": {
-          "line": 10,
-          "column": 6
+          "line": 12,
+          "column": 7
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 598,
+      "end": 599,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 7
+        },
+        "end": {
+          "line": 12,
+          "column": 8
         }
       }
     },
@@ -2099,16 +3480,95 @@
         "updateContext": null
       },
       "value": "default",
-      "start": 485,
-      "end": 492,
+      "start": 599,
+      "end": 606,
       "loc": {
         "start": {
-          "line": 10,
-          "column": 7
+          "line": 12,
+          "column": 8
         },
         "end": {
-          "line": 10,
-          "column": 14
+          "line": 12,
+          "column": 15
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 607,
+      "end": 608,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 16
+        },
+        "end": {
+          "line": 12,
+          "column": 17
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "exports",
+      "start": 609,
+      "end": 616,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 18
+        },
+        "end": {
+          "line": 12,
+          "column": 25
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 616,
+      "end": 617,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 25
+        },
+        "end": {
+          "line": 12,
+          "column": 26
         }
       }
     },
@@ -2125,16 +3585,16 @@
         "binop": null
       },
       "value": "MemoizeAll",
-      "start": 493,
-      "end": 503,
+      "start": 617,
+      "end": 627,
       "loc": {
         "start": {
-          "line": 10,
-          "column": 15
+          "line": 12,
+          "column": 26
         },
         "end": {
-          "line": 10,
-          "column": 25
+          "line": 12,
+          "column": 36
         }
       }
     },
@@ -2151,16 +3611,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 503,
-      "end": 504,
+      "start": 627,
+      "end": 628,
       "loc": {
         "start": {
-          "line": 10,
-          "column": 25
+          "line": 12,
+          "column": 36
         },
         "end": {
-          "line": 10,
-          "column": 26
+          "line": 12,
+          "column": 37
         }
       }
     },
@@ -2177,15 +3637,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 505,
-      "end": 505,
+      "start": 629,
+      "end": 629,
       "loc": {
         "start": {
-          "line": 11,
+          "line": 13,
           "column": 0
         },
         "end": {
-          "line": 11,
+          "line": 13,
           "column": 0
         }
       }

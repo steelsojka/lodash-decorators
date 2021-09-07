@@ -1,753 +1,435 @@
 window.esdocSearchIndex = [
   [
-    "lodash-decorators/builddocs/after.js~after",
-    "variable/index.html#static-variable-After",
-    "<span>After</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/after.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/afterall.js~afterall",
-    "variable/index.html#static-variable-AfterAll",
-    "<span>AfterAll</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/afterAll.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/applicators/applicator.js~applicator",
-    "class/buildDocs/applicators/Applicator.js~Applicator.html",
-    "<span>Applicator</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/applicators/Applicator.js</span>",
-    "class"
-  ],
-  [
-    "lodash-decorators/builddocs/ary.js~ary",
-    "variable/index.html#static-variable-Ary",
-    "<span>Ary</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/ary.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/attempt.js~attempt",
-    "variable/index.html#static-variable-Attempt",
-    "<span>Attempt</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/attempt.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/before.js~before",
-    "variable/index.html#static-variable-Before",
-    "<span>Before</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/before.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/beforeall.js~beforeall",
-    "variable/index.html#static-variable-BeforeAll",
-    "<span>BeforeAll</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/beforeAll.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/bind.js~bind",
-    "variable/index.html#static-variable-Bind",
-    "<span>Bind</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/bind.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/bindall.js~bindall",
-    "function/index.html#static-function-BindAll",
-    "<span>BindAll</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/bindAll.js</span>",
-    "function"
-  ],
-  [
-    "lodash-decorators/builddocs/applicators/bindapplicator.js~bindapplicator",
-    "class/buildDocs/applicators/BindApplicator.js~BindApplicator.html",
-    "<span>BindApplicator</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/applicators/BindApplicator.js</span>",
-    "class"
-  ],
-  [
-    "lodash-decorators/builddocs/applicators/composeapplicator.js~composeapplicator",
-    "class/buildDocs/applicators/ComposeApplicator.js~ComposeApplicator.html",
-    "<span>ComposeApplicator</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/applicators/ComposeApplicator.js</span>",
-    "class"
-  ],
-  [
-    "lodash-decorators/builddocs/curry.js~curry",
-    "variable/index.html#static-variable-Curry",
-    "<span>Curry</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/curry.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/curryall.js~curryall",
-    "variable/index.html#static-variable-CurryAll",
-    "<span>CurryAll</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/curryAll.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/curryright.js~curryright",
-    "variable/index.html#static-variable-CurryRight",
-    "<span>CurryRight</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/curryRight.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/curryrightall.js~curryrightall",
-    "variable/index.html#static-variable-CurryRightAll",
-    "<span>CurryRightAll</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/curryRightAll.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/debounce.js~debounce",
-    "variable/index.html#static-variable-Debounce",
-    "<span>Debounce</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/debounce.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/debounceall.js~debounceall",
-    "variable/index.html#static-variable-DebounceAll",
-    "<span>DebounceAll</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/debounceAll.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/factory/decoratorconfig.js~decoratorconfig",
-    "class/buildDocs/factory/DecoratorConfig.js~DecoratorConfig.html",
-    "<span>DecoratorConfig</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/factory/DecoratorConfig.js</span>",
-    "class"
-  ],
-  [
-    "lodash-decorators/builddocs/factory/decoratorfactory.js~decoratorfactory",
-    "variable/index.html#static-variable-DecoratorFactory",
-    "<span>DecoratorFactory</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/factory/DecoratorFactory.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/defer.js~defer",
-    "variable/index.html#static-variable-Defer",
-    "<span>Defer</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/defer.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/delay.js~delay",
-    "variable/index.html#static-variable-Delay",
-    "<span>Delay</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/delay.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/flip.js~flip",
-    "variable/index.html#static-variable-Flip",
-    "<span>Flip</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/flip.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/flow.js~flow",
-    "variable/index.html#static-variable-Flow",
-    "<span>Flow</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/flow.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/flowright.js~flowright",
-    "variable/index.html#static-variable-FlowRight",
-    "<span>FlowRight</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/flowRight.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/factory/common.js~instancechainmap",
-    "variable/index.html#static-variable-InstanceChainMap",
-    "<span>InstanceChainMap</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/factory/common.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/factory/decoratorfactory.js~internaldecoratorfactory",
-    "class/buildDocs/factory/DecoratorFactory.js~InternalDecoratorFactory.html",
-    "<span>InternalDecoratorFactory</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/factory/DecoratorFactory.js</span>",
-    "class"
-  ],
-  [
-    "lodash-decorators/builddocs/applicators/invokeapplicator.js~invokeapplicator",
-    "class/buildDocs/applicators/InvokeApplicator.js~InvokeApplicator.html",
-    "<span>InvokeApplicator</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/applicators/InvokeApplicator.js</span>",
-    "class"
-  ],
-  [
-    "lodash-decorators/builddocs/memoize.js~memoize",
-    "variable/index.html#static-variable-Memoize",
-    "<span>Memoize</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/memoize.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/memoizeall.js~memoizeall",
-    "variable/index.html#static-variable-MemoizeAll",
-    "<span>MemoizeAll</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/memoizeAll.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/applicators/memoizeapplicator.js~memoizeapplicator",
-    "class/buildDocs/applicators/MemoizeApplicator.js~MemoizeApplicator.html",
-    "<span>MemoizeApplicator</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/applicators/MemoizeApplicator.js</span>",
-    "class"
-  ],
-  [
-    "lodash-decorators/builddocs/mixin.js~mixin",
-    "function/index.html#static-function-Mixin",
-    "<span>Mixin</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/mixin.js</span>",
-    "function"
-  ],
-  [
-    "lodash-decorators/builddocs/negate.js~negate",
-    "variable/index.html#static-variable-Negate",
-    "<span>Negate</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/negate.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/once.js~once",
-    "variable/index.html#static-variable-Once",
-    "<span>Once</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/once.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/onceall.js~onceall",
-    "variable/index.html#static-variable-OnceAll",
-    "<span>OnceAll</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/onceAll.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/overargs.js~overargs",
-    "variable/index.html#static-variable-OverArgs",
-    "<span>OverArgs</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/overArgs.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/partial.js~partial",
-    "variable/index.html#static-variable-Partial",
-    "<span>Partial</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/partial.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/applicators/partialapplicator.js~partialapplicator",
-    "class/buildDocs/applicators/PartialApplicator.js~PartialApplicator.html",
-    "<span>PartialApplicator</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/applicators/PartialApplicator.js</span>",
-    "class"
-  ],
-  [
-    "lodash-decorators/builddocs/partialright.js~partialright",
-    "variable/index.html#static-variable-PartialRight",
-    "<span>PartialRight</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/partialRight.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/applicators/partialedapplicator.js~partialedapplicator",
-    "class/buildDocs/applicators/PartialedApplicator.js~PartialedApplicator.html",
-    "<span>PartialedApplicator</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/applicators/PartialedApplicator.js</span>",
-    "class"
-  ],
-  [
-    "lodash-decorators/builddocs/applicators/postvalueapplicator.js~postvalueapplicator",
-    "class/buildDocs/applicators/PostValueApplicator.js~PostValueApplicator.html",
-    "<span>PostValueApplicator</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/applicators/PostValueApplicator.js</span>",
-    "class"
-  ],
-  [
-    "lodash-decorators/builddocs/applicators/prevalueapplicator.js~prevalueapplicator",
-    "class/buildDocs/applicators/PreValueApplicator.js~PreValueApplicator.html",
-    "<span>PreValueApplicator</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/applicators/PreValueApplicator.js</span>",
-    "class"
-  ],
-  [
-    "lodash-decorators/builddocs/rearg.js~rearg",
-    "variable/index.html#static-variable-Rearg",
-    "<span>Rearg</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/rearg.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/rest.js~rest",
-    "variable/index.html#static-variable-Rest",
-    "<span>Rest</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/rest.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/spread.js~spread",
-    "variable/index.html#static-variable-Spread",
-    "<span>Spread</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/spread.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/tap.js~tap",
-    "variable/index.html#static-variable-Tap",
-    "<span>Tap</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/tap.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/throttle.js~throttle",
-    "variable/index.html#static-variable-Throttle",
-    "<span>Throttle</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/throttle.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/throttleall.js~throttleall",
-    "variable/index.html#static-variable-ThrottleAll",
-    "<span>ThrottleAll</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/throttleAll.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/throttle.js~throttlegetter",
-    "variable/index.html#static-variable-ThrottleGetter",
-    "<span>ThrottleGetter</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/throttle.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/throttle.js~throttlesetter",
-    "variable/index.html#static-variable-ThrottleSetter",
-    "<span>ThrottleSetter</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/throttle.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/unary.js~unary",
-    "variable/index.html#static-variable-Unary",
-    "<span>Unary</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/unary.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/wrap.js~wrap",
-    "variable/index.html#static-variable-Wrap",
-    "<span>Wrap</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/wrap.js</span>",
-    "variable"
-  ],
-  [
-    "lodash-decorators/builddocs/applicators/wrapapplicator.js~wrapapplicator",
-    "class/buildDocs/applicators/WrapApplicator.js~WrapApplicator.html",
-    "<span>WrapApplicator</span> <span class=\"search-result-import-path\">lodash-decorators/buildDocs/applicators/WrapApplicator.js</span>",
-    "class"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~array",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Array",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~arraybuffer",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
-    "BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~boolean",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
-    "BuiltinExternal/ECMAScriptExternal.js~Boolean",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~dataview",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
-    "BuiltinExternal/ECMAScriptExternal.js~DataView",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~date",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
-    "BuiltinExternal/ECMAScriptExternal.js~Date",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~error",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
-    "BuiltinExternal/ECMAScriptExternal.js~Error",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~evalerror",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
-    "BuiltinExternal/ECMAScriptExternal.js~EvalError",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~float32array",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Float32Array",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~float64array",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Float64Array",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~function",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
-    "BuiltinExternal/ECMAScriptExternal.js~Function",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~generator",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
-    "BuiltinExternal/ECMAScriptExternal.js~Generator",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~generatorfunction",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
-    "BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~infinity",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
-    "BuiltinExternal/ECMAScriptExternal.js~Infinity",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~int16array",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Int16Array",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~int32array",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Int32Array",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~int8array",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Int8Array",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~internalerror",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
-    "BuiltinExternal/ECMAScriptExternal.js~InternalError",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~json",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
-    "BuiltinExternal/ECMAScriptExternal.js~JSON",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~map",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
-    "BuiltinExternal/ECMAScriptExternal.js~Map",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~nan",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
-    "BuiltinExternal/ECMAScriptExternal.js~NaN",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~number",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
-    "BuiltinExternal/ECMAScriptExternal.js~Number",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~object",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
-    "BuiltinExternal/ECMAScriptExternal.js~Object",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~promise",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
-    "BuiltinExternal/ECMAScriptExternal.js~Promise",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~proxy",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
-    "BuiltinExternal/ECMAScriptExternal.js~Proxy",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~rangeerror",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
-    "BuiltinExternal/ECMAScriptExternal.js~RangeError",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~referenceerror",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
-    "BuiltinExternal/ECMAScriptExternal.js~ReferenceError",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~reflect",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
-    "BuiltinExternal/ECMAScriptExternal.js~Reflect",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~regexp",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
-    "BuiltinExternal/ECMAScriptExternal.js~RegExp",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~set",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
-    "BuiltinExternal/ECMAScriptExternal.js~Set",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~string",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
-    "BuiltinExternal/ECMAScriptExternal.js~String",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~symbol",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
-    "BuiltinExternal/ECMAScriptExternal.js~Symbol",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~syntaxerror",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
-    "BuiltinExternal/ECMAScriptExternal.js~SyntaxError",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~typeerror",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
-    "BuiltinExternal/ECMAScriptExternal.js~TypeError",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~urierror",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
-    "BuiltinExternal/ECMAScriptExternal.js~URIError",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~uint16array",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Uint16Array",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~uint32array",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Uint32Array",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~uint8array",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Uint8Array",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~uint8clampedarray",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
-    "BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~weakmap",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
-    "BuiltinExternal/ECMAScriptExternal.js~WeakMap",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~weakset",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
-    "BuiltinExternal/ECMAScriptExternal.js~WeakSet",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~boolean",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
-    "BuiltinExternal/ECMAScriptExternal.js~boolean",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~function",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
-    "BuiltinExternal/ECMAScriptExternal.js~function",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~null",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
-    "BuiltinExternal/ECMAScriptExternal.js~null",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~number",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
-    "BuiltinExternal/ECMAScriptExternal.js~number",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~object",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
-    "BuiltinExternal/ECMAScriptExternal.js~object",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~string",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
-    "BuiltinExternal/ECMAScriptExternal.js~string",
-    "external"
-  ],
-  [
-    "builtinexternal/ecmascriptexternal.js~undefined",
-    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
-    "BuiltinExternal/ECMAScriptExternal.js~undefined",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~audiocontext",
-    "https://developer.mozilla.org/en/docs/Web/API/AudioContext",
-    "BuiltinExternal/WebAPIExternal.js~AudioContext",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~canvasrenderingcontext2d",
-    "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D",
-    "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~documentfragment",
-    "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment",
-    "BuiltinExternal/WebAPIExternal.js~DocumentFragment",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~element",
-    "https://developer.mozilla.org/en-US/docs/Web/API/Element",
-    "BuiltinExternal/WebAPIExternal.js~Element",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~event",
-    "https://developer.mozilla.org/en-US/docs/Web/API/Event",
-    "BuiltinExternal/WebAPIExternal.js~Event",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~node",
-    "https://developer.mozilla.org/en-US/docs/Web/API/Node",
-    "BuiltinExternal/WebAPIExternal.js~Node",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~nodelist",
-    "https://developer.mozilla.org/en-US/docs/Web/API/NodeList",
-    "BuiltinExternal/WebAPIExternal.js~NodeList",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~xmlhttprequest",
-    "https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest",
-    "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
-    "external"
-  ],
-  [
     "",
-    "test-file/buildDocs/after.spec.js.html#lineNumber4",
+    "test-file/buildDocs/after.spec.js.html#lineNumber6",
     "after",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/after.spec.js.html#lineNumber5",
+    "test-file/buildDocs/after.spec.js.html#lineNumber7",
     "after should invoke the method after 3 times",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/afterAll.spec.js.html#lineNumber4",
+    "test-file/buildDocs/afterAll.spec.js.html#lineNumber6",
     "afterAll",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/afterAll.spec.js.html#lineNumber5",
+    "test-file/buildDocs/afterAll.spec.js.html#lineNumber7",
     "afterAll should invoke the method after 3 times",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/ary.spec.js.html#lineNumber4",
+    "test-file/buildDocs/ary.spec.js.html#lineNumber6",
     "ary",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/ary.spec.js.html#lineNumber5",
+    "test-file/buildDocs/ary.spec.js.html#lineNumber7",
     "ary should invoke the method with specified arguments",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/attempt.spec.js.html#lineNumber4",
+    "test-file/buildDocs/attempt.spec.js.html#lineNumber6",
     "attempt",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/attempt.spec.js.html#lineNumber5",
+    "test-file/buildDocs/attempt.spec.js.html#lineNumber7",
     "attempt should catch the error and return it",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/before.spec.js.html#lineNumber4",
+    "test-file/buildDocs/attempt.spec.js.html#lineNumber29",
+    "attempt should catch the error and return it (paramless)",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/before.spec.js.html#lineNumber6",
     "before",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/before.spec.js.html#lineNumber5",
+    "test-file/buildDocs/before.spec.js.html#lineNumber7",
     "before should invoke the method before 3 times",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/beforeAll.spec.js.html#lineNumber4",
+    "test-file/buildDocs/beforeAll.spec.js.html#lineNumber6",
     "beforeAll",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/beforeAll.spec.js.html#lineNumber5",
+    "test-file/buildDocs/beforeAll.spec.js.html#lineNumber7",
     "beforeAll should invoke the method before 3 times",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/bind.spec.js.html#lineNumber5",
+    "test-file/buildDocs/bind.spec.js.html#lineNumber7",
     "bind",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/bind.spec.js.html#lineNumber6",
+    "test-file/buildDocs/bind.spec.js.html#lineNumber8",
     "bind should bind the context of the method",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/bind.spec.js.html#lineNumber23",
+    "test-file/buildDocs/bind.spec.js.html#lineNumber28",
     "bind should bind with other decorators",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/bindAll.spec.js.html#lineNumber4",
+    "test-file/buildDocs/bind.spec.js.html#lineNumber46",
+    "bind should bind without params",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/bind.spec.js.html#lineNumber66",
+    "bind should not bind when accessed on the prototype",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/bindAll.spec.js.html#lineNumber7",
     "bindAll",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/bindAll.spec.js.html#lineNumber5",
+    "test-file/buildDocs/bindAll.spec.js.html#lineNumber8",
     "bindAll should bind all method to the context",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/bindAll.spec.js.html#lineNumber26",
+    "test-file/buildDocs/bindAll.spec.js.html#lineNumber37",
     "bindAll should bind only specified methods to the context",
     "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/bindAll.spec.js.html#lineNumber128",
+    "bindAll should copy over any static properties on the constructor",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/bindAll.spec.js.html#lineNumber89",
+    "bindAll should not access getters that are not decorated",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/bindAll.spec.js.html#lineNumber140",
+    "bindAll should pass babels class call check",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/bindAll.spec.js.html#lineNumber66",
+    "bindAll should work with getters",
+    "test"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~array",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "buildDocs/.external-ecmascript.js~Array",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~arraybuffer",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "buildDocs/.external-ecmascript.js~ArrayBuffer",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~boolean",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "buildDocs/.external-ecmascript.js~Boolean",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~dataview",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "buildDocs/.external-ecmascript.js~DataView",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~date",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "buildDocs/.external-ecmascript.js~Date",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~error",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "buildDocs/.external-ecmascript.js~Error",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~evalerror",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "buildDocs/.external-ecmascript.js~EvalError",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~float32array",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "buildDocs/.external-ecmascript.js~Float32Array",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~float64array",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "buildDocs/.external-ecmascript.js~Float64Array",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~function",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "buildDocs/.external-ecmascript.js~Function",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~generator",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "buildDocs/.external-ecmascript.js~Generator",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~generatorfunction",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "buildDocs/.external-ecmascript.js~GeneratorFunction",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~infinity",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "buildDocs/.external-ecmascript.js~Infinity",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~int16array",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "buildDocs/.external-ecmascript.js~Int16Array",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~int32array",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "buildDocs/.external-ecmascript.js~Int32Array",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~int8array",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "buildDocs/.external-ecmascript.js~Int8Array",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~internalerror",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "buildDocs/.external-ecmascript.js~InternalError",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~json",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "buildDocs/.external-ecmascript.js~JSON",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~map",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "buildDocs/.external-ecmascript.js~Map",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~nan",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "buildDocs/.external-ecmascript.js~NaN",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~number",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "buildDocs/.external-ecmascript.js~Number",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~object",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "buildDocs/.external-ecmascript.js~Object",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~promise",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "buildDocs/.external-ecmascript.js~Promise",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~proxy",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "buildDocs/.external-ecmascript.js~Proxy",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~rangeerror",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "buildDocs/.external-ecmascript.js~RangeError",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~referenceerror",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "buildDocs/.external-ecmascript.js~ReferenceError",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~reflect",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "buildDocs/.external-ecmascript.js~Reflect",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~regexp",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "buildDocs/.external-ecmascript.js~RegExp",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~set",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "buildDocs/.external-ecmascript.js~Set",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~string",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "buildDocs/.external-ecmascript.js~String",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~symbol",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "buildDocs/.external-ecmascript.js~Symbol",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~syntaxerror",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "buildDocs/.external-ecmascript.js~SyntaxError",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~typeerror",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "buildDocs/.external-ecmascript.js~TypeError",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~urierror",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "buildDocs/.external-ecmascript.js~URIError",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~uint16array",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "buildDocs/.external-ecmascript.js~Uint16Array",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~uint32array",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "buildDocs/.external-ecmascript.js~Uint32Array",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~uint8array",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "buildDocs/.external-ecmascript.js~Uint8Array",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~uint8clampedarray",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "buildDocs/.external-ecmascript.js~Uint8ClampedArray",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~weakmap",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "buildDocs/.external-ecmascript.js~WeakMap",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~weakset",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "buildDocs/.external-ecmascript.js~WeakSet",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~boolean",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "buildDocs/.external-ecmascript.js~boolean",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~function",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "buildDocs/.external-ecmascript.js~function",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~null",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "buildDocs/.external-ecmascript.js~null",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~number",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "buildDocs/.external-ecmascript.js~number",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~object",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "buildDocs/.external-ecmascript.js~object",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~string",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "buildDocs/.external-ecmascript.js~string",
+    "external"
+  ],
+  [
+    "builddocs/.external-ecmascript.js~undefined",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "buildDocs/.external-ecmascript.js~undefined",
+    "external"
   ],
   [
     "builddocs/after.js",
@@ -774,6 +456,12 @@ window.esdocSearchIndex = [
     "testFile"
   ],
   [
+    "builddocs/applicators.js",
+    "file/buildDocs/applicators.js.html",
+    "buildDocs/applicators.js",
+    "file"
+  ],
+  [
     "builddocs/applicators/applicator.js",
     "file/buildDocs/applicators/Applicator.js.html",
     "buildDocs/applicators/Applicator.js",
@@ -786,34 +474,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "builddocs/applicators/bindapplicator.js~bindapplicator#apply",
-    "class/buildDocs/applicators/BindApplicator.js~BindApplicator.html#instance-method-apply",
-    "buildDocs/applicators/BindApplicator.js~BindApplicator#apply",
-    "method"
-  ],
-  [
     "builddocs/applicators/composeapplicator.js",
     "file/buildDocs/applicators/ComposeApplicator.js.html",
     "buildDocs/applicators/ComposeApplicator.js",
     "file"
-  ],
-  [
-    "builddocs/applicators/composeapplicator.js~composeapplicator#apply",
-    "class/buildDocs/applicators/ComposeApplicator.js~ComposeApplicator.html#instance-method-apply",
-    "buildDocs/applicators/ComposeApplicator.js~ComposeApplicator#apply",
-    "method"
-  ],
-  [
-    "builddocs/applicators/composeapplicator.js~composeapplicator#constructor",
-    "class/buildDocs/applicators/ComposeApplicator.js~ComposeApplicator.html#instance-constructor-constructor",
-    "buildDocs/applicators/ComposeApplicator.js~ComposeApplicator#constructor",
-    "method"
-  ],
-  [
-    "builddocs/applicators/composeapplicator.js~composeapplicator#post",
-    "class/buildDocs/applicators/ComposeApplicator.js~ComposeApplicator.html#instance-get-post",
-    "buildDocs/applicators/ComposeApplicator.js~ComposeApplicator#post",
-    "member"
   ],
   [
     "builddocs/applicators/invokeapplicator.js",
@@ -822,22 +486,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "builddocs/applicators/invokeapplicator.js~invokeapplicator#apply",
-    "class/buildDocs/applicators/InvokeApplicator.js~InvokeApplicator.html#instance-method-apply",
-    "buildDocs/applicators/InvokeApplicator.js~InvokeApplicator#apply",
-    "method"
-  ],
-  [
     "builddocs/applicators/memoizeapplicator.js",
     "file/buildDocs/applicators/MemoizeApplicator.js.html",
     "buildDocs/applicators/MemoizeApplicator.js",
     "file"
-  ],
-  [
-    "builddocs/applicators/memoizeapplicator.js~memoizeapplicator#apply",
-    "class/buildDocs/applicators/MemoizeApplicator.js~MemoizeApplicator.html#instance-method-apply",
-    "buildDocs/applicators/MemoizeApplicator.js~MemoizeApplicator#apply",
-    "method"
   ],
   [
     "builddocs/applicators/partialapplicator.js",
@@ -846,10 +498,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "builddocs/applicators/partialapplicator.js~partialapplicator#apply",
-    "class/buildDocs/applicators/PartialApplicator.js~PartialApplicator.html#instance-method-apply",
-    "buildDocs/applicators/PartialApplicator.js~PartialApplicator#apply",
-    "method"
+    "builddocs/applicators/partialvalueapplicator.js",
+    "file/buildDocs/applicators/PartialValueApplicator.js.html",
+    "buildDocs/applicators/PartialValueApplicator.js",
+    "file"
   ],
   [
     "builddocs/applicators/partialedapplicator.js",
@@ -858,22 +510,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "builddocs/applicators/partialedapplicator.js~partialedapplicator#apply",
-    "class/buildDocs/applicators/PartialedApplicator.js~PartialedApplicator.html#instance-method-apply",
-    "buildDocs/applicators/PartialedApplicator.js~PartialedApplicator#apply",
-    "method"
-  ],
-  [
     "builddocs/applicators/postvalueapplicator.js",
     "file/buildDocs/applicators/PostValueApplicator.js.html",
     "buildDocs/applicators/PostValueApplicator.js",
     "file"
-  ],
-  [
-    "builddocs/applicators/postvalueapplicator.js~postvalueapplicator#apply",
-    "class/buildDocs/applicators/PostValueApplicator.js~PostValueApplicator.html#instance-method-apply",
-    "buildDocs/applicators/PostValueApplicator.js~PostValueApplicator#apply",
-    "method"
   ],
   [
     "builddocs/applicators/prevalueapplicator.js",
@@ -882,27 +522,9 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "builddocs/applicators/prevalueapplicator.js~prevalueapplicator#apply",
-    "class/buildDocs/applicators/PreValueApplicator.js~PreValueApplicator.html#instance-method-apply",
-    "buildDocs/applicators/PreValueApplicator.js~PreValueApplicator#apply",
-    "method"
-  ],
-  [
     "builddocs/applicators/wrapapplicator.js",
     "file/buildDocs/applicators/WrapApplicator.js.html",
     "buildDocs/applicators/WrapApplicator.js",
-    "file"
-  ],
-  [
-    "builddocs/applicators/wrapapplicator.js~wrapapplicator#apply",
-    "class/buildDocs/applicators/WrapApplicator.js~WrapApplicator.html#instance-method-apply",
-    "buildDocs/applicators/WrapApplicator.js~WrapApplicator#apply",
-    "method"
-  ],
-  [
-    "builddocs/applicators/index.js",
-    "file/buildDocs/applicators/index.js.html",
-    "buildDocs/applicators/index.js",
     "file"
   ],
   [
@@ -1080,64 +702,16 @@ window.esdocSearchIndex = [
     "testFile"
   ],
   [
+    "builddocs/factory.js",
+    "file/buildDocs/factory.js.html",
+    "buildDocs/factory.js",
+    "file"
+  ],
+  [
     "builddocs/factory/decoratorconfig.js",
     "file/buildDocs/factory/DecoratorConfig.js.html",
     "buildDocs/factory/DecoratorConfig.js",
     "file"
-  ],
-  [
-    "builddocs/factory/decoratorconfig.js~decoratorconfig#applicator",
-    "class/buildDocs/factory/DecoratorConfig.js~DecoratorConfig.html#instance-member-applicator",
-    "buildDocs/factory/DecoratorConfig.js~DecoratorConfig#applicator",
-    "member"
-  ],
-  [
-    "builddocs/factory/decoratorconfig.js~decoratorconfig#bound",
-    "class/buildDocs/factory/DecoratorConfig.js~DecoratorConfig.html#instance-get-bound",
-    "buildDocs/factory/DecoratorConfig.js~DecoratorConfig#bound",
-    "member"
-  ],
-  [
-    "builddocs/factory/decoratorconfig.js~decoratorconfig#constructor",
-    "class/buildDocs/factory/DecoratorConfig.js~DecoratorConfig.html#instance-constructor-constructor",
-    "buildDocs/factory/DecoratorConfig.js~DecoratorConfig#constructor",
-    "method"
-  ],
-  [
-    "builddocs/factory/decoratorconfig.js~decoratorconfig#execute",
-    "class/buildDocs/factory/DecoratorConfig.js~DecoratorConfig.html#instance-member-execute",
-    "buildDocs/factory/DecoratorConfig.js~DecoratorConfig#execute",
-    "member"
-  ],
-  [
-    "builddocs/factory/decoratorconfig.js~decoratorconfig#getter",
-    "class/buildDocs/factory/DecoratorConfig.js~DecoratorConfig.html#instance-get-getter",
-    "buildDocs/factory/DecoratorConfig.js~DecoratorConfig#getter",
-    "member"
-  ],
-  [
-    "builddocs/factory/decoratorconfig.js~decoratorconfig#method",
-    "class/buildDocs/factory/DecoratorConfig.js~DecoratorConfig.html#instance-get-method",
-    "buildDocs/factory/DecoratorConfig.js~DecoratorConfig#method",
-    "member"
-  ],
-  [
-    "builddocs/factory/decoratorconfig.js~decoratorconfig#options",
-    "class/buildDocs/factory/DecoratorConfig.js~DecoratorConfig.html#instance-member-options",
-    "buildDocs/factory/DecoratorConfig.js~DecoratorConfig#options",
-    "member"
-  ],
-  [
-    "builddocs/factory/decoratorconfig.js~decoratorconfig#property",
-    "class/buildDocs/factory/DecoratorConfig.js~DecoratorConfig.html#instance-get-property",
-    "buildDocs/factory/DecoratorConfig.js~DecoratorConfig#property",
-    "member"
-  ],
-  [
-    "builddocs/factory/decoratorconfig.js~decoratorconfig#setter",
-    "class/buildDocs/factory/DecoratorConfig.js~DecoratorConfig.html#instance-get-setter",
-    "buildDocs/factory/DecoratorConfig.js~DecoratorConfig#setter",
-    "member"
   ],
   [
     "builddocs/factory/decoratorfactory.js",
@@ -1146,33 +720,9 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "builddocs/factory/decoratorfactory.js~internaldecoratorfactory#[name]",
-    "class/buildDocs/factory/DecoratorFactory.js~InternalDecoratorFactory.html#instance-member-[name]",
-    "buildDocs/factory/DecoratorFactory.js~InternalDecoratorFactory#[name]",
-    "member"
-  ],
-  [
-    "builddocs/factory/decoratorfactory.js~internaldecoratorfactory#createdecorator",
-    "class/buildDocs/factory/DecoratorFactory.js~InternalDecoratorFactory.html#instance-method-createDecorator",
-    "buildDocs/factory/DecoratorFactory.js~InternalDecoratorFactory#createDecorator",
-    "method"
-  ],
-  [
-    "builddocs/factory/decoratorfactory.js~internaldecoratorfactory#createinstancedecorator",
-    "class/buildDocs/factory/DecoratorFactory.js~InternalDecoratorFactory.html#instance-method-createInstanceDecorator",
-    "buildDocs/factory/DecoratorFactory.js~InternalDecoratorFactory#createInstanceDecorator",
-    "method"
-  ],
-  [
     "builddocs/factory/common.js",
     "file/buildDocs/factory/common.js.html",
     "buildDocs/factory/common.js",
-    "file"
-  ],
-  [
-    "builddocs/factory/index.js",
-    "file/buildDocs/factory/index.js.html",
-    "buildDocs/factory/index.js",
     "file"
   ],
   [
@@ -1404,9 +954,21 @@ window.esdocSearchIndex = [
     "testFile"
   ],
   [
+    "builddocs/utils.js",
+    "file/buildDocs/utils.js.html",
+    "buildDocs/utils.js",
+    "file"
+  ],
+  [
     "builddocs/utils/compositekeyweakmap.js",
     "file/buildDocs/utils/CompositeKeyWeakMap.js.html",
     "buildDocs/utils/CompositeKeyWeakMap.js",
+    "file"
+  ],
+  [
+    "builddocs/utils/assignall.js",
+    "file/buildDocs/utils/assignAll.js.html",
+    "buildDocs/utils/assignAll.js",
     "file"
   ],
   [
@@ -1422,9 +984,21 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "builddocs/utils/index.js",
-    "file/buildDocs/utils/index.js.html",
-    "buildDocs/utils/index.js",
+    "builddocs/utils/isdecoratorargs.js",
+    "file/buildDocs/utils/isDecoratorArgs.js.html",
+    "buildDocs/utils/isDecoratorArgs.js",
+    "file"
+  ],
+  [
+    "builddocs/utils/isdecoratorargs.spec.js",
+    "test-file/buildDocs/utils/isDecoratorArgs.spec.js.html",
+    "buildDocs/utils/isDecoratorArgs.spec.js",
+    "testFile"
+  ],
+  [
+    "builddocs/utils/isprototypeaccess.js",
+    "file/buildDocs/utils/isPrototypeAccess.js.html",
+    "buildDocs/utils/isPrototypeAccess.js",
     "file"
   ],
   [
@@ -1446,6 +1020,18 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "builddocs/utils/wrapconstructor.js",
+    "file/buildDocs/utils/wrapConstructor.js.html",
+    "buildDocs/utils/wrapConstructor.js",
+    "file"
+  ],
+  [
+    "builddocs/utils/wrapconstructor.spec.js",
+    "test-file/buildDocs/utils/wrapConstructor.spec.js.html",
+    "buildDocs/utils/wrapConstructor.spec.js",
+    "testFile"
+  ],
+  [
     "builddocs/wrap.js",
     "file/buildDocs/wrap.js.html",
     "buildDocs/wrap.js",
@@ -1459,499 +1045,709 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/buildDocs/curry.spec.js.html#lineNumber4",
+    "test-file/buildDocs/curry.spec.js.html#lineNumber6",
     "curry",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/curry.spec.js.html#lineNumber5",
+    "test-file/buildDocs/curry.spec.js.html#lineNumber7",
     "curry should curry the method with default arity",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/curry.spec.js.html#lineNumber19",
+    "test-file/buildDocs/curry.spec.js.html#lineNumber24",
+    "curry should curry the method with default arity (paramless)",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/curry.spec.js.html#lineNumber41",
     "curry should curry the method with fixed arity",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/curry.spec.js.html#lineNumber33",
+    "test-file/buildDocs/curry.spec.js.html#lineNumber58",
     "curry should retain the class context",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/curryAll.spec.js.html#lineNumber4",
+    "test-file/buildDocs/curryAll.spec.js.html#lineNumber6",
     "curryAll",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/curryAll.spec.js.html#lineNumber5",
+    "test-file/buildDocs/curryAll.spec.js.html#lineNumber7",
     "curryAll should curry the method with default arity",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/curryAll.spec.js.html#lineNumber19",
+    "test-file/buildDocs/curryAll.spec.js.html#lineNumber24",
+    "curryAll should curry the method with default arity (paramless)",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/curryAll.spec.js.html#lineNumber41",
     "curryAll should curry the method with fixed arity",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/curryAll.spec.js.html#lineNumber33",
+    "test-file/buildDocs/curryAll.spec.js.html#lineNumber58",
     "curryAll should not retain the class context",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/curryRight.spec.js.html#lineNumber4",
+    "test-file/buildDocs/curryRight.spec.js.html#lineNumber6",
     "curryRight",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/curryRight.spec.js.html#lineNumber5",
+    "test-file/buildDocs/curryRight.spec.js.html#lineNumber7",
     "curryRight should curry the method with default arity",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/curryRight.spec.js.html#lineNumber18",
+    "test-file/buildDocs/curryRight.spec.js.html#lineNumber23",
+    "curryRight should curry the method with default arity (paramless)",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/curryRight.spec.js.html#lineNumber39",
     "curryRight should retain the class context",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/curryRightAll.spec.js.html#lineNumber4",
+    "test-file/buildDocs/curryRightAll.spec.js.html#lineNumber6",
     "curryRightAll",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/curryRightAll.spec.js.html#lineNumber5",
+    "test-file/buildDocs/curryRightAll.spec.js.html#lineNumber7",
     "curryRightAll should curry the method with default arity",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/debounce.spec.js.html#lineNumber4",
+    "test-file/buildDocs/curryRightAll.spec.js.html#lineNumber23",
+    "curryRightAll should curry the method with default arity (paramless)",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/debounce.spec.js.html#lineNumber6",
     "debounce",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/debounce.spec.js.html#lineNumber50",
+    "test-file/buildDocs/debounce.spec.js.html#lineNumber60",
     "debounce should contain the flush and cancel methods",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/debounce.spec.js.html#lineNumber5",
+    "test-file/buildDocs/debounce.spec.js.html#lineNumber7",
     "debounce should debounce the method",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/debounce.spec.js.html#lineNumber26",
+    "test-file/buildDocs/debounce.spec.js.html#lineNumber31",
     "debounce should debounce the property setter",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/debounceAll.spec.js.html#lineNumber4",
+    "test-file/buildDocs/debounceAll.spec.js.html#lineNumber6",
     "debounceAll",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/debounceAll.spec.js.html#lineNumber5",
+    "test-file/buildDocs/debounceAll.spec.js.html#lineNumber7",
     "debounceAll should debounce the method across instances",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/defer.spec.js.html#lineNumber5",
+    "test-file/buildDocs/defer.spec.js.html#lineNumber7",
     "defer",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/defer.spec.js.html#lineNumber26",
+    "test-file/buildDocs/defer.spec.js.html#lineNumber62",
     "defer should debounce the property setter",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/defer.spec.js.html#lineNumber6",
+    "test-file/buildDocs/defer.spec.js.html#lineNumber92",
+    "defer should debounce the property setter (paramless)",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/defer.spec.js.html#lineNumber8",
     "defer should defer the method",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/delay.spec.js.html#lineNumber5",
+    "test-file/buildDocs/defer.spec.js.html#lineNumber35",
+    "defer should defer the method (paramless)",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/delay.spec.js.html#lineNumber7",
     "delay",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/delay.spec.js.html#lineNumber26",
+    "test-file/buildDocs/delay.spec.js.html#lineNumber35",
     "delay should debounce the property setter",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/delay.spec.js.html#lineNumber6",
+    "test-file/buildDocs/delay.spec.js.html#lineNumber8",
     "delay should delay the method",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/flip.spec.js.html#lineNumber4",
+    "test-file/buildDocs/flip.spec.js.html#lineNumber6",
     "flip",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/flip.spec.js.html#lineNumber5",
+    "test-file/buildDocs/flip.spec.js.html#lineNumber7",
     "flip should flip the arguments of the function",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/flow.spec.js.html#lineNumber4",
+    "test-file/buildDocs/flip.spec.js.html#lineNumber22",
+    "flip should flip the arguments of the resolved function",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/flow.spec.js.html#lineNumber6",
     "flow",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/flow.spec.js.html#lineNumber24",
+    "test-file/buildDocs/flow.spec.js.html#lineNumber31",
     "flow should compose and assign to the property",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/flow.spec.js.html#lineNumber5",
+    "test-file/buildDocs/flow.spec.js.html#lineNumber7",
     "flow should compose the functions",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/flowRight.spec.js.html#lineNumber4",
+    "test-file/buildDocs/flowRight.spec.js.html#lineNumber6",
     "flowRight",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/flowRight.spec.js.html#lineNumber5",
+    "test-file/buildDocs/flowRight.spec.js.html#lineNumber7",
     "flowRight should compose the functions",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/flowRight.spec.js.html#lineNumber24",
+    "test-file/buildDocs/flowRight.spec.js.html#lineNumber31",
     "flowRight should compose the property",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/memoize.spec.js.html#lineNumber5",
+    "test-file/buildDocs/memoize.spec.js.html#lineNumber7",
     "memoize",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/memoize.spec.js.html#lineNumber6",
+    "test-file/buildDocs/memoize.spec.js.html#lineNumber8",
     "memoize should memoize the function",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/memoize.spec.js.html#lineNumber97",
+    "test-file/buildDocs/memoize.spec.js.html#lineNumber36",
+    "memoize should memoize the function (paramless)",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/memoize.spec.js.html#lineNumber139",
     "memoize with custom cache",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/memoize.spec.js.html#lineNumber98",
+    "test-file/buildDocs/memoize.spec.js.html#lineNumber140",
     "memoize with custom cache should use the provided map",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/memoize.spec.js.html#lineNumber83",
+    "test-file/buildDocs/memoize.spec.js.html#lineNumber122",
     "memoize with custom map type",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/memoize.spec.js.html#lineNumber84",
+    "test-file/buildDocs/memoize.spec.js.html#lineNumber123",
     "memoize with custom map type should create the map of type",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/memoize.spec.js.html#lineNumber31",
+    "test-file/buildDocs/memoize.spec.js.html#lineNumber64",
     "memoize with function resolver",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/memoize.spec.js.html#lineNumber32",
+    "test-file/buildDocs/memoize.spec.js.html#lineNumber65",
     "memoize with function resolver should resolve the key",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/memoize.spec.js.html#lineNumber55",
+    "test-file/buildDocs/memoize.spec.js.html#lineNumber91",
     "memoize with string resolver",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/memoize.spec.js.html#lineNumber56",
+    "test-file/buildDocs/memoize.spec.js.html#lineNumber92",
     "memoize with string resolver should resolve the key",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/memoizeAll.spec.js.html#lineNumber5",
+    "test-file/buildDocs/memoizeAll.spec.js.html#lineNumber7",
     "memoizeAll",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/memoizeAll.spec.js.html#lineNumber6",
+    "test-file/buildDocs/memoizeAll.spec.js.html#lineNumber8",
     "memoizeAll should memoize the function",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/memoizeAll.spec.js.html#lineNumber28",
+    "test-file/buildDocs/memoizeAll.spec.js.html#lineNumber33",
+    "memoizeAll should memoize the function (paramless)",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/memoizeAll.spec.js.html#lineNumber58",
     "memoizeAll with function resolver",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/memoizeAll.spec.js.html#lineNumber29",
+    "test-file/buildDocs/memoizeAll.spec.js.html#lineNumber59",
     "memoizeAll with function resolver should resolve the key",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/mixin.spec.js.html#lineNumber4",
+    "test-file/buildDocs/mixin.spec.js.html#lineNumber6",
     "mixin",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/mixin.spec.js.html#lineNumber5",
+    "test-file/buildDocs/mixin.spec.js.html#lineNumber7",
     "mixin should mixin the object",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/combinationTest.spec.js.html#lineNumber8",
+    "test-file/buildDocs/combinationTest.spec.js.html#lineNumber10",
     "multiple decorators",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/combinationTest.spec.js.html#lineNumber30",
+    "test-file/buildDocs/combinationTest.spec.js.html#lineNumber35",
     "multiple decorators when combining proto and instance decorators",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/combinationTest.spec.js.html#lineNumber31",
+    "test-file/buildDocs/combinationTest.spec.js.html#lineNumber36",
     "multiple decorators when combining proto and instance decorators should apply both decorators",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/combinationTest.spec.js.html#lineNumber54",
+    "test-file/buildDocs/combinationTest.spec.js.html#lineNumber62",
     "multiple decorators when combining proto and instance decorators when proto is after instance",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/combinationTest.spec.js.html#lineNumber55",
+    "test-file/buildDocs/combinationTest.spec.js.html#lineNumber63",
     "multiple decorators when combining proto and instance decorators when proto is after instance should only apply the instance decorator",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/combinationTest.spec.js.html#lineNumber9",
+    "test-file/buildDocs/combinationTest.spec.js.html#lineNumber11",
     "multiple decorators when using multiple instance decorators",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/combinationTest.spec.js.html#lineNumber10",
+    "test-file/buildDocs/combinationTest.spec.js.html#lineNumber12",
     "multiple decorators when using multiple instance decorators should apply both decorators",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/negate.spec.js.html#lineNumber4",
+    "test-file/buildDocs/negate.spec.js.html#lineNumber6",
     "negate",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/negate.spec.js.html#lineNumber5",
+    "test-file/buildDocs/negate.spec.js.html#lineNumber7",
     "negate should inverse the result of the function",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/once.spec.js.html#lineNumber4",
+    "test-file/buildDocs/negate.spec.js.html#lineNumber22",
+    "negate should inverse the result of the function (paramless)",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/negate.spec.js.html#lineNumber37",
+    "negate should inverse the result of the resolved function",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/once.spec.js.html#lineNumber6",
     "once",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/once.spec.js.html#lineNumber5",
+    "test-file/buildDocs/once.spec.js.html#lineNumber7",
     "once should invoke the method only once",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/overArgs.spec.js.html#lineNumber5",
+    "test-file/buildDocs/overArgs.spec.js.html#lineNumber7",
     "overArgs",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/overArgs.spec.js.html#lineNumber6",
+    "test-file/buildDocs/overArgs.spec.js.html#lineNumber8",
     "overArgs should transform each argument",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/partial.spec.js.html#lineNumber4",
+    "test-file/buildDocs/partial.spec.js.html#lineNumber6",
     "partial",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/partial.spec.js.html#lineNumber5",
+    "test-file/buildDocs/partial.spec.js.html#lineNumber7",
     "partial should create a partially applied function",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/partialRight.spec.js.html#lineNumber4",
+    "test-file/buildDocs/partialRight.spec.js.html#lineNumber6",
     "partialRight",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/partialRight.spec.js.html#lineNumber5",
+    "test-file/buildDocs/partialRight.spec.js.html#lineNumber7",
     "partialRight should create a partially applied function",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/rearg.spec.js.html#lineNumber4",
+    "test-file/buildDocs/rearg.spec.js.html#lineNumber6",
     "rearg",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/rearg.spec.js.html#lineNumber5",
+    "test-file/buildDocs/rearg.spec.js.html#lineNumber7",
     "rearg should change the order of arguments",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/rest.spec.js.html#lineNumber4",
+    "test-file/buildDocs/rearg.spec.js.html#lineNumber22",
+    "rearg should change the order of the resolved function",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/rest.spec.js.html#lineNumber6",
     "rest",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/rest.spec.js.html#lineNumber5",
+    "test-file/buildDocs/rest.spec.js.html#lineNumber7",
     "rest should change the order of arguments",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/spread.spec.js.html#lineNumber4",
+    "test-file/buildDocs/rest.spec.js.html#lineNumber28",
+    "rest should change the order of arguments (paramless)",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/spread.spec.js.html#lineNumber6",
     "spread",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/spread.spec.js.html#lineNumber5",
+    "test-file/buildDocs/spread.spec.js.html#lineNumber7",
     "spread should spread the arguments",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/tap.spec.js.html#lineNumber4",
+    "test-file/buildDocs/spread.spec.js.html#lineNumber27",
+    "spread should spread the arguments (paramless)",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/tap.spec.js.html#lineNumber6",
     "tap",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/tap.spec.js.html#lineNumber5",
+    "test-file/buildDocs/tap.spec.js.html#lineNumber7",
     "tap should return the first argument",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/throttle.spec.js.html#lineNumber5",
+    "test-file/buildDocs/tap.spec.js.html#lineNumber22",
+    "tap should return the first argument (paramless)",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/throttle.spec.js.html#lineNumber7",
     "throttle",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/throttle.spec.js.html#lineNumber72",
+    "test-file/buildDocs/throttle.spec.js.html#lineNumber109",
     "throttle should contain the cancel and flush methods",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/throttle.spec.js.html#lineNumber51",
-    "throttle should debounce the property getter",
-    "test"
-  ],
-  [
-    "",
-    "test-file/buildDocs/throttle.spec.js.html#lineNumber26",
+    "test-file/buildDocs/throttle.spec.js.html#lineNumber52",
     "throttle should debounce the property setter",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/throttle.spec.js.html#lineNumber6",
+    "test-file/buildDocs/throttle.spec.js.html#lineNumber8",
     "throttle should throttle the method",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/unary.spec.js.html#lineNumber4",
+    "test-file/buildDocs/throttle.spec.js.html#lineNumber31",
+    "throttle should throttle the method (paramless)",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/unary.spec.js.html#lineNumber6",
     "unary",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/unary.spec.js.html#lineNumber5",
+    "test-file/buildDocs/unary.spec.js.html#lineNumber7",
     "unary should only invoke with one argument",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/wrap.spec.js.html#lineNumber4",
+    "test-file/buildDocs/unary.spec.js.html#lineNumber26",
+    "unary should only invoke with one argument (paramless)",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/utils/isDecoratorArgs.spec.js.html#lineNumber5",
+    "when determining if args are from a decorator",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/utils/isDecoratorArgs.spec.js.html#lineNumber6",
+    "when determining if args are from a decorator and when the arguments are gte to 2",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/utils/isDecoratorArgs.spec.js.html#lineNumber49",
+    "when determining if args are from a decorator and when the arguments are gte to 2",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/utils/isDecoratorArgs.spec.js.html#lineNumber7",
+    "when determining if args are from a decorator and when the arguments are gte to 2 and when the first argument is an object",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/utils/isDecoratorArgs.spec.js.html#lineNumber8",
+    "when determining if args are from a decorator and when the arguments are gte to 2 and when the first argument is an object and when the second argument is a string",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/utils/isDecoratorArgs.spec.js.html#lineNumber31",
+    "when determining if args are from a decorator and when the arguments are gte to 2 and when the first argument is an object and when the second argument is a string and when the first argument does not have a constructor property",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/utils/isDecoratorArgs.spec.js.html#lineNumber32",
+    "when determining if args are from a decorator and when the arguments are gte to 2 and when the first argument is an object and when the second argument is a string and when the first argument does not have a constructor property should return false",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/utils/isDecoratorArgs.spec.js.html#lineNumber9",
+    "when determining if args are from a decorator and when the arguments are gte to 2 and when the first argument is an object and when the second argument is a string and when the first argument has a constructor property",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/utils/isDecoratorArgs.spec.js.html#lineNumber20",
+    "when determining if args are from a decorator and when the arguments are gte to 2 and when the first argument is an object and when the second argument is a string and when the first argument has a constructor property and when the constructors prototype is not the first argument",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/utils/isDecoratorArgs.spec.js.html#lineNumber21",
+    "when determining if args are from a decorator and when the arguments are gte to 2 and when the first argument is an object and when the second argument is a string and when the first argument has a constructor property and when the constructors prototype is not the first argument should return false",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/utils/isDecoratorArgs.spec.js.html#lineNumber10",
+    "when determining if args are from a decorator and when the arguments are gte to 2 and when the first argument is an object and when the second argument is a string and when the first argument has a constructor property and when the constructors prototype is the first argument",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/utils/isDecoratorArgs.spec.js.html#lineNumber11",
+    "when determining if args are from a decorator and when the arguments are gte to 2 and when the first argument is an object and when the second argument is a string and when the first argument has a constructor property and when the constructors prototype is the first argument should return true",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/utils/isDecoratorArgs.spec.js.html#lineNumber37",
+    "when determining if args are from a decorator and when the arguments are gte to 2 and when the first argument is an object and when the second argument is not a string",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/utils/isDecoratorArgs.spec.js.html#lineNumber38",
+    "when determining if args are from a decorator and when the arguments are gte to 2 and when the first argument is an object and when the second argument is not a string should return false",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/utils/isDecoratorArgs.spec.js.html#lineNumber43",
+    "when determining if args are from a decorator and when the arguments are gte to 2 and when the first argument is not an object",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/utils/isDecoratorArgs.spec.js.html#lineNumber44",
+    "when determining if args are from a decorator and when the arguments are gte to 2 and when the first argument is not an object should return false",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/utils/isDecoratorArgs.spec.js.html#lineNumber50",
+    "when determining if args are from a decorator and when the arguments are gte to 2 should return false",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/utils/wrapConstructor.spec.js.html#lineNumber5",
+    "when wrapping a constructor",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/utils/wrapConstructor.spec.js.html#lineNumber6",
+    "when wrapping a constructor should retain the original name of the constructor",
+    "test"
+  ],
+  [
+    "",
+    "test-file/buildDocs/wrap.spec.js.html#lineNumber6",
     "wrap",
     "test"
   ],
   [
     "",
-    "test-file/buildDocs/wrap.spec.js.html#lineNumber5",
+    "test-file/buildDocs/wrap.spec.js.html#lineNumber7",
     "wrap should wrap the function",
     "test"
   ]

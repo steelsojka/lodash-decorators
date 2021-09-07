@@ -1,0 +1,454 @@
+[
+  {
+    "name": "Delay",
+    "filePath": "buildDocs/delay.js",
+    "lines": [
+      {
+        "lineNumber": 18,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 19,
+        "line": " * Invokes func after wait milliseconds. Any additional arguments are provided to func when it's invoked."
+      },
+      {
+        "lineNumber": 20,
+        "line": " *"
+      },
+      {
+        "lineNumber": 21,
+        "line": " * @param {number} wait The number of milliseconds to delay invocation."
+      },
+      {
+        "lineNumber": 22,
+        "line": " * @param {...*} [args] Additional arguments to invoke the function with"
+      },
+      {
+        "lineNumber": 23,
+        "line": " * @example"
+      },
+      {
+        "lineNumber": 24,
+        "line": " *"
+      },
+      {
+        "lineNumber": 25,
+        "line": " * class MyClass {"
+      },
+      {
+        "lineNumber": 26,
+        "line": " *   value = 100;"
+      },
+      {
+        "lineNumber": 27,
+        "line": " *"
+      },
+      {
+        "lineNumber": 28,
+        "line": " *   @Delay(20)"
+      },
+      {
+        "lineNumber": 29,
+        "line": " *   add(a) {"
+      },
+      {
+        "lineNumber": 30,
+        "line": " *     this.value += a;"
+      },
+      {
+        "lineNumber": 31,
+        "line": " *   }"
+      },
+      {
+        "lineNumber": 32,
+        "line": " * }"
+      },
+      {
+        "lineNumber": 33,
+        "line": " *"
+      },
+      {
+        "lineNumber": 34,
+        "line": " * const myClass = new MyClass();"
+      },
+      {
+        "lineNumber": 35,
+        "line": " *"
+      },
+      {
+        "lineNumber": 36,
+        "line": " * myClass.add(10);"
+      },
+      {
+        "lineNumber": 37,
+        "line": " *"
+      },
+      {
+        "lineNumber": 38,
+        "line": " * myClass.value; // => 100;"
+      },
+      {
+        "lineNumber": 39,
+        "line": " *"
+      },
+      {
+        "lineNumber": 40,
+        "line": " * setTimeout(() => {"
+      },
+      {
+        "lineNumber": 41,
+        "line": " *   myClass.value; // => 110;"
+      },
+      {
+        "lineNumber": 42,
+        "line": " * }, 30);"
+      },
+      {
+        "lineNumber": 43,
+        "line": " */"
+      },
+      {
+        "lineNumber": 44,
+        "line": "function Delay(wait) {"
+      }
+    ],
+    "codeParams": [
+      "wait"
+    ],
+    "docParams": [
+      "wait",
+      "args"
+    ]
+  },
+  {
+    "name": "Mixin",
+    "filePath": "buildDocs/mixin.js",
+    "lines": [
+      {
+        "lineNumber": 3,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 4,
+        "line": " * Mixins an object into the classes prototype."
+      },
+      {
+        "lineNumber": 5,
+        "line": " * @export"
+      },
+      {
+        "lineNumber": 6,
+        "line": " * @param {...Object[]} srcs"
+      },
+      {
+        "lineNumber": 7,
+        "line": " * @returns {ClassDecorator}"
+      },
+      {
+        "lineNumber": 8,
+        "line": " * @example"
+      },
+      {
+        "lineNumber": 9,
+        "line": " *"
+      },
+      {
+        "lineNumber": 10,
+        "line": " * const myMixin = {"
+      },
+      {
+        "lineNumber": 11,
+        "line": " *   blorg: () => 'blorg!'"
+      },
+      {
+        "lineNumber": 12,
+        "line": " * }"
+      },
+      {
+        "lineNumber": 13,
+        "line": " *"
+      },
+      {
+        "lineNumber": 14,
+        "line": " * @Mixin(myMixin)"
+      },
+      {
+        "lineNumber": 15,
+        "line": " * class MyClass {}"
+      },
+      {
+        "lineNumber": 16,
+        "line": " *"
+      },
+      {
+        "lineNumber": 17,
+        "line": " * const myClass = new MyClass();"
+      },
+      {
+        "lineNumber": 18,
+        "line": " *"
+      },
+      {
+        "lineNumber": 19,
+        "line": " * myClass.blorg(); // => 'blorg!'"
+      },
+      {
+        "lineNumber": 20,
+        "line": " */"
+      },
+      {
+        "lineNumber": 21,
+        "line": "function Mixin() {"
+      }
+    ],
+    "codeParams": [],
+    "docParams": [
+      "srcs"
+    ]
+  },
+  {
+    "name": "OverArgs",
+    "filePath": "buildDocs/overArgs.js",
+    "lines": [
+      {
+        "lineNumber": 6,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 7,
+        "line": " * Creates a function that invokes func with its arguments transformed."
+      },
+      {
+        "lineNumber": 8,
+        "line": " * @export"
+      },
+      {
+        "lineNumber": 9,
+        "line": " * @param {...Function[]} transforms"
+      },
+      {
+        "lineNumber": 10,
+        "line": " * @returns {LodashMethodDecorator}"
+      },
+      {
+        "lineNumber": 11,
+        "line": " * @example"
+      },
+      {
+        "lineNumber": 12,
+        "line": " * class MyClass {"
+      },
+      {
+        "lineNumber": 13,
+        "line": " *   @OverArgs(_.castArray)"
+      },
+      {
+        "lineNumber": 14,
+        "line": " *   fn(list) {"
+      },
+      {
+        "lineNumber": 15,
+        "line": " *     return list;"
+      },
+      {
+        "lineNumber": 16,
+        "line": " *   }"
+      },
+      {
+        "lineNumber": 17,
+        "line": " * }"
+      },
+      {
+        "lineNumber": 18,
+        "line": " *"
+      },
+      {
+        "lineNumber": 19,
+        "line": " * const myClass = new MyClass();"
+      },
+      {
+        "lineNumber": 20,
+        "line": " *"
+      },
+      {
+        "lineNumber": 21,
+        "line": " * myClass.fn([ 1 ]); //=> [ 1 ];"
+      },
+      {
+        "lineNumber": 22,
+        "line": " * myClass.fn(1); //=> [ 1 ];"
+      },
+      {
+        "lineNumber": 23,
+        "line": " */"
+      },
+      {
+        "lineNumber": 24,
+        "line": "function OverArgs() {"
+      }
+    ],
+    "codeParams": [],
+    "docParams": [
+      "transforms"
+    ]
+  },
+  {
+    "name": "Partial",
+    "filePath": "buildDocs/partial.js",
+    "lines": [
+      {
+        "lineNumber": 6,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 7,
+        "line": " * Partially applies arguments to a function."
+      },
+      {
+        "lineNumber": 8,
+        "line": " * @export"
+      },
+      {
+        "lineNumber": 9,
+        "line": " * @param {...any[]} partials"
+      },
+      {
+        "lineNumber": 10,
+        "line": " * @returns {PropertyDecorator}"
+      },
+      {
+        "lineNumber": 11,
+        "line": " * @example"
+      },
+      {
+        "lineNumber": 12,
+        "line": " * class MyClass {"
+      },
+      {
+        "lineNumber": 13,
+        "line": " *   lastName: string = 'Schmo';"
+      },
+      {
+        "lineNumber": 14,
+        "line": " *"
+      },
+      {
+        "lineNumber": 15,
+        "line": " *   @Partial('fn', 'Joe')"
+      },
+      {
+        "lineNumber": 16,
+        "line": " *   fn2: () => string;"
+      },
+      {
+        "lineNumber": 17,
+        "line": " *"
+      },
+      {
+        "lineNumber": 18,
+        "line": " *   fn(name: string): string {"
+      },
+      {
+        "lineNumber": 19,
+        "line": " *     return `${name} ${this.lastName}`;"
+      },
+      {
+        "lineNumber": 20,
+        "line": " *   }"
+      },
+      {
+        "lineNumber": 21,
+        "line": " * }"
+      },
+      {
+        "lineNumber": 22,
+        "line": " *"
+      },
+      {
+        "lineNumber": 23,
+        "line": " * const myClass = new MyClass();"
+      },
+      {
+        "lineNumber": 24,
+        "line": " *"
+      },
+      {
+        "lineNumber": 25,
+        "line": " * myClass.fn2(); //=> 'Joe Schmo'"
+      },
+      {
+        "lineNumber": 26,
+        "line": " */"
+      },
+      {
+        "lineNumber": 27,
+        "line": "function Partial() {"
+      }
+    ],
+    "codeParams": [],
+    "docParams": [
+      "partials"
+    ]
+  },
+  {
+    "name": "resolveFunction",
+    "filePath": "buildDocs/utils/resolveFunction.js",
+    "lines": [
+      {
+        "lineNumber": 5,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 6,
+        "line": "  * Resolves a function on the current target object. It first will"
+      },
+      {
+        "lineNumber": 7,
+        "line": "  * try and resolve on the context object, then the target object,"
+      },
+      {
+        "lineNumber": 8,
+        "line": "  * then an error will be thrown if the method can not be resolved."
+      },
+      {
+        "lineNumber": 9,
+        "line": "  * @private"
+      },
+      {
+        "lineNumber": 10,
+        "line": "  * @param {Function|string} method The method or method name."
+      },
+      {
+        "lineNumber": 11,
+        "line": "  * @param {Object} [context] The context object to resolve from."
+      },
+      {
+        "lineNumber": 12,
+        "line": "  * @param {Object} [target] The target object to resolve from."
+      },
+      {
+        "lineNumber": 13,
+        "line": "  * @returns {Function} The resolved function."
+      },
+      {
+        "lineNumber": 14,
+        "line": "  */"
+      },
+      {
+        "lineNumber": 15,
+        "line": "function resolveFunction(method, context, target, throwNotFound) {"
+      }
+    ],
+    "codeParams": [
+      "method",
+      "context",
+      "target",
+      "throwNotFound"
+    ],
+    "docParams": [
+      "method",
+      "context",
+      "target"
+    ]
+  }
+]
