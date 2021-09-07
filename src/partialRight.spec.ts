@@ -5,7 +5,7 @@ import { PartialRight } from './partialRight';
 describe('partialRight', () => {
   it('should create a partially applied function', () => {
     class MyClass {
-      firstName: string = 'Avry';
+      firstName = 'Avry';
 
       @PartialRight('fn', 'Sojka')
       fn2: () => string;

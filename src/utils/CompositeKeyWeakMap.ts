@@ -2,6 +2,7 @@ import isUndefined = require('lodash/isUndefined');
 
 /**
  * A map for weakly holding nested references.
+ *
  * @private
  * @export
  * @class CompositeKeyWeakMap

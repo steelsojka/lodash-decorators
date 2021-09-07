@@ -6,7 +6,7 @@ describe('tap', () => {
   it('should return the first argument', () => {
     class MyClass {
       @Tap()
-      fn(n: number): any {
+      fn(_n: number): any {
         return 10;
       }
     }
@@ -19,7 +19,7 @@ describe('tap', () => {
   it('should return the first argument (paramless)', () => {
     class MyClass {
       @Tap
-      fn(n: number): any {
+      fn(_n: number): any {
         return 10;
       }
     }

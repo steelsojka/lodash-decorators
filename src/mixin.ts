@@ -2,6 +2,7 @@ import assign = require('lodash/assign');
 
 /**
  * Mixins an object into the classes prototype.
+ *
  * @export
  * @param {...Object[]} srcs
  * @returns {ClassDecorator}

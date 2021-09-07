@@ -11,6 +11,7 @@ const PROPERTY_EXCLUDES = [
 /**
  * Wraps a constructor in a wrapper function and copies all static properties
  * and methods to the new constructor.
+ *
  * @export
  * @param {Function} Ctor
  * @param {(Ctor: Function, ...args: any[]) => any} wrapper

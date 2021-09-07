@@ -15,6 +15,6 @@ export class PartialValueApplicator extends Applicator {
       }
 
       return execute(fn, ...args.slice(argIndex)).apply(this, invokeArgs);
-    }
+    };
   }
 }

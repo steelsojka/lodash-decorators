@@ -9,6 +9,7 @@ const decorator = DecoratorFactory.createInstanceDecorator(
 
 /**
  * Partially applies arguments to a function.
+ *
  * @export
  * @param {...any[]} partials
  * @returns {PropertyDecorator}

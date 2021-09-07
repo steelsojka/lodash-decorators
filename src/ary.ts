@@ -9,6 +9,7 @@ const decorator = DecoratorFactory.createDecorator(
 
 /**
  * Creates a function that invokes func, with up to n arguments, ignoring any additional arguments.
+ *
  * @param {number} n The arity cap.
  * @example
  *

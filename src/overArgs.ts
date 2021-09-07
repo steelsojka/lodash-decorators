@@ -9,6 +9,7 @@ const decorator = DecoratorFactory.createDecorator(
 
 /**
  * Creates a function that invokes func with its arguments transformed.
+ *
  * @export
  * @param {...Function[]} transforms
  * @returns {LodashMethodDecorator}

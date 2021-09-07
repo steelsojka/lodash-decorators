@@ -5,6 +5,7 @@ import { Bind } from './bind';
 
 /**
  * Binds methods of an object to the object itself, overwriting the existing method.
+ *
  * @export
  * @param {string[]} [methods=[]]
  * @returns {ClassDecorator}

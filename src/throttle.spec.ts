@@ -9,7 +9,7 @@ describe('throttle', () => {
 
     class MyClass {
       @Throttle(10)
-      fn(n: number) {
+      fn(_n: number) {
         _spy();
       }
     }
@@ -33,7 +33,7 @@ describe('throttle', () => {
 
     class MyClass {
       @Throttle
-      fn(n: number) {
+      fn(_n: number) {
         _spy();
       }
     }
@@ -51,7 +51,7 @@ describe('throttle', () => {
 
   it('should debounce the property setter', (done) => {
     class MyClass {
-      private _value: number = 100;
+      private _value = 100;
 
       @ThrottleSetter(10)
       set value(value: number) {
@@ -81,7 +81,7 @@ describe('throttle', () => {
   // Skipping this test for now.
   it.skip('should debounce the property getter', (done) => {
     class MyClass {
-      private _value: number = 0;
+      private _value = 0;
 
       @ThrottleGetter(10)
       get value(): number {

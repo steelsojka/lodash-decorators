@@ -29,7 +29,7 @@ describe('delay', () => {
 
   it('should debounce the property setter', (done) => {
     class MyClass {
-      private _value: number = 100;
+      private _value = 100;
 
       @Delay(15)
       set value(value: number) {

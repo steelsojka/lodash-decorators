@@ -14,7 +14,7 @@ describe('multiple decorators', () => {
       class MyClass {
         @Bind()
         @Memoize()
-        fn(n: number) {
+        fn(_n: number) {
           expect(this).to.equal(myClass);
           _spy();
         }
