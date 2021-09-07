@@ -1,12 +1,17 @@
 {
-  "source": "./buildDocs",
-  "destination": "./docs",
-  "title": "Lodash Decorators Documentation",
-  "access": [ "public" ],
-  "excludes": [ ".*\\.spec\\.js" ],
-  "test": {
-    "type": "mocha",
-    "source": "./buildDocs",
-    "includes": [ ".*\\.spec\\.js" ]
-  }
+    "source": "./src",
+    "destination": "./docs",
+    "plugins": [
+        {"name": "esdoc-standard-plugin","option": {
+            "accessor": {"access": [ "public" ], "autoPrivate": true},
+            "test": {
+                "type": "mocha",
+                "source": "./src",
+                "includes": [ ".*\\.spec\\.ts" ]
+            },
+            "brand": {"title": "Lodash Decorators Documentation"}
+        }},
+        {"name": "esdoc-typescript-plugin", "option": {"enable": true}}
+    ],
+    "excludes": [ ".*\\.spec\\.ts" ]
 }

@@ -7,28 +7,18 @@
     "node": ">=0.12.0"
   },
   "scripts": {
-    "clean": "npm run build:clean; npm run build:docs:clean; npm run test:clean",
-    "pretest": "npm run build:test",
-    "test": "mocha --opts mocha.opts",
-    "test:clean": "del test",
-    "posttest": "npm run test:clean",
+    "clean": "npm run build:clean",
+    "test": "mocha",
     "prebuild": "npm run lint && npm run build:clean",
-    "prebuild:test": "npm run test:clean",
-    "prebuild:docs": "npm run build:docs:clean",
     "build:clean": "del '*.js' '*.js.map' '*.d.ts' applicators factory utils",
-    "build:docs:clean": "del buildDocs",
     "build": "tsc -p tsconfig.build.json",
-    "build:test": "tsc -p tsconfig.test.json",
-    "build:docs": "tsc -p tsconfig.docs.json",
-    "predocs": "npm run build:docs",
-    "postdocs": "npm run build:docs:clean",
     "docs": "del docs && esdoc",
     "docs:serve": "http-server ./docs",
     "docs:publish": "git subtree push --prefix docs origin gh-pages",
     "readme": "doctoc ./README.md",
     "release": "npm run build && npm run docs && npm run readme",
-    "lint": "tslint src/**",
-    "lint:fix": "tslint src/** --fix",
+    "lint": "eslint src/**",
+    "lint:fix": "npm run lint -- --fix",
     "version": "standard-version"
   },
   "main": "index.js",
@@ -49,29 +39,42 @@
     "url": "http://github.com/steelsojka/lodash-decorators"
   },
   "devDependencies": {
-    "@types/chai": "^3.5.1",
-    "@types/lodash": "^4.14.109",
-    "@types/mocha": "^2.2.48",
-    "@types/node": "^7.0.65",
-    "@types/sinon": "^2.3.7",
-    "chai": "~2.2.0",
-    "del-cli": "^0.2.1",
-    "doctoc": "^1.3.1",
+    "@types/chai": "^4.2.21",
+    "@types/lodash": "^4.14.172",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.7.13",
+    "@types/sinon": "^10.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
+    "chai": "^4.3.4",
+    "del-cli": "^4.0.1",
+    "doctoc": "^2.0.1",
     "esdoc": "^1.1.0",
-    "http-server": "^0.11.1",
-    "lodash": "^4.17.10",
-    "mocha": "^5.2.0",
-    "sinon": "~1.14.1",
-    "standard-version": "^8.0.1",
-    "ts-node": "^3.0.2",
-    "tslint": "^5.10.0",
-    "tslint-language-service": "^0.9.9",
-    "typescript": "~2.3.4"
+    "esdoc-standard-plugin": "^1.0.0",
+    "esdoc-typescript-plugin": "^1.0.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsdoc": "^36.1.0",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "http-server": "^13.0.1",
+    "lodash": "^4.17.21",
+    "mocha": "^9.1.1",
+    "sinon": "^11.1.2",
+    "standard-version": "^9.3.1",
+    "ts-node": "^10.2.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.2"
   },
   "peerDependencies": {
-    "lodash": "4.x"
+    "lodash": "^4.0.0",
+    "tslib": "^2.0.0"
   },
-  "dependencies": {
-    "tslib": "^1.9.2"
+  "mocha": {
+    "reporter": "spec",
+    "spec": [
+      "src/**/*.spec.ts"
+    ],
+    "require": "ts-node/register"
   }
 }
