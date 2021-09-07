@@ -36,6 +36,9 @@ Decorators using lodash functions. View the [API docs](https://steelsojka.github
     - [Prototype decorator order no longer throws an error](#prototype-decorator-order-no-longer-throws-an-error)
     - [Other breaking changes](#other-breaking-changes)
   - [v4 Improvements](#v4-improvements)
+- [Note for ESM](#note-for-esm)
+  - [Example configuration for ESM with Webpack](#example-configuration-for-esm-with-webpack)
+  - [Example configuration for ESM with Rollup](#example-configuration-for-esm-with-rollup)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -426,3 +429,37 @@ If a prototype decorator comes after an instance decorator it will be ignored si
 -   Better performance with instance decorators.
 -   Single imports with `import { Debounce } from 'lodash-decorators/debounce'`;
 -   Composition decorators can be used on properties. These will generate the composed function.
+
+## Note for ESM
+
+Since version >6.0.1, `lodash-decorators` is ESM compatible with backwards compatibility with node 12 or tooling that fallbacks to CommonJS. Yet, this library still relies on `lodash`, and not its ESM counterpart `lodash-es`.
+
+To avoid duplications and leverage tree shaking, you should configure your bundler to alias `lodash-es` as `lodash`
+
+### Example configuration for ESM with Webpack
+
+```js
+module.exports = {
+    resolve: {
+        alias: {
+            lodash: 'lodash-es',
+        },
+    },
+};
+```
+
+### Example configuration for ESM with Rollup
+
+```js
+import alias from '@rollup/plugin-alias';
+
+module.exports = {
+    plugins: [
+        alias({
+            entries: [
+                lodash: 'lodash-es',
+            ]
+        })
+    ]
+}
+```

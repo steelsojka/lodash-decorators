@@ -88,6 +88,11 @@
 <li><a href="#v4-improvements">v4 Improvements</a></li>
 </ul>
 </li>
+<li><a href="#note-for-esm">Note for ESM</a><ul>
+<li><a href="#example-configuration-for-esm-with-webpack">Example configuration for ESM with Webpack</a></li>
+<li><a href="#example-configuration-for-esm-with-rollup">Example configuration for ESM with Rollup</a></li>
+</ul>
+</li>
 </ul>
 <p><!-- END doctoc generated TOC please keep comment here to allow auto update -->
 </p>
@@ -385,6 +390,28 @@ removed and decorators that make sense to apply to getters/setters are configure
 <li>Single imports with <code>import { Debounce } from &apos;lodash-decorators/debounce&apos;</code>;</li>
 <li>Composition decorators can be used on properties. These will generate the composed function.</li>
 </ul>
+<h2 id="note-for-esm">Note for ESM</h2><p>Since version &gt;6.0.1, <code>lodash-decorators</code> is ESM compatible with backwards compatibility with node 12 or tooling that fallbacks to CommonJS. Yet, this library still relies on <code>lodash</code>, and not its ESM counterpart <code>lodash-es</code>.</p>
+<p>To avoid duplications and leverage tree shaking, you should configure your bundler to alias <code>lodash-es</code> as <code>lodash</code></p>
+<h3 id="example-configuration-for-esm-with-webpack">Example configuration for ESM with Webpack</h3><pre><code class="lang-js"><code class="source-code prettyprint">module.exports = {
+    resolve: {
+        alias: {
+            lodash: &apos;lodash-es&apos;,
+        },
+    },
+};</code>
+</code></pre>
+<h3 id="example-configuration-for-esm-with-rollup">Example configuration for ESM with Rollup</h3><pre><code class="lang-js"><code class="source-code prettyprint">import alias from &apos;@rollup/plugin-alias&apos;;
+
+module.exports = {
+    plugins: [
+        alias({
+            entries: [
+                lodash: &apos;lodash-es&apos;,
+            ]
+        })
+    ]
+}</code>
+</code></pre>
 </div>
 </div>
 
