@@ -15,9 +15,11 @@
     "prebuild": "npm run lint && npm run build:clean",
     "prebuild:test": "npm run test:clean",
     "prebuild:docs": "npm run build:docs:clean",
-    "build:clean": "del '*.js' '*.js.map' '*.d.ts' applicators factory utils",
+    "build:clean": "del '*.js' '*.js.map' '*.d.ts' applicators factory utils dist",
     "build:docs:clean": "del buildDocs",
-    "build": "tsc -p tsconfig.build.json",
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc -p tsconfig.build.cjs.json && echo '{\"type\": \"commonjs\"}' > dist/cjs/package.json",
+    "build:esm": "tsc -p tsconfig.build.esm.json && echo '{\"type\": \"module\"}' > dist/esm/package.json",
     "build:test": "tsc -p tsconfig.test.json",
     "build:docs": "tsc -p tsconfig.docs.json",
     "predocs": "npm run build:docs",
@@ -31,7 +33,9 @@
     "lint:fix": "tslint src/** --fix",
     "version": "standard-version"
   },
-  "main": "index.js",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "type": "commonjs",
   "typings": "index.d.ts",
   "keywords": [
     "lodash",
@@ -40,6 +44,12 @@
     "ES2016",
     "utility"
   ],
+  "exports": {
+    "./*": {
+        "import": "./dist/esm/*.js",
+        "require": "./dist/cjs/*.js"
+    }
+  },
   "license": "MIT",
   "bugs": {
     "url": "http://github.com/steelsojka/lodash-decorators/issues"
