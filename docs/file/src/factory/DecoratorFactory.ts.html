@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/factory/DecoratorFactory.ts | Lodash Decorators Documentation</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="A collection of decorators using lodash at it&apos;s core."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Lodash Decorators Documentation"><meta property="twitter:description" content="A collection of decorators using lodash at it&apos;s core."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a href="http://github.com/steelsojka/lodash-decorators">Repository</a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-After">After</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AfterAll">AfterAll</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Ary">Ary</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Before">Before</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BeforeAll">BeforeAll</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-BindAll">BindAll</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Debounce">Debounce</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-DebounceAll">DebounceAll</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Delay">Delay</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Flip">Flip</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Flow">Flow</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-FlowRight">FlowRight</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Mixin">Mixin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-OverArgs">OverArgs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Partial">Partial</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-PartialRight">PartialRight</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Rearg">Rearg</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ThrottleAll">ThrottleAll</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Wrap">Wrap</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-decorator">decorator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-decorator">decorator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-decorator">decorator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Attempt">Attempt</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-decorator">decorator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-decorator">decorator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Bind">Bind</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Curry">Curry</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CurryAll">CurryAll</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CurryRight">CurryRight</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CurryRightAll">CurryRightAll</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-decorator">decorator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-decorator">decorator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Defer">Defer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-decorator">decorator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-decorator">decorator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-decorator">decorator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-decorator">decorator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Memoize">Memoize</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MemoizeAll">MemoizeAll</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Negate">Negate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Once">Once</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-OnceAll">OnceAll</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-decorator">decorator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-decorator">decorator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-decorator">decorator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-decorator">decorator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Rest">Rest</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Spread">Spread</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Tap">Tap</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Throttle">Throttle</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ThrottleGetter">ThrottleGetter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ThrottleSetter">ThrottleSetter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-decorator">decorator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Unary">Unary</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-decorator">decorator</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#applicators">applicators</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/applicators/Applicator.ts~Applicator.html">Applicator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/applicators/BindApplicator.ts~BindApplicator.html">BindApplicator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/applicators/ComposeApplicator.ts~ComposeApplicator.html">ComposeApplicator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/applicators/InvokeApplicator.ts~InvokeApplicator.html">InvokeApplicator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/applicators/MemoizeApplicator.ts~MemoizeApplicator.html">MemoizeApplicator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/applicators/PartialApplicator.ts~PartialApplicator.html">PartialApplicator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/applicators/PartialValueApplicator.ts~PartialValueApplicator.html">PartialValueApplicator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/applicators/PartialedApplicator.ts~PartialedApplicator.html">PartialedApplicator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/applicators/PostValueApplicator.ts~PostValueApplicator.html">PostValueApplicator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/applicators/PreValueApplicator.ts~PreValueApplicator.html">PreValueApplicator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/applicators/WrapApplicator.ts~WrapApplicator.html">WrapApplicator</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#factory">factory</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/factory/DecoratorConfig.ts~DecoratorConfig.html">DecoratorConfig</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/factory/DecoratorFactory.ts~InternalDecoratorFactory.html">InternalDecoratorFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DecoratorFactory">DecoratorFactory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-InstanceChainMap">InstanceChainMap</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#utils">utils</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/CompositeKeyWeakMap.ts~CompositeKeyWeakMap.html">CompositeKeyWeakMap</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assignAll">assignAll</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assignProperty">assignProperty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-bind">bind</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-copyMetadata">copyMetadata</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isMethodOrPropertyDecoratorArgs">isMethodOrPropertyDecoratorArgs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isPrototypeAccess">isPrototypeAccess</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-log">log</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-resolveFunction">resolveFunction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-returnAtIndex">returnAtIndex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-wrapConstructor">wrapConstructor</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/factory/DecoratorFactory.ts</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import isFunction = require(&apos;lodash/isFunction&apos;);
+
+import {
+  InstanceChainMap,
+  LodashDecorator,
+  InstanceChainContext
+} from &apos;./common&apos;;
+import { DecoratorConfig } from &apos;./DecoratorConfig&apos;;
+import {
+  copyMetadata,
+  bind,
+  isMethodOrPropertyDecoratorArgs,
+  isPrototypeAccess
+} from &apos;../utils&apos;;
+
+export type GenericDecorator = (...args: any[]) =&gt; LodashDecorator;
+
+export class InternalDecoratorFactory {
+  createDecorator(config: DecoratorConfig): GenericDecorator {
+    const { applicator, optionalParams } = config;
+
+    return (...args: any[]): LodashDecorator =&gt; {
+      let params = args;
+
+      const decorator = (target: Object, name: string, _descriptor?: PropertyDescriptor): PropertyDescriptor =&gt; {
+        const descriptor = this._resolveDescriptor(target, name, _descriptor);
+        const { value, get, set } = descriptor;
+
+        // If this decorator is being applied after an instance decorator we simply ignore it
+        // as we can&apos;t apply it correctly.
+        if (!InstanceChainMap.has([ target, name ])) {
+          if (isFunction(value)) {
+            descriptor.value = copyMetadata(applicator.apply({ config, target, value, args: params }), value);
+          } else if (isFunction(get) &amp;&amp; config.getter) {
+            descriptor.get = copyMetadata(applicator.apply({ config, target, value: get, args: params }), get);
+          } else if (isFunction(set) &amp;&amp; config.setter) {
+            descriptor.set = copyMetadata(applicator.apply({ config, target, value: set, args: params }), set);
+          }
+        }
+
+        return descriptor;
+      };
+
+      if (optionalParams &amp;&amp; isMethodOrPropertyDecoratorArgs(...args)) {
+        params = [];
+
+        return decorator(args[0], args[1], args[2]) as any;
+      }
+
+      return decorator;
+    };
+  }
+
+  createInstanceDecorator(config: DecoratorConfig): GenericDecorator {
+    const { applicator, bound, optionalParams } = config;
+
+    return (...args: any[]): LodashDecorator =&gt; {
+      let params = args;
+      const decorator = (target: Object, name: string, _descriptor?: PropertyDescriptor): PropertyDescriptor =&gt; {
+        const descriptor = this._resolveDescriptor(target, name, _descriptor);
+        const { value, writable, enumerable, configurable, get, set } = descriptor;
+        const isFirstInstance = !InstanceChainMap.has([ target, name ]);
+        const chainData = InstanceChainMap.get([ target, name ]) || { fns: [], properties: [] };
+        const isGetter = isFirstInstance &amp;&amp; isFunction(get);
+        const isSetter = isFirstInstance &amp;&amp; isFunction(set);
+        const isMethod = isFirstInstance &amp;&amp; isFunction(value);
+        const isProperty = isFirstInstance &amp;&amp; !isGetter &amp;&amp; !isSetter &amp;&amp; !isMethod;
+        const baseValue = isGetter ? get : isMethod ? value : undefined;
+
+        chainData.properties.push(name);
+        chainData.fns.push((fn: Function, instance: any, context: InstanceChainContext) =&gt; {
+          if (!this._isApplicable(context, config)) {
+            return fn;
+          }
+
+          if (bound) {
+            fn = bind(fn, instance);
+          }
+
+          return copyMetadata(
+            applicator.apply({ args: params, target, instance, value: fn, config }),
+            fn
+          );
+        });
+
+        InstanceChainMap.set([ target, name ], chainData);
+
+        if (!isFirstInstance) {
+          return descriptor;
+        }
+
+        chainData.isSetter = isSetter;
+        chainData.isGetter = isGetter;
+        chainData.isMethod = isMethod;
+        chainData.isProperty = isProperty;
+
+        const applyChain = (fn: any, context: InstanceChainContext, instance: any) =&gt; {
+          return chainData.fns.reduce((result: Function, next: Function) =&gt; next(result, instance, context), fn);
+        };
+
+        const applyDecorator = (instance: any) =&gt; {
+          let getter = get || undefined;
+          let setter = set || undefined;
+
+          if (isGetter || isSetter) {
+            // If we have a getter apply the decorators to the getter and assign it to the instance.
+            if (isGetter) {
+              getter = applyChain(get, { value: get, getter: true }, instance);
+            }
+
+            if (isSetter) {
+              setter = applyChain(set, { value: set, setter: true }, instance);
+            }
+
+            Object.defineProperty(instance, name, {
+              enumerable,
+              configurable,
+              get: getter,
+              set: setter
+            });
+          } else if (isMethod || isProperty) {
+            const newFn = isMethod
+              ? applyChain(value, { value, method: true }, instance)
+              : applyChain(value, { value, property: true }, instance);
+
+            Object.defineProperty(instance, name, {
+              writable,
+              enumerable,
+              configurable,
+              value: newFn
+            });
+          }
+        };
+
+        if (isMethod || isProperty) {
+          delete descriptor.value;
+          delete descriptor.writable;
+        }
+
+        descriptor.get = function() {
+          // Check for direct access on the prototype.
+          // MyClass.prototype.fn &lt;-- This should not apply the decorator.
+          if (isPrototypeAccess(this, target)) {
+            return baseValue;
+          }
+
+          applyDecorator(this);
+
+          const descriptor2 = Object.getOwnPropertyDescriptor(this, name)!;
+
+          if (descriptor2.get) {
+            return descriptor2.get.call(this);
+          }
+
+          return descriptor2.value;
+        };
+
+        descriptor.set = function(value2) {
+          applyDecorator(this);
+
+          const descriptor2 = Object.getOwnPropertyDescriptor(this, name)!;
+
+          if (descriptor2.set) {
+            descriptor2.set.call(this, value2);
+          } else if (isProperty || isMethod) {
+            this[name] = value2;
+          }
+        };
+
+        return descriptor;
+      };
+
+      if (optionalParams &amp;&amp; isMethodOrPropertyDecoratorArgs(...args)) {
+        params = [];
+
+        return decorator(args[0], args[1], args[2]) as any;
+      }
+
+      return decorator;
+    };
+  }
+
+  private _isApplicable(context: InstanceChainContext, config: DecoratorConfig): boolean {
+   return !Boolean(
+     context.getter &amp;&amp; !config.getter
+      || context.setter &amp;&amp; !config.setter
+      || context.method &amp;&amp; !config.method
+      || context.property &amp;&amp; !config.property
+   );
+  }
+
+  private _resolveDescriptor(target: Object, name: string, descriptor?: PropertyDescriptor): PropertyDescriptor {
+    if (descriptor) {
+      return descriptor;
+    }
+
+    return Object.getOwnPropertyDescriptor(target, name) || {};
+  }
+}
+
+export const DecoratorFactory = new InternalDecoratorFactory();
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
