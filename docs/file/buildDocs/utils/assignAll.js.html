@@ -36,9 +36,9 @@
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/utils/assignAll.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
-var without = require(&quot;lodash/without&quot;);
-var attempt = require(&quot;lodash/attempt&quot;);
-var isObject = require(&quot;lodash/isObject&quot;);
+var without_1 = require(&quot;lodash/without&quot;);
+var attempt_1 = require(&quot;lodash/attempt&quot;);
+var isObject_1 = require(&quot;lodash/isObject&quot;);
 /**
  * Assigns all properties from an object to another object including non enumerable
  * properties.
@@ -52,10 +52,10 @@ var isObject = require(&quot;lodash/isObject&quot;);
  */
 function assignAll(to, from, excludes) {
     if (excludes === void 0) { excludes = []; }
-    var properties = without.apply(void 0, [Object.getOwnPropertyNames(from)].concat(excludes));
+    var properties = without_1.default.apply(void 0, [Object.getOwnPropertyNames(from)].concat(excludes));
     for (var _i = 0, properties_1 = properties; _i &lt; properties_1.length; _i++) {
         var prop = properties_1[_i];
-        attempt(assignProperty, to, from, prop);
+        attempt_1.default(assignProperty, to, from, prop);
     }
     return to;
 }
@@ -73,7 +73,7 @@ function assignProperty(to, from, prop) {
     var descriptor = Object.getOwnPropertyDescriptor(to, prop);
     if (!descriptor || descriptor.configurable) {
         var srcDescriptor = Object.getOwnPropertyDescriptor(from, prop);
-        if (isObject(srcDescriptor)) {
+        if (isObject_1.default(srcDescriptor)) {
             Object.defineProperty(to, prop, srcDescriptor);
         }
         else {

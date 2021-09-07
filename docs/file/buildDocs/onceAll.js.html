@@ -36,7 +36,7 @@
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/onceAll.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
-var once = require(&quot;lodash/once&quot;);
+var once_1 = require(&quot;lodash/once&quot;);
 var factory_1 = require(&quot;./factory&quot;);
 var applicators_1 = require(&quot;./applicators&quot;);
 /**
@@ -58,7 +58,7 @@ var applicators_1 = require(&quot;./applicators&quot;);
  * myClass.fn(); //=&gt; 1
  * myClass2.fn(); //=&gt; 1
  */
-exports.OnceAll = factory_1.DecoratorFactory.createDecorator(new factory_1.DecoratorConfig(once, new applicators_1.PreValueApplicator(), { setter: true, optionalParams: true }));
+exports.OnceAll = factory_1.DecoratorFactory.createDecorator(new factory_1.DecoratorConfig(once_1.default, new applicators_1.PreValueApplicator(), { setter: true, optionalParams: true }));
 exports.onceAll = exports.OnceAll;
 exports.default = exports.OnceAll;
 </code></pre>

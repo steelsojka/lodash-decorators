@@ -36,10 +36,10 @@
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/wrap.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
-var wrap = require(&quot;lodash/wrap&quot;);
+var wrap_1 = require(&quot;lodash/wrap&quot;);
 var factory_1 = require(&quot;./factory&quot;);
 var applicators_1 = require(&quot;./applicators&quot;);
-var decorator = factory_1.DecoratorFactory.createDecorator(new factory_1.DecoratorConfig(wrap, new applicators_1.WrapApplicator()));
+var decorator = factory_1.DecoratorFactory.createDecorator(new factory_1.DecoratorConfig(wrap_1.default, new applicators_1.WrapApplicator()));
 function Wrap(fnToWrap) {
     return decorator(fnToWrap);
 }

@@ -36,7 +36,7 @@
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/utils/copyMetaData.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
-var forOwn = require(&quot;lodash/forOwn&quot;);
+var forOwn_1 = require(&quot;lodash/forOwn&quot;);
 /**
  * Used to copy over meta data from function to function.
  * If meta data is attached to a function. This can get lost
@@ -44,7 +44,7 @@ var forOwn = require(&quot;lodash/forOwn&quot;);
  * @private
  */
 function copyMetadata(to, from) {
-    forOwn(from, function (value, key) { return to[key] = value; });
+    forOwn_1.default(from, function (value, key) { return to[key] = value; });
     return to;
 }
 exports.copyMetadata = copyMetadata;

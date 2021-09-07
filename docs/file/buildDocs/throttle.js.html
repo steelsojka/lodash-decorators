@@ -36,14 +36,14 @@
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/throttle.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
-var throttle = require(&quot;lodash/throttle&quot;);
+var throttle_1 = require(&quot;lodash/throttle&quot;);
 var factory_1 = require(&quot;./factory&quot;);
 var applicators_1 = require(&quot;./applicators&quot;);
-exports.Throttle = factory_1.DecoratorFactory.createInstanceDecorator(new factory_1.DecoratorConfig(throttle, new applicators_1.PreValueApplicator(), { setter: true, getter: true, optionalParams: true }));
+exports.Throttle = factory_1.DecoratorFactory.createInstanceDecorator(new factory_1.DecoratorConfig(throttle_1.default, new applicators_1.PreValueApplicator(), { setter: true, getter: true, optionalParams: true }));
 exports.throttle = exports.Throttle;
-exports.ThrottleGetter = factory_1.DecoratorFactory.createInstanceDecorator(new factory_1.DecoratorConfig(throttle, new applicators_1.PreValueApplicator(), { getter: true, optionalParams: true }));
+exports.ThrottleGetter = factory_1.DecoratorFactory.createInstanceDecorator(new factory_1.DecoratorConfig(throttle_1.default, new applicators_1.PreValueApplicator(), { getter: true, optionalParams: true }));
 exports.throttleGetter = exports.ThrottleGetter;
-exports.ThrottleSetter = factory_1.DecoratorFactory.createInstanceDecorator(new factory_1.DecoratorConfig(throttle, new applicators_1.PreValueApplicator(), { setter: true, optionalParams: true }));
+exports.ThrottleSetter = factory_1.DecoratorFactory.createInstanceDecorator(new factory_1.DecoratorConfig(throttle_1.default, new applicators_1.PreValueApplicator(), { setter: true, optionalParams: true }));
 exports.throttleSetter = exports.ThrottleSetter;
 exports.default = exports.Throttle;
 </code></pre>

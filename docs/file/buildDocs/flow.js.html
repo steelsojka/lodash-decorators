@@ -36,10 +36,10 @@
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/flow.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
-var flow = require(&quot;lodash/flow&quot;);
+var flow_1 = require(&quot;lodash/flow&quot;);
 var factory_1 = require(&quot;./factory&quot;);
 var applicators_1 = require(&quot;./applicators&quot;);
-var decorator = factory_1.DecoratorFactory.createInstanceDecorator(new factory_1.DecoratorConfig(flow, new applicators_1.ComposeApplicator({ post: true }), { property: true }));
+var decorator = factory_1.DecoratorFactory.createInstanceDecorator(new factory_1.DecoratorConfig(flow_1.default, new applicators_1.ComposeApplicator({ post: true }), { property: true }));
 /**
  * Creates a function that returns the result of invoking the given functions with the this binding of the created function,
  * where each successive invocation is supplied the return value of the previous.

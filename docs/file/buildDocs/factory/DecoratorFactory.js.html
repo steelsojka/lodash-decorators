@@ -36,7 +36,7 @@
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/factory/DecoratorFactory.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
-var isFunction = require(&quot;lodash/isFunction&quot;);
+var isFunction_1 = require(&quot;lodash/isFunction&quot;);
 var common_1 = require(&quot;./common&quot;);
 var utils_1 = require(&quot;../utils&quot;);
 var InternalDecoratorFactory = (function () {
@@ -57,13 +57,13 @@ var InternalDecoratorFactory = (function () {
                 // If this decorator is being applied after an instance decorator we simply ignore it
                 // as we can&apos;t apply it correctly.
                 if (!common_1.InstanceChainMap.has([target, name])) {
-                    if (isFunction(value)) {
+                    if (isFunction_1.default(value)) {
                         descriptor.value = utils_1.copyMetadata(applicator.apply({ config: config, target: target, value: value, args: params }), value);
                     }
-                    else if (isFunction(get) &amp;&amp; config.getter) {
+                    else if (isFunction_1.default(get) &amp;&amp; config.getter) {
                         descriptor.get = utils_1.copyMetadata(applicator.apply({ config: config, target: target, value: get, args: params }), get);
                     }
-                    else if (isFunction(set) &amp;&amp; config.setter) {
+                    else if (isFunction_1.default(set) &amp;&amp; config.setter) {
                         descriptor.set = utils_1.copyMetadata(applicator.apply({ config: config, target: target, value: set, args: params }), set);
                     }
                 }
@@ -90,9 +90,9 @@ var InternalDecoratorFactory = (function () {
                 var value = descriptor.value, writable = descriptor.writable, enumerable = descriptor.enumerable, configurable = descriptor.configurable, get = descriptor.get, set = descriptor.set;
                 var isFirstInstance = !common_1.InstanceChainMap.has([target, name]);
                 var chainData = common_1.InstanceChainMap.get([target, name]) || { fns: [], properties: [] };
-                var isGetter = isFirstInstance &amp;&amp; isFunction(get);
-                var isSetter = isFirstInstance &amp;&amp; isFunction(set);
-                var isMethod = isFirstInstance &amp;&amp; isFunction(value);
+                var isGetter = isFirstInstance &amp;&amp; isFunction_1.default(get);
+                var isSetter = isFirstInstance &amp;&amp; isFunction_1.default(set);
+                var isMethod = isFirstInstance &amp;&amp; isFunction_1.default(value);
                 var isProperty = isFirstInstance &amp;&amp; !isGetter &amp;&amp; !isSetter &amp;&amp; !isMethod;
                 var baseValue = isGetter ? get : isMethod ? value : undefined;
                 chainData.properties.push(name);

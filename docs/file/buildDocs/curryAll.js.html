@@ -36,7 +36,7 @@
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/curryAll.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
-var curry = require(&quot;lodash/curry&quot;);
+var curry_1 = require(&quot;lodash/curry&quot;);
 var factory_1 = require(&quot;./factory&quot;);
 var applicators_1 = require(&quot;./applicators&quot;);
 /**
@@ -63,7 +63,7 @@ var applicators_1 = require(&quot;./applicators&quot;);
  *
  * add5AndMultiply(10); // =&gt; 15
  */
-exports.CurryAll = factory_1.DecoratorFactory.createDecorator(new factory_1.DecoratorConfig(curry, new applicators_1.PreValueApplicator(), { optionalParams: true }));
+exports.CurryAll = factory_1.DecoratorFactory.createDecorator(new factory_1.DecoratorConfig(curry_1.default, new applicators_1.PreValueApplicator(), { optionalParams: true }));
 exports.curryAll = exports.CurryAll;
 exports.default = exports.CurryAll;
 </code></pre>

@@ -36,10 +36,10 @@
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/unary.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
-var unary = require(&quot;lodash/unary&quot;);
+var unary_1 = require(&quot;lodash/unary&quot;);
 var factory_1 = require(&quot;./factory&quot;);
 var applicators_1 = require(&quot;./applicators&quot;);
-exports.Unary = factory_1.DecoratorFactory.createDecorator(new factory_1.DecoratorConfig(unary, new applicators_1.PreValueApplicator(), { optionalParams: true }));
+exports.Unary = factory_1.DecoratorFactory.createDecorator(new factory_1.DecoratorConfig(unary_1.default, new applicators_1.PreValueApplicator(), { optionalParams: true }));
 exports.unary = exports.Unary;
 exports.default = exports.Unary;
 </code></pre>

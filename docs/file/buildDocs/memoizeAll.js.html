@@ -36,14 +36,14 @@
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/memoizeAll.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
-var memoize = require(&quot;lodash/memoize&quot;);
+var memoize_1 = require(&quot;lodash/memoize&quot;);
 var factory_1 = require(&quot;./factory&quot;);
 var applicators_1 = require(&quot;./applicators&quot;);
 /**
  * Memoizes a function on the prototype instead of the instance. All instances of the class use the same memoize cache.
  * @param {Function} [resolver] Optional resolver
  */
-exports.MemoizeAll = factory_1.DecoratorFactory.createDecorator(new factory_1.DecoratorConfig(memoize, new applicators_1.MemoizeApplicator(), { optionalParams: true }));
+exports.MemoizeAll = factory_1.DecoratorFactory.createDecorator(new factory_1.DecoratorConfig(memoize_1.default, new applicators_1.MemoizeApplicator(), { optionalParams: true }));
 exports.memoizeAll = exports.MemoizeAll;
 exports.default = exports.MemoizeAll;
 </code></pre>

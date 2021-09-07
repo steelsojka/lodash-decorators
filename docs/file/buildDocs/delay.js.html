@@ -36,7 +36,7 @@
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/delay.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
-var delay = require(&quot;lodash/delay&quot;);
+var delay_1 = require(&quot;lodash/delay&quot;);
 var factory_1 = require(&quot;./factory&quot;);
 var applicators_1 = require(&quot;./applicators&quot;);
 var decorator = factory_1.DecoratorFactory.createDecorator(new factory_1.DecoratorConfig(function (value, wait) {
@@ -49,7 +49,7 @@ var decorator = factory_1.DecoratorFactory.createDecorator(new factory_1.Decorat
         for (var _i = 0; _i &lt; arguments.length; _i++) {
             invokeArgs[_i] = arguments[_i];
         }
-        return delay.apply(void 0, [value.bind(this), wait].concat(invokeArgs, args));
+        return delay_1.default.apply(void 0, [value.bind(this), wait].concat(invokeArgs, args));
     };
 }, new applicators_1.PreValueApplicator(), { setter: true }));
 /**

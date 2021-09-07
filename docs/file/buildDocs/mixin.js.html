@@ -36,7 +36,7 @@
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/mixin.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
-var assign = require(&quot;lodash/assign&quot;);
+var assign_1 = require(&quot;lodash/assign&quot;);
 /**
  * Mixins an object into the classes prototype.
  * @export
@@ -61,7 +61,7 @@ function Mixin() {
         srcs[_i] = arguments[_i];
     }
     return (function (target) {
-        assign.apply(void 0, [target.prototype].concat(srcs));
+        assign_1.default.apply(void 0, [target.prototype].concat(srcs));
         return target;
     });
 }

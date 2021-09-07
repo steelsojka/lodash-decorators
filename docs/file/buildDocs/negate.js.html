@@ -36,7 +36,7 @@
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/negate.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
-var negate = require(&quot;lodash/negate&quot;);
+var negate_1 = require(&quot;lodash/negate&quot;);
 var factory_1 = require(&quot;./factory&quot;);
 var applicators_1 = require(&quot;./applicators&quot;);
 /**
@@ -57,7 +57,7 @@ var applicators_1 = require(&quot;./applicators&quot;);
  *
  * myClass.fn2(); //=&gt; false
  */
-exports.Negate = factory_1.DecoratorFactory.createInstanceDecorator(new factory_1.DecoratorConfig(negate, new applicators_1.PartialValueApplicator(), { property: true, optionalParams: true }));
+exports.Negate = factory_1.DecoratorFactory.createInstanceDecorator(new factory_1.DecoratorConfig(negate_1.default, new applicators_1.PartialValueApplicator(), { property: true, optionalParams: true }));
 exports.negate = exports.Negate;
 exports.default = exports.Negate;
 </code></pre>

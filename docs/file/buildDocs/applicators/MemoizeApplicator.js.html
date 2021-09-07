@@ -37,8 +37,8 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
 var tslib_1 = require(&quot;tslib&quot;);
-var isFunction = require(&quot;lodash/isFunction&quot;);
-var isObject = require(&quot;lodash/isObject&quot;);
+var isFunction_1 = require(&quot;lodash/isFunction&quot;);
+var isObject_1 = require(&quot;lodash/isObject&quot;);
 var Applicator_1 = require(&quot;./Applicator&quot;);
 var utils_1 = require(&quot;../utils&quot;);
 var MemoizeApplicator = (function (_super) {
@@ -48,17 +48,17 @@ var MemoizeApplicator = (function (_super) {
     }
     MemoizeApplicator.prototype.apply = function (_a) {
         var value = _a.value, instance = _a.instance, execute = _a.config.execute, args = _a.args, target = _a.target;
-        var resolver = utils_1.resolveFunction(isFunction(args[0]) ? args[0] : isObject(args[0]) ? args[0].resolver : args[0], instance, target, false);
+        var resolver = utils_1.resolveFunction(isFunction_1.default(args[0]) ? args[0] : isObject_1.default(args[0]) ? args[0].resolver : args[0], instance, target, false);
         if (resolver &amp;&amp; instance) {
             resolver = resolver.bind(instance);
         }
         var memoized = resolver ? execute(value, resolver) : execute(value);
-        if (isObject(args[0])) {
+        if (isObject_1.default(args[0])) {
             var _b = args[0], cache = _b.cache, type = _b.type;
             if (cache) {
                 memoized.cache = cache;
             }
-            else if (isFunction(type)) {
+            else if (isFunction_1.default(type)) {
                 memoized.cache = new type();
             }
         }

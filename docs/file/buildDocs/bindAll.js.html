@@ -36,7 +36,7 @@
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/bindAll.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
-var isFunction = require(&quot;lodash/isFunction&quot;);
+var isFunction_1 = require(&quot;lodash/isFunction&quot;);
 var factory_1 = require(&quot;./factory&quot;);
 var bind_1 = require(&quot;./bind&quot;);
 /**
@@ -89,7 +89,7 @@ function bindAllMethods(target, methods) {
                         continue;
                     }
                 }
-                if (isFunction(proto[key]) &amp;&amp; boundKeys.indexOf(key) === -1) {
+                if (isFunction_1.default(proto[key]) &amp;&amp; boundKeys.indexOf(key) === -1) {
                     Object.defineProperty(targetProto, key, bind_1.Bind(proto, key, descriptor));
                     boundKeys.push(key);
                 }

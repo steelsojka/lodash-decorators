@@ -1,4 +1,4 @@
-import negate = require('lodash/negate');
+import negate from 'lodash/negate';
 
 import {
   DecoratorConfig,

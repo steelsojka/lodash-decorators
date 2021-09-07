@@ -36,18 +36,18 @@
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/utils/isDecoratorArgs.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
-var isObject = require(&quot;lodash/isObject&quot;);
-var isFunction = require(&quot;lodash/isFunction&quot;);
-var isString = require(&quot;lodash/isString&quot;);
+var isObject_1 = require(&quot;lodash/isObject&quot;);
+var isFunction_1 = require(&quot;lodash/isFunction&quot;);
+var isString_1 = require(&quot;lodash/isString&quot;);
 function isMethodOrPropertyDecoratorArgs() {
     var args = [];
     for (var _i = 0; _i &lt; arguments.length; _i++) {
         args[_i] = arguments[_i];
     }
     return args.length &gt;= 2
-        &amp;&amp; isObject(args[0])
-        &amp;&amp; isString(args[1])
-        &amp;&amp; isFunction(args[0].constructor)
+        &amp;&amp; isObject_1.default(args[0])
+        &amp;&amp; isString_1.default(args[1])
+        &amp;&amp; isFunction_1.default(args[0].constructor)
         &amp;&amp; args[0].constructor.prototype === args[0];
 }
 exports.isMethodOrPropertyDecoratorArgs = isMethodOrPropertyDecoratorArgs;

@@ -36,8 +36,8 @@
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/utils/resolveFunction.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
-var isFunction = require(&quot;lodash/isFunction&quot;);
-var isString = require(&quot;lodash/isString&quot;);
+var isFunction_1 = require(&quot;lodash/isFunction&quot;);
+var isString_1 = require(&quot;lodash/isString&quot;);
 var log_1 = require(&quot;./log&quot;);
 /**
   * Resolves a function on the current target object. It first will
@@ -51,14 +51,14 @@ var log_1 = require(&quot;./log&quot;);
   */
 function resolveFunction(method, context, target, throwNotFound) {
     if (throwNotFound === void 0) { throwNotFound = true; }
-    if (isFunction(method)) {
+    if (isFunction_1.default(method)) {
         return method;
     }
-    else if (isString(method)) {
-        if (context &amp;&amp; isFunction(context[method])) {
+    else if (isString_1.default(method)) {
+        if (context &amp;&amp; isFunction_1.default(context[method])) {
             return context[method];
         }
-        else if (target &amp;&amp; isFunction(target[method])) {
+        else if (target &amp;&amp; isFunction_1.default(target[method])) {
             return target[method];
         }
     }

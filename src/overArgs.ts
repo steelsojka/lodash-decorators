@@ -1,4 +1,4 @@
-import overArgs = require('lodash/overArgs');
+import overArgs from 'lodash/overArgs';
 
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { PreValueApplicator } from './applicators';

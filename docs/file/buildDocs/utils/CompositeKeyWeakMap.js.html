@@ -36,7 +36,7 @@
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/utils/CompositeKeyWeakMap.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
-var isUndefined = require(&quot;lodash/isUndefined&quot;);
+var isUndefined_1 = require(&quot;lodash/isUndefined&quot;);
 /**
  * A map for weakly holding nested references.
  * @private
@@ -65,14 +65,14 @@ var CompositeKeyWeakMap = (function () {
         var next = this._weakMap;
         for (var i = 0, len = keys.length; i &lt; len; i++) {
             next = next.get(keys[i]);
-            if (isUndefined(next)) {
+            if (isUndefined_1.default(next)) {
                 break;
             }
         }
         return next;
     };
     CompositeKeyWeakMap.prototype.has = function (keys) {
-        return !isUndefined(this.get(keys));
+        return !isUndefined_1.default(this.get(keys));
     };
     return CompositeKeyWeakMap;
 }());

@@ -1,4 +1,4 @@
-import ary = require('lodash/ary');
+import ary from 'lodash/ary';
 
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { PreValueApplicator } from './applicators';

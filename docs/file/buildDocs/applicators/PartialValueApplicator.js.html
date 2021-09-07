@@ -37,7 +37,7 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
 var tslib_1 = require(&quot;tslib&quot;);
-var isFunction = require(&quot;lodash/isFunction&quot;);
+var isFunction_1 = require(&quot;lodash/isFunction&quot;);
 var Applicator_1 = require(&quot;./Applicator&quot;);
 var utils_1 = require(&quot;../utils&quot;);
 var PartialValueApplicator = (function (_super) {
@@ -54,7 +54,7 @@ var PartialValueApplicator = (function (_super) {
             }
             var fn = value;
             var argIndex = 0;
-            if (!isFunction(fn)) {
+            if (!isFunction_1.default(fn)) {
                 fn = utils_1.resolveFunction(args[0], this, target);
                 argIndex = 1;
             }

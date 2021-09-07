@@ -36,10 +36,10 @@
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/after.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
-var after = require(&quot;lodash/after&quot;);
+var after_1 = require(&quot;lodash/after&quot;);
 var factory_1 = require(&quot;./factory&quot;);
 var applicators_1 = require(&quot;./applicators&quot;);
-var decorator = factory_1.DecoratorFactory.createInstanceDecorator(new factory_1.DecoratorConfig(after, new applicators_1.PostValueApplicator(), { setter: true }));
+var decorator = factory_1.DecoratorFactory.createInstanceDecorator(new factory_1.DecoratorConfig(after_1.default, new applicators_1.PostValueApplicator(), { setter: true }));
 /**
  * The opposite of Before. This method creates a function that invokes once it&apos;s called n or more times.
  * @param {number} n The number of calls before the function is invoked.

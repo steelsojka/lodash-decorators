@@ -36,10 +36,10 @@
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/flip.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
-var flip = require(&quot;lodash/flip&quot;);
+var flip_1 = require(&quot;lodash/flip&quot;);
 var factory_1 = require(&quot;./factory&quot;);
 var applicators_1 = require(&quot;./applicators&quot;);
-var decorator = factory_1.DecoratorFactory.createInstanceDecorator(new factory_1.DecoratorConfig(flip, new applicators_1.PartialValueApplicator(), { property: true }));
+var decorator = factory_1.DecoratorFactory.createInstanceDecorator(new factory_1.DecoratorConfig(flip_1.default, new applicators_1.PartialValueApplicator(), { property: true }));
 /**
  * Creates a function that invokes func with arguments reversed. Honestly, there is probably not much
  * use for this decorator but maybe you will find one?

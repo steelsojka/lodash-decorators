@@ -36,11 +36,11 @@
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/attempt.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
-var attempt = require(&quot;lodash/attempt&quot;);
-var partial = require(&quot;lodash/partial&quot;);
+var attempt_1 = require(&quot;lodash/attempt&quot;);
+var partial_1 = require(&quot;lodash/partial&quot;);
 var factory_1 = require(&quot;./factory&quot;);
 var applicators_1 = require(&quot;./applicators&quot;);
-var attemptFn = function (fn) { return partial(attempt, fn); };
+var attemptFn = function (fn) { return partial_1.default(attempt_1.default, fn); };
 /**
  * Attempts to invoke func, returning either the result or the caught error object. Any additional arguments are provided to func when it&apos;s invoked.
  * @param {...*} [args] The arguments to invoke func with.

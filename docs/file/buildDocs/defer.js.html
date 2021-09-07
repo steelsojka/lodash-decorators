@@ -36,7 +36,7 @@
 <div class="content" data-ice="content"><h1 data-ice="title">buildDocs/defer.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
 Object.defineProperty(exports, &quot;__esModule&quot;, { value: true });
-var defer = require(&quot;lodash/defer&quot;);
+var defer_1 = require(&quot;lodash/defer&quot;);
 var factory_1 = require(&quot;./factory&quot;);
 var applicators_1 = require(&quot;./applicators&quot;);
 /**
@@ -64,7 +64,7 @@ var applicators_1 = require(&quot;./applicators&quot;);
  *   myClass.value; // =&gt; 110;
  * }, 0);
  */
-exports.Defer = factory_1.DecoratorFactory.createDecorator(new factory_1.DecoratorConfig(defer, new applicators_1.InvokeApplicator(), { setter: true, optionalParams: true }));
+exports.Defer = factory_1.DecoratorFactory.createDecorator(new factory_1.DecoratorConfig(defer_1.default, new applicators_1.InvokeApplicator(), { setter: true, optionalParams: true }));
 exports.defer = exports.Defer;
 exports.default = exports.Defer;
 </code></pre>
