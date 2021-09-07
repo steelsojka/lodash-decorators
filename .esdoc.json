@@ -1,12 +1,17 @@
 {
   "source": "./buildDocs",
   "destination": "./docs",
-  "title": "Lodash Decorators Documentation",
-  "access": [ "public" ],
-  "excludes": [ ".*\\.spec\\.js" ],
-  "test": {
-    "type": "mocha",
-    "source": "./buildDocs",
-    "includes": [ ".*\\.spec\\.js" ]
-  }
+  "plugins": [{
+    "name": "esdoc-standard-plugin",
+    "option": {
+      "accessor": {"access": [ "public" ]},
+      "test": {
+        "type": "mocha",
+        "source": "./buildDocs",
+        "includes": [ ".*\\.spec\\.js" ]
+      },
+      "brand": {"title": "Lodash Decorators Documentation"}
+    }
+  }],
+  "excludes": [ ".*\\.spec\\.js" ]
 }

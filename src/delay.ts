@@ -1,4 +1,4 @@
-import delay = require('lodash/delay');
+import delay from 'lodash/delay';
 
 import { DecoratorConfig, DecoratorFactory, LodashMethodDecorator } from './factory';
 import { PreValueApplicator } from './applicators';

@@ -1,4 +1,4 @@
-import once = require('lodash/once');
+import once from 'lodash/once';
 
 import { DecoratorConfig, DecoratorFactory, BiTypedDecorator } from './factory';
 import { PreValueApplicator } from './applicators';

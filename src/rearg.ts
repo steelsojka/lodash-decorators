@@ -1,4 +1,4 @@
-import rearg = require('lodash/rearg');
+import rearg from 'lodash/rearg';
 
 import {
   DecoratorConfig,

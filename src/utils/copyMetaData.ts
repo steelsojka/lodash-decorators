@@ -1,4 +1,4 @@
-import forOwn = require('lodash/forOwn');
+import forOwn from 'lodash/forOwn';
 
 /**
  * Used to copy over meta data from function to function.
