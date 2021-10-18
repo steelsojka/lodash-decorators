@@ -5,7 +5,7 @@ import { Partial } from './partial';
 describe('partial', () => {
   it('should create a partially applied function', () => {
     class MyClass {
-      lastName: string = 'Schmo';
+      lastName = 'Schmo';
 
       @Partial('fn', 'Joe')
       fn2: () => string;

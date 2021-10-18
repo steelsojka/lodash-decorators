@@ -1,13 +1,13 @@
 import isFunction = require('lodash/isFunction');
-import isObject = require('lodash/isObject');
+import isObjectLike = require('lodash/isObjectLike');
 
 import { Applicator, ApplicateOptions } from './Applicator';
 import { resolveFunction } from '../utils';
 
 export class MemoizeApplicator extends Applicator {
-  apply({ value, instance, config: { execute }, args, target }: ApplicateOptions): any {
+  apply({ value, instance, config: { execute }, args: [arg], target }: ApplicateOptions): any {
     let resolver = resolveFunction(
-      isFunction(args[0]) ? args[0] : isObject(args[0]) ? args[0].resolver : args[0],
+      isFunction(arg) ? arg : isObjectLike(arg) ? arg.resolver : arg,
       instance,
       target,
       false
@@ -19,8 +19,8 @@ export class MemoizeApplicator extends Applicator {
 
     const memoized = resolver ? execute(value, resolver) : execute(value);
 
-    if (isObject(args[0])) {
-      const { cache, type } = args[0];
+    if (isObjectLike(arg)) {
+      const { cache, type } = arg;
 
       if (cache) {
         memoized.cache = cache;

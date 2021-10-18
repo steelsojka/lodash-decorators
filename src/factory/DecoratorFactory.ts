@@ -130,7 +130,7 @@ export class InternalDecoratorFactory {
               value: newFn
             });
           }
-        }
+        };
 
         if (isMethod || isProperty) {
           delete descriptor.value;
@@ -146,24 +146,24 @@ export class InternalDecoratorFactory {
 
           applyDecorator(this);
 
-          const descriptor = Object.getOwnPropertyDescriptor(this, name)!;
+          const descriptor2 = Object.getOwnPropertyDescriptor(this, name)!;
 
-          if (descriptor.get) {
-            return descriptor.get.call(this);
+          if (descriptor2.get) {
+            return descriptor2.get.call(this);
           }
 
-          return descriptor.value;
+          return descriptor2.value;
         };
 
-        descriptor.set = function(value) {
+        descriptor.set = function(value2) {
           applyDecorator(this);
 
-          const descriptor = Object.getOwnPropertyDescriptor(this, name)!;
+          const descriptor2 = Object.getOwnPropertyDescriptor(this, name)!;
 
-          if (descriptor.set) {
-            descriptor.set.call(this, value);
+          if (descriptor2.set) {
+            descriptor2.set.call(this, value2);
           } else if (isProperty || isMethod) {
-            this[name] = value;
+            this[name] = value2;
           }
         };
 

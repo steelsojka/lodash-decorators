@@ -9,6 +9,7 @@ const decorator = DecoratorFactory.createInstanceDecorator(
 
 /**
  * The opposite of Before. This method creates a function that invokes once it's called n or more times.
+ *
  * @param {number} n The number of calls before the function is invoked.
  * @example
  *

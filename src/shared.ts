@@ -30,6 +30,6 @@ export interface MemoizeMap<T, U> {
 
 export interface MemoizeConfig<T, U> {
   resolver?: ResolvableFunction;
-  type?: { new (...args: any[]): MemoizeMap<T, U> };
+  type?: new (...args: any[]) => MemoizeMap<T, U>;
   cache?: MemoizeMap<T, U>;
 }

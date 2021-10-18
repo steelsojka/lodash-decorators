@@ -5,6 +5,7 @@ import isObject = require('lodash/isObject');
 /**
  * Assigns all properties from an object to another object including non enumerable
  * properties.
+ *
  * @export
  * @template T
  * @template U
@@ -25,6 +26,7 @@ export function assignAll<T, U>(to: T, from: U, excludes: string[] = []): T {
 
 /**
  * Assigns a property from one object to another while retaining descriptor properties.
+ *
  * @export
  * @template T
  * @template U

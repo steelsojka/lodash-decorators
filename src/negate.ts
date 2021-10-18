@@ -11,6 +11,7 @@ import { PartialValueApplicator } from './applicators';
 /**
  * Negates a functions result or, when used on a property, creates a function that
  * negates the result of a provided function.
+ *
  * @param {ResolvableFunction} [fn] A resolvable function.
  * @example
  * class MyClass {

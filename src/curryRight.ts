@@ -11,6 +11,7 @@ import { PreValueApplicator } from './applicators';
  * The _.curryRight.placeholder value, which defaults to _ in monolithic builds, may be used as a placeholder for provided arguments.
  *
  * Note: This method doesn't set the "length" property of curried functions.
+ *
  * @param {number} [arity] The arity of func.
  * @example
  *

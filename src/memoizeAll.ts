@@ -6,6 +6,7 @@ import { MemoizeConfig } from './shared';
 
 /**
  * Memoizes a function on the prototype instead of the instance. All instances of the class use the same memoize cache.
+ *
  * @param {Function} [resolver] Optional resolver
  */
 export const MemoizeAll = DecoratorFactory.createDecorator(

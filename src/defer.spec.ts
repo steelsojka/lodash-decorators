@@ -52,7 +52,7 @@ describe('defer', () => {
 
   it('should debounce the property setter', (done) => {
     class MyClass {
-      private _value: number = 100;
+      private _value = 100;
 
       @Defer()
       set value(value: number) {
@@ -80,7 +80,7 @@ describe('defer', () => {
 
   it('should debounce the property setter (paramless)', (done) => {
     class MyClass {
-      private _value: number = 100;
+      private _value = 100;
 
       @Defer
       set value(value: number) {

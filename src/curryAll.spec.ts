@@ -51,7 +51,7 @@ describe('curryAll', () => {
   it('should not retain the class context', () => {
     class MyClass {
       @CurryAll()
-      add(a: any, b?: any): any {
+      add(_a: any, _b?: any): any {
         expect(this).to.equal(global);
       }
     }

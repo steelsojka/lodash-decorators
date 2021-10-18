@@ -6,6 +6,7 @@ import { PreValueApplicator } from './applicators';
 /**
  * Creates a function that is restricted to invoking func once. Repeat calls to the function return the value of the first invocation.
  * This is shared across all instances of the class.
+ *
  * @example
  * const value = 0;
  *

@@ -11,6 +11,7 @@ import { PreValueApplicator } from './applicators';
  *
  * Note: This method doesn't set the "length" property of curried functions.
  * Note: The original function invoked will not be called in the context of the instance. Use `Curry` to for using it bound.
+ *
  * @param {number} [arity] The arity of func.
  * @example
  *
